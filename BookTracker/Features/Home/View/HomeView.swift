@@ -36,7 +36,7 @@ struct HomeView: View {
             }
             // Sheet Add Book Dummy
             .sheet(isPresented: $viewModel.showAddBookSheet) {
-                AddBookView()
+                BookEditorView()
             }
         }
         .onAppear {

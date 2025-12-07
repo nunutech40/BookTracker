@@ -18,6 +18,7 @@ enum BookStatus: String, Codable {
 final class Book {
     var id: UUID
     var title: String
+    var author: String // <--- INI DITAMBAHKAN
     var totalPages: Int
     var currentPage: Int
     var coverImageData: Data?
@@ -28,9 +29,11 @@ final class Book {
     @Relationship(deleteRule: .cascade, inverse: \ReadingSession.book)
     var sessions: [ReadingSession] = []
     
-    init(title: String, totalPages: Int, coverImageData: Data? = nil) {
+    // Update Init: Tambah parameter author
+    init(title: String, author: String = "Unknown", totalPages: Int, coverImageData: Data? = nil) {
         self.id = UUID()
         self.title = title
+        self.author = author // <--- Simpan di sini
         self.totalPages = totalPages
         self.currentPage = 0
         self.coverImageData = coverImageData

@@ -9,10 +9,19 @@ import SwiftUI
 
 struct ContentView: View {
     var body: some View {
-        VStack {
+        TabView {
+            // Tab 1: Dashboard
             HomeView()
+                .tabItem {
+                    Label("Reading Now", systemImage: "book.fill")
+                }
+            
+            // Tab 2: Library (NEW)
+            LibraryView()
+                .tabItem {
+                    Label("Library", systemImage: "books.vertical.fill")
+                }
         }
-        .padding()
     }
 }
 
