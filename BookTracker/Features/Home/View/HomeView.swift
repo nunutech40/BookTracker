@@ -13,8 +13,6 @@ struct HomeView: View {
     @Environment(\.modelContext) private var context
     @State private var viewModel = HomeViewModel()
     
-    // 👇 PERUBAHAN UTAMA DI SINI 👇
-    // 1. Kita HAPUS filter di dalam @Query.
     // 2. Kita tarik semua buku, urutkan berdasarkan interaksi terakhir.
     @Query(sort: \Book.lastInteraction, order: .reverse)
     private var allBooks: [Book]
