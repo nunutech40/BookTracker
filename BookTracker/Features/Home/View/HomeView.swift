@@ -4,6 +4,7 @@
 //
 //  Created by Nunu Nugraha on 07/12/25.
 //
+
 import SwiftUI
 import SwiftData
 import Charts
@@ -12,9 +13,17 @@ struct HomeView: View {
     @Environment(\.modelContext) private var context
     @State private var viewModel = HomeViewModel()
     
-    @Query(filter: #Predicate<Book> { $0.status.rawValue == "reading" },
-           sort: \Book.lastInteraction, order: .reverse)
-    private var activeBooks: [Book]
+    // 👇 PERUBAHAN UTAMA DI SINI 👇
+    // 1. Kita HAPUS filter di dalam @Query.
+    // 2. Kita tarik semua buku, urutkan berdasarkan interaksi terakhir.
+    @Query(sort: \Book.lastInteraction, order: .reverse)
+    private var allBooks: [Book]
+    
+    // 3. Kita filter manual di sini (Computed Property).
+    // Ini 100% aman dan gak bakal error Predicate lagi.
+    var activeBooks: [Book] {
+        allBooks.filter { $0.status == .reading }
+    }
     
     var body: some View {
         NavigationStack {
@@ -26,17 +35,19 @@ struct HomeView: View {
                     // 2. Reading List
                     readingListSection
                 }
-                .padding() // Padding global biar gak nempel pinggir layar
+                .padding()
             }
-            .background(Color(uiColor: .systemGroupedBackground)) // Background abu halus
+            .background(Color(uiColor: .systemGroupedBackground))
             .navigationTitle("Bookmarker")
             .toolbar { toolbarContent }
             .sheet(item: $viewModel.selectedBook) { book in
                 updateProgressSheet(for: book)
             }
-            // Sheet Add Book Dummy
+            // Sheet Add Book
             .sheet(isPresented: $viewModel.showAddBookSheet) {
-                BookEditorView()
+                NavigationStack {
+                    BookEditorView()
+                }
             }
         }
         .onAppear {
@@ -47,7 +58,7 @@ struct HomeView: View {
 
 private extension HomeView {
     
-    // MARK: - 1. Hero Stats (Modern Card)
+    // MARK: - 1. Hero Stats
     var heroStatsSection: some View {
         VStack(alignment: .leading, spacing: 16) {
             HStack {
@@ -69,7 +80,6 @@ private extension HomeView {
                 Spacer()
             }
             
-            // Mini Heatmap Visual
             if !viewModel.heatmapData.isEmpty {
                 Chart {
                     ForEach(viewModel.heatmapData.sorted(by: { $0.key < $1.key }), id: \.key) { date, count in
@@ -93,7 +103,7 @@ private extension HomeView {
         .shadow(color: .blue.opacity(0.3), radius: 10, x: 0, y: 5)
     }
     
-    // MARK: - 2. Reading List (Clean Layout)
+    // MARK: - 2. Reading List
     var readingListSection: some View {
         VStack(alignment: .leading, spacing: 16) {
             Text("Reading Now")
@@ -101,6 +111,7 @@ private extension HomeView {
                 .bold()
                 .padding(.horizontal, 4)
             
+            // Logic UI tetep sama, pake 'activeBooks' yang udah difilter di atas
             if activeBooks.isEmpty {
                 emptyStateView
             } else {
@@ -146,12 +157,11 @@ private extension HomeView {
         .cornerRadius(16)
     }
     
-    // ... (Toolbar & Sheet logic tetep sama kayak sebelumnya)
     @ToolbarContentBuilder
     var toolbarContent: some ToolbarContent {
         ToolbarItem(placement: .topBarTrailing) {
             Button(action: navigateToAddBook) {
-                Image(systemName: "plus.circle.fill") // Icon lebih bold
+                Image(systemName: "plus.circle.fill")
                     .font(.system(size: 24))
                     .foregroundStyle(.blue)
             }

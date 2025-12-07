@@ -47,42 +47,55 @@ final class BookService {
      - book: Object `Book` yang sedang aktif (Reference Type, langsung terupdate).
      - newPage: Input angka halaman terbaru dari user.
      */
+    // MARK: - Core Logic: Update Progress
     func updateProgress(for book: Book, newPage: Int) {
+        print("🖨️ [BookService] Updating Progress for: \(book.title)")
+        print("   Current: \(book.currentPage), New: \(newPage), Status Awal: \(book.status.rawValue)")
+        
         let x = newPage
         let y = book.currentPage
         
-        // 1. Hitung Delta (Berapa halaman yang dibaca barusan?)
         var z = x - y
         
-        // 2. Validasi Negative Value
-        // Jika user merevisi halaman ke belakang (misal salah input),
-        // kita update posisinya, tapi TIDAK dianggap sebagai "membaca" (Z=0).
-        if z < 0 { z = 0 }
+        if z < 0 {
+            print("   ⚠️ User input halaman mundur (Delta Negatif). Z di-set 0.")
+            z = 0
+        }
         
-        // 3. Update State Buku (Live Object Manipulation)
+        // Update State
         book.currentPage = x
-        book.lastInteraction = Date() // Update timestamp agar buku naik ke urutan teratas list
+        book.lastInteraction = Date()
         
-        // 4. Auto-Switch Status (Reading -> Finished)
+        // Auto-Status Logic
         if book.currentPage >= book.totalPages {
+            print("   🎉 Book Finished! (Current \(book.currentPage) >= Total \(book.totalPages))")
             book.currentPage = book.totalPages
             book.status = .finished
         } else {
-            // Jika user membaca ulang buku tamat, kembalikan status ke reading
+            // Re-reading logic
+            if book.status == .finished {
+                print("   📖 Status changed back to READING (User re-reading)")
+            }
             book.status = .reading
         }
         
-        // 5. Create History (ReadingSession)
-        // Hanya catat sesi jika ada progress positif (Z > 0)
+        // Create History
         if z > 0 {
+            print("   📝 Mencatat ReadingSession: +\(z) pages")
             let session = ReadingSession(date: Date(), pagesReadCount: z)
-            session.book = book // Link relasi (One-to-Many)
+            session.book = book
             modelContext.insert(session)
+        } else {
+            print("   ℹ️ Tidak ada progress halaman (Z=0), skip sesi.")
         }
         
-        // 6. Persist to Disk
-        // Memastikan perubahan tersimpan permanen saat itu juga.
-        try? modelContext.save()
+        // Persist
+        do {
+            try modelContext.save()
+            print("   ✅ Save Success! Status Akhir: \(book.status.rawValue)")
+        } catch {
+            print("   ❌ ERROR Saving Context: \(error)")
+        }
     }
     
     // MARK: - Feature: GitHub-Style Heatmap
@@ -97,18 +110,22 @@ final class BookService {
      
      - Returns: Dictionary `[Date: Int]` di mana Key = Tanggal, Value = Total halaman dibaca hari itu.
      */
+    // MARK: - Heatmap
     func fetchReadingHeatmap() -> [Date: Int] {
+        print("🖨️ [BookService] Fetching Heatmap Data...")
         let descriptor = FetchDescriptor<ReadingSession>()
         
-        // Fail-safe: Return kosong jika fetch gagal
-        guard let sessions = try? modelContext.fetch(descriptor) else { return [:] }
+        guard let sessions = try? modelContext.fetch(descriptor) else {
+            print("   ❌ Fetch Failed")
+            return [:]
+        }
         
-        // Grouping by Date (Mengabaikan jam/menit, fokus ke Tanggal saja)
+        print("   Found \(sessions.count) total reading sessions.")
+        
         let grouped = Dictionary(grouping: sessions) { session in
             Calendar.current.startOfDay(for: session.date)
         }
         
-        // Summing pages per day
         return grouped.mapValues { sessions in
             sessions.reduce(0) { $0 + $1.pagesReadCount }
         }
@@ -129,19 +146,24 @@ final class BookService {
      */
     @MainActor
     func addBook(from apiBook: GoogleBookItem, coverData: Data?) {
-        // Mapping Data: API -> Local Model
+        print("🖨️ [BookService] Adding Book from API: \(apiBook.volumeInfo.title)")
+        
         let title = apiBook.volumeInfo.title
-        let totalPages = apiBook.volumeInfo.pageCount ?? 100 // Fallback default jika API null
+        let totalPages = apiBook.volumeInfo.pageCount ?? 100
         let author = apiBook.volumeInfo.authors?.first ?? "Unknown"
         
-        let newBook = Book(title: title, totalPages: totalPages, coverImageData: coverData)
+        let newBook = Book(title: title, author: author, totalPages: totalPages, coverImageData: coverData)
+        // Default API biasanya masuk ke Shelf
+        newBook.status = .shelf
         
-        // Opsional: Uncomment jika Model Book sudah punya properti author
-        // newBook.author = author
-        
-        // Insert & Save
         modelContext.insert(newBook)
-        try? modelContext.save()
+        
+        do {
+            try modelContext.save()
+            print("   ✅ Book Saved Successfully! (Title: \(title))")
+        } catch {
+            print("   ❌ Failed to save book: \(error)")
+        }
     }
     
     // MARK: - Feature: Quick Finish
@@ -161,27 +183,26 @@ final class BookService {
      
      - Parameter book: Buku yang ingin ditamatkan.
      */
+    // MARK: - Quick Finish
     func finishBook(_ book: Book) {
+        print("🖨️ [BookService] Force Finish Book: \(book.title)")
+        
         let x = book.totalPages
         let y = book.currentPage
-        
-        // 1. Hitung sisa halaman yang "dihabiskan" saat ini
         let z = x - y
         
-        // 2. Update State Buku
         book.currentPage = x
-        book.status = .finished // Force status ke finished
+        book.status = .finished
         book.lastInteraction = Date()
         
-        // 3. Create History (ReadingSession)
-        // Catat sisa halaman sebagai progress sesi ini
         if z > 0 {
             let session = ReadingSession(date: Date(), pagesReadCount: z)
             session.book = book
             modelContext.insert(session)
+            print("   📝 Added closing session: +\(z) pages")
         }
         
-        // 4. Save
         try? modelContext.save()
+        print("   ✅ Book marked as FINISHED.")
     }
 }

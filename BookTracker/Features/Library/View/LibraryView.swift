@@ -4,114 +4,112 @@
 //
 //  Created by Nunu Nugraha on 07/12/25.
 //
+
 import SwiftUI
 import SwiftData
 
 struct LibraryView: View {
-    // MARK: - Dependencies
     @Environment(\.modelContext) private var context
     
-    // MARK: - State
-    // 0 = Shelf, 1 = Finished
-    @State private var selectedFilter: Int = 0
+    // Default Filter: Shelf
+    @State private var selectedTab: BookStatus = .shelf
     
-    // Query Dasar (Diurutkan berdasarkan interaksi terakhir)
+    // Ambil SEMUA buku (Tanpa filter di query biar kita bisa debug)
     @Query(sort: \Book.lastInteraction, order: .reverse) private var allBooks: [Book]
     
-    // MARK: - Main Body (Abstraction)
     var body: some View {
         NavigationStack {
             VStack(spacing: 0) {
-                filterSegmentSection
-                contentAreaSection
+                // 1. Filter Tab
+                Picker("Filter", selection: $selectedTab) {
+                    Text("To Read (Shelf)").tag(BookStatus.shelf)
+                    Text("Reading Now").tag(BookStatus.reading)
+                }
+                .pickerStyle(.segmented)
+                .padding()
+                
+                // 2. DEBUGGER (Hapus ini nanti kalau udah fix)
+                /*
+                 VStack(alignment: .leading) {
+                 Text("DEBUG INFO:")
+                 Text("Total Books in DB: \(allBooks.count)")
+                 Text("Books with status \(selectedTab.rawValue): \(currentBooks.count)")
+                 }
+                 .font(.caption)
+                 .foregroundStyle(.red)
+                 .padding()
+                 */
+                
+                // 3. Content List
+                if currentBooks.isEmpty {
+                    emptyStateView
+                } else {
+                    List {
+                        ForEach(currentBooks) { book in
+                            bookRow(for: book)
+                        }
+                        .onDelete(perform: deleteBooks)
+                    }
+                    .listStyle(.plain)
+                }
             }
             .navigationTitle("My Library")
-        }
-    }
-}
-
-// MARK: - View Builders & Helpers
-private extension LibraryView {
-    
-    // 1. Logic Filtering Data
-    var filteredBooks: [Book] {
-        let targetStatus: BookStatus = (selectedFilter == 0) ? .shelf : .finished
-        return allBooks.filter { $0.status == targetStatus }
-    }
-    
-    // 2. Filter UI (Segmented Control)
-    var filterSegmentSection: some View {
-        Picker("Filter", selection: $selectedFilter) {
-            Text("To Read").tag(0)
-            Text("Finished").tag(1)
-        }
-        .pickerStyle(.segmented)
-        .padding()
-    }
-    
-    // 3. Content Area (Switching List vs Empty State)
-    @ViewBuilder
-    var contentAreaSection: some View {
-        if filteredBooks.isEmpty {
-            emptyStateView
-        } else {
-            bookListView
-        }
-    }
-    
-    // 4. List View
-    var bookListView: some View {
-        List {
-            ForEach(filteredBooks) { book in
-                bookRow(for: book)
+            // Tombol ke History
+            .toolbar {
+                ToolbarItem(placement: .topBarTrailing) {
+//                    NavigationLink(destination: HistoryView()) {
+//                        Label("History", systemImage: "clock.arrow.circlepath")
+//                    }
+                }
             }
-            .onDelete(perform: deleteBooks)
         }
-        .listStyle(.plain)
     }
     
-    // 5. Row Item & Swipe Actions
+    // MARK: - Logic Filter Langsung
+    // Kita pindahin logic filter ke sini biar lebih reaktif
+    var currentBooks: [Book] {
+        return allBooks.filter { book in
+            return book.status == selectedTab
+        }
+    }
+    
+    // MARK: - Builders & Actions
+    
     func bookRow(for book: Book) -> some View {
         NavigationLink(destination: BookEditorView(book: book)) {
             LibraryBookRow(book: book)
         }
         .swipeActions(edge: .leading) {
             if book.status == .shelf {
-                Button("Start Reading") {
-                    startReading(book)
-                }
-                .tint(.blue)
+                Button("Read") { moveToReading(book) }.tint(.blue)
+            } else {
+                Button("Shelf") { moveToShelf(book) }.tint(.orange)
             }
         }
     }
     
-    // 6. Empty State (Dipecah biar compiler gak pusing)
     var emptyStateView: some View {
-        // Tentukan teks dan icon di luar ViewBuilder biar clean
-        let isShelf = selectedFilter == 0
-        let title = isShelf ? "No Books in Shelf" : "No Finished Books"
-        let icon = isShelf ? "books.vertical" : "checkmark.seal"
-        let desc = isShelf ? "Add books to your queue." : "Finish a book to see it here."
-        
-        return ContentUnavailableView(
-            title,
-            systemImage: icon,
-            description: Text(desc)
+        ContentUnavailableView(
+            selectedTab == .shelf ? "Shelf Empty" : "No Active Reading",
+            systemImage: selectedTab == .shelf ? "books.vertical" : "book.closed",
+            description: Text(selectedTab == .shelf ? "Add new books to your queue." : "Start reading books from your shelf.")
         )
     }
     
-    // MARK: - Actions
-    
-    func startReading(_ book: Book) {
+    func moveToReading(_ book: Book) {
         withAnimation {
             book.status = .reading
             book.lastInteraction = Date()
         }
     }
     
+    func moveToShelf(_ book: Book) {
+        withAnimation { book.status = .shelf }
+    }
+    
     func deleteBooks(at offsets: IndexSet) {
         for index in offsets {
-            let book = filteredBooks[index]
+            let book = currentBooks[index]
             context.delete(book)
         }
     }

@@ -67,24 +67,48 @@ final class BookEditorViewModel {
         }
     }
     
-    // MARK: - Save Logic
+    // MARK: - Logic Save (DEBUGGED)
     func save(context: ModelContext) -> Bool {
-        guard !title.isEmpty, let pagesInt = Int(totalPages), pagesInt > 0 else { return false }
+        print("🖨️ [ViewModel] Tombol Save Ditekan!")
+        print("   Input -> Title: '\(title)', Pages: \(totalPages), Status Pilihan: \(status.rawValue)")
+        
+        // Validasi
+        guard !title.isEmpty, let pagesInt = Int(totalPages), pagesInt > 0 else {
+            print("   ❌ Validasi Gagal! Judul/Halaman kosong.")
+            return false
+        }
         
         switch mode {
         case .create:
-            let newBook = Book(title: title, author: author, totalPages: pagesInt, coverImageData: coverImageData)
-            newBook.status = status
+            print("   Mode: CREATE NEW")
+            let newBook = Book(
+                title: title,
+                author: author,
+                totalPages: pagesInt,
+                coverImageData: coverImageData
+            )
+            newBook.status = status // Pastikan status kebawa
+            print("   Inserting Book with Status: \(newBook.status.rawValue)...")
             context.insert(newBook)
+            
         case .edit(let existingBook):
+            print("   Mode: EDIT EXISTING")
             existingBook.title = title
             existingBook.author = author
             existingBook.totalPages = pagesInt
             existingBook.coverImageData = coverImageData
             existingBook.status = status
+            print("   Updating Book Status to: \(existingBook.status.rawValue)")
         }
-        try? context.save()
-        return true
+        
+        do {
+            try context.save()
+            print("   ✅ SUCCESS! Data tersimpan di SwiftData.")
+            return true
+        } catch {
+            print("   ❌ CRITICAL ERROR: Gagal save ke Context! \(error)")
+            return false
+        }
     }
     
     func deleteBook(context: ModelContext) {

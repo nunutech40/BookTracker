@@ -8,7 +8,7 @@
 import SwiftData
 import Foundation
 
-enum BookStatus: String, Codable {
+enum BookStatus: String, Codable, Equatable {
     case reading
     case shelf
     case finished
