@@ -57,6 +57,13 @@ final class GoogleBooksService {
     
     // MARK: - Search Feature
     
+    private let session: URLSession
+    
+    // Kalau dipanggil di App asli, dia otomatis pake .shared (Default)
+    // Kalau dipanggil di Test, kita bisa masukin session palsu
+    init(session: URLSession = .shared) {
+        self.session = session
+    }
     /**
      Mencari buku berdasarkan kata kunci (query) menggunakan Google Books API.
      
@@ -80,7 +87,7 @@ final class GoogleBooksService {
         }
         
         // 2. Network Call
-        let (data, _) = try await URLSession.shared.data(from: url)
+        let (data, _) = try await self.session.data(from: url)
         
         // 3. JSON Decoding
         let decodedResponse = try JSONDecoder().decode(GoogleBookResponse.self, from: data)
@@ -109,7 +116,7 @@ final class GoogleBooksService {
         
         do {
             // 2. Download Binary Data
-            let (data, _) = try await URLSession.shared.data(from: url)
+            let (data, _) = try await self.session.data(from: url)
             return data
         } catch {
             return nil
