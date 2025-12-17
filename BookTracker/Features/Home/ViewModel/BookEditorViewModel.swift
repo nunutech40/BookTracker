@@ -73,22 +73,31 @@ final class BookEditorViewModel {
         do {
             if let data = try await item.loadTransferable(type: Data.self) {
                 // Resize & Compress Image
-                self.coverImageData = processImage(from: data)
+                self.process(data: data)
             }
         } catch {
             print("❌ Gagal load foto: \(error)")
         }
     }
     
-    /// Resizes and compresses the selected image to optimize for storage.
-    private func processImage(from data: Data) -> Data? {
-        guard let image = UIImage(data: data) else { return nil }
-        
+    /// Processes image data (from PhotosPicker or URL) by resizing and compressing it.
+    func process(data: Data?) {
+        guard let data = data, let image = UIImage(data: data) else { return }
+        self.coverImageData = _process(image: image)
+    }
+    
+    /// Processes a UIImage (from Camera) by resizing and compressing it.
+    func process(image: UIImage) {
+        self.coverImageData = _process(image: image)
+    }
+
+    /// The core image processing function. Resizes and compresses the image.
+    private func _process(image: UIImage) -> Data? {
         let targetSize = CGSize(width: 500, height: 500)
-        let scaledImage = image.preparingThumbnail(of: targetSize)
+        guard let scaledImage = image.preparingThumbnail(of: targetSize) else { return nil }
         
         // Compress to JPEG with high quality
-        return scaledImage?.jpegData(compressionQuality: 0.8)
+        return scaledImage.jpegData(compressionQuality: 0.8)
     }
 
     // MARK: - Logic Save
@@ -153,7 +162,7 @@ final class BookEditorViewModel {
         if let url = item.volumeInfo.imageLinks?.thumbnail {
             let data = await googleBookService.downloadCoverImage(from: url)
             // Also process image from URL
-            self.coverImageData = processImage(from: data ?? Data())
+            self.process(data: data)
         }
         
         showSearchSheet = false

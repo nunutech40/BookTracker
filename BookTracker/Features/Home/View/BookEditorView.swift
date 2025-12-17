@@ -22,6 +22,12 @@ struct BookEditorView: View {
     @State var viewModel: BookEditorViewModel
     @State private var isReadingNow: Bool = false
     
+    // State for Image Picking
+    @State private var showImageSourceDialog = false
+    @State private var showCamera = false
+    @State private var showLibrary = false
+    @State private var selectedImage: UIImage?
+    
     init(viewModel: BookEditorViewModel) {
         _viewModel = State(initialValue: viewModel)
     }
@@ -78,9 +84,21 @@ struct BookEditorView: View {
         .sheet(isPresented: $vm.showSearchSheet) {
             GoogleBooksSearchSheet(viewModel: viewModel)
         }
+        // Sheet for Camera
+        .sheet(isPresented: $showCamera) {
+            ImagePicker(selectedImage: $selectedImage, sourceType: .camera)
+        }
+        // When an image is selected from the camera, process it.
+        .onChange(of: selectedImage) { _, newImage in
+            if let newImage = newImage {
+                viewModel.process(image: newImage)
+            }
+        }
         .onAppear {
             isReadingNow = (viewModel.status == .reading)
         }
+        // PhotosPicker is presented as a sheet from this modifier
+        .photosPicker(isPresented: $showLibrary, selection: $viewModel.photoSelection, matching: .images)
     }
     
     var navTitle: String {
@@ -100,12 +118,26 @@ private extension BookEditorView {
     var coverPickerRow: some View {
         HStack {
             Spacer()
-            // Kita akses viewModel langsung (karena extension View punya akses ke @State)
-            PhotosPicker(selection: $viewModel.photoSelection, matching: .images) {
-                // Logic tampilan gambar ditaruh di fungsi helper 'coverArtView'
+            
+            // The main button that shows the options
+            Button {
+                showImageSourceDialog = true
+            } label: {
                 coverArtView(data: viewModel.coverImageData)
             }
             .buttonStyle(.plain)
+            // This is the modern way to add a PhotosPicker to a confirmation dialog
+            .confirmationDialog("Add Cover Photo", isPresented: $showImageSourceDialog, titleVisibility: .visible) {
+                Button("Choose from Library") {
+                    showLibrary = true
+                }
+                if UIImagePickerController.isSourceTypeAvailable(.camera) {
+                    Button("Take Photo") {
+                        showCamera = true
+                    }
+                }
+            }
+            
             Spacer()
         }
     }
