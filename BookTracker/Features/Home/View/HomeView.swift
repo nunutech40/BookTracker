@@ -53,49 +53,90 @@ struct HomeView: View {
 
 private extension HomeView {
     
-    // MARK: - 1. Hero Stats
+    // MARK: - 1. Hero Stats (Clean Version)
     var heroStatsSection: some View {
-        VStack(alignment: .leading, spacing: 16) {
-            HStack {
-                VStack(alignment: .leading, spacing: 4) {
-                    Text("Current Streak")
-                        .font(.caption)
-                        .fontWeight(.semibold)
-                        .foregroundStyle(.white.opacity(0.8))
-                    
-                    HStack(alignment: .firstTextBaseline, spacing: 8) {
-                        Image(systemName: "flame.fill")
-                            .foregroundStyle(.yellow)
-                        
-                        Text(viewModel.currentStreak > 0 ? "\(viewModel.currentStreak) Days" : "Start Today")
-                            .font(.system(size: 28, weight: .bold, design: .rounded))
-                            .foregroundStyle(.white)
-                    }
-                }
-                Spacer()
+        HStack {
+            if viewModel.currentStreak > 0 {
+                activeStreakContent // Mode: Semangat Membara 🔥
+            } else {
+                emptyStreakContent  // Mode: Ayo Mulai 📖
             }
             
-            if !viewModel.heatmapData.isEmpty {
-                Chart {
-                    ForEach(viewModel.heatmapData.sorted(by: { $0.key < $1.key }), id: \.key) { date, count in
-                        BarMark(
-                            x: .value("Date", date),
-                            y: .value("Pages", count)
-                        )
-                        .foregroundStyle(.white.opacity(0.5))
-                    }
-                }
-                .frame(height: 40)
-                .chartXAxis(.hidden)
-                .chartYAxis(.hidden)
-            }
+            Spacer() // Dorong text ke kiri
         }
-        .padding(20)
+        .padding(24) // Padding agak gede biar lega
         .background(
-            LinearGradient(colors: [Color.blue, Color.purple], startPoint: .topLeading, endPoint: .bottomTrailing)
+            LinearGradient(
+                colors: [Color.blue, Color.purple],
+                startPoint: .topLeading,
+                endPoint: .bottomTrailing
+            )
         )
         .cornerRadius(20)
         .shadow(color: .blue.opacity(0.3), radius: 10, x: 0, y: 5)
+    }
+    
+    // MARK: - Content Modes
+    
+    // Mode A: User Rajin (Validasi & Pujian)
+    var activeStreakContent: some View {
+        VStack(alignment: .leading, spacing: 8) {
+            // Label atas
+            HStack(spacing: 6) {
+                Image(systemName: "flame.fill")
+                    .foregroundStyle(.yellow)
+                    .font(.caption.bold())
+                
+                Text("CURRENT STREAK")
+                    .font(.caption)
+                    .fontWeight(.bold)
+                    .foregroundStyle(.white.opacity(0.7))
+            }
+            
+            // Angka Besar
+            // Logic Grammar: 1 Day vs 2 Days
+            let dayText = viewModel.currentStreak == 1 ? "Day" : "Days"
+            
+            Text("\(viewModel.currentStreak) \(dayText)")
+                .font(.system(size: 40, weight: .bold, design: .rounded))
+                .foregroundStyle(.white)
+            
+            // Copywriting Penyemangat
+            Text("You're on fire! Keep the momentum going.")
+                .font(.subheadline)
+                .fontWeight(.medium)
+                .foregroundStyle(.white.opacity(0.9))
+                .fixedSize(horizontal: false, vertical: true) // Biar text wrap kalau kepanjangan
+        }
+    }
+    
+    // Mode B: Belum Mulai (Ajakan Halus)
+    var emptyStreakContent: some View {
+        VStack(alignment: .leading, spacing: 8) {
+            // Label atas
+            HStack(spacing: 6) {
+                Image(systemName: "star.fill") // Ganti bintang biar beda feel
+                    .foregroundStyle(.yellow)
+                    .font(.caption.bold())
+                
+                Text("DAILY GOAL")
+                    .font(.caption)
+                    .fontWeight(.bold)
+                    .foregroundStyle(.white.opacity(0.7))
+            }
+            
+            // Angka Redup
+            Text("0 Days")
+                .font(.system(size: 40, weight: .bold, design: .rounded))
+                .foregroundStyle(.white.opacity(0.4)) // Dibuat redup biar user "gatal" pengen ubah
+            
+            // Copywriting Actionable
+            Text("Read just 1 page today to start your streak.")
+                .font(.subheadline)
+                .fontWeight(.medium)
+                .foregroundStyle(.white)
+                .fixedSize(horizontal: false, vertical: true)
+        }
     }
     
     // MARK: - 2. Reading List
