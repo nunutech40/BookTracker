@@ -61,15 +61,29 @@ final class BookEditorViewModel {
     // Ini Logic Murni (Benar/Salah), dipake buat disable tombol Save
     
     var titleValidation: ValidationState {
-        if title.trimmingCharacters(in: .whitespacesAndNewlines).isEmpty {
+        let trimmedTitle = title.trimmingCharacters(in: .whitespacesAndNewlines)
+        if trimmedTitle.isEmpty {
             return .invalid(message: "Title cannot be empty.")
+        }
+        if trimmedTitle.count < 3 {
+            return .invalid(message: "Title must be at least 3 characters long.")
+        }
+        if trimmedTitle.count > 100 {
+            return .invalid(message: "Title cannot be longer than 100 characters.")
         }
         return .valid
     }
     
     var authorValidation: ValidationState {
-        if author.trimmingCharacters(in: .whitespacesAndNewlines).isEmpty {
+        let trimmedAuthor = author.trimmingCharacters(in: .whitespacesAndNewlines)
+        if trimmedAuthor.isEmpty {
             return .invalid(message: "Author cannot be empty.")
+        }
+        if trimmedAuthor.count < 3 {
+            return .invalid(message: "Author must be at least 3 characters long.")
+        }
+        if trimmedAuthor.count > 50 {
+            return .invalid(message: "Author cannot be longer than 50 characters.")
         }
         return .valid
     }
@@ -77,11 +91,17 @@ final class BookEditorViewModel {
     var totalPagesValidation: ValidationState {
         if totalPages.isEmpty {
             return .invalid(message: "Total pages cannot be empty.")
-        } else if let pagesInt = Int(totalPages), pagesInt > 0 {
-            return .valid
-        } else {
-            return .invalid(message: "Enter a valid number > 0.")
         }
+        guard let pagesInt = Int(totalPages) else {
+            return .invalid(message: "Enter a valid number.")
+        }
+        if pagesInt < 1 {
+            return .invalid(message: "Total pages must be at least 1.")
+        }
+        if pagesInt > 9999 {
+            return .invalid(message: "Total pages cannot exceed 9999.")
+        }
+        return .valid
     }
     
     var isFormValid: Bool {
