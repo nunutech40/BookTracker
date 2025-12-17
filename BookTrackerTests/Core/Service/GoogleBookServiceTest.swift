@@ -80,7 +80,6 @@ final class GoogleBooksServiceTests: XCTestCase {
     }
     
     // MARK: - Test URL Encoding
-    
     func testSearchBooks_UrlEncoding() async throws {
         // GIVEN: JSON Kosong gak masalah, kita mau cek URL-nya
         let mockData = "{}".data(using: .utf8)!
