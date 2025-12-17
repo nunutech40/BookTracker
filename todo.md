@@ -71,3 +71,9 @@ Create a `MotivationService` or helper to supply dynamic text.
 - **Core Data**: `Book` model (SwiftData), `ReadingSession` (history).
 - **Service**: `BookService` handles all data manipulation.
 - **Goal**: Keep the MVP lightweight. No social features yet.
+
+## 6. Testing
+- [ ] **Comprehensive Unit Tests**:
+    - Implement unit tests for all Services (e.g., `BookService`, `GoogleBooksService`).
+    - Implement unit tests for all ViewModels (e.g., `HomeViewModel`, `BookEditorViewModel`).
+    - Implement unit tests for all Validation logic.
