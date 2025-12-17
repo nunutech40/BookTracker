@@ -38,10 +38,13 @@ final class BookEditorViewModel {
     var searchError: String?
     
     // Dependencies
-    private var googleService = GoogleBooksService()
+    private var googleBookService: GoogleBooksService
+    private var bookService: BookService
     
     // MARK: - Init
-    init(book: Book? = nil) {
+    init(googleBookService: GoogleBooksService, bookService: BookService, book: Book? = nil) {
+        self.googleBookService = googleBookService
+        self.bookService = bookService
         if let book = book {
             self.mode = .edit(book)
             self.title = book.title
@@ -68,7 +71,8 @@ final class BookEditorViewModel {
     }
     
     // MARK: - Logic Save (DEBUGGED)
-    func save(context: ModelContext) -> Bool {
+    @MainActor
+    func save() -> Bool {
         print("🖨️ [ViewModel] Tombol Save Ditekan!")
         print("   Input -> Title: '\(title)', Pages: \(totalPages), Status Pilihan: \(status.rawValue)")
         
@@ -89,7 +93,7 @@ final class BookEditorViewModel {
             )
             newBook.status = status // Pastikan status kebawa
             print("   Inserting Book with Status: \(newBook.status.rawValue)...")
-            context.insert(newBook)
+            bookService.addBook(from: newBook)
             
         case .edit(let existingBook):
             print("   Mode: EDIT EXISTING")
@@ -101,20 +105,13 @@ final class BookEditorViewModel {
             print("   Updating Book Status to: \(existingBook.status.rawValue)")
         }
         
-        do {
-            try context.save()
-            print("   ✅ SUCCESS! Data tersimpan di SwiftData.")
-            return true
-        } catch {
-            print("   ❌ CRITICAL ERROR: Gagal save ke Context! \(error)")
-            return false
-        }
+        return true
     }
     
-    func deleteBook(context: ModelContext) {
+    @MainActor
+    func deleteBook() {
         if case .edit(let book) = mode {
-            context.delete(book)
-            try? context.save()
+            bookService.deleteBook(book)
         }
     }
     
@@ -124,7 +121,7 @@ final class BookEditorViewModel {
         isSearching = true
         searchError = nil
         do {
-            searchResults = try await googleService.searchBooks(query: query)
+            searchResults = try await googleBookService.searchBooks(query: query)
             if searchResults.isEmpty { searchError = "Buku tidak ditemukan." }
         } catch {
             searchError = "Gagal koneksi internet."
@@ -137,7 +134,7 @@ final class BookEditorViewModel {
         self.author = item.volumeInfo.authors?.joined(separator: ", ") ?? ""
         self.totalPages = String(item.volumeInfo.pageCount ?? 0)
         if let url = item.volumeInfo.imageLinks?.thumbnail {
-            self.coverImageData = await googleService.downloadCoverImage(from: url)
+            self.coverImageData = await googleBookService.downloadCoverImage(from: url)
         }
         showSearchSheet = false
     }

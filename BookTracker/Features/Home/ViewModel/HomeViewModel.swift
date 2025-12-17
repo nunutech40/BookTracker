@@ -31,18 +31,16 @@ final class HomeViewModel {
     var showAddBookSheet: Bool = false // <-- STATE BARU: Buat trigger sheet AddBook
     
     // Dependencies
-    private var bookService: BookService?
+    private var bookService: BookService
     
-    func setup(context: ModelContext) {
-        self.bookService = BookService(modelContext: context)
+    init(bookService: BookService) {
+        self.bookService = bookService
         refreshData()
     }
     
     func refreshData() {
-        guard let service = bookService else { return }
-        
         // 1. Fetch Heatmap
-        self.heatmapData = service.fetchReadingHeatmap()
+        self.heatmapData = bookService.fetchReadingHeatmap()
         
         // 2. Hitung Streak dari data heatmap yang ada
         calculateStreak()
@@ -50,7 +48,7 @@ final class HomeViewModel {
     
     func onPageInputSubmit(page: Int) {
         guard let book = selectedBook else { return }
-        bookService?.updateProgress(for: book, newPage: page)
+        bookService.updateProgress(for: book, newPage: page)
         refreshData() // Refresh semua (heatmap + streak)
         selectedBook = nil
     }

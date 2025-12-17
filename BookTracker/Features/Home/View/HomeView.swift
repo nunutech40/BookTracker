@@ -11,7 +11,7 @@ import Charts
 
 struct HomeView: View {
     @Environment(\.modelContext) private var context
-    @State private var viewModel = HomeViewModel()
+    @State var viewModel: HomeViewModel
     
     // 2. Kita tarik semua buku, urutkan berdasarkan interaksi terakhir.
     @Query(sort: \Book.lastInteraction, order: .reverse)
@@ -44,12 +44,9 @@ struct HomeView: View {
             // Sheet Add Book
             .sheet(isPresented: $viewModel.showAddBookSheet) {
                 NavigationStack {
-                    BookEditorView()
+                    BookEditorView(viewModel: Injection.shared.provideBookEditorViewModel(modelContext: context))
                 }
             }
-        }
-        .onAppear {
-            viewModel.setup(context: context)
         }
     }
 }

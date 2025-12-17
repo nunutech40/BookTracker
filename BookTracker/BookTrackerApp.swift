@@ -29,7 +29,7 @@ struct BookTrackerApp: App {
 
     var body: some Scene {
         WindowGroup {
-            ContentView()
+            ContentView(homeViewModel: Injection.shared.provideHomeViewModel(modelContext: sharedModelContainer.mainContext))
         }
         // Inject ke sini
         .modelContainer(sharedModelContainer)

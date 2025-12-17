@@ -8,10 +8,13 @@
 import SwiftUI
 
 struct ContentView: View {
+    
+    @State var homeViewModel: HomeViewModel
+    
     var body: some View {
         TabView {
             // TAB 1: HOME
-            HomeView()
+            HomeView(viewModel: homeViewModel)
                 .tabItem {
                     Label("Home", systemImage: "house.fill")
                 }

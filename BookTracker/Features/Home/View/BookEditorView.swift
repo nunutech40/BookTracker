@@ -19,9 +19,8 @@ struct BookEditorView: View {
     // State lokal buat Toggle UI
     @State private var isReadingNow: Bool = false
     
-    init(book: Book? = nil) {
-        let vm = book != nil ? BookEditorViewModel(book: book!) : BookEditorViewModel()
-        _viewModel = State(initialValue: vm)
+    init(viewModel: BookEditorViewModel) {
+        _viewModel = State(initialValue: viewModel)
     }
     
     var body: some View {
@@ -156,10 +155,11 @@ private extension BookEditorView {
     }
     
     // 5. Delete Section
+    @MainActor
     func makeDeleteSection(vm: BookEditorViewModel) -> some View {
         Section {
             Button("Delete Book", role: .destructive) {
-                vm.deleteBook(context: context)
+                vm.deleteBook()
                 dismiss()
             }
         }
@@ -167,13 +167,14 @@ private extension BookEditorView {
     
     // 6. Toolbar Content
     @ToolbarContentBuilder
+    @MainActor
     func makeToolbarContent(vm: BookEditorViewModel) -> some ToolbarContent {
         ToolbarItem(placement: .confirmationAction) {
             Button("Save") {
                 // Update status di VM berdasarkan Toggle sebelum save
                 vm.status = isReadingNow ? .reading : .shelf
                 
-                if vm.save(context: context) {
+                if vm.save() {
                     dismiss()
                 }
             }

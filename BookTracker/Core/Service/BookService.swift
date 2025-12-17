@@ -166,6 +166,26 @@ final class BookService {
         }
     }
     
+    @MainActor
+    func addBook(from book: Book) {
+        modelContext.insert(book)
+        do {
+            try modelContext.save()
+        } catch {
+            print("   ❌ Failed to save book: \(error)")
+        }
+    }
+    
+    @MainActor
+    func deleteBook(_ book: Book) {
+        modelContext.delete(book)
+        do {
+            try modelContext.save()
+        } catch {
+            print("   ❌ Failed to save book: \(error)")
+        }
+    }
+    
     // MARK: - Feature: Quick Finish
     
     /**
