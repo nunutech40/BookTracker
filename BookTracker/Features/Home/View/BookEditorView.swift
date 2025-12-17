@@ -21,6 +21,7 @@ struct BookEditorView: View {
     @State private var showCamera = false
     @State private var showLibrary = false
     @State private var selectedImage: UIImage?
+    @State private var showDeleteConfirmation = false
     
     init(viewModel: BookEditorViewModel) {
         _viewModel = State(initialValue: viewModel)
@@ -75,8 +76,7 @@ struct BookEditorView: View {
             if case .edit = viewModel.mode {
                 Section {
                     Button("Delete Book", role: .destructive) {
-                        vm.deleteBook()
-                        dismiss()
+                        showDeleteConfirmation = true
                     }
                 }
             }
@@ -101,6 +101,19 @@ struct BookEditorView: View {
             isReadingNow = (viewModel.status == .reading)
         }
         .photosPicker(isPresented: $showLibrary, selection: $viewModel.photoSelection, matching: .images)
+        .confirmationDialog(
+            "Delete Book?",
+            isPresented: $showDeleteConfirmation,
+            titleVisibility: .visible
+        ) {
+            Button("Delete", role: .destructive) {
+                viewModel.deleteBook()
+                dismiss()
+            }
+            Button("Cancel", role: .cancel) { }
+        } message: {
+            Text("Deleting this book will also remove all your reading progress. This action cannot be undone.")
+        }
     }
     
     var navTitle: String {
