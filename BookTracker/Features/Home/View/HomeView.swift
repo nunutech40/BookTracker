@@ -205,7 +205,7 @@ private extension HomeView {
     }
     
     func updateProgressSheet(for book: Book) -> some View {
-        UpdateProgressSheet(book: book) { newPage in
+        UpdateProgressSheet(book: book, maxPage: book.totalPages) { newPage in
             viewModel.onPageInputSubmit(page: newPage)
         }
         .presentationDetents([.medium])
