@@ -15,7 +15,6 @@ struct ProfileView: View {
     var body: some View {
         NavigationStack {
             List {
-                // MARK: 1. GITHUB STYLE HEATMAP (12 BULAN + TOOLTIP)
                 Section(header: Text("Reading Activity (Last 12 Months)")) {
                     VStack(alignment: .leading, spacing: 16) {
                         
@@ -79,8 +78,7 @@ struct ProfileView: View {
             }
             .navigationTitle("Profile")
             .onAppear {
-                // Generate data 365 hari ke belakang
-                generateDummyData()
+                // Remove generateDummyData() call.
             }
         }
     }
@@ -89,24 +87,7 @@ struct ProfileView: View {
         heatmapData.values.reduce(0, +)
     }
     
-    func generateDummyData() {
-        var dummy: [Date: Int] = [:]
-        let calendar = Calendar.current
-        let today = Date()
-        
-        // Loop 365 hari (Setahun penuh)
-        for i in 0..<365 {
-            if let date = calendar.date(byAdding: .day, value: -i, to: today) {
-                // Random: 40% hari aktif baca
-                if Bool.random() && Bool.random() { continue } // Skip biar bolong2
-                
-                let pages = Int.random(in: 5...150)
-                let normalizedDate = calendar.startOfDay(for: date)
-                dummy[normalizedDate] = pages
-            }
-        }
-        self.heatmapData = dummy
-    }
+
 }
 
 // MARK: - COMPONENT: INTERACTIVE HEATMAP
