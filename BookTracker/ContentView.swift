@@ -10,6 +10,7 @@ import SwiftUI
 struct ContentView: View {
     
     @State var homeViewModel: HomeViewModel
+    @State var profileViewModel: ProfileViewModel
     
     var body: some View {
         TabView {
@@ -26,7 +27,7 @@ struct ContentView: View {
                 }
             
             // TAB 3: PROFILE (NEW)
-            ProfileView()
+            ProfileView(viewModel: profileViewModel)
                 .tabItem {
                     Label("Profile", systemImage: "person.crop.circle")
                 }

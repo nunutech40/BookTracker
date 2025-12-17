@@ -15,7 +15,7 @@ final class Injection {
     private init() {}
 
     @MainActor
-    func provideHomeViewModel(modelContext: ModelContext) -> HomeViewModel {
+    func provideHomeViewModel(modelContext: ModelContext, book: Book? = nil) -> HomeViewModel {
         let bookService = provideBookService(modelContext: modelContext)
         return HomeViewModel(bookService: bookService)
     }
@@ -33,5 +33,11 @@ final class Injection {
         let googleBookService = provideGoogleBooksService()
         let bookService = provideBookService(modelContext: modelContext)
         return BookEditorViewModel(googleBookService: googleBookService, bookService: bookService, book: book)
+    }
+    
+    @MainActor
+    func provideProfileViewModel(modelContext: ModelContext) -> ProfileViewModel {
+        let bookService = provideBookService(modelContext: modelContext)
+        return ProfileViewModel(bookService: bookService)
     }
 }

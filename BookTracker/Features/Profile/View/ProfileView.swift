@@ -9,8 +9,7 @@ import SwiftUI
 import SwiftData
 
 struct ProfileView: View {
-    @Environment(\.modelContext) private var context
-    @State private var heatmapData: [Date: Int] = [:]
+    @State var viewModel: ProfileViewModel
     
     var body: some View {
         NavigationStack {
@@ -30,13 +29,13 @@ struct ProfileView: View {
                             VStack(alignment: .trailing) {
                                 Text("Active Days")
                                     .font(.caption).foregroundStyle(.secondary)
-                                Text("\(heatmapData.count)")
+                                Text("\(viewModel.heatmapData.count)")
                                     .font(.headline).bold()
                             }
                         }
                         
                         // THE GRID (KOTAK-KOTAK)
-                        GitHubHeatmapView(data: heatmapData)
+                        GitHubHeatmapView(data: viewModel.heatmapData)
                             .frame(height: 160) // Tinggi pas buat 7 kotak + Tooltip area
                         
                         // Legend
@@ -78,13 +77,13 @@ struct ProfileView: View {
             }
             .navigationTitle("Profile")
             .onAppear {
-                // Remove generateDummyData() call.
+                viewModel.loadHeatmapData()
             }
         }
     }
     
     func totalPagesRead() -> Int {
-        heatmapData.values.reduce(0, +)
+        viewModel.heatmapData.values.reduce(0, +)
     }
     
 
@@ -196,3 +195,4 @@ struct GitHubHeatmapView: View {
         return Color.green                                    // Gila Baca
     }
 }
+
