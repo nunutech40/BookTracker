@@ -5,14 +5,13 @@
 //  Created by Nunu Nugraha on 07/12/25.
 //
 
-
 import SwiftUI
 import SwiftData
 
 @main
 struct BookTrackerApp: App {
     
-    // Definisi Container untuk Schema Book & ReadingSession
+    // 1. Init Container (Tetap sama)
     var sharedModelContainer: ModelContainer = {
         let schema = Schema([
             Book.self,
@@ -26,15 +25,21 @@ struct BookTrackerApp: App {
             fatalError("Could not create ModelContainer: \(error)")
         }
     }()
+    
+    // 2. Custom Init untuk Setup Injection
+    init() {
+        //  Lakukan Inject Container sekali di awal
+        Injection.shared.setup(container: sharedModelContainer)
+    }
 
     var body: some Scene {
         WindowGroup {
             ContentView(
-                homeViewModel: Injection.shared.provideHomeViewModel(modelContext: sharedModelContainer.mainContext),
-                profileViewModel: Injection.shared.provideProfileViewModel(modelContext: sharedModelContainer.mainContext)
+                homeViewModel: Injection.shared.provideHomeViewModel(),
+                profileViewModel: Injection.shared.provideProfileViewModel()
             )
         }
-        // Inject ke sini
+        // Jangan lupa modifier ini tetap wajib ada biar SwiftUI environment jalan
         .modelContainer(sharedModelContainer)
     }
 }

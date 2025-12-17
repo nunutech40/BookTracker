@@ -9,35 +9,62 @@ import Foundation
 import SwiftData
 
 final class Injection {
-
+    
+    // 1. Singleton Instance
     static let shared = Injection()
-
+    
+    // 2. Private Container Storage
+    // Disimpan di sini biar bisa diakses internal oleh Injection
+    private var container: ModelContainer?
+    
     private init() {}
-
+    
+    // 3. Setup Function (Dipanggil SEKALI di App init)
+    func setup(container: ModelContainer) {
+        self.container = container
+    }
+    
+    // 4. Helper untuk ambil Context dg aman
+    // Kalau container belum di-setup, dia akan crash (bagus utk debugging saat development)
     @MainActor
-    func provideHomeViewModel(modelContext: ModelContext, book: Book? = nil) -> HomeViewModel {
-        let bookService = provideBookService(modelContext: modelContext)
+    private var context: ModelContext {
+        guard let container = container else {
+            fatalError("⚠️ Injection belum di-setup! Panggil Injection.shared.setup(container:) di App init.")
+        }
+        return container.mainContext
+    }
+    
+    // MARK: - Providers
+    
+    // Perhatikan: Parameter 'modelContext' DIHAPUS karena sudah ambil dari internal
+    
+    @MainActor
+    func provideHomeViewModel() -> HomeViewModel {
+        // Otomatis pakai self.context
+        let bookService = provideBookService()
         return HomeViewModel(bookService: bookService)
     }
     
-    func provideBookService(modelContext: ModelContext) -> BookService {
-        return BookService(modelContext: modelContext)
-    }
-
-    func provideGoogleBooksService() -> GoogleBooksService {
-        return GoogleBooksService()
+    @MainActor
+    func provideProfileViewModel() -> ProfileViewModel {
+        let bookService = provideBookService()
+        return ProfileViewModel(bookService: bookService)
     }
     
     @MainActor
-    func provideBookEditorViewModel(modelContext: ModelContext, book: Book? = nil) -> BookEditorViewModel {
+    func provideBookEditorViewModel(book: Book? = nil) -> BookEditorViewModel {
         let googleBookService = provideGoogleBooksService()
-        let bookService = provideBookService(modelContext: modelContext)
+        let bookService = provideBookService()
         return BookEditorViewModel(googleBookService: googleBookService, bookService: bookService, book: book)
     }
-    
+
+    // Service Provider (Internal Helper)
     @MainActor
-    func provideProfileViewModel(modelContext: ModelContext) -> ProfileViewModel {
-        let bookService = provideBookService(modelContext: modelContext)
-        return ProfileViewModel(bookService: bookService)
+    private func provideBookService() -> BookService {
+        return BookService(modelContext: self.context)
+    }
+    
+    private func provideGoogleBooksService() -> GoogleBooksService {
+        return GoogleBooksService()
     }
 }

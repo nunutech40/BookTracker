@@ -75,8 +75,9 @@ struct LibraryView: View {
     
     // MARK: - Builders & Actions
     
+    @MainActor
     func bookRow(for book: Book) -> some View {
-        NavigationLink(destination: BookEditorView(viewModel: Injection.shared.provideBookEditorViewModel(modelContext: context, book: book))) {
+        NavigationLink(destination: BookEditorView(viewModel: Injection.shared.provideBookEditorViewModel(book: book))) {
             LibraryBookRow(book: book)
         }
         .swipeActions(edge: .leading) {

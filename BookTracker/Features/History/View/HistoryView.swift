@@ -32,7 +32,7 @@ struct HistoryView: View {
                 List {
                     ForEach(finishedBooks) { book in
                         // Bisa diklik buat liat detail/edit lagi
-                        NavigationLink(destination: BookEditorView(viewModel: Injection.shared.provideBookEditorViewModel(modelContext: context, book: book))) {
+                        NavigationLink(destination: BookEditorView(viewModel: Injection.shared.provideBookEditorViewModel(book: book))) {
                             LibraryBookRow(book: book) // Reuse row yang udah ada
                         }
                         // Tetep bisa dihapus kalau mau

@@ -44,7 +44,7 @@ struct HomeView: View {
             // Sheet Add Book
             .sheet(isPresented: $viewModel.showAddBookSheet) {
                 NavigationStack {
-                    BookEditorView(viewModel: Injection.shared.provideBookEditorViewModel(modelContext: context))
+                    BookEditorView(viewModel: Injection.shared.provideBookEditorViewModel())
                 }
             }
         }
