@@ -4,12 +4,6 @@
 //
 //  Created by Nunu Nugraha on 07/12/25.
 //
-//
-//  BookEditorView.swift
-//  BookTracker
-//
-//  Created by Nunu Nugraha on 07/12/25.
-//
 
 import SwiftUI
 import SwiftData
