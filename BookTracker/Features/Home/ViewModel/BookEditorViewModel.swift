@@ -18,17 +18,28 @@ final class BookEditorViewModel {
         case edit(Book)
     }
     
+    // MARK: - Dependencies
+    private var googleBookService: GoogleBooksService
+    private var bookService: BookService
+    
     let mode: EditorMode
     
-    // MARK: - Form State
+    // MARK: - Form State (Gak perlu @Published kalau pake @Observable)
     var title: String = ""
     var author: String = ""
     var totalPages: String = ""
     var coverImageData: Data?
     var status: BookStatus = .shelf
     
-    // MARK: - Photo Picker State (INI YG BIKIN ERROR KALO GAK ADA)
-    var photoSelection: PhotosPickerItem? = nil
+    // MARK: - Photo Picker State & Logic
+    // ✅ PERBAIKAN: Hanya dideklarasikan 1 kali + Logic Trigger
+    var photoSelection: PhotosPickerItem? {
+        didSet {
+            if let item = photoSelection {
+                Task { await loadPhoto(from: item) }
+            }
+        }
+    }
     
     // MARK: - Search State
     var showSearchSheet: Bool = false
@@ -37,14 +48,11 @@ final class BookEditorViewModel {
     var isSearching: Bool = false
     var searchError: String?
     
-    // Dependencies
-    private var googleBookService: GoogleBooksService
-    private var bookService: BookService
-    
     // MARK: - Init
     init(googleBookService: GoogleBooksService, bookService: BookService, book: Book? = nil) {
         self.googleBookService = googleBookService
         self.bookService = bookService
+        
         if let book = book {
             self.mode = .edit(book)
             self.title = book.title
@@ -58,51 +66,46 @@ final class BookEditorViewModel {
         }
     }
     
-    // MARK: - Photo Logic
-    func loadPhoto() async {
-        guard let item = photoSelection else { return }
+    // MARK: - Photo Logic (Internal)
+    @MainActor
+    func loadPhoto(from item: PhotosPickerItem) async {
         do {
             if let data = try await item.loadTransferable(type: Data.self) {
                 self.coverImageData = data
             }
         } catch {
-            print("Gagal load foto: \(error)")
+            print("❌ Gagal load foto: \(error)")
         }
     }
     
-    // MARK: - Logic Save (DEBUGGED)
+    // MARK: - Logic Save
     @MainActor
     func save() -> Bool {
-        print("🖨️ [ViewModel] Tombol Save Ditekan!")
-        print("   Input -> Title: '\(title)', Pages: \(totalPages), Status Pilihan: \(status.rawValue)")
+        print("🖨️ [ViewModel] Saving...")
         
         // Validasi
         guard !title.isEmpty, let pagesInt = Int(totalPages), pagesInt > 0 else {
-            print("   ❌ Validasi Gagal! Judul/Halaman kosong.")
+            print("   ❌ Validasi Gagal!")
             return false
         }
         
         switch mode {
         case .create:
-            print("   Mode: CREATE NEW")
             let newBook = Book(
                 title: title,
                 author: author,
                 totalPages: pagesInt,
                 coverImageData: coverImageData
             )
-            newBook.status = status // Pastikan status kebawa
-            print("   Inserting Book with Status: \(newBook.status.rawValue)...")
+            newBook.status = status
             bookService.addBook(from: newBook)
             
         case .edit(let existingBook):
-            print("   Mode: EDIT EXISTING")
             existingBook.title = title
             existingBook.author = author
             existingBook.totalPages = pagesInt
             existingBook.coverImageData = coverImageData
             existingBook.status = status
-            print("   Updating Book Status to: \(existingBook.status.rawValue)")
         }
         
         return true
@@ -133,9 +136,11 @@ final class BookEditorViewModel {
         self.title = item.volumeInfo.title
         self.author = item.volumeInfo.authors?.joined(separator: ", ") ?? ""
         self.totalPages = String(item.volumeInfo.pageCount ?? 0)
+        
         if let url = item.volumeInfo.imageLinks?.thumbnail {
             self.coverImageData = await googleBookService.downloadCoverImage(from: url)
         }
+        
         showSearchSheet = false
     }
 }

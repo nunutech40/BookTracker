@@ -4,19 +4,22 @@
 //
 //  Created by Nunu Nugraha on 07/12/25.
 //
+//
+//  BookEditorView.swift
+//  BookTracker
+//
+//  Created by Nunu Nugraha on 07/12/25.
+//
 
 import SwiftUI
 import SwiftData
 import PhotosUI
 
 struct BookEditorView: View {
-    @Environment(\.modelContext) private var context
     @Environment(\.dismiss) private var dismiss
     
     // State Object
     @State var viewModel: BookEditorViewModel
-    
-    // State lokal buat Toggle UI
     @State private var isReadingNow: Bool = false
     
     init(viewModel: BookEditorViewModel) {
@@ -24,22 +27,47 @@ struct BookEditorView: View {
     }
     
     var body: some View {
-        // Kita butuh @Bindable di sini buat sheet & toolbar
+        // Bindable wajib ada di body untuk akses $variable
         @Bindable var vm = viewModel
         
         Form {
-            // Panggil fungsi pecahan (biar compiler gak timeout)
-            // Kita lempar 'viewModel' ke bawah
+            // 1. Autofill
             makeAutofillSection(vm: viewModel)
             
-            makeCoverSection(vm: viewModel)
+            // 2. Cover Section (SOLUSI ANTI ERROR)
+            // Kita panggil variabel terpisah. Compiler gak bakal bingung lagi.
+            Section {
+                coverPickerRow
+                removeCoverButtonRow
+            }
+            .listRowBackground(Color.clear) // Modifier ditaruh di Section biar aman
             
-            makeMetadataSection(vm: viewModel)
+            // 3. Metadata
+            Section(header: Text("Book Info")) {
+                TextField("Title", text: $vm.title)
+                TextField("Author", text: $vm.author)
+                TextField("Total Pages", text: $vm.totalPages)
+                    .keyboardType(.numberPad)
+            }
             
-            makeStatusSection() // Pake state lokal isReadingNow
+            // 4. Status
+            Section {
+                Toggle(isOn: $isReadingNow) {
+                    Label("Start Reading Now", systemImage: "book.fill")
+                }
+                .tint(.blue)
+            } footer: {
+                Text(isReadingNow ? "Book will appear in 'Reading Now'" : "Book will start in 'Library (To Read)'")
+            }
             
+            // 5. Delete
             if case .edit = viewModel.mode {
-                makeDeleteSection(vm: viewModel)
+                Section {
+                    Button("Delete Book", role: .destructive) {
+                        vm.deleteBook()
+                        dismiss()
+                    }
+                }
             }
         }
         .navigationTitle(navTitle)
@@ -47,15 +75,9 @@ struct BookEditorView: View {
         .toolbar {
             makeToolbarContent(vm: viewModel)
         }
-        // Sheet Search
         .sheet(isPresented: $vm.showSearchSheet) {
             GoogleBooksSearchSheet(viewModel: viewModel)
         }
-        // Listener Foto (Syntax iOS 17)
-        .onChange(of: vm.photoSelection) { _, _ in
-            Task { await viewModel.loadPhoto() }
-        }
-        // Sync awal status toggle
         .onAppear {
             isReadingNow = (viewModel.status == .reading)
         }
@@ -69,13 +91,72 @@ struct BookEditorView: View {
     }
 }
 
-// MARK: - UI Breakdown (Solusi Compiler Timeout)
-// Logic: Fungsi terima VM -> Bind Ulang -> Return View
+// MARK: - Subviews (Pecahan Logic)
+
 private extension BookEditorView {
     
-    // 1. Autofill Section
+    // MARK: - Row 1: Picker Foto
+    // Dipisah jadi var sendiri supaya compiler gak pusing nebak tipenya
+    var coverPickerRow: some View {
+        HStack {
+            Spacer()
+            // Kita akses viewModel langsung (karena extension View punya akses ke @State)
+            PhotosPicker(selection: $viewModel.photoSelection, matching: .images) {
+                // Logic tampilan gambar ditaruh di fungsi helper 'coverArtView'
+                coverArtView(data: viewModel.coverImageData)
+            }
+            .buttonStyle(.plain)
+            Spacer()
+        }
+    }
+    
+    // MARK: - Row 2: Tombol Hapus
+    // Menggunakan @ViewBuilder supaya bisa return "EmptyView" kalau nil
+    @ViewBuilder
+    var removeCoverButtonRow: some View {
+        if viewModel.coverImageData != nil {
+            Button("Remove Cover", role: .destructive) {
+                withAnimation {
+                    viewModel.coverImageData = nil
+                    viewModel.photoSelection = nil
+                }
+            }
+            .frame(maxWidth: .infinity, alignment: .center)
+        }
+    }
+    
+    // MARK: - Helper Tampilan Gambar
+    @ViewBuilder
+    func coverArtView(data: Data?) -> some View {
+        if let data = data, let uiImage = UIImage(data: data) {
+            Image(uiImage: uiImage)
+                .resizable()
+                .scaledToFit()
+                .frame(height: 180)
+                .cornerRadius(8)
+                .shadow(radius: 4)
+                .overlay(alignment: .bottomTrailing) {
+                    Image(systemName: "pencil.circle.fill")
+                        .font(.title).foregroundStyle(.white).shadow(radius: 2).offset(x: 10, y: 10)
+                }
+        } else {
+            VStack(spacing: 8) {
+                Image(systemName: "photo.badge.plus").font(.system(size: 40)).foregroundStyle(.blue)
+                Text("Tap to Add Cover").font(.caption).foregroundStyle(.secondary)
+            }
+            .frame(height: 150).frame(maxWidth: .infinity)
+            .background(Color.gray.opacity(0.1)).cornerRadius(8)
+            .overlay(
+                RoundedRectangle(cornerRadius: 8)
+                    .stroke(style: StrokeStyle(lineWidth: 1, dash: [5]))
+                    .foregroundStyle(.gray.opacity(0.3))
+            )
+        }
+    }
+    
+    // MARK: - Lain-lain
     func makeAutofillSection(vm: BookEditorViewModel) -> some View {
-        @Bindable var vm = vm // <--- RE-BINDING (Kunci biar $ jalan & compiler happy)
+        @Bindable var vm = vm
         return Section {
             Button(action: { vm.showSearchSheet = true }) {
                 HStack {
@@ -89,91 +170,12 @@ private extension BookEditorView {
         }
     }
     
-    // 2. Cover Section
-    func makeCoverSection(vm: BookEditorViewModel) -> some View {
-        @Bindable var vm = vm
-        return Section {
-            HStack {
-                Spacer()
-                PhotosPicker(selection: $vm.photoSelection, matching: .images) {
-                    if let data = vm.coverImageData, let uiImage = UIImage(data: data) {
-                        Image(uiImage: uiImage)
-                            .resizable()
-                            .scaledToFit()
-                            .frame(height: 180)
-                            .cornerRadius(8)
-                            .shadow(radius: 4)
-                            .overlay(alignment: .bottomTrailing) {
-                                Image(systemName: "pencil.circle.fill")
-                                    .font(.title).foregroundStyle(.white).shadow(radius: 2).offset(x: 10, y: 10)
-                            }
-                    } else {
-                        VStack {
-                            Image(systemName: "photo.badge.plus").font(.system(size: 40)).foregroundStyle(.blue)
-                            Text("Tap to Add Cover").font(.caption).foregroundStyle(.secondary)
-                        }
-                        .frame(height: 150).frame(maxWidth: .infinity)
-                        .background(Color.gray.opacity(0.1)).cornerRadius(8)
-                    }
-                }
-                .buttonStyle(.plain)
-                Spacer()
-            }
-            .listRowBackground(Color.clear)
-            
-            if vm.coverImageData != nil {
-                Button("Remove Cover", role: .destructive) {
-                    vm.coverImageData = nil
-                    vm.photoSelection = nil
-                }
-                .frame(maxWidth: .infinity, alignment: .center)
-            }
-        }
-    }
-    
-    // 3. Metadata Section
-    func makeMetadataSection(vm: BookEditorViewModel) -> some View {
-        @Bindable var vm = vm
-        return Section(header: Text("Book Info")) {
-            TextField("Title", text: $vm.title)
-            TextField("Author", text: $vm.author)
-            TextField("Total Pages", text: $vm.totalPages)
-                .keyboardType(.numberPad)
-        }
-    }
-    
-    // 4. Status Section (Pake State Lokal)
-    func makeStatusSection() -> some View {
-        Section {
-            Toggle(isOn: $isReadingNow) {
-                Label("Start Reading Now", systemImage: "book.fill")
-            }
-            .tint(.blue)
-        } footer: {
-            Text(isReadingNow ? "Book will appear in 'Reading Now'" : "Book will start in 'Library (To Read)'")
-        }
-    }
-    
-    // 5. Delete Section
-    @MainActor
-    func makeDeleteSection(vm: BookEditorViewModel) -> some View {
-        Section {
-            Button("Delete Book", role: .destructive) {
-                vm.deleteBook()
-                dismiss()
-            }
-        }
-    }
-    
-    // 6. Toolbar Content
     @ToolbarContentBuilder
     @MainActor
     func makeToolbarContent(vm: BookEditorViewModel) -> some ToolbarContent {
         ToolbarItem(placement: .confirmationAction) {
             Button("Save") {
-                // Update status di VM berdasarkan Toggle sebelum save
                 vm.status = isReadingNow ? .reading : .shelf
-                
                 if vm.save() {
                     dismiss()
                 }
