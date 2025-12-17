@@ -3,22 +3,31 @@
 This document outlines the remaining tasks to complete the MVP, focusing on code documentation, reading targets, local notifications, and gamification copywriting.
 
 ## 1. Documentation & Code Quality
-- [ ] **BookEditor Validation Docs**:
+- [x] **BookEditor Validation Docs**:
     - Add comprehensive comments/documentation in `BookEditorViewModel`.
     - Explain the "Dirty State" logic (`hasInteracted`) and `ValidationState` computed properties.
     - Explain the Regex logic used for sanitizing `totalPages` input.
 
-## 2. Feature: Reading Targets (Goals)
-Create a new view or section in Profile to manage user reading goals.
+## 2. Feature: Reading Targets (Goals) - Hybrid Approach
 
-- [ ] **Target UI Implementation**:
-    - Create `ReadingGoalView` (or a section inside Profile).
-    - Allow users to set targets based on:
-        - **Frequency**: Daily, Weekly, Yearly.
-        - **Metric**:
-            - *Pages* (Only available for 'Daily' frequency).
-            - *Books* (Available for Daily, Weekly, Yearly).
-- [ ] **Target Logic Calculation**:
+**Concept**: Implement the reading goals feature with settings in the Profile tab and an entry point/summary on the Home tab for better visibility and engagement.
+
+- [ ] **A. Entry Point on Home Tab**:
+    - Create a new component `ReadingGoalSummaryView`.
+    - **Scenario 1 (No Goal)**: Display a card with a call-to-action, e.g., "Set Your Weekly Reading Goal". Tapping it should navigate to the `ReadingGoalView` in the Profile tab.
+    - **Scenario 2 (Goal is Set)**: Display a summary of the current goal and progress (e.g., "This week's goal: 2 books. You've read 1."). Tapping it navigates to the detailed `ReadingGoalView`.
+
+- [ ] **B. Main Settings in Profile Tab**:
+    - Create `ReadingGoalView` inside the Profile feature (`Features/Profile/View`).
+    - This view will contain the UI for setting and managing goals.
+    - **Target UI Implementation**:
+        - Allow users to set targets based on:
+            - **Frequency**: Daily, Weekly, Yearly.
+            - **Metric**:
+                - *Pages* (Only available for 'Daily' frequency).
+                - *Books* (Available for Daily, Weekly, Yearly).
+
+- [ ] **C. Target Logic & Data**:
     - Implement logic to break down long-term targets into daily chunks:
         - *Formula*: If Target is "50 Books/Year", calculate: `(Target - FinishedBooks) / DaysRemaining`.
     - Store these preferences using `@AppStorage` or `UserDefaults`.
