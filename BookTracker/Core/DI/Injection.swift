@@ -37,7 +37,6 @@ final class Injection {
     // MARK: - Providers
     
     // Perhatikan: Parameter 'modelContext' DIHAPUS karena sudah ambil dari internal
-    
     @MainActor
     func provideHomeViewModel() -> HomeViewModel {
         // Otomatis pakai self.context

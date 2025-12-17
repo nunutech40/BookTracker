@@ -28,18 +28,6 @@ struct LibraryView: View {
                 .pickerStyle(.segmented)
                 .padding()
                 
-                // 2. DEBUGGER (Hapus ini nanti kalau udah fix)
-                /*
-                 VStack(alignment: .leading) {
-                 Text("DEBUG INFO:")
-                 Text("Total Books in DB: \(allBooks.count)")
-                 Text("Books with status \(selectedTab.rawValue): \(currentBooks.count)")
-                 }
-                 .font(.caption)
-                 .foregroundStyle(.red)
-                 .padding()
-                 */
-                
                 // 3. Content List
                 if currentBooks.isEmpty {
                     emptyStateView
