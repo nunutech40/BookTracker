@@ -34,20 +34,31 @@ struct BookEditorView: View {
             // 1. Autofill
             makeAutofillSection(vm: viewModel)
             
-            // 2. Cover Section (SOLUSI ANTI ERROR)
-            // Kita panggil variabel terpisah. Compiler gak bakal bingung lagi.
+            // 2. Cover Section
             Section {
                 coverPickerRow
                 removeCoverButtonRow
             }
-            .listRowBackground(Color.clear) // Modifier ditaruh di Section biar aman
+            .listRowBackground(Color.clear)
             
-            // 3. Metadata
+            // 3. Metadata with Validation
             Section(header: Text("Book Info")) {
                 TextField("Title", text: $vm.title)
+                // Panggil Helper: Cuma muncul kalo udah diketik atau ditekan save
+                if let error = vm.errorMessage(for: .title) {
+                    Text(error).font(.caption).foregroundStyle(.red)
+                }
+                
                 TextField("Author", text: $vm.author)
+                if let error = vm.errorMessage(for: .author) {
+                    Text(error).font(.caption).foregroundStyle(.red)
+                }
+                
                 TextField("Total Pages", text: $vm.totalPages)
                     .keyboardType(.numberPad)
+                if let error = vm.errorMessage(for: .totalPages) {
+                    Text(error).font(.caption).foregroundStyle(.red)
+                }
             }
             
             // 4. Status
@@ -78,11 +89,9 @@ struct BookEditorView: View {
         .sheet(isPresented: $vm.showSearchSheet) {
             GoogleBooksSearchSheet(viewModel: viewModel)
         }
-        // Sheet for Camera
         .sheet(isPresented: $showCamera) {
             ImagePicker(selectedImage: $selectedImage, sourceType: .camera)
         }
-        // When an image is selected from the camera, process it.
         .onChange(of: selectedImage) { _, newImage in
             if let newImage = newImage {
                 viewModel.process(image: newImage)
@@ -91,7 +100,6 @@ struct BookEditorView: View {
         .onAppear {
             isReadingNow = (viewModel.status == .reading)
         }
-        // PhotosPicker is presented as a sheet from this modifier
         .photosPicker(isPresented: $showLibrary, selection: $viewModel.photoSelection, matching: .images)
     }
     
@@ -103,24 +111,19 @@ struct BookEditorView: View {
     }
 }
 
-// MARK: - Subviews (Pecahan Logic)
+// MARK: - Subviews
 
 private extension BookEditorView {
     
-    // MARK: - Row 1: Picker Foto
-    // Dipisah jadi var sendiri supaya compiler gak pusing nebak tipenya
     var coverPickerRow: some View {
         HStack {
             Spacer()
-            
-            // The main button that shows the options
             Button {
                 showImageSourceDialog = true
             } label: {
                 coverArtView(data: viewModel.coverImageData)
             }
             .buttonStyle(.plain)
-            // This is the modern way to add a PhotosPicker to a confirmation dialog
             .confirmationDialog("Add Cover Photo", isPresented: $showImageSourceDialog, titleVisibility: .visible) {
                 Button("Choose from Library") {
                     showLibrary = true
@@ -131,13 +134,10 @@ private extension BookEditorView {
                     }
                 }
             }
-            
             Spacer()
         }
     }
     
-    // MARK: - Row 2: Tombol Hapus
-    // Menggunakan @ViewBuilder supaya bisa return "EmptyView" kalau nil
     @ViewBuilder
     var removeCoverButtonRow: some View {
         if viewModel.coverImageData != nil {
@@ -151,36 +151,23 @@ private extension BookEditorView {
         }
     }
     
-    // MARK: - Helper Tampilan Gambar
     @ViewBuilder
     func coverArtView(data: Data?) -> some View {
         if let data = data, let uiImage = UIImage(data: data) {
             Image(uiImage: uiImage)
-                .resizable()
-                .scaledToFit()
-                .frame(height: 180)
-                .cornerRadius(8)
-                .shadow(radius: 4)
+                .resizable().scaledToFit().frame(height: 180).cornerRadius(8).shadow(radius: 4)
                 .overlay(alignment: .bottomTrailing) {
-                    Image(systemName: "pencil.circle.fill")
-                        .font(.title).foregroundStyle(.white).shadow(radius: 2).offset(x: 10, y: 10)
+                    Image(systemName: "pencil.circle.fill").font(.title).foregroundStyle(.white).shadow(radius: 2).offset(x: 10, y: 10)
                 }
         } else {
             VStack(spacing: 8) {
                 Image(systemName: "photo.badge.plus").font(.system(size: 40)).foregroundStyle(.blue)
                 Text("Tap to Add Cover").font(.caption).foregroundStyle(.secondary)
-            }
-            .frame(height: 150).frame(maxWidth: .infinity)
-            .background(Color.gray.opacity(0.1)).cornerRadius(8)
-            .overlay(
-                RoundedRectangle(cornerRadius: 8)
-                    .stroke(style: StrokeStyle(lineWidth: 1, dash: [5]))
-                    .foregroundStyle(.gray.opacity(0.3))
-            )
+            }.frame(height: 150).frame(maxWidth: .infinity).background(Color.gray.opacity(0.1)).cornerRadius(8)
+            .overlay(RoundedRectangle(cornerRadius: 8).stroke(style: StrokeStyle(lineWidth: 1, dash: [5])).foregroundStyle(.gray.opacity(0.3)))
         }
     }
     
-    // MARK: - Lain-lain
     func makeAutofillSection(vm: BookEditorViewModel) -> some View {
         @Bindable var vm = vm
         return Section {
@@ -188,11 +175,8 @@ private extension BookEditorView {
                 HStack {
                     Image(systemName: "magnifyingglass")
                     Text("Autofill data from Google Books")
-                        .fontWeight(.medium)
-                }
-                .frame(maxWidth: .infinity)
-            }
-            .tint(.blue)
+                }.frame(maxWidth: .infinity)
+            }.tint(.blue)
         }
     }
     
@@ -201,12 +185,13 @@ private extension BookEditorView {
     func makeToolbarContent(vm: BookEditorViewModel) -> some ToolbarContent {
         ToolbarItem(placement: .confirmationAction) {
             Button("Save") {
-                vm.status = isReadingNow ? .reading : .shelf
+                // Saat diklik, save() akan set hasAttemptedSave = true
+                // Jadi field yg kosong akan langsung merah semua
                 if vm.save() {
                     dismiss()
                 }
             }
-            .disabled(vm.title.isEmpty || vm.totalPages.isEmpty)
+            .disabled(!vm.isFormValid)
         }
         
         if case .create = vm.mode {

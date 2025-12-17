@@ -13,27 +13,112 @@ import UIKit
 @Observable
 final class BookEditorViewModel {
     
-    // MARK: - Mode Definition
+    // ... (Enum & Dependencies Tetap Sama) ...
     enum EditorMode {
         case create
         case edit(Book)
     }
     
-    // MARK: - Dependencies
     private var googleBookService: GoogleBooksService
     private var bookService: BookService
     
     let mode: EditorMode
     
-    // MARK: - Form State (Gak perlu @Published kalau pake @Observable)
-    var title: String = ""
-    var author: String = ""
-    var totalPages: String = ""
+    // MARK: - Interaction State (Dirty Flags) ✅ BARU
+    // Ini gunanya buat nandain: "User udah nyentuh field ini belum?"
+    private var hasInteractedWithTitle = false
+    private var hasInteractedWithAuthor = false
+    private var hasInteractedWithPages = false
+    private var hasAttemptedSave = false // Buat maksa munculin semua error pas klik Save
+    
+    // MARK: - Form State
+    
+    var title: String = "" {
+        didSet { hasInteractedWithTitle = true } // ✅ Auto update flag
+    }
+    
+    var author: String = "" {
+        didSet { hasInteractedWithAuthor = true } // ✅ Auto update flag
+    }
+    
+    // Logic Filter Angka
+    private var _totalPages: String = ""
+    var totalPages: String {
+        get { _totalPages }
+        set {
+            let filtered = newValue.filter { "0123456789".contains($0) }
+            if _totalPages != filtered {
+                _totalPages = filtered
+            }
+            hasInteractedWithPages = true // ✅ Auto update flag
+        }
+    }
+    
     var coverImageData: Data?
     var status: BookStatus = .shelf
     
-    // MARK: - Photo Picker State & Logic
-    // ✅ PERBAIKAN: Hanya dideklarasikan 1 kali + Logic Trigger
+    // MARK: - Validation Logic (Strict)
+    // Ini Logic Murni (Benar/Salah), dipake buat disable tombol Save
+    
+    var titleValidation: ValidationState {
+        if title.trimmingCharacters(in: .whitespacesAndNewlines).isEmpty {
+            return .invalid(message: "Title cannot be empty.")
+        }
+        return .valid
+    }
+    
+    var authorValidation: ValidationState {
+        if author.trimmingCharacters(in: .whitespacesAndNewlines).isEmpty {
+            return .invalid(message: "Author cannot be empty.")
+        }
+        return .valid
+    }
+    
+    var totalPagesValidation: ValidationState {
+        if totalPages.isEmpty {
+            return .invalid(message: "Total pages cannot be empty.")
+        } else if let pagesInt = Int(totalPages), pagesInt > 0 {
+            return .valid
+        } else {
+            return .invalid(message: "Enter a valid number > 0.")
+        }
+    }
+    
+    var isFormValid: Bool {
+        return titleValidation == .valid &&
+        authorValidation == .valid &&
+        totalPagesValidation == .valid
+    }
+    
+    // MARK: - UI Helper: Error Message Display ✅ BARU
+    // Fungsi ini yang dipanggil View. Dia nentuin "Boleh tampilin error gak?"
+    // Syarat tampil: (User udah ngetik ATAU User udah tekan Save) DAN (Datanya Invalid)
+    
+    func errorMessage(for field: FieldType) -> String? {
+        let shouldShow: Bool
+        let state: ValidationState
+        
+        switch field {
+        case .title:
+            shouldShow = hasInteractedWithTitle || hasAttemptedSave
+            state = titleValidation
+        case .author:
+            shouldShow = hasInteractedWithAuthor || hasAttemptedSave
+            state = authorValidation
+        case .totalPages:
+            shouldShow = hasInteractedWithPages || hasAttemptedSave
+            state = totalPagesValidation
+        }
+        
+        if shouldShow, let message = state.message {
+            return message
+        }
+        return nil
+    }
+    
+    enum FieldType { case title, author, totalPages }
+    
+    // ... (Photo Picker State & Search State Tetap Sama) ...
     var photoSelection: PhotosPickerItem? {
         didSet {
             if let item = photoSelection {
@@ -42,7 +127,6 @@ final class BookEditorViewModel {
         }
     }
     
-    // MARK: - Search State
     var showSearchSheet: Bool = false
     var query: String = ""
     var searchResults: [GoogleBookItem] = []
@@ -58,65 +142,62 @@ final class BookEditorViewModel {
             self.mode = .edit(book)
             self.title = book.title
             self.author = book.author
-            self.totalPages = String(book.totalPages)
+            self._totalPages = String(book.totalPages)
             self.coverImageData = book.coverImageData
             self.status = book.status
+            
+            // Kalau Edit Mode, anggap user sudah interaksi (biar validasi jalan normal)
+            self.hasInteractedWithTitle = true
+            self.hasInteractedWithAuthor = true
+            self.hasInteractedWithPages = true
         } else {
             self.mode = .create
             self.status = .shelf
         }
     }
     
-    // MARK: - Photo Logic (Internal)
+    // ... (Photo Logic Internal Tetap Sama) ...
     @MainActor
     func loadPhoto(from item: PhotosPickerItem) async {
         do {
             if let data = try await item.loadTransferable(type: Data.self) {
-                // Resize & Compress Image
-                self.process(data: data)
+                process(data: data)
             }
         } catch {
             print("❌ Gagal load foto: \(error)")
         }
     }
     
-    /// Processes image data (from PhotosPicker or URL) by resizing and compressing it.
     func process(data: Data?) {
         guard let data = data, let image = UIImage(data: data) else { return }
         self.coverImageData = _process(image: image)
     }
     
-    /// Processes a UIImage (from Camera) by resizing and compressing it.
     func process(image: UIImage) {
         self.coverImageData = _process(image: image)
     }
-
-    /// The core image processing function. Resizes and compresses the image.
+    
     private func _process(image: UIImage) -> Data? {
         let targetSize = CGSize(width: 500, height: 500)
         guard let scaledImage = image.preparingThumbnail(of: targetSize) else { return nil }
-        
-        // Compress to JPEG with high quality
         return scaledImage.jpegData(compressionQuality: 0.8)
     }
-
-    // MARK: - Logic Save
+    
+    // MARK: - Core Actions
     @MainActor
     func save() -> Bool {
-        print("🖨️ [ViewModel] Saving...")
+        // 1. Tandai user sudah mencoba save (munculkan semua merah-merah)
+        hasAttemptedSave = true
         
-        // Validasi
-        guard !title.isEmpty, let pagesInt = Int(totalPages), pagesInt > 0 else {
-            print("   ❌ Validasi Gagal!")
-            return false
-        }
+        // 2. Cek validasi
+        guard isFormValid else { return false }
         
         switch mode {
         case .create:
             let newBook = Book(
                 title: title,
                 author: author,
-                totalPages: pagesInt,
+                totalPages: Int(totalPages) ?? 0,
                 coverImageData: coverImageData
             )
             newBook.status = status
@@ -125,7 +206,7 @@ final class BookEditorViewModel {
         case .edit(let existingBook):
             existingBook.title = title
             existingBook.author = author
-            existingBook.totalPages = pagesInt
+            existingBook.totalPages = Int(totalPages) ?? 0
             existingBook.coverImageData = coverImageData
             existingBook.status = status
         }
@@ -133,6 +214,7 @@ final class BookEditorViewModel {
         return true
     }
     
+    // ... (Delete & Search & Autofill Tetap Sama) ...
     @MainActor
     func deleteBook() {
         if case .edit(let book) = mode {
@@ -140,7 +222,6 @@ final class BookEditorViewModel {
         }
     }
     
-    // MARK: - Search Logic
     func searchBooks() async {
         guard !query.isEmpty else { return }
         isSearching = true
@@ -159,9 +240,13 @@ final class BookEditorViewModel {
         self.author = item.volumeInfo.authors?.joined(separator: ", ") ?? ""
         self.totalPages = String(item.volumeInfo.pageCount ?? 0)
         
+        // Autofill dianggap interaksi user
+        self.hasInteractedWithTitle = true
+        self.hasInteractedWithAuthor = true
+        self.hasInteractedWithPages = true
+        
         if let url = item.volumeInfo.imageLinks?.thumbnail {
             let data = await googleBookService.downloadCoverImage(from: url)
-            // Also process image from URL
             self.process(data: data)
         }
         
