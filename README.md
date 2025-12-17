@@ -1,6 +1,6 @@
 # Aplikasi BookTracker
 
-BookTracker adalah aplikasi seluler yang dirancang untuk membantu pengguna mengelola dan melacak kemajuan membaca mereka. Aplikasi ini menyediakan fitur untuk mencatat halaman terakhir yang dibaca dari sebuah buku, memvisualisasikan aktivitas membaca, dan menemukan buku baru melalui integrasi Google Books.
+BookTracker adalah aplikasi seluler yang dirancang untuk membantu pengguna mengelola dan melacak kemajuan membaca mereka. Aplikasi ini menyediakan fitur untuk mencatat halaman terakhir yang Anda baca dari sebuah buku, memvisualisasikan aktivitas membaca, dan menemukan buku baru melalui integrasi Google Books.
 
 ## Fitur Utama
 
@@ -18,6 +18,14 @@ Aplikasi ini dibangun mengikuti pola arsitektur **MVVM (Model-View-ViewModel)**,
 *   **ViewModel:** Bertindak sebagai perantara antara View dan Model, menangani logika tampilan, manajemen status, dan mengatur aliran data (misalnya, `HomeViewModel`, `BookEditorViewModel`).
 *   **Layanan (Services):** Lapisan layanan khusus (`BookService`, `GoogleBooksService`) merangkum logika bisnis, operasi persistensi data (SwiftData), dan interaksi API eksternal (Google Books API).
 
+## Dependency Injection
+
+Aplikasi ini menggunakan sistem Dependency Injection (DI) berbasis *singleton* yang terpusat melalui kelas `Injection`. Pola ini memastikan bahwa dependensi dibuat dan dikelola secara konsisten di seluruh aplikasi, meningkatkan modularitas dan kemampuan pengujian.
+
+*   **Setup Terpusat:** Instans `ModelContainer` disediakan ke `Injection.shared` sekali saat aplikasi dimulai (`BookTrackerApp.swift`).
+*   **Penyedia Dependensi:** `Injection` menyediakan metode khusus (misalnya, `provideHomeViewModel()`, `provideBookEditorViewModel(book:)`) yang bertanggung jawab untuk membuat ViewModel dan secara otomatis menyuntikkan Layanan yang dibutuhkan.
+*   **Penggunaan yang Bersih:** View atau ViewModel tidak secara langsung membuat dependensinya, melainkan memintanya dari `Injection.shared`. Hal ini membuat kode lebih bersih dan lebih mudah untuk dipahami alur dependensinya.
+
 ## Teknologi yang Digunakan
 
 *   **Swift:** Bahasa pemrograman utama.
@@ -30,7 +38,7 @@ Aplikasi ini dibangun mengikuti pola arsitektur **MVVM (Model-View-ViewModel)**,
 Proyek ini mencakup pengujian unit untuk lapisan layanannya guna memastikan keandalan dan kebenaran. Secara khusus:
 
 *   **`BookServiceTest.swift`**: Menguji logika inti untuk mengelola buku dan sesi membaca.
-*   **`GoogleBookServiceTest.swift`**: Menguji integrasi dengan Google Books API, menggunakan `MockURLProtocol` untuk mensimulasikan respons jaringan dan memastikan pengujian yang terisolasi dan andal.
+*   **`GoogleBookServiceTest.swift`**: Menguji integrasi dengan Google Books API, menggunakan `MockURLProtocol` untuk mensimulasikan respons jaringan dan memastikan pengujian yang terisolasi danandal.
 
 ## Memulai
 

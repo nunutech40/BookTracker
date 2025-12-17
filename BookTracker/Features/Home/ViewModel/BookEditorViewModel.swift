@@ -8,6 +8,7 @@
 import SwiftUI
 import SwiftData
 import PhotosUI
+import UIKit
 
 @Observable
 final class BookEditorViewModel {
@@ -71,13 +72,25 @@ final class BookEditorViewModel {
     func loadPhoto(from item: PhotosPickerItem) async {
         do {
             if let data = try await item.loadTransferable(type: Data.self) {
-                self.coverImageData = data
+                // Resize & Compress Image
+                self.coverImageData = processImage(from: data)
             }
         } catch {
             print("❌ Gagal load foto: \(error)")
         }
     }
     
+    /// Resizes and compresses the selected image to optimize for storage.
+    private func processImage(from data: Data) -> Data? {
+        guard let image = UIImage(data: data) else { return nil }
+        
+        let targetSize = CGSize(width: 500, height: 500)
+        let scaledImage = image.preparingThumbnail(of: targetSize)
+        
+        // Compress to JPEG with high quality
+        return scaledImage?.jpegData(compressionQuality: 0.8)
+    }
+
     // MARK: - Logic Save
     @MainActor
     func save() -> Bool {
@@ -138,7 +151,9 @@ final class BookEditorViewModel {
         self.totalPages = String(item.volumeInfo.pageCount ?? 0)
         
         if let url = item.volumeInfo.imageLinks?.thumbnail {
-            self.coverImageData = await googleBookService.downloadCoverImage(from: url)
+            let data = await googleBookService.downloadCoverImage(from: url)
+            // Also process image from URL
+            self.coverImageData = processImage(from: data ?? Data())
         }
         
         showSearchSheet = false
