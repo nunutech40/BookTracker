@@ -26,16 +26,28 @@ struct BookTrackerApp: App {
         }
     }()
     
-    // 2. Custom Init untuk Setup Injection
+    // Create the ViewModel instance here
+    @State private var homeViewModel: HomeViewModel
+    
     init() {
         //  Lakukan Inject Container sekali di awal
-        Injection.shared.setup(container: sharedModelContainer)
+        let injection = Injection.shared
+        injection.setup(container: sharedModelContainer)
+        
+        // Create the ViewModel
+        let vm = injection.provideHomeViewModel()
+        _homeViewModel = State(initialValue: vm)
+        
+        // Start loading data in the background immediately
+        Task {
+            await vm.refreshData()
+        }
     }
 
     var body: some Scene {
         WindowGroup {
             ContentView(
-                homeViewModel: Injection.shared.provideHomeViewModel(),
+                homeViewModel: homeViewModel,
                 profileViewModel: Injection.shared.provideProfileViewModel()
             )
         }

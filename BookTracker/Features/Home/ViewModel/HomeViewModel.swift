@@ -24,41 +24,51 @@ final class HomeViewModel {
     
     // MARK: - UI State
     var heatmapData: [Date: Int] = [:]
-    var currentStreak: Int = 0 // <-- STATE BARU: Data Streak Real
+    var currentStreak: Int = 0
+    var isLoading: Bool = true
     
     // Navigation State
     var selectedBook: Book?
-    var showAddBookSheet: Bool = false // <-- STATE BARU: Buat trigger sheet AddBook
+    var showAddBookSheet: Bool = false
     
     // Dependencies
     private var bookService: BookService
     
     init(bookService: BookService) {
         self.bookService = bookService
-        refreshData()
     }
     
-    func refreshData() {
-        // 1. Fetch Heatmap
-        self.heatmapData = bookService.fetchReadingHeatmap()
+    @MainActor
+    func refreshData() async {
+        // Simulate background work for initial load
+        if isLoading {
+            try? await Task.sleep(for: .milliseconds(500))
+        }
         
-        // 2. Hitung Streak dari data heatmap yang ada
+        self.heatmapData = bookService.fetchReadingHeatmap()
         calculateStreak()
+        
+        if isLoading {
+            isLoading = false
+        }
     }
     
-    func onPageInputSubmit(page: Int) {
+    @MainActor
+    func onPageInputSubmit(page: Int) async {
         guard let book = selectedBook else { return }
+        
+        try? await Task.sleep(for: .seconds(1))
+        
         bookService.updateProgress(for: book, newPage: page)
-        refreshData() // Refresh semua (heatmap + streak)
+        await refreshData()
+        
         selectedBook = nil
     }
     
     // MARK: - Logic Streak Calculation
     
     private func calculateStreak() {
-        // Ambil semua tanggal unik yang ada session-nya
-        let readDates = heatmapData.keys.sorted(by: >) // Urutkan dari terbaru
-        
+        let readDates = heatmapData.keys.sorted(by: >)
         guard !readDates.isEmpty else {
             currentStreak = 0
             return
@@ -68,24 +78,18 @@ final class HomeViewModel {
         let today = calendar.startOfDay(for: Date())
         let yesterday = calendar.date(byAdding: .day, value: -1, to: today)!
         
-        // Cek apakah user baca hari ini atau kemarin (kalau terakhir baca 2 hari lalu, streak putus)
         let lastReadDate = calendar.startOfDay(for: readDates[0])
-        
         if lastReadDate != today && lastReadDate != yesterday {
             currentStreak = 0
             return
         }
         
-        // Hitung mundur
         var streak = 0
         var currentDateToCheck = lastReadDate
-        
-        // Ubah Array tanggal jadi Set biar pencarian O(1) alias cepet
         let dateSet = Set(readDates.map { calendar.startOfDay(for: $0) })
         
         while dateSet.contains(currentDateToCheck) {
             streak += 1
-            // Mundur 1 hari ke belakang
             currentDateToCheck = calendar.date(byAdding: .day, value: -1, to: currentDateToCheck)!
         }
         

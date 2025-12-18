@@ -25,17 +25,23 @@ struct HomeView: View {
     
     var body: some View {
         NavigationStack {
-            ScrollView {
-                VStack(spacing: 24) {
-                    // 1. Hero Section (Streak)
-                    heroStatsSection
-                    
-                    // 2. Reading List
-                    readingListSection
+            ZStack {
+                if viewModel.isLoading {
+                    ProgressView()
+                } else {
+                    ScrollView {
+                        VStack(spacing: 24) {
+                            // 1. Hero Section (Streak)
+                            heroStatsSection
+                            
+                            // 2. Reading List
+                            readingListSection
+                        }
+                        .padding()
+                    }
+                    .background(Color(uiColor: .systemGroupedBackground))
                 }
-                .padding()
             }
-            .background(Color(uiColor: .systemGroupedBackground))
             .navigationTitle("Bookmarker")
             .toolbar { toolbarContent }
             .sheet(item: $viewModel.selectedBook) { book in
@@ -45,6 +51,11 @@ struct HomeView: View {
             .sheet(isPresented: $viewModel.showAddBookSheet) {
                 NavigationStack {
                     BookEditorView(viewModel: Injection.shared.provideBookEditorViewModel())
+                }
+                .onDisappear {
+                    Task {
+                        await viewModel.refreshData()
+                    }
                 }
             }
         }
@@ -206,7 +217,7 @@ private extension HomeView {
     
     func updateProgressSheet(for book: Book) -> some View {
         UpdateProgressSheet(book: book, maxPage: book.totalPages) { newPage in
-            viewModel.onPageInputSubmit(page: newPage)
+            await viewModel.onPageInputSubmit(page: newPage)
         }
         .presentationDetents([.medium])
         .presentationDragIndicator(.visible)

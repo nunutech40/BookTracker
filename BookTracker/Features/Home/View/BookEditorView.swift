@@ -14,7 +14,6 @@ struct BookEditorView: View {
     
     // State Object
     @State var viewModel: BookEditorViewModel
-    @State private var isReadingNow: Bool = false
     
     // State for Image Picking
     @State private var showImageSourceDialog = false
@@ -64,12 +63,12 @@ struct BookEditorView: View {
             
             // 4. Status
             Section {
-                Toggle(isOn: $isReadingNow) {
+                Toggle(isOn: $viewModel.isReadingNow) {
                     Label("Start Reading Now", systemImage: "book.fill")
                 }
                 .tint(.blue)
             } footer: {
-                Text(isReadingNow ? "Book will appear in 'Reading Now'" : "Book will start in 'Library (To Read)'")
+                Text(viewModel.isReadingNow ? "Book will appear in 'Reading Now'" : "Book will start in 'Library (To Read)'")
             }
             
             // 5. Delete
@@ -96,9 +95,6 @@ struct BookEditorView: View {
             if let newImage = newImage {
                 viewModel.process(image: newImage)
             }
-        }
-        .onAppear {
-            isReadingNow = (viewModel.status == .reading)
         }
         .photosPicker(isPresented: $showLibrary, selection: $viewModel.photoSelection, matching: .images)
         .confirmationDialog(

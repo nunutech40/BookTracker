@@ -100,6 +100,7 @@ final class BookEditorViewModel {
     
     var coverImageData: Data?
     var status: BookStatus = .shelf
+    var isReadingNow: Bool = false
     
     // MARK: - Validation Logic (Strict)
     /// These computed properties encapsulate the validation rules for each form field.
@@ -215,6 +216,7 @@ final class BookEditorViewModel {
             self._totalPages = String(book.totalPages)
             self.coverImageData = book.coverImageData
             self.status = book.status
+            self.isReadingNow = book.status == .reading
             
             // Kalau Edit Mode, anggap user sudah interaksi (biar validasi jalan normal)
             self.hasInteractedWithTitle = true
@@ -262,6 +264,9 @@ final class BookEditorViewModel {
         // 2. Cek validasi
         guard isFormValid else { return false }
         
+        // 3. Set status
+        let newStatus: BookStatus = isReadingNow ? .reading : .shelf
+        
         switch mode {
         case .create:
             let newBook = Book(
@@ -270,7 +275,7 @@ final class BookEditorViewModel {
                 totalPages: Int(totalPages) ?? 0,
                 coverImageData: coverImageData
             )
-            newBook.status = status
+            newBook.status = newStatus
             bookService.addBook(from: newBook)
             
         case .edit(let existingBook):
@@ -278,7 +283,7 @@ final class BookEditorViewModel {
             existingBook.author = author
             existingBook.totalPages = Int(totalPages) ?? 0
             existingBook.coverImageData = coverImageData
-            existingBook.status = status
+            existingBook.status = newStatus
         }
         
         return true

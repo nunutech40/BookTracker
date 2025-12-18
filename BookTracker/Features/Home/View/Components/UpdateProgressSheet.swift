@@ -10,29 +10,41 @@ struct UpdateProgressSheet: View {
     // MARK: - Properties
     let book: Book
     let maxPage: Int
-    var onSubmit: (Int) -> Void
+    var onSubmit: (Int) async -> Void
     
     // MARK: - State
     @State private var inputPage: String = ""
     @State private var showAlert = false
+    @State private var isSaving = false
     @Environment(\.dismiss) var dismiss
     @FocusState private var isFocused: Bool
     
     // MARK: - Main Body
     var body: some View {
         NavigationStack {
-            Form {
-                inputSection
-            }
-            .navigationTitle("Update Progress")
-            .navigationBarTitleDisplayMode(.inline)
-            .toolbar { toolbarContent }
-            .onAppear(perform: setupView)
-            .onChange(of: inputPage, perform: validateInput)
-            .alert("Invalid Page", isPresented: $showAlert) {
-                Button("OK") { }
-            } message: {
-                Text("Please enter a valid page number between \(book.currentPage) and \(maxPage).")
+            ZStack {
+                Form {
+                    inputSection
+                }
+                .navigationTitle("Update Progress")
+                .navigationBarTitleDisplayMode(.inline)
+                .toolbar { toolbarContent }
+                .onAppear(perform: setupView)
+                .onChange(of: inputPage, perform: validateInput)
+                .alert("Invalid Page", isPresented: $showAlert) {
+                    Button("OK") { }
+                } message: {
+                    Text("Please enter a valid page number between \(book.currentPage) and \(maxPage).")
+                }
+                .disabled(isSaving)
+                
+                if isSaving {
+                    ProgressView("Saving...")
+                        .progressViewStyle(.circular)
+                        .padding()
+                        .background(Color.white.opacity(0.8))
+                        .cornerRadius(10)
+                }
             }
         }
     }
@@ -64,11 +76,16 @@ private extension UpdateProgressSheet {
     var toolbarContent: some ToolbarContent {
         ToolbarItem(placement: .cancellationAction) {
             Button("Cancel") { dismiss() }
+                .disabled(isSaving)
         }
         
         ToolbarItem(placement: .confirmationAction) {
-            Button("Save", action: saveAction)
-                .disabled(inputPage.isEmpty)
+            Button("Save", action: {
+                Task {
+                    await saveAction()
+                }
+            })
+            .disabled(inputPage.isEmpty || isSaving)
         }
     }
     
@@ -100,12 +117,14 @@ private extension UpdateProgressSheet {
         }
     }
     
-    func saveAction() {
+    func saveAction() async {
         guard let page = Int(inputPage), page >= book.currentPage, page <= maxPage else {
             showAlert = true
             return
         }
-        onSubmit(page)
-        dismiss()
+        
+        isSaving = true
+        await onSubmit(page)
+        // Dismissal is handled by the parent view setting selectedBook to nil
     }
 }
