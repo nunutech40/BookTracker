@@ -23,6 +23,7 @@ struct UpdateProgressSheet: View {
     var body: some View {
         NavigationStack {
             ZStack {
+                // Main Form Content
                 Form {
                     inputSection
                 }
@@ -36,14 +37,27 @@ struct UpdateProgressSheet: View {
                 } message: {
                     Text("Please enter a valid page number between \(book.currentPage) and \(maxPage).")
                 }
-                .disabled(isSaving)
+                .disabled(isSaving) // Disable form while saving
                 
+                // Native Loading Overlay
                 if isSaving {
+                    // Use a system material for a native, blurred background
+                    // that adapts to light/dark mode automatically.
+                    Rectangle()
+                        .fill(.ultraThinMaterial)
+                        .ignoresSafeArea()
+                    
                     ProgressView("Saving...")
                         .progressViewStyle(.circular)
+                        .tint(.primary) // Ensure spinner color is visible in both themes
                         .padding()
-                        .background(Color.white.opacity(0.8))
-                        .cornerRadius(10)
+                        .background(
+                            // Add a thicker material background to the ProgressView itself
+                            // for better legibility.
+                            RoundedRectangle(cornerRadius: 15)
+                                .fill(.thickMaterial)
+                        )
+                        .shadow(radius: 10)
                 }
             }
         }
@@ -98,21 +112,15 @@ private extension UpdateProgressSheet {
     
     /// Validates the input in real-time.
     func validateInput(newValue: String) {
-        // 1. Filter for numbers only
         let filtered = newValue.filter { "0123456789".contains($0) }
         
-        // 2. Check if the filtered value is different
         if filtered != newValue {
             self.inputPage = filtered
         }
 
-        // 3. Check against maxPage
-        if let number = Int(filtered) {
-            if number > self.maxPage {
-                // Use DispatchQueue.main.async to avoid modifying state during a view update
-                DispatchQueue.main.async {
-                    self.inputPage = String(self.maxPage)
-                }
+        if let number = Int(filtered), number > self.maxPage {
+            DispatchQueue.main.async {
+                self.inputPage = String(self.maxPage)
             }
         }
     }
@@ -125,6 +133,6 @@ private extension UpdateProgressSheet {
         
         isSaving = true
         await onSubmit(page)
-        // Dismissal is handled by the parent view setting selectedBook to nil
+        // Dismissal is now handled by the parent view.
     }
 }
