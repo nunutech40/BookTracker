@@ -55,11 +55,11 @@ final class HomeViewModel {
     var showAddBookSheet: Bool = false
     
     // Dependencies
-    private var bookService: BookService
+    private var bookService: BookServiceProtocol
     
     // ALGORITMA LANGKAH 1 (Lanjutan): `init` hanya melakukan setup minimal.
     // Tidak ada pemanggilan `refreshData()` yang berat di sini.
-    init(bookService: BookService) {
+    init(bookService: BookServiceProtocol) {
         self.bookService = bookService
     }
     
