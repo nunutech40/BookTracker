@@ -15,9 +15,9 @@ final class ProfileViewModel {
     var heatmapData: [Date: Int] = [:]
     
     // Dependencies
-    private var bookService: BookService
+    private var bookService: BookServiceProtocol
     
-    init(bookService: BookService) {
+    init(bookService: BookServiceProtocol) {
         self.bookService = bookService
     }
     
