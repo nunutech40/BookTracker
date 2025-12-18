@@ -9,16 +9,33 @@ import SwiftUI
 import SwiftData
 import Charts
 
+/**
+ ## Peran HomeView dalam Arsitektur Loading Asinkron
+ 
+ `HomeView` bertanggung jawab untuk menampilkan UI berdasarkan state yang dikelola oleh `HomeViewModel`. View ini dirancang untuk menjadi "bodoh" (_dumb_), artinya ia tidak melakukan logika bisnis atau pemuatan data secara langsung.
+ 
+ **Algoritma dari Sisi View:**
+ 1.  **ALGORITMA LANGKAH 3: Menampilkan UI Loading.**
+     Saat `HomeView` pertama kali muncul, ia akan memeriksa `viewModel.isLoading`. Jika `true`, `View` akan menampilkan `ProgressView`. Ini adalah implementasi dari _splash screen_ atau layar pemuatan data awal.
+ 
+ 2.  **ALGORITMA LANGKAH 5: Menampilkan Konten Utama.**
+     `HomeViewModel` akan mengubah `isLoading` menjadi `false` setelah data siap. Karena `viewModel` adalah `@Observable`, perubahan ini secara otomatis akan membuat `HomeView` me-render ulang (_re-render_). `ZStack` kemudian akan menampilkan `ScrollView` yang berisi konten utama.
+ 
+ 3.  **Pemuatan Data Lanjutan (Refresh).**
+     - **Saat App Muncul:** Pemuatan data awal tidak lagi dipicu oleh `.onAppear` di `HomeView`. Sebaliknya, itu dipicu saat aplikasi pertama kali diluncurkan di `BookTrackerApp.swift`. Ini memastikan data mulai dimuat bahkan sebelum `HomeView` muncul, membuat transisi lebih mulus.
+     - **Setelah Menambah Buku:** `onDisappear` pada sheet `BookEditorView` digunakan untuk memicu `refreshData()`. Ini memastikan bahwa daftar buku dan statistik di `HomeView` selalu yang terbaru setelah pengguna menambahkan entri baru.
+ */
 struct HomeView: View {
     @Environment(\.modelContext) private var context
     @State var viewModel: HomeViewModel
     
-    // 2. Kita tarik semua buku, urutkan berdasarkan interaksi terakhir.
+    // Data buku diambil menggunakan @Query, yang secara otomatis akan diperbarui oleh SwiftData
+    // ketika ada perubahan di database.
     @Query(sort: \Book.lastInteraction, order: .reverse)
     private var allBooks: [Book]
     
-    // 3. Kita filter manual di sini (Computed Property).
-    // Ini 100% aman dan gak bakal error Predicate lagi.
+    // Computed property untuk memfilter buku yang sedang dibaca.
+    // Ini lebih efisien daripada menjalankan query baru.
     var activeBooks: [Book] {
         allBooks.filter { $0.status == .reading }
     }
@@ -26,15 +43,15 @@ struct HomeView: View {
     var body: some View {
         NavigationStack {
             ZStack {
+                // ALGORITMA LANGKAH 3 & 5: Pengkondisian Tampilan
+                // Jika `isLoading` true, tampilkan spinner.
+                // Jika false, tampilkan konten utama.
                 if viewModel.isLoading {
-                    ProgressView()
+                    ProgressView("Loading Your Library...")
                 } else {
                     ScrollView {
                         VStack(spacing: 24) {
-                            // 1. Hero Section (Streak)
                             heroStatsSection
-                            
-                            // 2. Reading List
                             readingListSection
                         }
                         .padding()
@@ -47,11 +64,12 @@ struct HomeView: View {
             .sheet(item: $viewModel.selectedBook) { book in
                 updateProgressSheet(for: book)
             }
-            // Sheet Add Book
+            // Sheet untuk menambah buku baru
             .sheet(isPresented: $viewModel.showAddBookSheet) {
                 NavigationStack {
                     BookEditorView(viewModel: Injection.shared.provideBookEditorViewModel())
                 }
+                // ALGORITMA LANGKAH LANJUTAN: Refresh data setelah ada kemungkinan perubahan.
                 .onDisappear {
                     Task {
                         await viewModel.refreshData()
@@ -64,18 +82,19 @@ struct HomeView: View {
 
 private extension HomeView {
     
-    // MARK: - 1. Hero Stats (Clean Version)
+    // MARK: - Subviews
+    
     var heroStatsSection: some View {
         HStack {
             if viewModel.currentStreak > 0 {
-                activeStreakContent // Mode: Semangat Membara 🔥
+                activeStreakContent
             } else {
-                emptyStreakContent  // Mode: Ayo Mulai 📖
+                emptyStreakContent
             }
             
-            Spacer() // Dorong text ke kiri
+            Spacer()
         }
-        .padding(24) // Padding agak gede biar lega
+        .padding(24)
         .background(
             LinearGradient(
                 colors: [Color.blue, Color.purple],
@@ -87,12 +106,8 @@ private extension HomeView {
         .shadow(color: .blue.opacity(0.3), radius: 10, x: 0, y: 5)
     }
     
-    // MARK: - Content Modes
-    
-    // Mode A: User Rajin (Validasi & Pujian)
     var activeStreakContent: some View {
         VStack(alignment: .leading, spacing: 8) {
-            // Label atas
             HStack(spacing: 6) {
                 Image(systemName: "flame.fill")
                     .foregroundStyle(.yellow)
@@ -104,29 +119,23 @@ private extension HomeView {
                     .foregroundStyle(.white.opacity(0.7))
             }
             
-            // Angka Besar
-            // Logic Grammar: 1 Day vs 2 Days
             let dayText = viewModel.currentStreak == 1 ? "Day" : "Days"
-            
             Text("\(viewModel.currentStreak) \(dayText)")
                 .font(.system(size: 40, weight: .bold, design: .rounded))
                 .foregroundStyle(.white)
             
-            // Copywriting Penyemangat
             Text("You're on fire! Keep the momentum going.")
                 .font(.subheadline)
                 .fontWeight(.medium)
                 .foregroundStyle(.white.opacity(0.9))
-                .fixedSize(horizontal: false, vertical: true) // Biar text wrap kalau kepanjangan
+                .fixedSize(horizontal: false, vertical: true)
         }
     }
     
-    // Mode B: Belum Mulai (Ajakan Halus)
     var emptyStreakContent: some View {
         VStack(alignment: .leading, spacing: 8) {
-            // Label atas
             HStack(spacing: 6) {
-                Image(systemName: "star.fill") // Ganti bintang biar beda feel
+                Image(systemName: "star.fill")
                     .foregroundStyle(.yellow)
                     .font(.caption.bold())
                 
@@ -136,12 +145,10 @@ private extension HomeView {
                     .foregroundStyle(.white.opacity(0.7))
             }
             
-            // Angka Redup
             Text("0 Days")
                 .font(.system(size: 40, weight: .bold, design: .rounded))
-                .foregroundStyle(.white.opacity(0.4)) // Dibuat redup biar user "gatal" pengen ubah
+                .foregroundStyle(.white.opacity(0.4))
             
-            // Copywriting Actionable
             Text("Read just 1 page today to start your streak.")
                 .font(.subheadline)
                 .fontWeight(.medium)
@@ -150,7 +157,6 @@ private extension HomeView {
         }
     }
     
-    // MARK: - 2. Reading List
     var readingListSection: some View {
         VStack(alignment: .leading, spacing: 16) {
             Text("Reading Now")
@@ -158,7 +164,6 @@ private extension HomeView {
                 .bold()
                 .padding(.horizontal, 4)
             
-            // Logic UI tetep sama, pake 'activeBooks' yang udah difilter di atas
             if activeBooks.isEmpty {
                 emptyStateView
             } else {
@@ -178,7 +183,7 @@ private extension HomeView {
                 viewModel.selectedBook = book
             },
             onTapCamera: {
-                // TODO: Open Camera
+                // TODO: Implement camera functionality
             }
         )
     }
