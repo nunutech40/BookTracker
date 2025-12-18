@@ -53,7 +53,7 @@ struct GoogleBookImageLinks: Codable {
  2. **Deserialization:** Mengubah JSON response menjadi object Swift (`GoogleBookItem`).
  3. **Image Data Conversion:** Mengunduh gambar dari URL dan mengubahnya menjadi binary `Data` (Blob) untuk disimpan offline.
  */
-final class GoogleBooksService {
+final class GoogleBooksService: GoogleBooksServiceProtocol {
     
     // MARK: - Search Feature
     

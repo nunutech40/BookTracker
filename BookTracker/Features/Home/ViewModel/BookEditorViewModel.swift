@@ -52,8 +52,8 @@ final class BookEditorViewModel {
         case edit(Book)
     }
     
-    private var googleBookService: GoogleBooksService
-    private var bookService: BookService
+    private var googleBookService: GoogleBooksServiceProtocol
+    private var bookService: BookServiceProtocol
     
     let mode: EditorMode
     
@@ -205,7 +205,7 @@ final class BookEditorViewModel {
     var searchError: String?
     
     // MARK: - Init
-    init(googleBookService: GoogleBooksService, bookService: BookService, book: Book? = nil) {
+    init(googleBookService: GoogleBooksServiceProtocol, bookService: BookServiceProtocol, book: Book? = nil) {
         self.googleBookService = googleBookService
         self.bookService = bookService
         

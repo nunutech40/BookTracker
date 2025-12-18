@@ -20,9 +20,17 @@ import Foundation
  - **`updatedBook`, `updatedNewPage`:** Properti untuk memverifikasi argumen yang dikirim ke metode `updateProgress`.
  */
 public class MockBookService: BookServiceProtocol {
+    public func addBook(from apiBook: BookTracker.GoogleBookItem, coverData: Data?) {
+        addBookFromApiCalled = true
+    }
+    
     public var heatmapData: [Date: Int] = [:]
     public var fetchReadingHeatmapCalled = false
     public var updateProgressCalled = false
+    public var addBookCalled = false
+    public var deleteBookCalled = false
+    public var finishBookCalled = false
+    public var addBookFromApiCalled = false
     
     public var updatedBook: Book?
     public var updatedNewPage: Int?
@@ -43,5 +51,17 @@ public class MockBookService: BookServiceProtocol {
         // yang akan mempengaruhi perhitungan streak pada panggilan `refreshData` berikutnya.
         let today = Calendar.current.startOfDay(for: Date())
         heatmapData[today, default: 0] += 1
+    }
+    
+    public func addBook(from book: Book) {
+        addBookCalled = true
+    }
+    
+    public func deleteBook(_ book: Book) {
+        deleteBookCalled = true
+    }
+    
+    public func finishBook(_ book: Book) {
+        finishBookCalled = true
     }
 }

@@ -10,4 +10,8 @@ import Foundation
 protocol BookServiceProtocol {
     func fetchReadingHeatmap() -> [Date: Int]
     func updateProgress(for book: Book, newPage: Int)
+    func addBook(from book: Book)
+    func deleteBook(_ book: Book)
+    func finishBook(_ book: Book)
+    func addBook(from apiBook: GoogleBookItem, coverData: Data?)
 }
