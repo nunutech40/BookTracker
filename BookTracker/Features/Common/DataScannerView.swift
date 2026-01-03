@@ -1,4 +1,3 @@
-
 import SwiftUI
 import VisionKit
 import Vision
@@ -6,29 +5,41 @@ import Vision
 struct DataScannerView: UIViewControllerRepresentable {
     @Binding var recognizedText: String
     @Environment(\.dismiss) var dismiss
+    @State private var showNotFound = false
     
     func makeUIViewController(context: Context) -> DataScannerViewController {
         let viewController = DataScannerViewController(
             recognizedDataTypes: [.text()],
             qualityLevel: .balanced,
             recognizesMultipleItems: true,
-            isHighFrameRateTrackingEnabled: false,
+            isHighFrameRateTrackingEnabled: true,
             isPinchToZoomEnabled: true,
             isGuidanceEnabled: true,
             isHighlightingEnabled: true
         )
         
         viewController.delegate = context.coordinator
+        context.coordinator.viewController = viewController
         
-        // Start scanning
+        // Add the overlay
+        let overlay = UIHostingController(rootView: ScannerGuidanceOverlayView(
+            onCancel: {
+                dismiss()
+            },
+            showNotFound: $showNotFound
+        ))
+        overlay.view.backgroundColor = .clear
+        overlay.view.frame = viewController.view.bounds
+        overlay.view.autoresizingMask = [.flexibleWidth, .flexibleHeight]
+        viewController.addChild(overlay)
+        viewController.view.addSubview(overlay.view)
+        
         try? viewController.startScanning()
         
         return viewController
     }
     
-    func updateUIViewController(_ uiViewController: DataScannerViewController, context: Context) {
-        // Not needed for this use case
-    }
+    func updateUIViewController(_ uiViewController: DataScannerViewController, context: Context) {}
     
     func makeCoordinator() -> Coordinator {
         Coordinator(self)
@@ -36,41 +47,34 @@ struct DataScannerView: UIViewControllerRepresentable {
     
     class Coordinator: NSObject, DataScannerViewControllerDelegate {
         var parent: DataScannerView
+        var viewController: DataScannerViewController?
         private var recognizedItems: [RecognizedItem] = []
-        
+        private var debounceTimer: Timer?
+        private let feedbackGenerator = UINotificationFeedbackGenerator()
+
         init(_ parent: DataScannerView) {
             self.parent = parent
         }
         
-        func dataScanner(_ dataScanner: DataScannerViewController, didTapOn item: RecognizedItem) {
-            switch item {
-            case .text(let text):
-                // Process the tapped text item
-                processRecognizedText(text.transcript)
-            default:
-                break
-            }
-        }
-        
         func dataScanner(_ dataScanner: DataScannerViewController, didAdd addedItems: [RecognizedItem], allItems: [RecognizedItem]) {
-            // Keep track of all recognized items
             self.recognizedItems = allItems
-            processAllRecognizedItems()
+            debounceTimer?.invalidate()
+            debounceTimer = Timer.scheduledTimer(withTimeInterval: 0.5, repeats: false) { [weak self] _ in
+                self?.processAllRecognizedItems()
+            }
         }
         
         private func processAllRecognizedItems() {
-            guard let mostLikelyPageNumber = findPageNumber(from: recognizedItems) else {
-                return
-            }
-            parent.recognizedText = mostLikelyPageNumber
-            parent.dismiss()
-        }
-
-        private func processRecognizedText(_ text: String) {
-            // Simple numeric filter
-            if let _ = Int(text) {
-                parent.recognizedText = text
+            if let mostLikelyPageNumber = findPageNumber(from: recognizedItems) {
+                parent.recognizedText = mostLikelyPageNumber
+                feedbackGenerator.notificationOccurred(.success)
                 parent.dismiss()
+            } else {
+                // If no number is found, trigger feedback and keep scanning
+                feedbackGenerator.notificationOccurred(.error)
+                withAnimation {
+                    parent.showNotFound = true
+                }
             }
         }
         
@@ -82,26 +86,19 @@ struct DataScannerView: UIViewControllerRepresentable {
                 
                 let transcript = text.transcript.trimmingCharacters(in: .whitespacesAndNewlines)
                 
-                // Kriteria 1: Cuma Angka & Panjang Karakter
                 guard let _ = Int(transcript), (1...4).contains(transcript.count) else { continue }
 
-                // Kriteria 2: Posisi (Bawah atau Atas)
                 let bounds = text.bounds
                 let centerY = (bounds.topLeft.y + bounds.bottomLeft.y) / 2.0
-                let isAtTop = centerY < 0.1
-                let isAtBottom = centerY > 0.9
+                let isAtTop = centerY < 0.20 // Widen the area a bit more
+                let isAtBottom = centerY > 0.80 // Widen the area a bit more
 
                 guard isAtTop || isAtBottom else { continue }
 
-                // Kriteria 3: Jauh dari blok teks lain (simplifikasi)
-                // Kita hitung "confidence" berdasarkan seberapa jauh dari tengah (vertikal)
-                let distanceFromCenter = abs(0.5 - centerY)
-                let confidence = distanceFromCenter // Semakin jauh dari tengah, semakin tinggi confidence
-
+                let confidence = abs(0.5 - centerY)
                 potentialPageNumbers.append((transcript, confidence))
             }
 
-            // Urutkan berdasarkan confidence dan ambil yang tertinggi
             return potentialPageNumbers.sorted { $0.confidence > $1.confidence }.first?.number
         }
     }
