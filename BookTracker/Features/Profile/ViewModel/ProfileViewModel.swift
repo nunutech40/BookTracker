@@ -24,4 +24,8 @@ final class ProfileViewModel {
     func loadHeatmapData() {
         self.heatmapData = bookService.fetchReadingHeatmap()
     }
+    
+    func getHeatmapData(forLastMonths months: Int) -> [Date: Int] {
+        return bookService.fetchReadingHeatmap(forLastMonths: months)
+    }
 }

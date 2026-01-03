@@ -9,6 +9,7 @@ import Foundation
 
 protocol BookServiceProtocol {
     func fetchReadingHeatmap() -> [Date: Int]
+    func fetchReadingHeatmap(forLastMonths months: Int) -> [Date: Int]
     func updateProgress(for book: Book, newPage: Int)
     func addBook(from book: Book)
     func deleteBook(_ book: Book)

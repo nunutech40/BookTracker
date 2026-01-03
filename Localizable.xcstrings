@@ -417,6 +417,9 @@
         }
       }
     },
+    "BOOKTRACKER" : {
+
+    },
     "BookTracker %@" : {
 
     },
@@ -817,6 +820,9 @@
         }
       }
     },
+    "Get BookTracker on the App Store" : {
+
+    },
     "Google Books" : {
       "extractionState" : "manual",
       "localizations" : {
@@ -1057,6 +1063,9 @@
           }
         }
       }
+    },
+    "My Reading Journey" : {
+
     },
     "No Active Books" : {
       "extractionState" : "manual",
@@ -1455,6 +1464,9 @@
         }
       }
     },
+    "Share" : {
+
+    },
     "Shelf" : {
       "extractionState" : "manual",
       "localizations" : {
@@ -1763,6 +1775,9 @@
           }
         }
       }
+    },
+    "Track your reading habits!" : {
+
     },
     "Traktir di Buy Me a Coffee" : {
       "extractionState" : "manual",

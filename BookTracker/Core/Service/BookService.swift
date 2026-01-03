@@ -130,6 +130,37 @@ final class BookService: BookServiceProtocol {
             sessions.reduce(0) { $0 + $1.pagesReadCount }
         }
     }
+
+    func fetchReadingHeatmap(forLastMonths months: Int) -> [Date: Int] {
+        print("🖨️ [BookService] Fetching Heatmap Data for last \(months) months...")
+        
+        let calendar = Calendar.current
+        let today = calendar.startOfDay(for: Date())
+        guard let startDate = calendar.date(byAdding: .month, value: -months, to: today) else {
+            return [:]
+        }
+
+        let predicate = #Predicate<ReadingSession> { session in
+            session.date >= startDate
+        }
+        
+        var descriptor = FetchDescriptor<ReadingSession>(predicate: predicate)
+        
+        guard let sessions = try? modelContext.fetch(descriptor) else {
+            print("   ❌ Fetch Failed")
+            return [:]
+        }
+        
+        print("   Found \(sessions.count) reading sessions in the last \(months) months.")
+        
+        let grouped = Dictionary(grouping: sessions) { session in
+            calendar.startOfDay(for: session.date)
+        }
+        
+        return grouped.mapValues { sessions in
+            sessions.reduce(0) { $0 + $1.pagesReadCount }
+        }
+    }
     
     // MARK: - Feature: Add Book from API
     

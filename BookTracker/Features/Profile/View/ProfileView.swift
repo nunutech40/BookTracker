@@ -11,6 +11,11 @@ import SwiftData
 struct ProfileView: View {
     @State var viewModel: ProfileViewModel
     
+    // State for Share Sheet
+    @State private var showShareSheet = false
+    @State private var shareableImage: UIImage?
+    @State private var shareCard: ShareCardView?
+
     var body: some View {
         NavigationStack {
             List {
@@ -76,8 +81,33 @@ struct ProfileView: View {
                 }
             }
             .navigationTitle(String(localized: "Profile"))
+            .toolbar {
+                ToolbarItem(placement: .topBarTrailing) {
+                    Button(action: {
+                        renderShareCard()
+                    }) {
+                        Label("Share", systemImage: "square.and.arrow.up")
+                    }
+                }
+            }
+            .sheet(isPresented: $showShareSheet) {
+                if let image = shareableImage {
+                    ActivityView(activityItems: [image, "Check out my reading progress on BookTracker!"])
+                }
+            }
+            .background(
+                Group {
+                    if let shareCard = shareCard {
+                        shareCard
+                            .opacity(0)
+                            .frame(width: 0, height: 0)
+                    }
+                }
+            )
             .onAppear {
                 viewModel.loadHeatmapData()
+                let data = viewModel.getHeatmapData(forLastMonths: 6)
+                self.shareCard = ShareCardView(heatmapData: data)
             }
         }
     }
@@ -86,7 +116,18 @@ struct ProfileView: View {
         viewModel.heatmapData.values.reduce(0, +)
     }
     
-
+    @MainActor
+    private func renderShareCard() {
+        if let shareCard = shareCard {
+            let renderer = ImageRenderer(content: shareCard)
+            renderer.scale = UIScreen.main.scale
+            
+            if let image = renderer.uiImage {
+                self.shareableImage = image
+                self.showShareSheet = true
+            }
+        }
+    }
 }
 
 // MARK: - COMPONENT: INTERACTIVE HEATMAP
@@ -195,4 +236,3 @@ struct GitHubHeatmapView: View {
         return Color.green                                    // Gila Baca
     }
 }
-
