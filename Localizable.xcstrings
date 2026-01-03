@@ -97,13 +97,13 @@
         "en" : {
           "stringUnit" : {
             "state" : "translated",
-            "value" : "A simple app to track your daily book reading progress. Made with love using SwiftUI & SwiftData."
+            "value" : "Your personal companion for tracking reading progress, building habits, and falling in love with books all over again."
           }
         },
         "id" : {
           "stringUnit" : {
             "state" : "translated",
-            "value" : "App simpel buat tracking progres baca. Dibuat pake cinta with SwiftUI & SwiftData."
+            "value" : "Teman pribadimu untuk mencatat progres baca, membangun kebiasaan, dan jatuh cinta lagi pada buku."
           }
         }
       }
