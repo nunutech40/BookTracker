@@ -25,7 +25,7 @@ struct AboutView: View {
                 
                 Divider()
                 
-                Text("Aplikasi simpel untuk mencatat progres baca buku harianmu. Dibuat dengan cinta menggunakan SwiftUI & SwiftData.")
+                Text("A simple app to track your daily book reading progress. Made with love using SwiftUI & SwiftData.")
                     .multilineTextAlignment(.center)
                     .padding()
                 
@@ -33,7 +33,7 @@ struct AboutView: View {
             }
             .padding()
         }
-        .navigationTitle("About")
+        .navigationTitle(String(localized: "About"))
         .navigationBarTitleDisplayMode(.inline)
     }
 }

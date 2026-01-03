@@ -14,20 +14,20 @@ struct ProfileView: View {
     var body: some View {
         NavigationStack {
             List {
-                Section(header: Text("Reading Activity (Last 12 Months)")) {
+                Section(header: Text(String(localized: "Reading Activity (Last 12 Months)"))) {
                     VStack(alignment: .leading, spacing: 16) {
                         
                         // Header Stats
                         HStack {
                             VStack(alignment: .leading) {
-                                Text("Total Pages")
+                                Text(String(localized: "Total Pages"))
                                     .font(.caption).foregroundStyle(.secondary)
                                 Text("\(totalPagesRead())")
                                     .font(.headline).bold()
                             }
                             Spacer()
                             VStack(alignment: .trailing) {
-                                Text("Active Days")
+                                Text(String(localized: "Active Days"))
                                     .font(.caption).foregroundStyle(.secondary)
                                 Text("\(viewModel.heatmapData.count)")
                                     .font(.headline).bold()
@@ -40,12 +40,12 @@ struct ProfileView: View {
                         
                         // Legend
                         HStack {
-                            Text("Less")
+                            Text(String(localized: "Less"))
                             RoundedRectangle(cornerRadius: 2).fill(Color.gray.opacity(0.2)).frame(width: 12, height: 12)
                             RoundedRectangle(cornerRadius: 2).fill(Color.green.opacity(0.4)).frame(width: 12, height: 12)
                             RoundedRectangle(cornerRadius: 2).fill(Color.green.opacity(0.7)).frame(width: 12, height: 12)
                             RoundedRectangle(cornerRadius: 2).fill(Color.green).frame(width: 12, height: 12)
-                            Text("More")
+                            Text(String(localized: "More"))
                         }
                         .font(.caption2)
                         .foregroundStyle(.secondary)
@@ -55,27 +55,27 @@ struct ProfileView: View {
                 }
                 
                 // MARK: 2. MY COLLECTIONS
-                Section(header: Text("Collections")) {
+                Section(header: Text(String(localized: "Collections"))) {
                     NavigationLink(destination: HistoryView()) {
-                        Label("Finished Books", systemImage: "trophy.fill")
+                        Label(String(localized: "Finished Books"), systemImage: "trophy.fill")
                             .foregroundStyle(.orange)
                     }
                 }
                 
                 // MARK: 3. APP INFO
-                Section(header: Text("App Info")) {
+                Section(header: Text(String(localized: "App Info"))) {
                     NavigationLink(destination: AboutView()) {
-                        Label("About BookTracker", systemImage: "info.circle.fill")
+                        Label(String(localized: "About BookTracker"), systemImage: "info.circle.fill")
                             .foregroundStyle(.blue)
                     }
                     
                     Link(destination: URL(string: "https://saweria.co/nununugraha")!) {
-                        Label("Support Developer (Donate)", systemImage: "cup.and.saucer.fill")
+                        Label(String(localized: "Support Developer (Donate)"), systemImage: "cup.and.saucer.fill")
                             .foregroundStyle(.pink)
                     }
                 }
             }
-            .navigationTitle("Profile")
+            .navigationTitle(String(localized: "Profile"))
             .onAppear {
                 viewModel.loadHeatmapData()
             }
@@ -162,12 +162,12 @@ struct GitHubHeatmapView: View {
                         .foregroundStyle(.secondary)
                     
                     if let pages = selectedPages, pages > 0 {
-                        Text("\(pages) pages read")
+                        Text(String(format: NSLocalizedString("%lld pages read", comment: ""), pages))
                             .font(.caption)
                             .bold()
                             .foregroundStyle(.primary)
                     } else {
-                        Text("No reading activity")
+                        Text(String(localized: "No reading activity"))
                             .font(.caption)
                             .foregroundStyle(.secondary)
                     }

@@ -31,7 +31,7 @@ struct BookDetailView: View {
                         .bold()
                         .multilineTextAlignment(.center)
                     
-                    Text("\(book.totalPages) Pages")
+                    Text(String(format: NSLocalizedString("%lld Pages", comment: ""), book.totalPages))
                         .foregroundStyle(.secondary)
                 }
                 
@@ -59,7 +59,7 @@ struct BookDetailView: View {
                 book.lastInteraction = Date()
                 dismiss() // Balik ke list
             }) {
-                Label("Start Reading", systemImage: "book.fill")
+                Label(String(localized: "Start Reading"), systemImage: "book.fill")
                     .frame(maxWidth: .infinity)
             }
             .buttonStyle(.borderedProminent)
@@ -71,7 +71,7 @@ struct BookDetailView: View {
                 book.currentPage = book.totalPages // Auto max pages
                 dismiss()
             }) {
-                Label("Mark as Finished", systemImage: "checkmark.circle.fill")
+                Label(String(localized: "Mark as Finished"), systemImage: "checkmark.circle.fill")
                     .frame(maxWidth: .infinity)
             }
             .buttonStyle(.bordered)
@@ -85,7 +85,7 @@ struct BookDetailView: View {
                 book.lastInteraction = Date()
                 dismiss()
             }) {
-                Label("Read Again", systemImage: "arrow.clockwise")
+                Label(String(localized: "Read Again"), systemImage: "arrow.clockwise")
                     .frame(maxWidth: .infinity)
             }
             .buttonStyle(.bordered)

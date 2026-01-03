@@ -6,6 +6,10 @@
 	objectVersion = 77;
 	objects = {
 
+/* Begin PBXBuildFile section */
+		0D02E9A35CA472971ACB1D97 /* Localizable.xcstrings in Resources */ = {isa = PBXBuildFile; fileRef = 8789A5E1B327273C47BB0197 /* Localizable.xcstrings */; };
+/* End PBXBuildFile section */
+
 /* Begin PBXContainerItemProxy section */
 		A0FC34522EE5243600868161 /* PBXContainerItemProxy */ = {
 			isa = PBXContainerItemProxy;
@@ -24,6 +28,7 @@
 /* End PBXContainerItemProxy section */
 
 /* Begin PBXFileReference section */
+		8789A5E1B327273C47BB0197 /* Localizable.xcstrings */ = {isa = PBXFileReference; includeInIndex = 1; path = Localizable.xcstrings; sourceTree = "<group>"; };
 		A0FC34412EE5243400868161 /* BookTracker.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = BookTracker.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		A0FC34512EE5243600868161 /* BookTrackerTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = BookTrackerTests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
 		A0FC345B2EE5243600868161 /* BookTrackerUITests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = BookTrackerUITests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
@@ -32,16 +37,22 @@
 /* Begin PBXFileSystemSynchronizedRootGroup section */
 		A0FC34432EE5243400868161 /* BookTracker */ = {
 			isa = PBXFileSystemSynchronizedRootGroup;
+			exceptions = (
+			);
 			path = BookTracker;
 			sourceTree = "<group>";
 		};
 		A0FC34542EE5243600868161 /* BookTrackerTests */ = {
 			isa = PBXFileSystemSynchronizedRootGroup;
+			exceptions = (
+			);
 			path = BookTrackerTests;
 			sourceTree = "<group>";
 		};
 		A0FC345E2EE5243600868161 /* BookTrackerUITests */ = {
 			isa = PBXFileSystemSynchronizedRootGroup;
+			exceptions = (
+			);
 			path = BookTrackerUITests;
 			sourceTree = "<group>";
 		};
@@ -79,6 +90,7 @@
 				A0FC34542EE5243600868161 /* BookTrackerTests */,
 				A0FC345E2EE5243600868161 /* BookTrackerUITests */,
 				A0FC34422EE5243400868161 /* Products */,
+				8789A5E1B327273C47BB0197 /* Localizable.xcstrings */,
 			);
 			sourceTree = "<group>";
 		};
@@ -111,8 +123,6 @@
 				A0FC34432EE5243400868161 /* BookTracker */,
 			);
 			name = BookTracker;
-			packageProductDependencies = (
-			);
 			productName = BookTracker;
 			productReference = A0FC34412EE5243400868161 /* BookTracker.app */;
 			productType = "com.apple.product-type.application";
@@ -134,8 +144,6 @@
 				A0FC34542EE5243600868161 /* BookTrackerTests */,
 			);
 			name = BookTrackerTests;
-			packageProductDependencies = (
-			);
 			productName = BookTrackerTests;
 			productReference = A0FC34512EE5243600868161 /* BookTrackerTests.xctest */;
 			productType = "com.apple.product-type.bundle.unit-test";
@@ -157,8 +165,6 @@
 				A0FC345E2EE5243600868161 /* BookTrackerUITests */,
 			);
 			name = BookTrackerUITests;
-			packageProductDependencies = (
-			);
 			productName = BookTrackerUITests;
 			productReference = A0FC345B2EE5243600868161 /* BookTrackerUITests.xctest */;
 			productType = "com.apple.product-type.bundle.ui-testing";
@@ -192,6 +198,7 @@
 			hasScannedForEncodings = 0;
 			knownRegions = (
 				en,
+				id,
 				Base,
 			);
 			mainGroup = A0FC34382EE5243400868161;
@@ -213,6 +220,7 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				0D02E9A35CA472971ACB1D97 /* Localizable.xcstrings in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

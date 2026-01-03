@@ -22,8 +22,8 @@ struct LibraryView: View {
             VStack(spacing: 0) {
                 // 1. Filter Tab
                 Picker("Filter", selection: $selectedTab) {
-                    Text("To Read (Shelf)").tag(BookStatus.shelf)
-                    Text("Reading Now").tag(BookStatus.reading)
+                    Text(String(localized: "To Read (Shelf)")).tag(BookStatus.shelf)
+                    Text(String(localized: "Reading Now")).tag(BookStatus.reading)
                 }
                 .pickerStyle(.segmented)
                 .padding()
@@ -41,13 +41,13 @@ struct LibraryView: View {
                     .listStyle(.plain)
                 }
             }
-            .navigationTitle("My Library")
+            .navigationTitle(String(localized: "My Library"))
             // Tombol ke History
             .toolbar {
                 ToolbarItem(placement: .topBarTrailing) {
-//                    NavigationLink(destination: HistoryView()) {
-//                        Label("History", systemImage: "clock.arrow.circlepath")
-//                    }
+                    NavigationLink(destination: HistoryView()) {
+                        Label(String(localized: "History"), systemImage: "clock.arrow.circlepath")
+                    }
                 }
             }
         }
@@ -70,18 +70,21 @@ struct LibraryView: View {
         }
         .swipeActions(edge: .leading) {
             if book.status == .shelf {
-                Button("Read") { moveToReading(book) }.tint(.blue)
+                Button(String(localized: "Read")) { moveToReading(book) }.tint(.blue)
             } else {
-                Button("Shelf") { moveToShelf(book) }.tint(.orange)
+                Button(String(localized: "Shelf")) { moveToShelf(book) }.tint(.orange)
             }
         }
     }
     
     var emptyStateView: some View {
-        ContentUnavailableView(
-            selectedTab == .shelf ? "Shelf Empty" : "No Active Reading",
+        let title = selectedTab == .shelf ? String(localized: "Shelf Empty") : String(localized: "No Active Reading")
+        let description = selectedTab == .shelf ? String(localized: "Add new books to your queue.") : String(localized: "Start reading books from your shelf.")
+        
+        return ContentUnavailableView(
+            title,
             systemImage: selectedTab == .shelf ? "books.vertical" : "book.closed",
-            description: Text(selectedTab == .shelf ? "Add new books to your queue." : "Start reading books from your shelf.")
+            description: Text(description)
         )
     }
     

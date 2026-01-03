@@ -28,14 +28,14 @@ struct SearchResultRow: View {
                 Text(item.volumeInfo.title)
                     .font(.headline)
                     .lineLimit(1)
-                Text(item.volumeInfo.authors?.first ?? "Unknown")
+                Text(item.volumeInfo.authors?.first ?? String(localized: "Unknown"))
                     .font(.caption)
                     .foregroundStyle(.secondary)
             }
             
             Spacer()
             
-            Button("Select", action: onSelect)
+            Button(String(localized: "Select"), action: onSelect)
                 .buttonStyle(.bordered)
                 .font(.caption)
         }

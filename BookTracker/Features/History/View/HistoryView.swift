@@ -23,9 +23,9 @@ struct HistoryView: View {
         Group {
             if finishedBooks.isEmpty {
                 ContentUnavailableView(
-                    "No Finished Books",
+                    String(localized: "No Finished Books"),
                     systemImage: "trophy",
-                    description: Text("Finish a book to see it here.")
+                    description: Text(String(localized: "Finish a book to see it here."))
                 )
             } else {
                 List {
@@ -36,13 +36,13 @@ struct HistoryView: View {
                         }
                         // Tetep bisa dihapus kalau mau
                         .swipeActions(edge: .trailing) {
-                            Button("Delete", systemImage: "trash", role: .destructive) {
+                            Button(String(localized: "Delete"), systemImage: "trash", role: .destructive) {
                                 context.delete(book)
                             }
                         }
                         // Bisa baca ulang (Pindah ke Reading)
                         .swipeActions(edge: .leading) {
-                            Button("Read Again", systemImage: "arrow.clockwise") {
+                            Button(String(localized: "Read Again"), systemImage: "arrow.clockwise") {
                                 moveToReading(book)
                             }
                             .tint(.blue)
@@ -52,7 +52,7 @@ struct HistoryView: View {
                 .listStyle(.plain)
             }
         }
-        .navigationTitle("Finished Books")
+        .navigationTitle(String(localized: "Finished Books"))
     }
     
     // MARK: - Actions

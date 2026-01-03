@@ -15,11 +15,11 @@ struct GoogleBooksSearchSheet: View {
         NavigationStack {
             Group {
                 if viewModel.isSearching {
-                    ProgressView("Searching...")
+                    ProgressView(String(localized: "Searching..."))
                 } else if let error = viewModel.searchError {
-                    ContentUnavailableView("Error", systemImage: "exclamationmark.triangle", description: Text(error))
+                    ContentUnavailableView(String(localized: "Error"), systemImage: "exclamationmark.triangle", description: Text(error))
                 } else if viewModel.searchResults.isEmpty {
-                    ContentUnavailableView("Search Books", systemImage: "magnifyingglass", description: Text("Enter title or author"))
+                    ContentUnavailableView(String(localized: "Search Books"), systemImage: "magnifyingglass", description: Text(String(localized: "Enter title or author")))
                 } else {
                     List(viewModel.searchResults) { item in
                         SearchResultRow(item: item) {
@@ -32,14 +32,14 @@ struct GoogleBooksSearchSheet: View {
                     }
                 }
             }
-            .navigationTitle("Google Books")
+            .navigationTitle(String(localized: "Google Books"))
             .searchable(text: $viewModel.query)
             .onSubmit(of: .search) {
                 Task { await viewModel.searchBooks() }
             }
             .toolbar {
                 ToolbarItem(placement: .cancellationAction) {
-                    Button("Close") { viewModel.showSearchSheet = false }
+                    Button(String(localized: "Close")) { viewModel.showSearchSheet = false }
                 }
             }
         }

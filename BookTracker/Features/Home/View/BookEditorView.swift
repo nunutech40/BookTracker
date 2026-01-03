@@ -42,19 +42,19 @@ struct BookEditorView: View {
             .listRowBackground(Color.clear)
             
             // 3. Metadata with Validation
-            Section(header: Text("Book Info")) {
-                TextField("Title", text: $vm.title)
+            Section(header: Text(String(localized: "Book Info"))) {
+                TextField(String(localized: "Title"), text: $vm.title)
                 // Panggil Helper: Cuma muncul kalo udah diketik atau ditekan save
                 if let error = vm.errorMessage(for: .title) {
                     Text(error).font(.caption).foregroundStyle(.red)
                 }
                 
-                TextField("Author", text: $vm.author)
+                TextField(String(localized: "Author"), text: $vm.author)
                 if let error = vm.errorMessage(for: .author) {
                     Text(error).font(.caption).foregroundStyle(.red)
                 }
                 
-                TextField("Total Pages", text: $vm.totalPages)
+                TextField(String(localized: "Total Pages"), text: $vm.totalPages)
                     .keyboardType(.numberPad)
                 if let error = vm.errorMessage(for: .totalPages) {
                     Text(error).font(.caption).foregroundStyle(.red)
@@ -64,17 +64,17 @@ struct BookEditorView: View {
             // 4. Status
             Section {
                 Toggle(isOn: $viewModel.isReadingNow) {
-                    Label("Start Reading Now", systemImage: "book.fill")
+                    Label(String(localized: "Start Reading Now"), systemImage: "book.fill")
                 }
                 .tint(.blue)
             } footer: {
-                Text(viewModel.isReadingNow ? "Book will appear in 'Reading Now'" : "Book will start in 'Library (To Read)'")
+                Text(viewModel.isReadingNow ? String(localized: "Book will appear in 'Reading Now'") : String(localized: "Book will start in 'Library (To Read)'"))
             }
             
             // 5. Delete
             if case .edit = viewModel.mode {
                 Section {
-                    Button("Delete Book", role: .destructive) {
+                    Button(String(localized: "Delete Book"), role: .destructive) {
                         showDeleteConfirmation = true
                     }
                 }
@@ -98,24 +98,24 @@ struct BookEditorView: View {
         }
         .photosPicker(isPresented: $showLibrary, selection: $viewModel.photoSelection, matching: .images)
         .confirmationDialog(
-            "Delete Book?",
+            String(localized: "Delete Book?"),
             isPresented: $showDeleteConfirmation,
             titleVisibility: .visible
         ) {
-            Button("Delete", role: .destructive) {
+            Button(String(localized: "Delete"), role: .destructive) {
                 viewModel.deleteBook()
                 dismiss()
             }
-            Button("Cancel", role: .cancel) { }
+            Button(String(localized: "Cancel"), role: .cancel) { }
         } message: {
-            Text("Deleting this book will also remove all your reading progress. This action cannot be undone.")
+            Text(String(localized: "Deleting this book will also remove all your reading progress. This action cannot be undone."))
         }
     }
     
     var navTitle: String {
         switch viewModel.mode {
-        case .create: return "Add New Book"
-        case .edit: return "Edit Book Details"
+        case .create: return String(localized: "Add New Book")
+        case .edit: return String(localized: "Edit Book Details")
         }
     }
 }
@@ -133,12 +133,12 @@ private extension BookEditorView {
                 coverArtView(data: viewModel.coverImageData)
             }
             .buttonStyle(.plain)
-            .confirmationDialog("Add Cover Photo", isPresented: $showImageSourceDialog, titleVisibility: .visible) {
-                Button("Choose from Library") {
+            .confirmationDialog(String(localized: "Add Cover Photo"), isPresented: $showImageSourceDialog, titleVisibility: .visible) {
+                Button(String(localized: "Choose from Library")) {
                     showLibrary = true
                 }
                 if UIImagePickerController.isSourceTypeAvailable(.camera) {
-                    Button("Take Photo") {
+                    Button(String(localized: "Take Photo")) {
                         showCamera = true
                     }
                 }
@@ -150,7 +150,7 @@ private extension BookEditorView {
     @ViewBuilder
     var removeCoverButtonRow: some View {
         if viewModel.coverImageData != nil {
-            Button("Remove Cover", role: .destructive) {
+            Button(String(localized: "Remove Cover"), role: .destructive) {
                 withAnimation {
                     viewModel.coverImageData = nil
                     viewModel.photoSelection = nil
@@ -171,7 +171,7 @@ private extension BookEditorView {
         } else {
             VStack(spacing: 8) {
                 Image(systemName: "photo.badge.plus").font(.system(size: 40)).foregroundStyle(.blue)
-                Text("Tap to Add Cover").font(.caption).foregroundStyle(.secondary)
+                Text(String(localized: "Tap to Add Cover")).font(.caption).foregroundStyle(.secondary)
             }.frame(height: 150).frame(maxWidth: .infinity).background(Color.gray.opacity(0.1)).cornerRadius(8)
             .overlay(RoundedRectangle(cornerRadius: 8).stroke(style: StrokeStyle(lineWidth: 1, dash: [5])).foregroundStyle(.gray.opacity(0.3)))
         }
@@ -183,7 +183,7 @@ private extension BookEditorView {
             Button(action: { vm.showSearchSheet = true }) {
                 HStack {
                     Image(systemName: "magnifyingglass")
-                    Text("Autofill data from Google Books")
+                    Text(String(localized: "Autofill data from Google Books"))
                 }.frame(maxWidth: .infinity)
             }.tint(.blue)
         }
@@ -193,7 +193,7 @@ private extension BookEditorView {
     @MainActor
     func makeToolbarContent(vm: BookEditorViewModel) -> some ToolbarContent {
         ToolbarItem(placement: .confirmationAction) {
-            Button("Save") {
+            Button(String(localized: "Save")) {
                 // Saat diklik, save() akan set hasAttemptedSave = true
                 // Jadi field yg kosong akan langsung merah semua
                 if vm.save() {
@@ -205,7 +205,7 @@ private extension BookEditorView {
         
         if case .create = vm.mode {
             ToolbarItem(placement: .cancellationAction) {
-                Button("Cancel") { dismiss() }
+                Button(String(localized: "Cancel")) { dismiss() }
             }
         }
     }

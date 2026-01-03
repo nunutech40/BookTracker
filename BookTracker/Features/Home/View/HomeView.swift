@@ -119,7 +119,7 @@ private extension HomeView {
                     .foregroundStyle(.white.opacity(0.7))
             }
             
-            let dayText = viewModel.currentStreak == 1 ? "Day" : "Days"
+            let dayText = LocalizedStringResource(viewModel.currentStreak == 1 ? "Day" : "Days")
             Text("\(viewModel.currentStreak) \(dayText)")
                 .font(.system(size: 40, weight: .bold, design: .rounded))
                 .foregroundStyle(.white)

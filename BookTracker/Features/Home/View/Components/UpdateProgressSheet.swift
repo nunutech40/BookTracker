@@ -27,15 +27,15 @@ struct UpdateProgressSheet: View {
                 Form {
                     inputSection
                 }
-                .navigationTitle("Update Progress")
+                .navigationTitle(String(localized: "Update Progress"))
                 .navigationBarTitleDisplayMode(.inline)
                 .toolbar { toolbarContent }
                 .onAppear(perform: setupView)
                 .onChange(of: inputPage, perform: validateInput)
-                .alert("Invalid Page", isPresented: $showAlert) {
-                    Button("OK") { }
+                .alert(String(localized: "Invalid Page"), isPresented: $showAlert) {
+                    Button(String(localized: "OK")) { }
                 } message: {
-                    Text("Please enter a valid page number between \(book.currentPage) and \(maxPage).")
+                    Text(String(format: NSLocalizedString("Please enter a valid page number between %lld and %lld.", comment: ""), book.currentPage, maxPage))
                 }
                 .disabled(isSaving) // Disable form while saving
                 
@@ -47,7 +47,7 @@ struct UpdateProgressSheet: View {
                         .fill(.ultraThinMaterial)
                         .ignoresSafeArea()
                     
-                    ProgressView("Saving...")
+                    ProgressView(String(localized: "Saving..."))
                         .progressViewStyle(.circular)
                         .tint(.primary) // Ensure spinner color is visible in both themes
                         .padding()
@@ -71,7 +71,7 @@ private extension UpdateProgressSheet {
         Section {
             HStack {
                 Spacer()
-                TextField("Page", text: $inputPage)
+                TextField(String(localized: "Page"), text: $inputPage)
                     .keyboardType(.numberPad)
                     .font(.system(size: 60, weight: .bold, design: .rounded))
                     .multilineTextAlignment(.center)
@@ -80,7 +80,7 @@ private extension UpdateProgressSheet {
             }
             .listRowBackground(Color.clear)
         } header: {
-            Text("Enter page for '\(book.title)' (Max: \(maxPage))")
+            Text(String(format: NSLocalizedString("Enter page for '%@' (Max: %lld)", comment: ""), book.title, maxPage))
                 .multilineTextAlignment(.center)
                 .frame(maxWidth: .infinity)
         }
@@ -89,12 +89,12 @@ private extension UpdateProgressSheet {
     @ToolbarContentBuilder
     var toolbarContent: some ToolbarContent {
         ToolbarItem(placement: .cancellationAction) {
-            Button("Cancel") { dismiss() }
+            Button(String(localized: "Cancel")) { dismiss() }
                 .disabled(isSaving)
         }
         
         ToolbarItem(placement: .confirmationAction) {
-            Button("Save", action: {
+            Button(String(localized: "Save"), action: {
                 Task {
                     await saveAction()
                 }

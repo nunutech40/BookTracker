@@ -17,19 +17,19 @@ struct ContentView: View {
             // TAB 1: HOME
             HomeView(viewModel: homeViewModel)
                 .tabItem {
-                    Label("Home", systemImage: "house.fill")
+                    Label(String(localized: "Home"), systemImage: "house.fill")
                 }
             
             // TAB 2: LIBRARY (Shelf & Reading)
             LibraryView()
                 .tabItem {
-                    Label("Library", systemImage: "books.vertical.fill")
+                    Label(String(localized: "Library"), systemImage: "books.vertical.fill")
                 }
             
             // TAB 3: PROFILE (NEW)
             ProfileView(viewModel: profileViewModel)
                 .tabItem {
-                    Label("Profile", systemImage: "person.crop.circle")
+                    Label(String(localized: "Profile"), systemImage: "person.crop.circle")
                 }
         }
     }
