@@ -225,4 +225,14 @@ final class BookService: BookServiceProtocol {
         try? modelContext.save()
         print("   ✅ Book marked as FINISHED.")
     }
+
+    @MainActor
+    func updateBook(_ book: Book) {
+        book.lastInteraction = Date()
+        do {
+            try modelContext.save()
+        } catch {
+            print("   ❌ Failed to save book: \(error)")
+        }
+    }
 }

@@ -14,4 +14,5 @@ protocol BookServiceProtocol {
     func deleteBook(_ book: Book)
     func finishBook(_ book: Book)
     func addBook(from apiBook: GoogleBookItem, coverData: Data?)
+    func updateBook(_ book: Book)
 }

@@ -31,6 +31,7 @@ public class MockBookService: BookServiceProtocol {
     public var deleteBookCalled = false
     public var finishBookCalled = false
     public var addBookFromApiCalled = false
+    public var updateBookCalled = false
     
     public var updatedBook: Book?
     public var updatedNewPage: Int?
@@ -63,5 +64,10 @@ public class MockBookService: BookServiceProtocol {
     
     public func finishBook(_ book: Book) {
         finishBookCalled = true
+    }
+    
+    public func updateBook(_ book: Book) {
+        updateBookCalled = true
+        updatedBook = book
     }
 }

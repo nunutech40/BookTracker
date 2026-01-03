@@ -284,6 +284,7 @@ final class BookEditorViewModel {
             existingBook.totalPages = Int(totalPages) ?? 0
             existingBook.coverImageData = coverImageData
             existingBook.status = newStatus
+            bookService.updateBook(existingBook)
         }
         
         return true

@@ -15,24 +15,40 @@ import Foundation
  sebelum dikonversi menjadi model aplikasi.
  */
 
-struct GoogleBookResponse: Codable {
+public struct GoogleBookResponse: Codable {
     let items: [GoogleBookItem]?
 }
 
-struct GoogleBookItem: Codable, Identifiable {
-    let id: String
-    let volumeInfo: GoogleBookVolumeInfo
+public struct GoogleBookItem: Codable, Identifiable {
+    public let id: String
+    public let volumeInfo: GoogleBookVolumeInfo
+    
+    public init(id: String, volumeInfo: GoogleBookVolumeInfo) {
+        self.id = id
+        self.volumeInfo = volumeInfo
+    }
 }
 
-struct GoogleBookVolumeInfo: Codable {
-    let title: String
-    let authors: [String]?
-    let pageCount: Int?
-    let imageLinks: GoogleBookImageLinks?
+public struct GoogleBookVolumeInfo: Codable {
+    public let title: String
+    public let authors: [String]?
+    public let pageCount: Int?
+    public let imageLinks: GoogleBookImageLinks?
+    
+    public init(title: String, authors: [String]?, pageCount: Int?, imageLinks: GoogleBookImageLinks?) {
+        self.title = title
+        self.authors = authors
+        self.pageCount = pageCount
+        self.imageLinks = imageLinks
+    }
 }
 
-struct GoogleBookImageLinks: Codable {
-    let thumbnail: String?
+public struct GoogleBookImageLinks: Codable {
+    public let thumbnail: String?
+    
+    public init(thumbnail: String?) {
+        self.thumbnail = thumbnail
+    }
 }
 
 // MARK: - Service Class
