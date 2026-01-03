@@ -1316,6 +1316,23 @@
         }
       }
     },
+    "Keep camera steady for best results." : {
+      "extractionState" : "manual",
+      "localizations" : {
+        "en" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Keep camera steady for best results."
+          }
+        },
+        "id" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Jaga kamera tetap stabil untuk hasil terbaik."
+          }
+        }
+      }
+    },
     "Search Books" : {
       "extractionState" : "manual",
       "localizations" : {

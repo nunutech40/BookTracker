@@ -59,7 +59,7 @@ struct DataScannerView: UIViewControllerRepresentable {
         func dataScanner(_ dataScanner: DataScannerViewController, didAdd addedItems: [RecognizedItem], allItems: [RecognizedItem]) {
             self.recognizedItems = allItems
             debounceTimer?.invalidate()
-            debounceTimer = Timer.scheduledTimer(withTimeInterval: 0.5, repeats: false) { [weak self] _ in
+            debounceTimer = Timer.scheduledTimer(withTimeInterval: 0.2, repeats: false) { [weak self] _ in
                 self?.processAllRecognizedItems()
             }
         }

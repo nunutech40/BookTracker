@@ -20,12 +20,18 @@ struct ScannerGuidanceOverlayView: View {
         VStack {
             // Top Bar with instructions and cancel button
             HStack(alignment: .center) {
-                Text(String(localized: "Point camera at page number. Scanning is automatic."))
-                    .font(.subheadline)
-                    .foregroundColor(.white)
-                    .padding(12)
-                    .background(Color.black.opacity(0.6))
-                    .cornerRadius(10)
+                VStack(alignment: .leading, spacing: 4) {
+                    Text(NSLocalizedString("Point camera at page number. Scanning is automatic.", comment: ""))
+                        .font(.subheadline)
+                        .foregroundColor(.white)
+
+                    Text(NSLocalizedString("Keep camera steady for best results.", comment: ""))
+                        .font(.caption)
+                        .foregroundColor(.white.opacity(0.8))
+                }
+                .padding(12)
+                .background(Color.black.opacity(0.6))
+                .cornerRadius(10)
                 
                 Spacer()
                 
@@ -49,7 +55,7 @@ struct ScannerGuidanceOverlayView: View {
                     .modifier(Shake(animatableData: showNotFound ? 1 : 0))
 
                 if showNotFound {
-                    Text(String(localized: "Page number not found. Please try again."))
+                    Text(NSLocalizedString("Page number not found. Please try again.", comment: ""))
                         .font(.headline)
                         .foregroundColor(.white)
                         .padding()
