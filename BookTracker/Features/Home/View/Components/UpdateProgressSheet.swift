@@ -10,6 +10,7 @@ struct UpdateProgressSheet: View {
     // MARK: - Properties
     let book: Book
     let maxPage: Int
+    var scannedPage: String?
     var onSubmit: (Int) async -> Void
     
     // MARK: - State
@@ -106,7 +107,11 @@ private extension UpdateProgressSheet {
     // MARK: - Logic & Actions
     
     func setupView() {
-        self.inputPage = String(book.currentPage)
+        if let scannedPage = scannedPage, !scannedPage.isEmpty {
+            self.inputPage = scannedPage
+        } else {
+            self.inputPage = String(book.currentPage)
+        }
         isFocused = true
     }
     

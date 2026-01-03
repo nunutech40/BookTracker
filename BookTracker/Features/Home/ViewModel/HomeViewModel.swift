@@ -45,6 +45,7 @@ final class HomeViewModel {
     // MARK: - UI State
     var heatmapData: [Date: Int] = [:]
     var currentStreak: Int = 0
+    var scannedPage: String? = nil
     
     // ALGORITMA LANGKAH 1: Inisialisasi cepat dengan state `isLoading`
     // Flag ini mengontrol apakah View harus menampilkan ProgressView atau konten utama.
@@ -86,8 +87,15 @@ final class HomeViewModel {
     
     @MainActor
     func onPageInputSubmit(page: Int) async {
-        guard let book = selectedBook else { return }
-        
+        guard let book = selectedBook else {
+            return
+        }
+        await onPageInputSubmit(page: page, for: book)
+        selectedBook = nil // Menutup sheet setelah semua proses selesai.
+    }
+    
+    @MainActor
+    func onPageInputSubmit(page: Int, for book: Book) async {
         // Menunggu proses update selesai.
         try? await Task.sleep(for: .seconds(1))
         
@@ -96,11 +104,8 @@ final class HomeViewModel {
         // Setelah progres diupdate, panggil `refreshData` untuk memperbarui heatmap dan streak.
         // Karena data kemungkinan besar sudah ada di cache, proses ini akan berjalan sangat cepat.
         await refreshData()
-        
-        // Menutup sheet setelah semua proses selesai.
-        selectedBook = nil
     }
-    
+
     // MARK: - Logic Streak Calculation
     
     private func calculateStreak() {
