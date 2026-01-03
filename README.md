@@ -6,8 +6,19 @@ BookTracker adalah aplikasi seluler yang dirancang untuk membantu pengguna menge
 
 *   **Pelacakan Kemajuan Membaca:** Catat dengan mudah halaman terakhir yang Anda baca di buku apa pun. Data ini disimpan menggunakan SwiftData dan dikelola oleh `BookService`.
 *   **Dasbor Aktivitas Membaca:** Visualisasikan kebiasaan dan riwayat membaca Anda melalui dasbor aktivitas yang intuitif, termasuk peta panas (heatmap) yang dihasilkan dari sesi membaca Anda. Aktivitas membaca dimuat dan ditampilkan dari data `ReadingSession` melalui `BookService`.
+*   **Berbagi Laporan Aktivitas Membaca:** Buat dan bagikan kartu visual aktivitas membaca 6 bulan Anda, lengkap dengan QR code untuk mempromosikan aplikasi.
+*   **Pemindai Halaman Otomatis:** Gunakan kamera perangkat Anda untuk memindai nomor halaman secara cepat dan akurat, membuat pembaruan progres membaca Anda lebih mudah. (Didukung oleh VisionKit)
 *   **Integrasi Google Books:** Cari buku menggunakan Google Books API. Aplikasi ini memungkinkan Anda menambahkan buku ke perpustakaan dengan mengambil detail dan gambar sampul langsung dari Google Books.
 *   **Manajemen Buku:** Tambah, edit, dan lihat detail buku Anda.
+*   **Tema Dinamis:** Seluruh antarmuka aplikasi, termasuk kartu yang dapat dibagikan, secara otomatis beradaptasi dengan pengaturan mode terang atau gelap sistem Anda untuk pengalaman visual yang nyaman.
+
+## Penyempurnaan & Pengalaman Pengguna (UX)
+
+*   **Pengalaman Pengguna Baru yang Ditingkatkan:** Tampilan kosong yang ramah di layar utama kini memandu pengguna baru untuk menambahkan buku pertama mereka.
+*   **Umpan Balik Pengguna yang Lebih Baik:** Lembar "Update Progres" (Update Progress) memberikan umpan balik yang jelas dan kontekstual jika nomor halaman tidak valid, mencegah kesalahan pengguna.
+*   **Penanganan Izin yang Andal:** Aplikasi menangani izin kamera dan perpustakaan foto dengan baik, memandu pengguna ke pengaturan sistem jika akses ditolak.
+*   **Layar "Tentang" Dinamis:** Halaman "Tentang" secara otomatis menampilkan versi aplikasi saat ini dan nomor build dari Info.plist proyek.
+*   **Dukung Developer:** Halaman khusus memungkinkan pengguna untuk mendukung pengembangan aplikasi melalui berbagai platform donasi.
 
 ## Arsitektur
 
@@ -32,10 +43,12 @@ Aplikasi ini menggunakan sistem Dependency Injection (DI) berbasis *singleton* y
 *   **SwiftUI:** Untuk membangun antarmuka pengguna deklaratif.
 *   **SwiftData:** Untuk persistensi dan manajemen data lokal.
 *   **Google Books API:** Untuk mencari dan mengambil informasi buku.
+*   **VisionKit:** Digunakan untuk fungsionalitas pemindaian halaman otomatis.
+*   **CoreImage:** Digunakan untuk menghasilkan QR code pada kartu berbagi.
 
 ## Pengujian Unit (Unit Testing)
 
-Proyek ini mencakup pengujian unit untuk lapisan layanannya guna memastikan keandalan dan kebenaran. Secara khusus:
+Proyek ini mencakup pengujian unit untuk lapisan layanannya guna memastikan keandalan dan kebenbasan. Secara khusus:
 
 *   **`BookServiceTest.swift`**: Menguji logika inti untuk mengelola buku dan sesi membaca.
 *   **`GoogleBookServiceTest.swift`**: Menguji integrasi dengan Google Books API, menggunakan `MockURLProtocol` untuk mensimulasikan respons jaringan dan memastikan pengujian yang terisolasi danandal.
