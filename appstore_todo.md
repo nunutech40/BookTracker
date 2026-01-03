@@ -38,14 +38,14 @@ Here are some suggestions for final polish before releasing to the App Store.
   - Remove the obsolete `// TODO: Implement camera functionality` comment in `HomeView.swift` since the data scanner feature is now implemented.
 
 ## About & Support (Global Target)
-- [ ] **About App with Dynamic Versioning**
+- [x] **About App with Dynamic Versioning**
   - Implement logic to fetch and display the `Version` and `Build Number` langsung dari `Info.plist`.
-- [ ] **Refine About View UI**
+- [x] **Refine About View UI**
   - Poles UI About View biar terlihat profesional dan modern.
-- [ ] **About Developer (Persuasive Story)**
+- [x] **About Developer (Persuasive Story)**
   - Tulis section "About Developer" yang keren untuk menggerakkan hati user supaya mau kasih dukungan.
-- [ ] **Support the Developer Page**
-  - Buat halaman terpisah untuk donasi dengan link global: **Buy Me a Coffee**, **Ko-fi**, atau **PayPal.me**.
+- [x] **Support the Developer Page**
+  - Buat halaman terpisah untuk donasi dengan link global: **Buy Me a Coffee**, **Ko-fi**, atau **PayPal.me`.
 
 ## Firebase & Backend Services
 - [ ] **Setup Firebase Cloud Messaging (FCM)**

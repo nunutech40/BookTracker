@@ -142,6 +142,23 @@
         }
       }
     },
+    "about.developer.story" : {
+      "extractionState" : "manual",
+      "localizations" : {
+        "en" : {
+          "stringUnit" : {
+            "state" : "new",
+            "value" : "Hi, I'm Nunu, the developer behind BookTracker. I built this app with a passion for reading and a desire to help fellow book lovers track their journeys. Your support helps keep this app updated and free from ads, allowing me to dedicate more time to improving your reading experience. Thank as you!"
+          }
+        },
+        "id" : {
+          "stringUnit" : {
+            "state" : "new",
+            "value" : "Hai, saya Nunu, developer di balik BookTracker. Aplikasi ini saya buat dengan passion membaca dan keinginan membantu sesama pecinta buku melacak perjalanan mereka. Dukungan Anda membantu menjaga aplikasi ini tetap terupdate dan bebas iklan, memungkinkan saya mencurahkan lebih banyak waktu untuk meningkatkan pengalaman membaca Anda. Terima kasih!"
+          }
+        }
+      }
+    },
     "Active Days" : {
       "extractionState" : "manual",
       "localizations" : {
@@ -400,6 +417,9 @@
         }
       }
     },
+    "BookTracker %@" : {
+
+    },
     "BookTracker v1.0" : {
       "extractionState" : "manual",
       "localizations" : {
@@ -413,6 +433,23 @@
           "stringUnit" : {
             "state" : "translated",
             "value" : "BookTracker v1.0"
+          }
+        }
+      }
+    },
+    "Buy Me a Coffee" : {
+      "extractionState" : "manual",
+      "localizations" : {
+        "en" : {
+          "stringUnit" : {
+            "state" : "new",
+            "value" : "Buy Me a Coffee"
+          }
+        },
+        "id" : {
+          "stringUnit" : {
+            "state" : "new",
+            "value" : "Traktir Kopi"
           }
         }
       }
@@ -641,6 +678,23 @@
         }
       }
     },
+    "Donate via PayPal" : {
+      "extractionState" : "manual",
+      "localizations" : {
+        "en" : {
+          "stringUnit" : {
+            "state" : "new",
+            "value" : "Donate via PayPal"
+          }
+        },
+        "id" : {
+          "stringUnit" : {
+            "state" : "new",
+            "value" : "Donasi via PayPal"
+          }
+        }
+      }
+    },
     "Edit Book Details" : {
       "extractionState" : "manual",
       "localizations" : {
@@ -817,6 +871,23 @@
         }
       }
     },
+    "If you enjoy BookTracker, please consider supporting its development. Your contribution helps keep this app updated and free from ads, and allows me to dedicate more time to creating new features." : {
+      "extractionState" : "manual",
+      "localizations" : {
+        "en" : {
+          "stringUnit" : {
+            "state" : "new",
+            "value" : "If you enjoy BookTracker, please consider supporting its development. Your contribution helps keep this app updated and free from ads, and allows me to dedicate more time to creating new features."
+          }
+        },
+        "id" : {
+          "stringUnit" : {
+            "state" : "new",
+            "value" : "Jika Anda menikmati BookTracker, mohon pertimbangkan untuk mendukung pengembangannya. Kontribusi Anda membantu menjaga aplikasi ini tetap terupdate dan bebas iklan, serta memungkinkan saya mencurahkan lebih banyak waktu untuk menciptakan fitur-fitur baru."
+          }
+        }
+      }
+    },
     "Internet connection failed." : {
       "extractionState" : "manual",
       "localizations" : {
@@ -847,6 +918,23 @@
           "stringUnit" : {
             "state" : "translated",
             "value" : "Halaman Salah"
+          }
+        }
+      }
+    },
+    "Keep camera steady for best results." : {
+      "extractionState" : "manual",
+      "localizations" : {
+        "en" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Keep camera steady for best results."
+          }
+        },
+        "id" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Jaga kamera tetap stabil untuk hasil terbaik."
           }
         }
       }
@@ -1316,23 +1404,6 @@
         }
       }
     },
-    "Keep camera steady for best results." : {
-      "extractionState" : "manual",
-      "localizations" : {
-        "en" : {
-          "stringUnit" : {
-            "state" : "translated",
-            "value" : "Keep camera steady for best results."
-          }
-        },
-        "id" : {
-          "stringUnit" : {
-            "state" : "translated",
-            "value" : "Jaga kamera tetap stabil untuk hasil terbaik."
-          }
-        }
-      }
-    },
     "Search Books" : {
       "extractionState" : "manual",
       "localizations" : {
@@ -1472,6 +1543,23 @@
         }
       }
     },
+    "Support" : {
+      "extractionState" : "manual",
+      "localizations" : {
+        "en" : {
+          "stringUnit" : {
+            "state" : "new",
+            "value" : "Support"
+          }
+        },
+        "id" : {
+          "stringUnit" : {
+            "state" : "new",
+            "value" : "Dukungan"
+          }
+        }
+      }
+    },
     "Support Developer (Donate)" : {
       "extractionState" : "manual",
       "localizations" : {
@@ -1485,6 +1573,40 @@
           "stringUnit" : {
             "state" : "translated",
             "value" : "Traktir Kopi Developer"
+          }
+        }
+      }
+    },
+    "Support on Ko-fi" : {
+      "extractionState" : "manual",
+      "localizations" : {
+        "en" : {
+          "stringUnit" : {
+            "state" : "new",
+            "value" : "Support on Ko-fi"
+          }
+        },
+        "id" : {
+          "stringUnit" : {
+            "state" : "new",
+            "value" : "Dukung di Ko-fi"
+          }
+        }
+      }
+    },
+    "Support the Developer" : {
+      "extractionState" : "manual",
+      "localizations" : {
+        "en" : {
+          "stringUnit" : {
+            "state" : "new",
+            "value" : "Support the Developer"
+          }
+        },
+        "id" : {
+          "stringUnit" : {
+            "state" : "new",
+            "value" : "Dukung Developer"
           }
         }
       }

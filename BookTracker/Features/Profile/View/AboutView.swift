@@ -8,6 +8,14 @@
 import SwiftUI
 
 struct AboutView: View {
+    private var appVersion: String {
+        Bundle.main.infoDictionary?["CFBundleShortVersionString"] as? String ?? "N/A"
+    }
+    
+    private var buildNumber: String {
+        Bundle.main.infoDictionary?["CFBundleVersion"] as? String ?? "N/A"
+    }
+    
     var body: some View {
         ScrollView {
             VStack(spacing: 20) {
@@ -16,18 +24,44 @@ struct AboutView: View {
                     .foregroundStyle(.blue)
                     .padding(.top, 40)
                 
-                Text("BookTracker v1.0")
-                    .font(.title)
-                    .bold()
+                VStack(spacing: 8) {
+                    Text("BookTracker \(appVersion)")
+                        .font(.title2)
+                        .fontWeight(.bold)
+                    
+                    Text(NSLocalizedString("Created by Nunu Nugraha", comment: ""))
+                        .font(.subheadline)
+                        .foregroundStyle(.secondary)
+                }
+                .padding()
+                .frame(maxWidth: .infinity)
+                .background(Color(UIColor.secondarySystemGroupedBackground))
+                .cornerRadius(10)
+                .shadow(radius: 2)
                 
-                Text("Created by Nunu Nugraha")
-                    .foregroundStyle(.secondary)
-                
-                Divider()
-                
-                Text("A simple app to track your daily book reading progress. Made with love using SwiftUI & SwiftData.")
+                Text(NSLocalizedString("A simple app to track your daily book reading progress. Made with love using SwiftUI & SwiftData.", comment: ""))
                     .multilineTextAlignment(.center)
-                    .padding()
+                    .font(.body)
+                    .padding(.horizontal)
+
+                Text(NSLocalizedString("about.developer.story", comment: ""))
+                    .multilineTextAlignment(.center)
+                    .font(.callout)
+                    .padding(.horizontal)
+                
+                NavigationLink {
+                    SupportDeveloperView()
+                } label: {
+                    Text(NSLocalizedString("Support Developer (Donate)", comment: ""))
+                        .font(.headline)
+                        .padding(.vertical, 10)
+                        .frame(maxWidth: .infinity)
+                        .background(Color.green.opacity(0.8))
+                        .foregroundColor(.white)
+                        .cornerRadius(10)
+                }
+                .padding(.horizontal)
+                .padding(.top, 10)
                 
                 Spacer()
             }
