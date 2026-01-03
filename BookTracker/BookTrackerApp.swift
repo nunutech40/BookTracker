@@ -53,7 +53,8 @@ struct BookTrackerApp: App {
         WindowGroup {
             ContentView(
                 homeViewModel: homeViewModel,
-                profileViewModel: Injection.shared.provideProfileViewModel()
+                profileViewModel: Injection.shared.provideProfileViewModel(),
+                navigationCoordinator: appDelegate.navigationCoordinator // Pass the coordinator
             )
         }
         // Jangan lupa modifier ini tetap wajib ada biar SwiftUI environment jalan

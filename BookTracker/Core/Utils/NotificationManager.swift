@@ -10,7 +10,7 @@ import UserNotifications
 
 protocol NotificationManagerProtocol {
     func requestAuthorization() async -> Bool // Make async and return Bool
-    func scheduleAchievementNotification(title: String, message: String)
+    func scheduleAchievementNotification(title: String, message: String, achievementID: String) // Add achievementID
     func scheduleDailyStreakNotification(currentStreak: Int)
 }
 
@@ -59,12 +59,14 @@ final class NotificationManager: NotificationManagerProtocol {
         }
     }
     
-    func scheduleAchievementNotification(title: String, message: String) {
+    func scheduleAchievementNotification(title: String, message: String, achievementID: String) { // Updated signature
         let content = UNMutableNotificationContent()
         content.title = "Achievement Unlocked!"
         content.subtitle = title
         content.body = message
         content.sound = UNNotificationSound.default
+        content.categoryIdentifier = "achievement_unlocked" // Add category identifier
+        content.userInfo = ["achievementID": achievementID] // Add userInfo
         
         Task { // Ensure this is called in an async context
             await scheduleNotification(content: content, identifier: UUID().uuidString)
@@ -76,6 +78,7 @@ final class NotificationManager: NotificationManagerProtocol {
         content.title = "Streak Update!"
         content.body = "You're on a \(currentStreak)-day streak! Keep it up!"
         content.sound = UNNotificationSound.default
+        content.categoryIdentifier = "daily_streak" // Add category identifier
         
         Task { // Ensure this is called in an async context
             await scheduleNotification(content: content, identifier: "daily_streak_notification")

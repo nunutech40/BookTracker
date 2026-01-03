@@ -143,7 +143,7 @@ final class GamificationService: GamificationServiceProtocol {
                         try modelContext.save()
                         print("🎉 GamificationService: NEW achievement unlocked and saved: \(achievement.title)")
                         // Trigger notification for newly unlocked achievement
-                        notificationManager.scheduleAchievementNotification(title: achievement.title, message: achievement.message)
+                        notificationManager.scheduleAchievementNotification(title: achievement.title, message: achievement.message, achievementID: achievement.id)
                     } catch {
                         print("❌ GamificationService: Failed to save new unlocked achievement: \(error)")
                     }

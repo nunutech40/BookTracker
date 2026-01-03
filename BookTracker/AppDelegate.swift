@@ -9,6 +9,10 @@ import UIKit
 import UserNotifications
 
 class AppDelegate: NSObject, UIApplicationDelegate, UNUserNotificationCenterDelegate {
+    
+    // Shared instance of NavigationCoordinator for deep linking
+    let navigationCoordinator = NavigationCoordinator()
+
     func application(_ application: UIApplication,
                      didFinishLaunchingWithOptions launchOptions: [UIApplication.LaunchOptionsKey: Any]? = nil) -> Bool {
         // Set the UNUserNotificationCenter delegate
@@ -30,13 +34,20 @@ class AppDelegate: NSObject, UIApplicationDelegate, UNUserNotificationCenterDele
     func userNotificationCenter(_ center: UNUserNotificationCenter,
                                 didReceive response: UNNotificationResponse,
                                 withCompletionHandler completionHandler: @escaping () -> Void) {
-        // Handle user interaction with the notification here
         print("User interacted with notification: \(response.notification.request.identifier)")
         
-        // Example: navigate to a specific view based on notification content
-        // if response.notification.request.content.categoryIdentifier == "achievement" {
-        //     // Handle achievement tap
-        // }
+        let userInfo = response.notification.request.content.userInfo
+        let categoryIdentifier = response.notification.request.content.categoryIdentifier
+        
+        switch categoryIdentifier {
+        case "achievement_unlocked":
+            let achievementID = userInfo["achievementID"] as? String
+            navigationCoordinator.navigateToGamification(with: achievementID)
+        case "daily_streak":
+            navigationCoordinator.navigateToGamification()
+        default:
+            break
+        }
         
         completionHandler()
     }
