@@ -69,8 +69,8 @@ struct ProfileView: View {
                             .foregroundStyle(.blue)
                     }
                     
-                    Link(destination: URL(string: "https://saweria.co/nununugraha")!) {
-                        Label(String(localized: "Support Developer (Donate)"), systemImage: "cup.and.saucer.fill")
+                    NavigationLink(destination: SupportDeveloperView()) {
+                        Label(String(localized: "Dukung Developer"), systemImage: "hand.raised.fill")
                             .foregroundStyle(.pink)
                     }
                 }

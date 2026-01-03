@@ -10,50 +10,46 @@ import SwiftUI
 struct SupportDeveloperView: View {
     var body: some View {
         ScrollView {
-            VStack(spacing: 20) {
-                Image(systemName: "heart.fill")
-                    .font(.system(size: 80))
-                    .foregroundStyle(.red)
+            VStack(spacing: 24) {
+                Image(systemName: "person.crop.circle.fill")
+                    .resizable()
+                    .aspectRatio(contentMode: .fill)
+                    .frame(width: 120, height: 120)
+                    .clipShape(Circle())
+                    .overlay(Circle().stroke(Color.gray, lineWidth: 2))
+                    .shadow(radius: 10)
                     .padding(.top, 40)
                 
-                Text(NSLocalizedString("Support the Developer", comment: ""))
-                    .font(.title)
+                Text(NSLocalizedString("Dukung Developer Indie", comment: ""))
+                    .font(.largeTitle)
                     .bold()
                 
-                Text(NSLocalizedString("If you enjoy BookTracker, please consider supporting its development. Your contribution helps keep this app updated and free from ads, and allows me to dedicate more time to creating new features.", comment: ""))
+                Text(NSLocalizedString("Hai, saya Nunu, developer tunggal di balik BookTracker. Aplikasi ini saya buat dari passion untuk membaca dan teknologi. Dukungan Anda sangat berarti untuk menjaga aplikasi ini tetap gratis, bebas iklan, dan terus berkembang dengan fitur-fitur baru. Setiap traktiran kopi dari Anda memberi saya energi dan motivasi untuk terus berkarya!", comment: ""))
                     .multilineTextAlignment(.center)
                     .font(.body)
                     .padding(.horizontal)
                 
                 VStack(spacing: 15) {
-                    Link(destination: URL(string: "https://buymeacoffee.com/yourprofile")!) {
-                        Label(NSLocalizedString("Buy Me a Coffee", comment: ""), systemImage: "mug.fill")
+                    Link(destination: URL(string: "https://saweria.co/nunugraha17")!) {
+                        Label(NSLocalizedString("Traktir di Saweria", comment: ""), systemImage: "sparkles")
                             .font(.headline)
                             .padding()
                             .frame(maxWidth: .infinity)
-                            .background(Color.yellow.opacity(0.8))
+                            .background(Color.orange)
+                            .foregroundColor(.white)
+                            .cornerRadius(10)
+                            .shadow(color: .orange.opacity(0.4), radius: 5, y: 2)
+                    }
+                    
+                    Link(destination: URL(string: "https://www.buymeacoffee.com/nunutech401")!) {
+                        Label(NSLocalizedString("Traktir di Buy Me a Coffee", comment: ""), systemImage: "mug.fill")
+                            .font(.headline)
+                            .padding()
+                            .frame(maxWidth: .infinity)
+                            .background(Color.yellow)
                             .foregroundColor(.black)
                             .cornerRadius(10)
-                    }
-                    
-                    Link(destination: URL(string: "https://ko-fi.com/yourprofile")!) {
-                        Label(NSLocalizedString("Support on Ko-fi", comment: ""), systemImage: "cup.and.saucer.fill")
-                            .font(.headline)
-                            .padding()
-                            .frame(maxWidth: .infinity)
-                            .background(Color.blue.opacity(0.8))
-                            .foregroundColor(.white)
-                            .cornerRadius(10)
-                    }
-                    
-                    Link(destination: URL(string: "https://paypal.me/yourprofile")!) {
-                        Label(NSLocalizedString("Donate via PayPal", comment: ""), systemImage: "dollarsign.circle.fill")
-                            .font(.headline)
-                            .padding()
-                            .frame(maxWidth: .infinity)
-                            .background(Color.purple.opacity(0.8))
-                            .foregroundColor(.white)
-                            .cornerRadius(10)
+                            .shadow(color: .yellow.opacity(0.4), radius: 5, y: 2)
                     }
                 }
                 .padding()
@@ -62,7 +58,7 @@ struct SupportDeveloperView: View {
             }
             .padding()
         }
-        .navigationTitle(NSLocalizedString("Support", comment: ""))
+        .navigationTitle(NSLocalizedString("Dukung Developer", comment: ""))
         .navigationBarTitleDisplayMode(.inline)
     }
 }
