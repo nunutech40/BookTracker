@@ -143,5 +143,7 @@ struct UpdateProgressSheet: View {
         
         isSaving = true
         await onSubmit(page)
+        isSaving = false
+        dismiss()
     }
 }
