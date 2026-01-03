@@ -171,22 +171,25 @@ struct HomeView: View {
     }
     
     private var emptyStateView: some View {
-        VStack(spacing: 12) {
-            Image(systemName: "book.circle.fill")
-                .font(.system(size: 60))
-                .foregroundStyle(.gray.opacity(0.3))
-            Text(String(localized: "No Active Books"))
-                .font(.headline)
-                .foregroundStyle(.primary)
-            Text(String(localized: "Your reading journey starts here.\nTap + to add a book."))
-                .font(.subheadline)
-                .foregroundStyle(.secondary)
-                .multilineTextAlignment(.center)
+        Button(action: navigateToAddBook) {
+            VStack(spacing: 12) {
+                Image(systemName: "book.circle.fill")
+                    .font(.system(size: 60))
+                    .foregroundStyle(.gray.opacity(0.3))
+                Text(String(localized: "No Active Books"))
+                    .font(.headline)
+                    .foregroundStyle(.primary)
+                Text(String(localized: "Your reading journey starts here.\nTap + to add a book."))
+                    .font(.subheadline)
+                    .foregroundStyle(.secondary)
+                    .multilineTextAlignment(.center)
+            }
+            .frame(maxWidth: .infinity)
+            .padding(.vertical, 40)
+            .background(Color(uiColor: .secondarySystemGroupedBackground))
+            .cornerRadius(16)
         }
-        .frame(maxWidth: .infinity)
-        .padding(.vertical, 40)
-        .background(Color(uiColor: .secondarySystemGroupedBackground))
-        .cornerRadius(16)
+        .buttonStyle(.plain) // Use .plain to remove default button styling
     }
     
     @ToolbarContentBuilder
