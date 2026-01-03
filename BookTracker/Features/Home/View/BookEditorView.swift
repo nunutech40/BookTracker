@@ -15,12 +15,15 @@ struct BookEditorView: View {
     // State Object
     @State var viewModel: BookEditorViewModel
     
-    // State for Image Picking
+    // State for Image Picking & Permissions
     @State private var showImageSourceDialog = false
     @State private var showCamera = false
     @State private var showLibrary = false
     @State private var selectedImage: UIImage?
     @State private var showDeleteConfirmation = false
+    @StateObject private var permissionManager = PermissionManager()
+    @State private var showPermissionDeniedCamera = false
+    @State private var showPermissionDeniedLibrary = false
     
     init(viewModel: BookEditorViewModel) {
         _viewModel = State(initialValue: viewModel)
@@ -91,6 +94,12 @@ struct BookEditorView: View {
         .sheet(isPresented: $showCamera) {
             ImagePicker(selectedImage: $selectedImage, sourceType: .camera)
         }
+        .sheet(isPresented: $showPermissionDeniedCamera) {
+            PermissionDeniedView(permissionType: .camera)
+        }
+        .sheet(isPresented: $showPermissionDeniedLibrary) {
+            PermissionDeniedView(permissionType: .photoLibrary)
+        }
         .onChange(of: selectedImage) { _, newImage in
             if let newImage = newImage {
                 viewModel.process(image: newImage)
@@ -135,11 +144,23 @@ private extension BookEditorView {
             .buttonStyle(.plain)
             .confirmationDialog(String(localized: "Add Cover Photo"), isPresented: $showImageSourceDialog, titleVisibility: .visible) {
                 Button(String(localized: "Choose from Library")) {
-                    showLibrary = true
+                    permissionManager.requestPermission(for: .photoLibrary) { granted in
+                        if granted {
+                            showLibrary = true
+                        } else {
+                            showPermissionDeniedLibrary = true
+                        }
+                    }
                 }
                 if UIImagePickerController.isSourceTypeAvailable(.camera) {
                     Button(String(localized: "Take Photo")) {
-                        showCamera = true
+                        permissionManager.requestPermission(for: .camera) { granted in
+                            if granted {
+                                showCamera = true
+                            } else {
+                                showPermissionDeniedCamera = true
+                            }
+                        }
                     }
                 }
             }

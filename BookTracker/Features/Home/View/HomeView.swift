@@ -13,11 +13,13 @@ struct HomeView: View {
     @Environment(\.modelContext) private var context
     @State var viewModel: HomeViewModel
     
-    // State for Data Scanner
+    // State for Data Scanner & Permissions
     @State private var showScanner = false
     @State private var scannedText = ""
     @State private var bookToScan: Book?
-    
+    @StateObject private var permissionManager = PermissionManager()
+    @State private var showPermissionDenied = false
+
     @Query(sort: \Book.lastInteraction, order: .reverse)
     private var allBooks: [Book]
     
@@ -67,6 +69,9 @@ struct HomeView: View {
                         bookToScan = nil
                         scannedText = ""
                     }
+            }
+            .sheet(isPresented: $showPermissionDenied) {
+                PermissionDeniedView(permissionType: .camera)
             }
         }
     }
@@ -165,7 +170,13 @@ struct HomeView: View {
             },
             onTapCamera: {
                 bookToScan = book
-                showScanner = true
+                permissionManager.requestPermission(for: .camera) { granted in
+                    if granted {
+                        showScanner = true
+                    } else {
+                        showPermissionDenied = true
+                    }
+                }
             }
         )
     }

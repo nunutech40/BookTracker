@@ -1,40 +1,6 @@
 {
   "sourceLanguage" : "en",
   "strings" : {
-    "Page number not found. Please try again." : {
-      "extractionState" : "manual",
-      "localizations" : {
-        "en" : {
-          "stringUnit" : {
-            "state" : "translated",
-            "value" : "Page number not found. Please try again."
-          }
-        },
-        "id" : {
-          "stringUnit" : {
-            "state" : "translated",
-            "value" : "Nomor halaman tidak ditemukan. Coba lagi ya."
-          }
-        }
-      }
-    },
-    "Point camera at page number. Scanning is automatic." : {
-      "extractionState" : "manual",
-      "localizations" : {
-        "en" : {
-          "stringUnit" : {
-            "state" : "translated",
-            "value" : "Point camera at page number. Scanning is automatic."
-          }
-        },
-        "id" : {
-          "stringUnit" : {
-            "state" : "translated",
-            "value" : "Arahkan kamera ke nomor halaman. Scan akan berjalan otomatis."
-          }
-        }
-      }
-    },
     "%@" : {
 
     },
@@ -1106,6 +1072,9 @@
         }
       }
     },
+    "Open Settings" : {
+
+    },
     "Page" : {
       "extractionState" : "manual",
       "localizations" : {
@@ -1140,6 +1109,23 @@
         }
       }
     },
+    "Page number not found. Please try again." : {
+      "extractionState" : "manual",
+      "localizations" : {
+        "en" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Page number not found. Please try again."
+          }
+        },
+        "id" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Nomor halaman tidak ditemukan. Coba lagi ya."
+          }
+        }
+      }
+    },
     "Pages" : {
 
     },
@@ -1156,6 +1142,23 @@
           "stringUnit" : {
             "state" : "translated",
             "value" : "Hal. harus antara %lld - %lld ya."
+          }
+        }
+      }
+    },
+    "Point camera at page number. Scanning is automatic." : {
+      "extractionState" : "manual",
+      "localizations" : {
+        "en" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Point camera at page number. Scanning is automatic."
+          }
+        },
+        "id" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Arahkan kamera ke nomor halaman. Scan akan berjalan otomatis."
           }
         }
       }
