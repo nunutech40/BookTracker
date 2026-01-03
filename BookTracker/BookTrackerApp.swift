@@ -11,11 +11,16 @@ import SwiftData
 @main
 struct BookTrackerApp: App {
     
+    // Using an AppDelegateAdaptor to hook into the UIApplicationDelegate lifecycle
+    // and manage UNUserNotificationCenterDelegate for foreground notifications.
+    @UIApplicationDelegateAdaptor(AppDelegate.self) var appDelegate
+    
     // 1. Init Container (Tetap sama)
     var sharedModelContainer: ModelContainer = {
         let schema = Schema([
             Book.self,
-            ReadingSession.self
+            ReadingSession.self,
+            UnlockedAchievement.self // Add UnlockedAchievement to the schema
         ])
         let modelConfiguration = ModelConfiguration(schema: schema, isStoredInMemoryOnly: false)
 

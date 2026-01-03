@@ -17,10 +17,12 @@ protocol GamificationServiceProtocol {
 final class GamificationService: GamificationServiceProtocol {
     
     private var allAchievements: [GamificationAchievement] = []
-    private let modelContext: ModelContext // Add ModelContext
+    private let modelContext: ModelContext
+    private let notificationManager: NotificationManagerProtocol // New property
     
-    init(modelContext: ModelContext) { // Update initializer
+    init(modelContext: ModelContext, notificationManager: NotificationManagerProtocol) { // Updated initializer
         self.modelContext = modelContext
+        self.notificationManager = notificationManager // Initialize new dependency
         self.allAchievements = loadAchievements()
     }
 
@@ -140,6 +142,8 @@ final class GamificationService: GamificationServiceProtocol {
                     do {
                         try modelContext.save()
                         print("🎉 GamificationService: NEW achievement unlocked and saved: \(achievement.title)")
+                        // Trigger notification for newly unlocked achievement
+                        notificationManager.scheduleAchievementNotification(title: achievement.title, message: achievement.message)
                     } catch {
                         print("❌ GamificationService: Failed to save new unlocked achievement: \(error)")
                     }

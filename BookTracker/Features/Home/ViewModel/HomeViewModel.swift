@@ -7,6 +7,7 @@
 
 import SwiftUI
 import SwiftData
+import UserNotifications // Import UNUserNotificationCenter
 
 /**
  # HomeViewModel
@@ -59,12 +60,26 @@ final class HomeViewModel {
     // Dependencies
     private var bookService: BookServiceProtocol
     private var gamificationService: GamificationServiceProtocol // New dependency
+    private var notificationManager: NotificationManagerProtocol // New dependency
+    
+    // User Defaults Key for daily streak notification
+    private static let lastDailyStreakNotificationDateKey = "lastDailyStreakNotificationDate"
+    
+    private static var lastDailyStreakNotificationDate: Date? {
+        get {
+            UserDefaults.standard.object(forKey: lastDailyStreakNotificationDateKey) as? Date
+        }
+        set {
+            UserDefaults.standard.set(newValue, forKey: lastDailyStreakNotificationDateKey)
+        }
+    }
     
     // ALGORITMA LANGKAH 1 (Lanjutan): `init` hanya melakukan setup minimal.
     // Tidak ada pemanggilan `refreshData()` yang berat di sini.
-    init(bookService: BookServiceProtocol, gamificationService: GamificationServiceProtocol) { // Updated initializer
+    init(bookService: BookServiceProtocol, gamificationService: GamificationServiceProtocol, notificationManager: NotificationManagerProtocol) { // Updated initializer
         self.bookService = bookService
-        self.gamificationService = gamificationService // Initialize new dependency
+        self.gamificationService = gamificationService
+        self.notificationManager = notificationManager // Initialize new dependency
     }
     
     @MainActor
@@ -72,6 +87,17 @@ final class HomeViewModel {
         // Mensimulasikan latensi jaringan atau pembacaan disk yang lambat saat pertama kali.
         if isLoading {
             try? await Task.sleep(for: .milliseconds(500))
+        }
+        
+        // Proactively request notification authorization if not determined
+        let notificationSettings = await UNUserNotificationCenter.current().notificationSettings()
+        
+        // --- ADD THIS PRINT STATEMENT ---
+        print("🔔 Notification Authorization Status: \(notificationSettings.authorizationStatus.rawValue)")
+        // -------------------------------
+        
+        if notificationSettings.authorizationStatus == .notDetermined {
+            _ = await notificationManager.requestAuthorization()
         }
         
         // ALGORITMA LANGKAH 4: Data diambil dan state ViewModel diperbarui.
@@ -88,6 +114,22 @@ final class HomeViewModel {
         // Ini akan memberitahu View untuk beralih dari ProgressView ke konten utama.
         if isLoading {
             isLoading = false
+        }
+        
+        // Daily Streak Notification Logic
+        if currentStreak > 0 {
+            let today = Calendar.current.startOfDay(for: Date())
+            if let lastNotificationDate = Self.lastDailyStreakNotificationDate {
+                if !Calendar.current.isDate(lastNotificationDate, inSameDayAs: today) {
+                    notificationManager.scheduleDailyStreakNotification(currentStreak: currentStreak)
+                    Self.lastDailyStreakNotificationDate = today
+                }
+            }
+            else {
+                // If never notified, notify today
+                notificationManager.scheduleDailyStreakNotification(currentStreak: currentStreak)
+                Self.lastDailyStreakNotificationDate = today
+            }
         }
     }
     
@@ -122,10 +164,10 @@ final class HomeViewModel {
         }
         
         let calendar = Calendar.current
-        let today = calendar.startOfDay(for: Date())
+        let today = Calendar.current.startOfDay(for: Date())
         let yesterday = calendar.date(byAdding: .day, value: -1, to: today)!
         
-        let lastReadDate = calendar.startOfDay(for: readDates[0])
+        let lastReadDate = Calendar.current.startOfDay(for: readDates[0])
         if lastReadDate != today && lastReadDate != yesterday {
             currentStreak = 0
             return
@@ -133,11 +175,11 @@ final class HomeViewModel {
         
         var streak = 0
         var currentDateToCheck = lastReadDate
-        let dateSet = Set(readDates.map { calendar.startOfDay(for: $0) })
+        let dateSet = Set(readDates.map { Calendar.current.startOfDay(for: $0) })
         
         while dateSet.contains(currentDateToCheck) {
             streak += 1
-            currentDateToCheck = calendar.date(byAdding: .day, value: -1, to: currentDateToCheck)!
+            currentDateToCheck = Calendar.current.date(byAdding: .day, value: -1, to: currentDateToCheck)!
         }
         
         self.currentStreak = streak

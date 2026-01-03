@@ -81,13 +81,14 @@ final class Injection {
     
     // Perhatikan: Parameter 'modelContext' DIHAPUS karena sudah ambil dari internal
     
-    /// Provides a `HomeViewModel` with its `BookService` and `GamificationService` dependencies automatically injected.
+    /// Provides a `HomeViewModel` with its `BookService`, `GamificationService`, and `NotificationManager` dependencies automatically injected.
     @MainActor
     func provideHomeViewModel() -> HomeViewModel {
         // Otomatis pakai self.context
         let bookService = provideBookService()
         let gamificationService = provideGamificationService()
-        return HomeViewModel(bookService: bookService, gamificationService: gamificationService)
+        let notificationManager = provideNotificationManager()
+        return HomeViewModel(bookService: bookService, gamificationService: gamificationService, notificationManager: notificationManager)
     }
     
     /// Provides a `ProfileViewModel` with its `BookService` dependency automatically injected.
@@ -131,6 +132,12 @@ final class Injection {
     /// Provides a shared `GamificationService` instance.
     @MainActor
     private func provideGamificationService() -> GamificationService {
-        return GamificationService(modelContext: self.context)
+        let notificationManager = provideNotificationManager()
+        return GamificationService(modelContext: self.context, notificationManager: notificationManager)
+    }
+    
+    /// Provides a shared `NotificationManager` instance.
+    private func provideNotificationManager() -> NotificationManager {
+        return NotificationManager()
     }
 }
