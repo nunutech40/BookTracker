@@ -19,77 +19,12 @@ struct ProfileView: View {
     var body: some View {
         NavigationStack {
             List {
-                Section(header: Text(String(localized: "Reading Activity (Last 12 Months)"))) {
-                    VStack(alignment: .leading, spacing: 16) {
-                        
-                        // Header Stats
-                        HStack {
-                            VStack(alignment: .leading) {
-                                Text(String(localized: "Total Pages"))
-                                    .font(.caption).foregroundStyle(.secondary)
-                                Text("\(totalPagesRead())")
-                                    .font(.headline).bold()
-                            }
-                            Spacer()
-                            VStack(alignment: .trailing) {
-                                Text(String(localized: "Active Days"))
-                                    .font(.caption).foregroundStyle(.secondary)
-                                Text("\(viewModel.heatmapData.count)")
-                                    .font(.headline).bold()
-                            }
-                        }
-                        
-                        // THE GRID (KOTAK-KOTAK)
-                        GitHubHeatmapView(data: viewModel.heatmapData)
-                            .frame(height: 160) // Tinggi pas buat 7 kotak + Tooltip area
-                        
-                        // Legend
-                        HStack {
-                            Text(String(localized: "Less"))
-                            RoundedRectangle(cornerRadius: 2).fill(Color.gray.opacity(0.2)).frame(width: 12, height: 12)
-                            RoundedRectangle(cornerRadius: 2).fill(Color.green.opacity(0.4)).frame(width: 12, height: 12)
-                            RoundedRectangle(cornerRadius: 2).fill(Color.green.opacity(0.7)).frame(width: 12, height: 12)
-                            RoundedRectangle(cornerRadius: 2).fill(Color.green).frame(width: 12, height: 12)
-                            Text(String(localized: "More"))
-                        }
-                        .font(.caption2)
-                        .foregroundStyle(.secondary)
-                        .frame(maxWidth: .infinity, alignment: .trailing)
-                    }
-                    .padding(.vertical, 8)
-                }
-                
-                // MARK: 2. MY COLLECTIONS
-                Section(header: Text(String(localized: "Collections"))) {
-                    NavigationLink(destination: HistoryView()) {
-                        Label(String(localized: "Finished Books"), systemImage: "trophy.fill")
-                            .foregroundStyle(.orange)
-                    }
-                }
-                
-                // MARK: 3. APP INFO
-                Section(header: Text(String(localized: "App Info"))) {
-                    NavigationLink(destination: AboutView()) {
-                        Label(String(localized: "About BookTracker"), systemImage: "info.circle.fill")
-                            .foregroundStyle(.blue)
-                    }
-                    
-                    NavigationLink(destination: SupportDeveloperView()) {
-                        Label(String(localized: "Dukung Developer"), systemImage: "hand.raised.fill")
-                            .foregroundStyle(.pink)
-                    }
-                }
+                readingActivitySection
+                collectionsSection
+                appInfoSection
             }
             .navigationTitle(String(localized: "Profile"))
-            .toolbar {
-                ToolbarItem(placement: .topBarTrailing) {
-                    Button(action: {
-                        renderShareCard()
-                    }) {
-                        Label("Share", systemImage: "square.and.arrow.up")
-                    }
-                }
-            }
+            .toolbar { toolbarContent }
             .sheet(isPresented: $showShareSheet) {
                 if let image = shareableImage {
                     ActivityView(activityItems: [image, "Check out my reading progress on BookTracker!"])
@@ -108,6 +43,88 @@ struct ProfileView: View {
                 viewModel.loadHeatmapData()
                 let data = viewModel.getHeatmapData(forLastMonths: 6)
                 self.shareCard = ShareCardView(heatmapData: data)
+            }
+        }
+    }
+    
+    private var readingActivitySection: some View {
+        Section(header: Text(String(localized: "Reading Activity (Last 12 Months)"))) {
+            VStack(alignment: .leading, spacing: 16) {
+                
+                // Header Stats
+                HStack {
+                    VStack(alignment: .leading) {
+                        Text(String(localized: "Total Pages"))
+                            .font(.caption).foregroundStyle(.secondary)
+                        Text("\(totalPagesRead())")
+                            .font(.headline).bold()
+                    }
+                    Spacer()
+                    VStack(alignment: .trailing) {
+                        Text(String(localized: "Active Days"))
+                            .font(.caption).foregroundStyle(.secondary)
+                        Text("\(viewModel.heatmapData.count)")
+                            .font(.headline).bold()
+                    }
+                }
+                
+                // THE GRID (KOTAK-KOTAK)
+                GitHubHeatmapView(data: viewModel.heatmapData)
+                    .frame(height: 160) // Tinggi pas buat 7 kotak + Tooltip area
+                
+                // Legend
+                HStack {
+                    Text(String(localized: "Less"))
+                    RoundedRectangle(cornerRadius: 2).fill(Color.gray.opacity(0.2)).frame(width: 12, height: 12)
+                    RoundedRectangle(cornerRadius: 2).fill(Color.green.opacity(0.4)).frame(width: 12, height: 12)
+                    RoundedRectangle(cornerRadius: 2).fill(Color.green.opacity(0.7)).frame(width: 12, height: 12)
+                    RoundedRectangle(cornerRadius: 2).fill(Color.green).frame(width: 12, height: 12)
+                    Text(String(localized: "More"))
+                }
+                .font(.caption2)
+                .foregroundStyle(.secondary)
+                .frame(maxWidth: .infinity, alignment: .trailing)
+            }
+            .padding(.vertical, 8)
+        }
+    }
+    
+    private var collectionsSection: some View {
+        Section(header: Text(String(localized: "Collections"))) {
+            NavigationLink(destination: HistoryView()) {
+                Label(String(localized: "Finished Books"), systemImage: "trophy.fill")
+                    .foregroundStyle(.orange)
+            }
+            
+            // New NavigationLink for Gamification
+            NavigationLink(destination: GamificationView(viewModel: Injection.shared.provideGamificationViewModel())) {
+                Label("Achievements", systemImage: "star.fill") // Using a star icon for achievements
+                    .foregroundStyle(.yellow) // Using yellow for achievements
+            }
+        }
+    }
+    
+    private var appInfoSection: some View {
+        Section(header: Text(String(localized: "App Info"))) {
+            NavigationLink(destination: AboutView()) {
+                Label(String(localized: "About BookTracker"), systemImage: "info.circle.fill")
+                    .foregroundStyle(.blue)
+            }
+            
+            NavigationLink(destination: SupportDeveloperView()) {
+                Label(String(localized: "Dukung Developer"), systemImage: "hand.raised.fill")
+                    .foregroundStyle(.pink)
+            }
+        }
+    }
+    
+    @ToolbarContentBuilder
+    private var toolbarContent: some ToolbarContent {
+        ToolbarItem(placement: .topBarTrailing) {
+            Button(action: {
+                renderShareCard()
+            }) {
+                Label("Share", systemImage: "square.and.arrow.up")
             }
         }
     }

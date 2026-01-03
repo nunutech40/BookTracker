@@ -81,12 +81,13 @@ final class Injection {
     
     // Perhatikan: Parameter 'modelContext' DIHAPUS karena sudah ambil dari internal
     
-    /// Provides a `HomeViewModel` with its `BookService` dependency automatically injected.
+    /// Provides a `HomeViewModel` with its `BookService` and `GamificationService` dependencies automatically injected.
     @MainActor
     func provideHomeViewModel() -> HomeViewModel {
         // Otomatis pakai self.context
         let bookService = provideBookService()
-        return HomeViewModel(bookService: bookService)
+        let gamificationService = provideGamificationService()
+        return HomeViewModel(bookService: bookService, gamificationService: gamificationService)
     }
     
     /// Provides a `ProfileViewModel` with its `BookService` dependency automatically injected.
@@ -105,6 +106,14 @@ final class Injection {
         let bookService = provideBookService()
         return BookEditorViewModel(googleBookService: googleBookService, bookService: bookService, book: book)
     }
+    
+    /// Provides a `GamificationViewModel` with its `GamificationService` and `BookService` dependencies injected.
+    @MainActor
+    func provideGamificationViewModel() -> GamificationViewModel {
+        let gamificationService = provideGamificationService()
+        let bookService = provideBookService()
+        return GamificationViewModel(gamificationService: gamificationService, bookService: bookService)
+    }
 
     // MARK: - Internal Service Providers
     
@@ -117,5 +126,11 @@ final class Injection {
     /// Provides a shared `GoogleBooksService` instance.
     private func provideGoogleBooksService() -> GoogleBooksService {
         return GoogleBooksService()
+    }
+    
+    /// Provides a shared `GamificationService` instance.
+    @MainActor
+    private func provideGamificationService() -> GamificationService {
+        return GamificationService(modelContext: self.context)
     }
 }

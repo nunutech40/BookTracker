@@ -159,6 +159,9 @@
         }
       }
     },
+    "Achievements" : {
+
+    },
     "Active Days" : {
       "extractionState" : "manual",
       "localizations" : {
@@ -226,6 +229,9 @@
           }
         }
       }
+    },
+    "All achievements unlocked! You're a legend!" : {
+
     },
     "App Info" : {
       "extractionState" : "manual",
@@ -1013,6 +1019,9 @@
         }
       }
     },
+    "Locked Achievements" : {
+
+    },
     "Mark as Finished" : {
       "extractionState" : "manual",
       "localizations" : {
@@ -1065,6 +1074,9 @@
       }
     },
     "My Reading Journey" : {
+
+    },
+    "No achievements unlocked yet. Keep reading!" : {
 
     },
     "No Active Books" : {
@@ -1829,6 +1841,9 @@
           }
         }
       }
+    },
+    "Unlocked Achievements" : {
+
     },
     "Update progres '%@' (Maks: %lld)" : {
       "localizations" : {

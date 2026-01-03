@@ -266,4 +266,17 @@ final class BookService: BookServiceProtocol {
             print("   ❌ Failed to save book: \(error)")
         }
     }
+    
+    // MARK: - Gamification Specific Fetchers
+    @MainActor
+    func fetchAllBooks() async throws -> [Book] {
+        let descriptor = FetchDescriptor<Book>()
+        return try modelContext.fetch(descriptor)
+    }
+
+    @MainActor
+    func fetchAllReadingSessions() async throws -> [ReadingSession] {
+        let descriptor = FetchDescriptor<ReadingSession>()
+        return try modelContext.fetch(descriptor)
+    }
 }

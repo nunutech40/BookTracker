@@ -119,6 +119,29 @@ struct HomeView: View {
                 .fontWeight(.medium)
                 .foregroundStyle(.white.opacity(0.9))
                 .fixedSize(horizontal: false, vertical: true)
+            
+            // New: Display unlocked achievements
+            if !viewModel.unlockedAchievements.isEmpty {
+                Divider().background(.white.opacity(0.5))
+                
+                // Display up to 2 achievements
+                ForEach(viewModel.unlockedAchievements.prefix(2)) { achievement in
+                    HStack(spacing: 6) {
+                        Image(systemName: achievement.icon)
+                            .foregroundStyle(.yellow)
+                            .font(.caption.bold())
+                        Text(achievement.title)
+                            .font(.caption)
+                            .fontWeight(.bold)
+                            .foregroundStyle(.white.opacity(0.7))
+                    }
+                    Text(achievement.message)
+                        .font(.subheadline)
+                        .fontWeight(.medium)
+                        .foregroundStyle(.white.opacity(0.9))
+                        .fixedSize(horizontal: false, vertical: true)
+                }
+            }
         }
     }
     

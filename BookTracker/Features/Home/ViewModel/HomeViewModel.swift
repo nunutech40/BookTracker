@@ -25,7 +25,7 @@ import SwiftData
  
  **Masalah:** Saat aplikasi pertama kali diluncurkan, ada jeda (lag) yang terasa sebelum UI menjadi responsif. Hal ini terjadi karena proses pengambilan data (misalnya, dari SwiftData) dan perhitungan (misalnya, `calculateStreak`) dilakukan secara sinkron pada saat inisialisasi, yang memblokir _main thread_.
  
- **Solusi:** Menerapkan strategi pemuatan data asinkron untuk memisahkan proses inisialisasi UI dari proses pemuatan data yang berat. Ini memastikan UI muncul dengan cepat dan tetap responsif.
+ **Solusi:** Menerapkan strategi pemuatan data asinkron untuk memisahkan proses pemuatan data yang berat. Ini memastikan UI muncul dengan cepat dan tetap responsif.
  
  **Langkah-langkah Algoritma:**
  1.  **Inisialisasi Cepat:** `ViewModel` diinisialisasi dengan cepat tanpa melakukan pemuatan data. Sebuah _flag_ `isLoading` diatur ke `true` untuk menandakan bahwa data awal belum siap.
@@ -46,6 +46,7 @@ final class HomeViewModel {
     var heatmapData: [Date: Int] = [:]
     var currentStreak: Int = 0
     var scannedPage: String? = nil
+    var unlockedAchievements: [GamificationAchievement] = [] // New property
     
     // ALGORITMA LANGKAH 1: Inisialisasi cepat dengan state `isLoading`
     // Flag ini mengontrol apakah View harus menampilkan ProgressView atau konten utama.
@@ -57,11 +58,13 @@ final class HomeViewModel {
     
     // Dependencies
     private var bookService: BookServiceProtocol
+    private var gamificationService: GamificationServiceProtocol // New dependency
     
     // ALGORITMA LANGKAH 1 (Lanjutan): `init` hanya melakukan setup minimal.
     // Tidak ada pemanggilan `refreshData()` yang berat di sini.
-    init(bookService: BookServiceProtocol) {
+    init(bookService: BookServiceProtocol, gamificationService: GamificationServiceProtocol) { // Updated initializer
         self.bookService = bookService
+        self.gamificationService = gamificationService // Initialize new dependency
     }
     
     @MainActor
@@ -77,6 +80,9 @@ final class HomeViewModel {
         // Kali berikutnya, ini cepat (membaca dari cache memori SwiftData).
         self.heatmapData = bookService.fetchReadingHeatmap()
         calculateStreak()
+        
+        // Check for gamification achievements
+        self.unlockedAchievements = await gamificationService.checkAchievements(bookService: bookService)
         
         // ALGORITMA LANGKAH 4 (Lanjutan): Setelah data siap, ubah `isLoading`.
         // Ini akan memberitahu View untuk beralih dari ProgressView ke konten utama.

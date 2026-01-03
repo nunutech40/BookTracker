@@ -16,4 +16,8 @@ protocol BookServiceProtocol {
     func finishBook(_ book: Book)
     func addBook(from apiBook: GoogleBookItem, coverData: Data?)
     func updateBook(_ book: Book)
+    
+    // MARK: - Gamification Specific
+    func fetchAllBooks() async throws -> [Book]
+    func fetchAllReadingSessions() async throws -> [ReadingSession]
 }
