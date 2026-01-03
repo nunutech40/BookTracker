@@ -71,7 +71,7 @@ private extension UpdateProgressSheet {
         Section {
             HStack {
                 Spacer()
-                TextField(String(localized: "Page"), text: $inputPage)
+                TextField(String(localized: "Halaman"), text: $inputPage)
                     .keyboardType(.numberPad)
                     .font(.system(size: 60, weight: .bold, design: .rounded))
                     .multilineTextAlignment(.center)
@@ -80,7 +80,7 @@ private extension UpdateProgressSheet {
             }
             .listRowBackground(Color.clear)
         } header: {
-            Text(String(format: NSLocalizedString("Enter page for '%@' (Max: %lld)", comment: ""), book.title, maxPage))
+            Text(String(format: NSLocalizedString("Update progres '%@' (Maks: %lld)", comment: ""), book.title, maxPage))
                 .multilineTextAlignment(.center)
                 .frame(maxWidth: .infinity)
         }
@@ -89,17 +89,17 @@ private extension UpdateProgressSheet {
     @ToolbarContentBuilder
     var toolbarContent: some ToolbarContent {
         ToolbarItem(placement: .cancellationAction) {
-            Button(String(localized: "Cancel")) { dismiss() }
+            Button(String(localized: "Batal")) { dismiss() }
                 .disabled(isSaving)
         }
         
         ToolbarItem(placement: .confirmationAction) {
-            Button(String(localized: "Save"), action: {
+            Button(String(localized: "Simpan"), action: {
                 Task {
                     await saveAction()
                 }
             })
-            .disabled(inputPage.isEmpty || isSaving)
+            .disabled(inputPage.isEmpty || isSaving || (Int(inputPage) ?? 0 <= book.currentPage))
         }
     }
     
@@ -126,7 +126,7 @@ private extension UpdateProgressSheet {
     }
     
     func saveAction() async {
-        guard let page = Int(inputPage), page >= book.currentPage, page <= maxPage else {
+        guard let page = Int(inputPage), page > book.currentPage, page <= maxPage else { // Changed to > book.currentPage
             showAlert = true
             return
         }
