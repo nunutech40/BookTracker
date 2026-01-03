@@ -20,6 +20,15 @@ struct UpdateProgressSheet: View {
     @Environment(\.dismiss) var dismiss
     @FocusState private var isFocused: Bool
     
+    // MARK: - Computed Properties
+    private var pageInputError: String? {
+        guard let page = Int(inputPage), !inputPage.isEmpty else { return nil }
+        if page <= book.currentPage {
+            return String(format: NSLocalizedString("Page must be greater than current page (%lld).", comment: ""), book.currentPage)
+        }
+        return nil
+    }
+    
     // MARK: - Main Body
     var body: some View {
         NavigationStack {
@@ -42,33 +51,23 @@ struct UpdateProgressSheet: View {
                 
                 // Native Loading Overlay
                 if isSaving {
-                    // Use a system material for a native, blurred background
-                    // that adapts to light/dark mode automatically.
                     Rectangle()
                         .fill(.ultraThinMaterial)
                         .ignoresSafeArea()
                     
                     ProgressView(String(localized: "Saving..."))
                         .progressViewStyle(.circular)
-                        .tint(.primary) // Ensure spinner color is visible in both themes
+                        .tint(.primary)
                         .padding()
-                        .background(
-                            // Add a thicker material background to the ProgressView itself
-                            // for better legibility.
-                            RoundedRectangle(cornerRadius: 15)
-                                .fill(.thickMaterial)
-                        )
+                        .background(RoundedRectangle(cornerRadius: 15).fill(.thickMaterial))
                         .shadow(radius: 10)
                 }
             }
         }
     }
-}
-
-// MARK: - Components & Builders
-private extension UpdateProgressSheet {
     
-    var inputSection: some View {
+    // MARK: - Components & Builders
+    private var inputSection: some View {
         Section {
             HStack {
                 Spacer()
@@ -80,6 +79,13 @@ private extension UpdateProgressSheet {
                 Spacer()
             }
             .listRowBackground(Color.clear)
+            
+            if let error = pageInputError {
+                Text(error)
+                    .font(.caption)
+                    .foregroundStyle(.red)
+                    .frame(maxWidth: .infinity, alignment: .center)
+            }
         } header: {
             Text(String(format: NSLocalizedString("Update progres '%@' (Maks: %lld)", comment: ""), book.title, maxPage))
                 .multilineTextAlignment(.center)
@@ -88,7 +94,7 @@ private extension UpdateProgressSheet {
     }
     
     @ToolbarContentBuilder
-    var toolbarContent: some ToolbarContent {
+    private var toolbarContent: some ToolbarContent {
         ToolbarItem(placement: .cancellationAction) {
             Button(String(localized: "Batal")) { dismiss() }
                 .disabled(isSaving)
@@ -100,13 +106,13 @@ private extension UpdateProgressSheet {
                     await saveAction()
                 }
             })
-            .disabled(inputPage.isEmpty || isSaving || (Int(inputPage) ?? 0 <= book.currentPage))
+            .disabled(inputPage.isEmpty || isSaving || pageInputError != nil)
         }
     }
     
     // MARK: - Logic & Actions
     
-    func setupView() {
+    private func setupView() {
         if let scannedPage = scannedPage, !scannedPage.isEmpty {
             self.inputPage = scannedPage
         } else {
@@ -115,8 +121,7 @@ private extension UpdateProgressSheet {
         isFocused = true
     }
     
-    /// Validates the input in real-time.
-    func validateInput(newValue: String) {
+    private func validateInput(newValue: String) {
         let filtered = newValue.filter { "0123456789".contains($0) }
         
         if filtered != newValue {
@@ -130,14 +135,13 @@ private extension UpdateProgressSheet {
         }
     }
     
-    func saveAction() async {
-        guard let page = Int(inputPage), page > book.currentPage, page <= maxPage else { // Changed to > book.currentPage
+    private func saveAction() async {
+        guard let page = Int(inputPage), page > book.currentPage, page <= maxPage else {
             showAlert = true
             return
         }
         
         isSaving = true
         await onSubmit(page)
-        // Dismissal is now handled by the parent view.
     }
 }
