@@ -15,6 +15,7 @@ struct ProfileView: View {
     @State private var showShareSheet = false
     @State private var shareableImage: UIImage?
     @State private var shareCard: ShareCardView?
+    @State private var showOnboarding = false
 
     var body: some View {
         NavigationStack {
@@ -29,6 +30,9 @@ struct ProfileView: View {
                 if let image = shareableImage {
                     ActivityView(activityItems: [image, "Check out my reading progress on BookTracker!"])
                 }
+            }
+            .sheet(isPresented: $showOnboarding) {
+                OnboardingView()
             }
             .background(
                 Group {
@@ -109,6 +113,13 @@ struct ProfileView: View {
             NavigationLink(destination: AboutView()) {
                 Label(String(localized: "About BookTracker"), systemImage: "info.circle.fill")
                     .foregroundStyle(.blue)
+            }
+            
+            Button(action: {
+                showOnboarding = true
+            }) {
+                Label(String(localized: "Tutorial"), systemImage: "book.closed.fill")
+                    .foregroundStyle(.green)
             }
             
             NavigationLink(destination: SupportDeveloperView()) {

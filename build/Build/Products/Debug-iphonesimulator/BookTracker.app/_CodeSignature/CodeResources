@@ -4,9 +4,13 @@
 <dict>
 	<key>files</key>
 	<dict>
+		<key>Assets.car</key>
+		<data>
+		sdk+QMg9CgZ0+gOyhSkIaCtkM60=
+		</data>
 		<key>BookTracker.debug.dylib</key>
 		<data>
-		KP/2WOy4oYJC/UGMR66wW9I5dqc=
+		8zcqfoL6oi1cH9IwbmhQG+/oDD0=
 		</data>
 		<key>Info.plist</key>
 		<data>
@@ -45,11 +49,18 @@
 	</dict>
 	<key>files2</key>
 	<dict>
+		<key>Assets.car</key>
+		<dict>
+			<key>hash2</key>
+			<data>
+			uF36RtrTgTk7Vz0OFXIfx3EAumSu+zMMe0Met73HiYA=
+			</data>
+		</dict>
 		<key>BookTracker.debug.dylib</key>
 		<dict>
 			<key>hash2</key>
 			<data>
-			XixH6eWXVPwn5xDnkz2IIltnnmvO033tlTGjFp4mOFQ=
+			NBg/eynabiTijtLu6u+9oglSNawBGHiI9kjnWGzPC9g=
 			</data>
 		</dict>
 		<key>__preview.dylib</key>

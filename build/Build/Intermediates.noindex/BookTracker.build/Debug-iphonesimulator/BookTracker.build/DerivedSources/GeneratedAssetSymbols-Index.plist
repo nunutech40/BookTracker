@@ -5,7 +5,48 @@
 	<key>colors</key>
 	<array/>
 	<key>images</key>
-	<array/>
+	<array>
+		<dict>
+			<key>catalogPath</key>
+			<string>/Users/nununugraha/Documents/Programming/My Project/BookTracker/BookTracker/Assets.xcassets</string>
+			<key>objcSymbol</key>
+			<string>ACImageNameOnBoarding1</string>
+			<key>relativePath</key>
+			<string>./OnBoarding1.imageset</string>
+			<key>swiftSymbol</key>
+			<string>onBoarding1</string>
+		</dict>
+		<dict>
+			<key>catalogPath</key>
+			<string>/Users/nununugraha/Documents/Programming/My Project/BookTracker/BookTracker/Assets.xcassets</string>
+			<key>objcSymbol</key>
+			<string>ACImageNameOnBoarding2</string>
+			<key>relativePath</key>
+			<string>./OnBoarding2.imageset</string>
+			<key>swiftSymbol</key>
+			<string>onBoarding2</string>
+		</dict>
+		<dict>
+			<key>catalogPath</key>
+			<string>/Users/nununugraha/Documents/Programming/My Project/BookTracker/BookTracker/Assets.xcassets</string>
+			<key>objcSymbol</key>
+			<string>ACImageNameOnBoarding3</string>
+			<key>relativePath</key>
+			<string>./OnBoarding3.imageset</string>
+			<key>swiftSymbol</key>
+			<string>onBoarding3</string>
+		</dict>
+		<dict>
+			<key>catalogPath</key>
+			<string>/Users/nununugraha/Documents/Programming/My Project/BookTracker/BookTracker/Assets.xcassets</string>
+			<key>objcSymbol</key>
+			<string>ACImageNameOnBoarding4</string>
+			<key>relativePath</key>
+			<string>./OnBoarding4.imageset</string>
+			<key>swiftSymbol</key>
+			<string>onBoarding4</string>
+		</dict>
+	</array>
 	<key>symbols</key>
 	<array/>
 </dict>

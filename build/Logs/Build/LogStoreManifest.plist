@@ -6,7 +6,7 @@
 	<integer>11</integer>
 	<key>logs</key>
 	<dict>
-		<key>DC6A4750-37E9-444A-8725-C0F671CC8792</key>
+		<key>A1B163F4-CC11-4AA8-B234-0E050D44AAE4</key>
 		<dict>
 			<key>className</key>
 			<string>IDECommandLineBuildLog</string>
@@ -15,7 +15,7 @@
 			<key>domainType</key>
 			<string>Xcode.IDEActivityLogDomainType.BuildLog</string>
 			<key>fileName</key>
-			<string>DC6A4750-37E9-444A-8725-C0F671CC8792.xcactivitylog</string>
+			<string>A1B163F4-CC11-4AA8-B234-0E050D44AAE4.xcactivitylog</string>
 			<key>hasPrimaryLog</key>
 			<true/>
 			<key>primaryObservable</key>
@@ -40,13 +40,13 @@
 			<key>signature</key>
 			<string>Building project BookTracker with scheme BookTracker and configuration Debug</string>
 			<key>timeStartedRecording</key>
-			<real>789278124.65051496</real>
+			<real>789281488.001459</real>
 			<key>timeStoppedRecording</key>
-			<real>789278212.10570896</real>
+			<real>789281523.751719</real>
 			<key>title</key>
 			<string>Building project BookTracker with scheme BookTracker and configuration Debug</string>
 			<key>uniqueIdentifier</key>
-			<string>DC6A4750-37E9-444A-8725-C0F671CC8792</string>
+			<string>A1B163F4-CC11-4AA8-B234-0E050D44AAE4</string>
 		</dict>
 		<key>EB9558D5-3F1E-4A0C-BE96-648B16068E55</key>
 		<dict>

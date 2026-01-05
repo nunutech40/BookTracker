@@ -6,8 +6,16 @@
         "comment": "",
         "key": "Get Started",
         "location": {
-          "startingColumn": 22,
-          "startingLine": 33
+          "startingColumn": 39,
+          "startingLine": 50
+        }
+      },
+      {
+        "comment": "",
+        "key": "Next",
+        "location": {
+          "startingColumn": 55,
+          "startingLine": 50
         }
       }
     ]
