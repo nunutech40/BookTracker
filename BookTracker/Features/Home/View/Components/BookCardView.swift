@@ -65,7 +65,7 @@ private extension BookCardView {
                 .progressViewStyle(.linear)
                 .tint(.blue)
             
-            Text("\(book.currentPage) / \(book.totalPages) Pg")
+            Text(String(format: NSLocalizedString("%d / %d pages", comment: ""), book.currentPage, book.totalPages))
                 .font(.caption)
                 .foregroundStyle(.secondary)
         }

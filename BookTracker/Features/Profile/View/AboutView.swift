@@ -25,7 +25,7 @@ struct AboutView: View {
                     .padding(.top, 40)
                 
                 VStack(spacing: 8) {
-                    Text("BookTracker \(appVersion)")
+                    Text(String(format: NSLocalizedString("BookTracker %@", comment: ""), appVersion))
                         .font(.title2)
                         .fontWeight(.bold)
                     

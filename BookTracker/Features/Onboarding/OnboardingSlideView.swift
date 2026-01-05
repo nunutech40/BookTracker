@@ -22,12 +22,12 @@ struct OnboardingSlideView: View {
                 .padding(.horizontal, 50) // Biar nggak mepet layar
             
             VStack(spacing: 15) {
-                Text(title)
+                Text(LocalizedStringKey(title))
                     .font(.title2)
                     .fontWeight(.bold)
                     .multilineTextAlignment(.center)
 
-                Text(description)
+                Text(LocalizedStringKey(description))
                     .font(.body)
                     .foregroundColor(.secondary)
                     .multilineTextAlignment(.center)
@@ -42,7 +42,7 @@ struct OnboardingSlideView: View {
 #Preview {
     OnboardingSlideView(
         imageName: "book.pages",
-        title: "Track Your Reading",
-        description: "Easily log the last page you read and monitor your progress over time."
+        title: NSLocalizedString("Track Your Reading", comment: ""),
+        description: NSLocalizedString("Easily log the last page you read and monitor your progress over time.", comment: "")
     )
 }

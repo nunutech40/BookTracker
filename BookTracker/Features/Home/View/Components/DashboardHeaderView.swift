@@ -18,21 +18,21 @@ struct DashboardHeaderView: View {
             HStack {
                 if streak > 0 {
                     // Kalo ada streak
-                    Label("\(streak) Day Streak", systemImage: "flame.fill")
+                    Label(String(format: NSLocalizedString("%d Day Streak", comment: ""), streak), systemImage: "flame.fill")
                         .symbolRenderingMode(.palette)
                         .foregroundStyle(.orange, .red)
                         .font(.headline)
                     Spacer()
-                    Text("Keep it up!")
+                    Text(String(localized: "Keep it up!"))
                         .font(.caption)
                         .foregroundStyle(.secondary)
                 } else {
                     // Kalo streak 0 (User baru/Belum baca)
-                    Label("Start Reading", systemImage: "book.fill")
+                    Label(String(localized: "Start Reading"), systemImage: "book.fill")
                         .foregroundStyle(.blue)
                         .font(.headline)
                     Spacer()
-                    Text("No reading data yet")
+                    Text(String(localized: "No reading data yet"))
                         .font(.caption)
                         .foregroundStyle(.secondary)
                 }

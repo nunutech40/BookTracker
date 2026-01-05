@@ -71,7 +71,7 @@ struct UpdateProgressSheet: View {
         Section {
             HStack {
                 Spacer()
-                TextField(String(localized: "Halaman"), text: $inputPage)
+                TextField(String(localized: "Page"), text: $inputPage)
                     .keyboardType(.numberPad)
                     .font(.system(size: 60, weight: .bold, design: .rounded))
                     .multilineTextAlignment(.center)
@@ -96,12 +96,12 @@ struct UpdateProgressSheet: View {
     @ToolbarContentBuilder
     private var toolbarContent: some ToolbarContent {
         ToolbarItem(placement: .cancellationAction) {
-            Button(String(localized: "Batal")) { dismiss() }
+            Button(String(localized: "Cancel")) { dismiss() }
                 .disabled(isSaving)
         }
         
         ToolbarItem(placement: .confirmationAction) {
-            Button(String(localized: "Simpan"), action: {
+            Button(String(localized: "Save"), action: {
                 Task {
                     await saveAction()
                 }

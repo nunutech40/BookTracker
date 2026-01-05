@@ -28,7 +28,7 @@ struct ProfileView: View {
             .toolbar { toolbarContent }
             .sheet(isPresented: $showShareSheet) {
                 if let image = shareableImage {
-                    ActivityView(activityItems: [image, "Check out my reading progress on BookTracker!"])
+                    ActivityView(activityItems: [image, NSLocalizedString("Check out my reading progress on BookTracker!", comment: "")])
                 }
             }
             .sheet(isPresented: $showOnboarding) {
@@ -102,7 +102,7 @@ struct ProfileView: View {
             
             // New NavigationLink for Gamification
             NavigationLink(destination: GamificationView(viewModel: Injection.shared.provideGamificationViewModel())) {
-                Label("Achievements", systemImage: "star.fill") // Using a star icon for achievements
+                Label(NSLocalizedString("Achievements", comment: ""), systemImage: "star.fill") // Using a star icon for achievements
                     .foregroundStyle(.yellow) // Using yellow for achievements
             }
         }
@@ -135,7 +135,7 @@ struct ProfileView: View {
             Button(action: {
                 renderShareCard()
             }) {
-                Label("Share", systemImage: "square.and.arrow.up")
+                Label(NSLocalizedString("Share", comment: ""), systemImage: "square.and.arrow.up")
             }
         }
     }

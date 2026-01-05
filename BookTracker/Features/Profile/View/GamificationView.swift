@@ -12,9 +12,9 @@ struct GamificationView: View {
     
     var body: some View {
         List {
-            Section("Unlocked Achievements") {
+            Section(NSLocalizedString("Unlocked Achievements", comment: "")) {
                 if viewModel.unlockedAchievements.isEmpty {
-                    Text("No achievements unlocked yet. Keep reading!")
+                    Text(NSLocalizedString("No achievements unlocked yet. Keep reading!", comment: ""))
                         .foregroundStyle(.secondary)
                 } else {
                     ForEach(viewModel.unlockedAchievements) { achievement in
@@ -23,9 +23,9 @@ struct GamificationView: View {
                 }
             }
             
-            Section("Locked Achievements") {
+            Section(NSLocalizedString("Locked Achievements", comment: "")) {
                 if viewModel.lockedAchievements.isEmpty {
-                    Text("All achievements unlocked! You're a legend!")
+                    Text(NSLocalizedString("All achievements unlocked! You're a legend!", comment: ""))
                         .foregroundStyle(.secondary)
                 } else {
                     ForEach(viewModel.lockedAchievements) { achievement in
@@ -34,7 +34,7 @@ struct GamificationView: View {
                 }
             }
         }
-        .navigationTitle("Achievements")
+        .navigationTitle(NSLocalizedString("Achievements", comment: ""))
         .onAppear {
             viewModel.loadAndCheckAchievements()
         }

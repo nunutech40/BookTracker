@@ -13,18 +13,18 @@ struct PermissionDeniedView: View {
     var title: String {
         switch permissionType {
         case .camera:
-            return "Camera Access Denied"
+            return NSLocalizedString("Camera Access Denied", comment: "")
         case .photoLibrary:
-            return "Photo Library Access Denied"
+            return NSLocalizedString("Photo Library Access Denied", comment: "")
         }
     }
     
     var message: String {
         switch permissionType {
         case .camera:
-            return "To use this feature, please enable camera access in Settings."
+            return NSLocalizedString("To use this feature, please enable camera access in Settings.", comment: "")
         case .photoLibrary:
-            return "To use this feature, please enable photo library access in Settings."
+            return NSLocalizedString("To use this feature, please enable photo library access in Settings.", comment: "")
         }
     }
     
@@ -43,7 +43,7 @@ struct PermissionDeniedView: View {
                 .multilineTextAlignment(.center)
                 .padding(.horizontal)
             
-            Button("Open Settings") {
+            Button(NSLocalizedString("Open Settings", comment: "")) {
                 if let url = URL(string: UIApplication.openSettingsURLString) {
                     UIApplication.shared.open(url)
                 }

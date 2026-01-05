@@ -15,10 +15,10 @@ struct ShareCardView: View {
         VStack(spacing: 20) {
             // Header
             VStack {
-                Text("BOOKTRACKER")
+                Text(NSLocalizedString("BOOKTRACKER", comment: ""))
                     .font(.system(size: 24, weight: .heavy, design: .rounded))
                     .foregroundColor(.white)
-                Text("My Reading Journey")
+                Text(NSLocalizedString("My Reading Journey", comment: ""))
                     .font(.system(size: 16, weight: .medium, design: .default))
                     .foregroundColor(.white.opacity(0.8))
             }
@@ -28,7 +28,7 @@ struct ShareCardView: View {
                 VStack {
                     Text("\(totalPagesRead())")
                         .font(.system(size: 36, weight: .bold, design: .rounded))
-                    Text("Total Pages")
+                    Text(NSLocalizedString("Total Pages", comment: ""))
                         .font(.system(size: 14, weight: .medium, design: .rounded))
                 }
                 .foregroundColor(.white)
@@ -38,7 +38,7 @@ struct ShareCardView: View {
                 VStack {
                     Text("\(heatmapData.count)")
                         .font(.system(size: 36, weight: .bold, design: .rounded))
-                    Text("Active Days")
+                    Text(NSLocalizedString("Active Days", comment: ""))
                         .font(.system(size: 14, weight: .medium, design: .rounded))
                 }
                 .foregroundColor(.white)
@@ -50,12 +50,12 @@ struct ShareCardView: View {
             
             // Legend
             HStack {
-                Text("Less")
+                Text(NSLocalizedString("Less", comment: ""))
                 RoundedRectangle(cornerRadius: 2).fill(Color.white.opacity(0.2)).frame(width: 12, height: 12)
                 RoundedRectangle(cornerRadius: 2).fill(Color.yellow.opacity(0.4)).frame(width: 12, height: 12)
                 RoundedRectangle(cornerRadius: 2).fill(Color.yellow.opacity(0.7)).frame(width: 12, height: 12)
                 RoundedRectangle(cornerRadius: 2).fill(Color.yellow).frame(width: 12, height: 12)
-                Text("More")
+                Text(NSLocalizedString("More", comment: ""))
             }
             .font(.caption2)
             .foregroundColor(.white.opacity(0.8))
@@ -72,10 +72,10 @@ struct ShareCardView: View {
                     .clipShape(RoundedRectangle(cornerRadius: 8))
                 
                 VStack(alignment: .leading) {
-                    Text("Track your reading habits!")
+                    Text(NSLocalizedString("Track your reading habits!", comment: ""))
                         .font(.headline)
                         .foregroundColor(.white)
-                    Text("Get BookTracker on the App Store")
+                    Text(NSLocalizedString("Get BookTracker on the App Store", comment: ""))
                         .font(.subheadline)
                         .foregroundColor(.white.opacity(0.8))
                 }

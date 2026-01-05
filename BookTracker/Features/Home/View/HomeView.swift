@@ -110,8 +110,8 @@ struct HomeView: View {
                     .fontWeight(.bold)
                     .foregroundStyle(.white.opacity(0.7))
             }
-            let dayText = LocalizedStringResource(viewModel.currentStreak == 1 ? "Day" : "Days")
-            Text("\(viewModel.currentStreak) \(dayText)")
+            let dayText = String(localized: "\(viewModel.currentStreak) Day(s)")
+            Text(dayText)
                 .font(.system(size: 40, weight: .bold, design: .rounded))
                 .foregroundStyle(.white)
             Text(String(localized: "You're on fire! Keep the momentum going."))

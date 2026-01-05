@@ -54,14 +54,14 @@ struct LibraryBookRow: View {
                     HStack(spacing: 4) {
                         Image(systemName: "book.fill")
                             .font(.caption2)
-                        Text("\(book.currentPage) / \(book.totalPages) Pages")
+                        Text(String(format: NSLocalizedString("%d / %d Pages", comment: ""), book.currentPage, book.totalPages))
                             .font(.caption)
                     }
                     .foregroundStyle(.blue)
                     .padding(.top, 2)
                 } else {
                     // Kalau Shelf (atau default): Tampilkan Total Pages aja
-                    Text("\(book.totalPages) Pages")
+                    Text(String(format: NSLocalizedString("%d Pages", comment: ""), book.totalPages))
                         .font(.caption)
                         .foregroundStyle(.secondary)
                         .padding(.top, 2)

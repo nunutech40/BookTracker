@@ -94,7 +94,7 @@ struct BookDetailView: View {
     }
     
     var statusBadge: some View {
-        Text(book.status.rawValue.uppercased())
+        Text(LocalizedStringKey(book.status.rawValue.uppercased()))
             .font(.caption)
             .fontWeight(.bold)
             .padding(6)
