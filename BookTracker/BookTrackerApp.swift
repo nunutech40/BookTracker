@@ -15,6 +15,10 @@ struct BookTrackerApp: App {
     // and manage UNUserNotificationCenterDelegate for foreground notifications.
     @UIApplicationDelegateAdaptor(AppDelegate.self) var appDelegate
     
+    // Use AppStorage to track if onboarding has been completed.
+    // This value is persisted across app launches.
+    @AppStorage("hasCompletedOnboarding") var hasCompletedOnboarding: Bool = false
+    
     // 1. Init Container (Tetap sama)
     var sharedModelContainer: ModelContainer = {
         let schema = Schema([
@@ -51,11 +55,16 @@ struct BookTrackerApp: App {
 
     var body: some Scene {
         WindowGroup {
-            ContentView(
-                homeViewModel: homeViewModel,
-                profileViewModel: Injection.shared.provideProfileViewModel(),
-                navigationCoordinator: appDelegate.navigationCoordinator // Pass the coordinator
-            )
+            // Conditionally show the OnboardingView or the ContentView
+            if hasCompletedOnboarding {
+                ContentView(
+                    homeViewModel: homeViewModel,
+                    profileViewModel: Injection.shared.provideProfileViewModel(),
+                    navigationCoordinator: appDelegate.navigationCoordinator // Pass the coordinator
+                )
+            } else {
+                OnboardingView(hasCompletedOnboarding: $hasCompletedOnboarding)
+            }
         }
         // Jangan lupa modifier ini tetap wajib ada biar SwiftUI environment jalan
         .modelContainer(sharedModelContainer)

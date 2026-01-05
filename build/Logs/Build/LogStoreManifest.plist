@@ -48,6 +48,48 @@
 			<key>uniqueIdentifier</key>
 			<string>DC6A4750-37E9-444A-8725-C0F671CC8792</string>
 		</dict>
+		<key>EB9558D5-3F1E-4A0C-BE96-648B16068E55</key>
+		<dict>
+			<key>className</key>
+			<string>IDECommandLineBuildLog</string>
+			<key>documentTypeString</key>
+			<string>&lt;nil&gt;</string>
+			<key>domainType</key>
+			<string>Xcode.IDEActivityLogDomainType.BuildLog</string>
+			<key>fileName</key>
+			<string>EB9558D5-3F1E-4A0C-BE96-648B16068E55.xcactivitylog</string>
+			<key>hasPrimaryLog</key>
+			<true/>
+			<key>primaryObservable</key>
+			<dict>
+				<key>highLevelStatus</key>
+				<string>W</string>
+				<key>totalNumberOfAnalyzerIssues</key>
+				<integer>0</integer>
+				<key>totalNumberOfErrors</key>
+				<integer>0</integer>
+				<key>totalNumberOfTestFailures</key>
+				<integer>0</integer>
+				<key>totalNumberOfWarnings</key>
+				<integer>72</integer>
+			</dict>
+			<key>schemeIdentifier-containerName</key>
+			<string>BookTracker project</string>
+			<key>schemeIdentifier-schemeName</key>
+			<string>BookTracker</string>
+			<key>schemeIdentifier-sharedScheme</key>
+			<integer>1</integer>
+			<key>signature</key>
+			<string>Building project BookTracker with scheme BookTracker and configuration Debug</string>
+			<key>timeStartedRecording</key>
+			<real>789280316.76400697</real>
+			<key>timeStoppedRecording</key>
+			<real>789280330.115049</real>
+			<key>title</key>
+			<string>Building project BookTracker with scheme BookTracker and configuration Debug</string>
+			<key>uniqueIdentifier</key>
+			<string>EB9558D5-3F1E-4A0C-BE96-648B16068E55</string>
+		</dict>
 	</dict>
 </dict>
 </plist>
