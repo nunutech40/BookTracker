@@ -11,6 +11,12 @@
             "state" : "new",
             "value" : "%1$d / %2$d pages"
           }
+        },
+        "id" : {
+          "stringUnit" : {
+            "state" : "new",
+            "value" : "%1$d / %2$d halaman"
+          }
         }
       }
     },
@@ -21,20 +27,65 @@
             "state" : "new",
             "value" : "%1$d / %2$d Pages"
           }
+        },
+        "id" : {
+          "stringUnit" : {
+            "state" : "new",
+            "value" : "%1$d / %2$d Halaman"
+          }
         }
       }
     },
     "%d Day Streak" : {
-
+      "localizations" : {
+        "en" : {
+          "stringUnit" : {
+            "state" : "new",
+            "value" : "%d Day Streak"
+          }
+        },
+        "id" : {
+          "stringUnit" : {
+            "state" : "new",
+            "value" : "%d Hari Streak"
+          }
+        }
+      }
     },
     "%d Pages" : {
-
+      "localizations" : {
+        "en" : {
+          "stringUnit" : {
+            "state" : "new",
+            "value" : "%d Pages"
+          }
+        },
+        "id" : {
+          "stringUnit" : {
+            "state" : "new",
+            "value" : "%d Halaman"
+          }
+        }
+      }
     },
     "%lld" : {
 
     },
     "%lld Day(s)" : {
-
+      "localizations" : {
+        "en" : {
+          "stringUnit" : {
+            "state" : "new",
+            "value" : "%lld Day(s)"
+          }
+        },
+        "id" : {
+          "stringUnit" : {
+            "state" : "new",
+            "value" : "%lld Hari"
+          }
+        }
+      }
     },
     "%lld Pages" : {
       "extractionState" : "manual",
@@ -156,7 +207,20 @@
       }
     },
     "Achievements" : {
-
+      "localizations" : {
+        "en" : {
+          "stringUnit" : {
+            "state" : "new",
+            "value" : "Achievements"
+          }
+        },
+        "id" : {
+          "stringUnit" : {
+            "state" : "new",
+            "value" : "Pencapaian"
+          }
+        }
+      }
     },
     "Active Days" : {
       "extractionState" : "manual",
@@ -227,10 +291,36 @@
       }
     },
     "All achievements unlocked! You're a legend!" : {
-
+      "localizations" : {
+        "en" : {
+          "stringUnit" : {
+            "state" : "new",
+            "value" : "All achievements unlocked! You're a legend!"
+          }
+        },
+        "id" : {
+          "stringUnit" : {
+            "state" : "new",
+            "value" : "Semua pencapaian telah terbuka! Kamu adalah legenda!"
+          }
+        }
+      }
     },
     "Analyze Productivity" : {
-
+      "localizations" : {
+        "en" : {
+          "stringUnit" : {
+            "state" : "new",
+            "value" : "Analyze Productivity"
+          }
+        },
+        "id" : {
+          "stringUnit" : {
+            "state" : "new",
+            "value" : "Analisis Produktivitas"
+          }
+        }
+      }
     },
     "App Info" : {
       "extractionState" : "manual",
@@ -420,10 +510,36 @@
       }
     },
     "BOOKTRACKER" : {
-
+      "localizations" : {
+        "en" : {
+          "stringUnit" : {
+            "state" : "new",
+            "value" : "BOOKTRACKER"
+          }
+        },
+        "id" : {
+          "stringUnit" : {
+            "state" : "new",
+            "value" : "BOOKTRACKER"
+          }
+        }
+      }
     },
     "BookTracker %@" : {
-
+      "localizations" : {
+        "en" : {
+          "stringUnit" : {
+            "state" : "new",
+            "value" : "BookTracker %s"
+          }
+        },
+        "id" : {
+          "stringUnit" : {
+            "state" : "new",
+            "value" : "BookTracker %s"
+          }
+        }
+      }
     },
     "BookTracker v1.0" : {
       "extractionState" : "manual",
@@ -443,7 +559,20 @@
       }
     },
     "Camera Access Denied" : {
-
+      "localizations" : {
+        "en" : {
+          "stringUnit" : {
+            "state" : "new",
+            "value" : "Camera Access Denied"
+          }
+        },
+        "id" : {
+          "stringUnit" : {
+            "state" : "new",
+            "value" : "Akses Kamera Ditolak"
+          }
+        }
+      }
     },
     "Cancel" : {
       "extractionState" : "manual",
@@ -463,7 +592,20 @@
       }
     },
     "Check out my reading progress on BookTracker!" : {
-
+      "localizations" : {
+        "en" : {
+          "stringUnit" : {
+            "state" : "new",
+            "value" : "Check out my reading progress on BookTracker!"
+          }
+        },
+        "id" : {
+          "stringUnit" : {
+            "state" : "new",
+            "value" : "Lihat progres membacaku di BookTracker!"
+          }
+        }
+      }
     },
     "Choose from Library" : {
       "extractionState" : "manual",
@@ -673,14 +815,27 @@
       }
     },
     "Discover New Books" : {
-
+      "localizations" : {
+        "en" : {
+          "stringUnit" : {
+            "state" : "new",
+            "value" : "Discover New Books"
+          }
+        },
+        "id" : {
+          "stringUnit" : {
+            "state" : "new",
+            "value" : "Temukan Buku Baru"
+          }
+        }
+      }
     },
     "Dukung Developer" : {
       "extractionState" : "manual",
       "localizations" : {
         "en" : {
           "stringUnit" : {
-            "state" : "new",
+            "state" : "translated",
             "value" : "Support Developer"
           }
         },
@@ -697,7 +852,7 @@
       "localizations" : {
         "en" : {
           "stringUnit" : {
-            "state" : "new",
+            "state" : "translated",
             "value" : "Support Indie Developer"
           }
         },
@@ -795,10 +950,36 @@
       }
     },
     "Filter" : {
-
+      "localizations" : {
+        "en" : {
+          "stringUnit" : {
+            "state" : "new",
+            "value" : "Filter"
+          }
+        },
+        "id" : {
+          "stringUnit" : {
+            "state" : "new",
+            "value" : "Filter"
+          }
+        }
+      }
     },
     "Find your next favorite book by searching the vast Google Books library." : {
-
+      "localizations" : {
+        "en" : {
+          "stringUnit" : {
+            "state" : "new",
+            "value" : "Find your next favorite book by searching the vast Google Books library."
+          }
+        },
+        "id" : {
+          "stringUnit" : {
+            "state" : "new",
+            "value" : "Temukan buku favoritmu selanjutnya dengan mencari di perpustakaan Google Books yang luas."
+          }
+        }
+      }
     },
     "Finish a book to see it here." : {
       "extractionState" : "manual",
@@ -835,10 +1016,36 @@
       }
     },
     "Get BookTracker on the App Store" : {
-
+      "localizations" : {
+        "en" : {
+          "stringUnit" : {
+            "state" : "new",
+            "value" : "Get BookTracker on the App Store"
+          }
+        },
+        "id" : {
+          "stringUnit" : {
+            "state" : "new",
+            "value" : "Dapatkan BookTracker di App Store"
+          }
+        }
+      }
     },
     "Get Started" : {
-
+      "localizations" : {
+        "en" : {
+          "stringUnit" : {
+            "state" : "new",
+            "value" : "Get Started"
+          }
+        },
+        "id" : {
+          "stringUnit" : {
+            "state" : "new",
+            "value" : "Mulai"
+          }
+        }
+      }
     },
     "Google Books" : {
       "extractionState" : "manual",
@@ -1028,10 +1235,36 @@
       }
     },
     "Locked Achievements" : {
-
+      "localizations" : {
+        "en" : {
+          "stringUnit" : {
+            "state" : "new",
+            "value" : "Locked Achievements"
+          }
+        },
+        "id" : {
+          "stringUnit" : {
+            "state" : "new",
+            "value" : "Pencapaian Terkunci"
+          }
+        }
+      }
     },
     "Log the last page you read and visualize your reading habits with an activity heatmap." : {
-
+      "localizations" : {
+        "en" : {
+          "stringUnit" : {
+            "state" : "new",
+            "value" : "Log the last page you read and visualize your reading habits with an activity heatmap."
+          }
+        },
+        "id" : {
+          "stringUnit" : {
+            "state" : "new",
+            "value" : "Catat halaman terakhir yang kamu baca dan visualisasikan kebiasaan membacamu dengan peta panas aktivitas."
+          }
+        }
+      }
     },
     "Mark as Finished" : {
       "extractionState" : "manual",
@@ -1051,7 +1284,20 @@
       }
     },
     "Monitor your reading speed and maintain your daily reading streaks." : {
-
+      "localizations" : {
+        "en" : {
+          "stringUnit" : {
+            "state" : "new",
+            "value" : "Monitor your reading speed and maintain your daily reading streaks."
+          }
+        },
+        "id" : {
+          "stringUnit" : {
+            "state" : "new",
+            "value" : "Pantau kecepatan membacamu dan pertahankan coretan harianmu."
+          }
+        }
+      }
     },
     "More" : {
       "extractionState" : "manual",
@@ -1088,13 +1334,52 @@
       }
     },
     "My Reading Journey" : {
-
+      "localizations" : {
+        "en" : {
+          "stringUnit" : {
+            "state" : "new",
+            "value" : "My Reading Journey"
+          }
+        },
+        "id" : {
+          "stringUnit" : {
+            "state" : "new",
+            "value" : "Perjalanan Membacaku"
+          }
+        }
+      }
     },
     "Next" : {
-
+      "localizations" : {
+        "en" : {
+          "stringUnit" : {
+            "state" : "new",
+            "value" : "Next"
+          }
+        },
+        "id" : {
+          "stringUnit" : {
+            "state" : "new",
+            "value" : "Lanjut"
+          }
+        }
+      }
     },
     "No achievements unlocked yet. Keep reading!" : {
-
+      "localizations" : {
+        "en" : {
+          "stringUnit" : {
+            "state" : "new",
+            "value" : "No achievements unlocked yet. Keep reading!"
+          }
+        },
+        "id" : {
+          "stringUnit" : {
+            "state" : "new",
+            "value" : "Belum ada pencapaian yang terbuka. Teruslah membaca!"
+          }
+        }
+      }
     },
     "No Active Books" : {
       "extractionState" : "manual",
@@ -1199,7 +1484,20 @@
       }
     },
     "Open Settings" : {
-
+      "localizations" : {
+        "en" : {
+          "stringUnit" : {
+            "state" : "new",
+            "value" : "Open Settings"
+          }
+        },
+        "id" : {
+          "stringUnit" : {
+            "state" : "new",
+            "value" : "Buka Pengaturan"
+          }
+        }
+      }
     },
     "Page" : {
       "extractionState" : "manual",
@@ -1253,10 +1551,36 @@
       }
     },
     "Pages" : {
-
+      "localizations" : {
+        "en" : {
+          "stringUnit" : {
+            "state" : "new",
+            "value" : "Pages"
+          }
+        },
+        "id" : {
+          "stringUnit" : {
+            "state" : "new",
+            "value" : "Halaman"
+          }
+        }
+      }
     },
     "Photo Library Access Denied" : {
-
+      "localizations" : {
+        "en" : {
+          "stringUnit" : {
+            "state" : "new",
+            "value" : "Photo Library Access Denied"
+          }
+        },
+        "id" : {
+          "stringUnit" : {
+            "state" : "new",
+            "value" : "Akses Galeri Foto Ditolak"
+          }
+        }
+      }
     },
     "Please enter a valid page number between %lld and %lld." : {
       "extractionState" : "manual",
@@ -1497,7 +1821,20 @@
       }
     },
     "Share" : {
-
+      "localizations" : {
+        "en" : {
+          "stringUnit" : {
+            "state" : "new",
+            "value" : "Share"
+          }
+        },
+        "id" : {
+          "stringUnit" : {
+            "state" : "new",
+            "value" : "Bagikan"
+          }
+        }
+      }
     },
     "Shelf" : {
       "extractionState" : "manual",
@@ -1585,7 +1922,20 @@
       }
     },
     "Stay motivated by earning medals and reaching milestones as you build your consistent reading habit." : {
-
+      "localizations" : {
+        "en" : {
+          "stringUnit" : {
+            "state" : "new",
+            "value" : "Stay motivated by earning medals and reaching milestones as you build your consistent reading habit."
+          }
+        },
+        "id" : {
+          "stringUnit" : {
+            "state" : "new",
+            "value" : "Tetap termotivasi dengan mendapatkan medali dan mencapai tonggak sejarah saat Anda membangun kebiasaan membaca yang konsisten."
+          }
+        }
+      }
     },
     "Support" : {
       "extractionState" : "manual",
@@ -1741,10 +2091,36 @@
       }
     },
     "To use this feature, please enable camera access in Settings." : {
-
+      "localizations" : {
+        "en" : {
+          "stringUnit" : {
+            "state" : "new",
+            "value" : "To use this feature, please enable camera access in Settings."
+          }
+        },
+        "id" : {
+          "stringUnit" : {
+            "state" : "new",
+            "value" : "Untuk menggunakan fitur ini, harap aktifkan akses kamera di Pengaturan."
+          }
+        }
+      }
     },
     "To use this feature, please enable photo library access in Settings." : {
-
+      "localizations" : {
+        "en" : {
+          "stringUnit" : {
+            "state" : "new",
+            "value" : "To use this feature, please enable photo library access in Settings."
+          }
+        },
+        "id" : {
+          "stringUnit" : {
+            "state" : "new",
+            "value" : "Untuk menggunakan fitur ini, harap aktifkan akses perpustakaan foto di Pengaturan."
+          }
+        }
+      }
     },
     "Total Pages" : {
       "extractionState" : "manual",
@@ -1815,17 +2191,43 @@
       }
     },
     "Track Your Progress" : {
-
+      "localizations" : {
+        "en" : {
+          "stringUnit" : {
+            "state" : "new",
+            "value" : "Track Your Progress"
+          }
+        },
+        "id" : {
+          "stringUnit" : {
+            "state" : "new",
+            "value" : "Lacak Progres Anda"
+          }
+        }
+      }
     },
     "Track your reading habits!" : {
-
+      "localizations" : {
+        "en" : {
+          "stringUnit" : {
+            "state" : "new",
+            "value" : "Track your reading habits!"
+          }
+        },
+        "id" : {
+          "stringUnit" : {
+            "state" : "new",
+            "value" : "Lacak kebiasaan membacamu!"
+          }
+        }
+      }
     },
     "Traktir di Buy Me a Coffee" : {
       "extractionState" : "manual",
       "localizations" : {
         "en" : {
           "stringUnit" : {
-            "state" : "new",
+            "state" : "translated",
             "value" : "Treat on Buy Me a Coffee"
           }
         },
@@ -1842,7 +2244,7 @@
       "localizations" : {
         "en" : {
           "stringUnit" : {
-            "state" : "new",
+            "state" : "translated",
             "value" : "Treat on Saweria"
           }
         },
@@ -1855,7 +2257,20 @@
       }
     },
     "Tutorial" : {
-
+      "localizations" : {
+        "en" : {
+          "stringUnit" : {
+            "state" : "new",
+            "value" : "Tutorial"
+          }
+        },
+        "id" : {
+          "stringUnit" : {
+            "state" : "new",
+            "value" : "Tutorial"
+          }
+        }
+      }
     },
     "Unknown" : {
       "extractionState" : "manual",
@@ -1875,14 +2290,46 @@
       }
     },
     "Unlock Your Achievements" : {
-
+      "localizations" : {
+        "en" : {
+          "stringUnit" : {
+            "state" : "new",
+            "value" : "Unlock Your Achievements"
+          }
+        },
+        "id" : {
+          "stringUnit" : {
+            "state" : "new",
+            "value" : "Buka Pencapaian Anda"
+          }
+        }
+      }
     },
     "Unlocked Achievements" : {
-
+      "localizations" : {
+        "en" : {
+          "stringUnit" : {
+            "state" : "new",
+            "value" : "Unlocked Achievements"
+          }
+        },
+        "id" : {
+          "stringUnit" : {
+            "state" : "new",
+            "value" : "Pencapaian Terbuka"
+          }
+        }
+      }
     },
     "Update progres '%@' (Maks: %lld)" : {
       "localizations" : {
         "en" : {
+          "stringUnit" : {
+            "state" : "new",
+            "value" : "Update progress for '%1$@' (Max: %2$lld)"
+          }
+        },
+        "id" : {
           "stringUnit" : {
             "state" : "new",
             "value" : "Update progres '%1$@' (Maks: %2$lld)"
