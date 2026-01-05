@@ -1,0 +1,104 @@
+{
+  "source": "/Users/nununugraha/Documents/Programming/My Project/BookTracker/BookTracker/Features/Home/ViewModel/BookEditorViewModel.swift",
+  "tables": {
+    "Localizable": [
+      {
+        "comment": "",
+        "key": "Title cannot be empty.",
+        "location": {
+          "startingColumn": 56,
+          "startingLine": 115
+        }
+      },
+      {
+        "comment": "",
+        "key": "Title must be at least 3 characters long.",
+        "location": {
+          "startingColumn": 56,
+          "startingLine": 119
+        }
+      },
+      {
+        "comment": "",
+        "key": "Title cannot be longer than 100 characters.",
+        "location": {
+          "startingColumn": 56,
+          "startingLine": 123
+        }
+      },
+      {
+        "comment": "",
+        "key": "Author cannot be empty.",
+        "location": {
+          "startingColumn": 56,
+          "startingLine": 131
+        }
+      },
+      {
+        "comment": "",
+        "key": "Author must be at least 3 characters long.",
+        "location": {
+          "startingColumn": 56,
+          "startingLine": 134
+        }
+      },
+      {
+        "comment": "",
+        "key": "Author cannot be longer than 50 characters.",
+        "location": {
+          "startingColumn": 56,
+          "startingLine": 137
+        }
+      },
+      {
+        "comment": "",
+        "key": "Total pages cannot be empty.",
+        "location": {
+          "startingColumn": 56,
+          "startingLine": 144
+        }
+      },
+      {
+        "comment": "",
+        "key": "Total pages must be at least 1.",
+        "location": {
+          "startingColumn": 56,
+          "startingLine": 150
+        }
+      },
+      {
+        "comment": "",
+        "key": "Total pages cannot exceed 9999.",
+        "location": {
+          "startingColumn": 56,
+          "startingLine": 153
+        }
+      },
+      {
+        "comment": "",
+        "key": "Enter a valid number.",
+        "location": {
+          "startingColumn": 56,
+          "startingLine": 147
+        }
+      },
+      {
+        "comment": "",
+        "key": "Book not found.",
+        "location": {
+          "startingColumn": 72,
+          "startingLine": 307
+        }
+      },
+      {
+        "comment": "",
+        "key": "Internet connection failed.",
+        "location": {
+          "startingColumn": 45,
+          "startingLine": 309
+        }
+      }
+    ]
+  },
+  "version": 1
+}

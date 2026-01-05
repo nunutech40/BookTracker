@@ -1,0 +1,30 @@
+"/Users/nununugraha/Documents/Programming/My Project/BookTracker/BookTracker/Features/Profile/View/ShareCardView.swift":
+  object: "/Users/nununugraha/Documents/Programming/My Project/BookTracker/build/Build/Intermediates.noindex/BookTracker.build/Debug-iphonesimulator/BookTracker.build/Objects-normal/x86_64/ShareCardView.o"
+  swift-dependencies: "/Users/nununugraha/Documents/Programming/My Project/BookTracker/build/Build/Intermediates.noindex/BookTracker.build/Debug-iphonesimulator/BookTracker.build/Objects-normal/x86_64/ShareCardView.swiftdeps"
+  const-values: "/Users/nununugraha/Documents/Programming/My Project/BookTracker/build/Build/Intermediates.noindex/BookTracker.build/Debug-iphonesimulator/BookTracker.build/Objects-normal/x86_64/ShareCardView.swiftconstvalues"
+  diagnostics: "/Users/nununugraha/Documents/Programming/My Project/BookTracker/build/Build/Intermediates.noindex/BookTracker.build/Debug-iphonesimulator/BookTracker.build/Objects-normal/x86_64/ShareCardView.dia"
+  dependencies: "/Users/nununugraha/Documents/Programming/My Project/BookTracker/build/Build/Intermediates.noindex/BookTracker.build/Debug-iphonesimulator/BookTracker.build/Objects-normal/x86_64/ShareCardView.d"
+"/Users/nununugraha/Documents/Programming/My Project/BookTracker/BookTracker/Features/Profile/ViewModel/GamificationViewModel.swift":
+  object: "/Users/nununugraha/Documents/Programming/My Project/BookTracker/build/Build/Intermediates.noindex/BookTracker.build/Debug-iphonesimulator/BookTracker.build/Objects-normal/x86_64/GamificationViewModel.o"
+  swift-dependencies: "/Users/nununugraha/Documents/Programming/My Project/BookTracker/build/Build/Intermediates.noindex/BookTracker.build/Debug-iphonesimulator/BookTracker.build/Objects-normal/x86_64/GamificationViewModel.swiftdeps"
+  diagnostics: "/Users/nununugraha/Documents/Programming/My Project/BookTracker/build/Build/Intermediates.noindex/BookTracker.build/Debug-iphonesimulator/BookTracker.build/Objects-normal/x86_64/GamificationViewModel.dia"
+  const-values: "/Users/nununugraha/Documents/Programming/My Project/BookTracker/build/Build/Intermediates.noindex/BookTracker.build/Debug-iphonesimulator/BookTracker.build/Objects-normal/x86_64/GamificationViewModel.swiftconstvalues"
+  dependencies: "/Users/nununugraha/Documents/Programming/My Project/BookTracker/build/Build/Intermediates.noindex/BookTracker.build/Debug-iphonesimulator/BookTracker.build/Objects-normal/x86_64/GamificationViewModel.d"
+"/Users/nununugraha/Documents/Programming/My Project/BookTracker/BookTracker/Features/Profile/View/SupportDeveloperView.swift":
+  swift-dependencies: "/Users/nununugraha/Documents/Programming/My Project/BookTracker/build/Build/Intermediates.noindex/BookTracker.build/Debug-iphonesimulator/BookTracker.build/Objects-normal/x86_64/SupportDeveloperView.swiftdeps"
+  object: "/Users/nununugraha/Documents/Programming/My Project/BookTracker/build/Build/Intermediates.noindex/BookTracker.build/Debug-iphonesimulator/BookTracker.build/Objects-normal/x86_64/SupportDeveloperView.o"
+  diagnostics: "/Users/nununugraha/Documents/Programming/My Project/BookTracker/build/Build/Intermediates.noindex/BookTracker.build/Debug-iphonesimulator/BookTracker.build/Objects-normal/x86_64/SupportDeveloperView.dia"
+  dependencies: "/Users/nununugraha/Documents/Programming/My Project/BookTracker/build/Build/Intermediates.noindex/BookTracker.build/Debug-iphonesimulator/BookTracker.build/Objects-normal/x86_64/SupportDeveloperView.d"
+  const-values: "/Users/nununugraha/Documents/Programming/My Project/BookTracker/build/Build/Intermediates.noindex/BookTracker.build/Debug-iphonesimulator/BookTracker.build/Objects-normal/x86_64/SupportDeveloperView.swiftconstvalues"
+"/Users/nununugraha/Documents/Programming/My Project/BookTracker/BookTracker/Features/Profile/View/GamificationView.swift":
+  object: "/Users/nununugraha/Documents/Programming/My Project/BookTracker/build/Build/Intermediates.noindex/BookTracker.build/Debug-iphonesimulator/BookTracker.build/Objects-normal/x86_64/GamificationView.o"
+  dependencies: "/Users/nununugraha/Documents/Programming/My Project/BookTracker/build/Build/Intermediates.noindex/BookTracker.build/Debug-iphonesimulator/BookTracker.build/Objects-normal/x86_64/GamificationView.d"
+  swift-dependencies: "/Users/nununugraha/Documents/Programming/My Project/BookTracker/build/Build/Intermediates.noindex/BookTracker.build/Debug-iphonesimulator/BookTracker.build/Objects-normal/x86_64/GamificationView.swiftdeps"
+  const-values: "/Users/nununugraha/Documents/Programming/My Project/BookTracker/build/Build/Intermediates.noindex/BookTracker.build/Debug-iphonesimulator/BookTracker.build/Objects-normal/x86_64/GamificationView.swiftconstvalues"
+  diagnostics: "/Users/nununugraha/Documents/Programming/My Project/BookTracker/build/Build/Intermediates.noindex/BookTracker.build/Debug-iphonesimulator/BookTracker.build/Objects-normal/x86_64/GamificationView.dia"
+"/Users/nununugraha/Documents/Programming/My Project/BookTracker/BookTracker/Features/Profile/View/ProfileView.swift":
+  dependencies: "/Users/nununugraha/Documents/Programming/My Project/BookTracker/build/Build/Intermediates.noindex/BookTracker.build/Debug-iphonesimulator/BookTracker.build/Objects-normal/x86_64/ProfileView.d"
+  const-values: "/Users/nununugraha/Documents/Programming/My Project/BookTracker/build/Build/Intermediates.noindex/BookTracker.build/Debug-iphonesimulator/BookTracker.build/Objects-normal/x86_64/ProfileView.swiftconstvalues"
+  object: "/Users/nununugraha/Documents/Programming/My Project/BookTracker/build/Build/Intermediates.noindex/BookTracker.build/Debug-iphonesimulator/BookTracker.build/Objects-normal/x86_64/ProfileView.o"
+  swift-dependencies: "/Users/nununugraha/Documents/Programming/My Project/BookTracker/build/Build/Intermediates.noindex/BookTracker.build/Debug-iphonesimulator/BookTracker.build/Objects-normal/x86_64/ProfileView.swiftdeps"
+  diagnostics: "/Users/nununugraha/Documents/Programming/My Project/BookTracker/build/Build/Intermediates.noindex/BookTracker.build/Debug-iphonesimulator/BookTracker.build/Objects-normal/x86_64/ProfileView.dia"

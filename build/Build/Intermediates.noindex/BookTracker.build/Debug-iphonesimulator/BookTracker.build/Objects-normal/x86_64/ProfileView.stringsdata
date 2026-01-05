@@ -1,0 +1,144 @@
+{
+  "source": "/Users/nununugraha/Documents/Programming/My Project/BookTracker/BookTracker/Features/Profile/View/ProfileView.swift",
+  "tables": {
+    "Localizable": [
+      {
+        "comment": "",
+        "key": "Profile",
+        "location": {
+          "startingColumn": 48,
+          "startingLine": 26
+        }
+      },
+      {
+        "comment": "",
+        "key": "Reading Activity (Last 12 Months)",
+        "location": {
+          "startingColumn": 48,
+          "startingLine": 51
+        }
+      },
+      {
+        "comment": "",
+        "key": "Collections",
+        "location": {
+          "startingColumn": 48,
+          "startingLine": 93
+        }
+      },
+      {
+        "comment": "",
+        "key": "App Info",
+        "location": {
+          "startingColumn": 48,
+          "startingLine": 108
+        }
+      },
+      {
+        "comment": "",
+        "key": "Total Pages",
+        "location": {
+          "startingColumn": 48,
+          "startingLine": 57
+        }
+      },
+      {
+        "comment": "",
+        "key": "%lld",
+        "location": {
+          "startingColumn": 30,
+          "startingLine": 59
+        }
+      },
+      {
+        "comment": "",
+        "key": "Active Days",
+        "location": {
+          "startingColumn": 48,
+          "startingLine": 64
+        }
+      },
+      {
+        "comment": "",
+        "key": "%lld",
+        "location": {
+          "startingColumn": 30,
+          "startingLine": 66
+        }
+      },
+      {
+        "comment": "",
+        "key": "Less",
+        "location": {
+          "startingColumn": 44,
+          "startingLine": 77
+        }
+      },
+      {
+        "comment": "",
+        "key": "More",
+        "location": {
+          "startingColumn": 44,
+          "startingLine": 82
+        }
+      },
+      {
+        "comment": "",
+        "key": "Finished Books",
+        "location": {
+          "startingColumn": 41,
+          "startingLine": 95
+        }
+      },
+      {
+        "comment": "",
+        "key": "Achievements",
+        "location": {
+          "startingColumn": 23,
+          "startingLine": 101
+        }
+      },
+      {
+        "comment": "",
+        "key": "About BookTracker",
+        "location": {
+          "startingColumn": 41,
+          "startingLine": 110
+        }
+      },
+      {
+        "comment": "",
+        "key": "Dukung Developer",
+        "location": {
+          "startingColumn": 41,
+          "startingLine": 115
+        }
+      },
+      {
+        "comment": "",
+        "key": "Share",
+        "location": {
+          "startingColumn": 23,
+          "startingLine": 127
+        }
+      },
+      {
+        "comment": "",
+        "key": "%@",
+        "location": {
+          "startingColumn": 26,
+          "startingLine": 217
+        }
+      },
+      {
+        "comment": "",
+        "key": "No reading activity",
+        "location": {
+          "startingColumn": 48,
+          "startingLine": 228
+        }
+      }
+    ]
+  },
+  "version": 1
+}

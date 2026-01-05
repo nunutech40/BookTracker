@@ -1,0 +1,96 @@
+{
+  "source": "/Users/nununugraha/Documents/Programming/My Project/BookTracker/BookTracker/Features/Home/View/HomeView.swift",
+  "tables": {
+    "Localizable": [
+      {
+        "comment": "",
+        "key": "Bookmarker",
+        "location": {
+          "startingColumn": 48,
+          "startingLine": 46
+        }
+      },
+      {
+        "comment": "",
+        "key": "Loading Your Library...",
+        "location": {
+          "startingColumn": 52,
+          "startingLine": 34
+        }
+      },
+      {
+        "comment": "",
+        "key": "%lld %@",
+        "location": {
+          "startingColumn": 18,
+          "startingLine": 114
+        }
+      },
+      {
+        "comment": "",
+        "key": "You're on fire! Keep the momentum going.",
+        "location": {
+          "startingColumn": 36,
+          "startingLine": 117
+        }
+      },
+      {
+        "comment": "",
+        "key": "CURRENT STREAK",
+        "location": {
+          "startingColumn": 40,
+          "startingLine": 108
+        }
+      },
+      {
+        "comment": "",
+        "key": "0 Days",
+        "location": {
+          "startingColumn": 36,
+          "startingLine": 156
+        }
+      },
+      {
+        "comment": "",
+        "key": "Read just 1 page today to start your streak.",
+        "location": {
+          "startingColumn": 36,
+          "startingLine": 159
+        }
+      },
+      {
+        "comment": "",
+        "key": "DAILY GOAL",
+        "location": {
+          "startingColumn": 40,
+          "startingLine": 151
+        }
+      },
+      {
+        "comment": "",
+        "key": "Reading Now",
+        "location": {
+          "startingColumn": 36,
+          "startingLine": 169
+        }
+      },
+      {
+        "comment": "",
+        "key": "No Active Books",
+        "location": {
+          "startingColumn": 40,
+          "startingLine": 210
+        }
+      },
+      {
+        "comment": "",
+        "key": "Your reading journey starts here.\nTap + to add a book.",
+        "location": {
+          "startingColumn": 40,
+          "startingLine": 213
+        }
+      }
+    ]
+  },
+  "version": 1
+}

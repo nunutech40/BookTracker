@@ -1,0 +1,36 @@
+"/Users/nununugraha/Documents/Programming/My Project/BookTracker/BookTracker/Features/Home/View/Components/SearchResultRow.swift":
+  dependencies: "/Users/nununugraha/Documents/Programming/My Project/BookTracker/build/Build/Intermediates.noindex/BookTracker.build/Debug-iphonesimulator/BookTracker.build/Objects-normal/arm64/SearchResultRow.d"
+  swift-dependencies: "/Users/nununugraha/Documents/Programming/My Project/BookTracker/build/Build/Intermediates.noindex/BookTracker.build/Debug-iphonesimulator/BookTracker.build/Objects-normal/arm64/SearchResultRow.swiftdeps"
+  diagnostics: "/Users/nununugraha/Documents/Programming/My Project/BookTracker/build/Build/Intermediates.noindex/BookTracker.build/Debug-iphonesimulator/BookTracker.build/Objects-normal/arm64/SearchResultRow.dia"
+  object: "/Users/nununugraha/Documents/Programming/My Project/BookTracker/build/Build/Intermediates.noindex/BookTracker.build/Debug-iphonesimulator/BookTracker.build/Objects-normal/arm64/SearchResultRow.o"
+  const-values: "/Users/nununugraha/Documents/Programming/My Project/BookTracker/build/Build/Intermediates.noindex/BookTracker.build/Debug-iphonesimulator/BookTracker.build/Objects-normal/arm64/SearchResultRow.swiftconstvalues"
+"/Users/nununugraha/Documents/Programming/My Project/BookTracker/BookTracker/Features/Home/View/Components/BookCardView.swift":
+  const-values: "/Users/nununugraha/Documents/Programming/My Project/BookTracker/build/Build/Intermediates.noindex/BookTracker.build/Debug-iphonesimulator/BookTracker.build/Objects-normal/arm64/BookCardView.swiftconstvalues"
+  object: "/Users/nununugraha/Documents/Programming/My Project/BookTracker/build/Build/Intermediates.noindex/BookTracker.build/Debug-iphonesimulator/BookTracker.build/Objects-normal/arm64/BookCardView.o"
+  diagnostics: "/Users/nununugraha/Documents/Programming/My Project/BookTracker/build/Build/Intermediates.noindex/BookTracker.build/Debug-iphonesimulator/BookTracker.build/Objects-normal/arm64/BookCardView.dia"
+  dependencies: "/Users/nununugraha/Documents/Programming/My Project/BookTracker/build/Build/Intermediates.noindex/BookTracker.build/Debug-iphonesimulator/BookTracker.build/Objects-normal/arm64/BookCardView.d"
+  swift-dependencies: "/Users/nununugraha/Documents/Programming/My Project/BookTracker/build/Build/Intermediates.noindex/BookTracker.build/Debug-iphonesimulator/BookTracker.build/Objects-normal/arm64/BookCardView.swiftdeps"
+"/Users/nununugraha/Documents/Programming/My Project/BookTracker/BookTracker/Features/Home/View/Components/GoogleBookSearchSheet.swift":
+  diagnostics: "/Users/nununugraha/Documents/Programming/My Project/BookTracker/build/Build/Intermediates.noindex/BookTracker.build/Debug-iphonesimulator/BookTracker.build/Objects-normal/arm64/GoogleBookSearchSheet.dia"
+  object: "/Users/nununugraha/Documents/Programming/My Project/BookTracker/build/Build/Intermediates.noindex/BookTracker.build/Debug-iphonesimulator/BookTracker.build/Objects-normal/arm64/GoogleBookSearchSheet.o"
+  dependencies: "/Users/nununugraha/Documents/Programming/My Project/BookTracker/build/Build/Intermediates.noindex/BookTracker.build/Debug-iphonesimulator/BookTracker.build/Objects-normal/arm64/GoogleBookSearchSheet.d"
+  swift-dependencies: "/Users/nununugraha/Documents/Programming/My Project/BookTracker/build/Build/Intermediates.noindex/BookTracker.build/Debug-iphonesimulator/BookTracker.build/Objects-normal/arm64/GoogleBookSearchSheet.swiftdeps"
+  const-values: "/Users/nununugraha/Documents/Programming/My Project/BookTracker/build/Build/Intermediates.noindex/BookTracker.build/Debug-iphonesimulator/BookTracker.build/Objects-normal/arm64/GoogleBookSearchSheet.swiftconstvalues"
+"/Users/nununugraha/Documents/Programming/My Project/BookTracker/BookTracker/Features/History/View/HistoryView.swift":
+  dependencies: "/Users/nununugraha/Documents/Programming/My Project/BookTracker/build/Build/Intermediates.noindex/BookTracker.build/Debug-iphonesimulator/BookTracker.build/Objects-normal/arm64/HistoryView.d"
+  const-values: "/Users/nununugraha/Documents/Programming/My Project/BookTracker/build/Build/Intermediates.noindex/BookTracker.build/Debug-iphonesimulator/BookTracker.build/Objects-normal/arm64/HistoryView.swiftconstvalues"
+  swift-dependencies: "/Users/nununugraha/Documents/Programming/My Project/BookTracker/build/Build/Intermediates.noindex/BookTracker.build/Debug-iphonesimulator/BookTracker.build/Objects-normal/arm64/HistoryView.swiftdeps"
+  diagnostics: "/Users/nununugraha/Documents/Programming/My Project/BookTracker/build/Build/Intermediates.noindex/BookTracker.build/Debug-iphonesimulator/BookTracker.build/Objects-normal/arm64/HistoryView.dia"
+  object: "/Users/nununugraha/Documents/Programming/My Project/BookTracker/build/Build/Intermediates.noindex/BookTracker.build/Debug-iphonesimulator/BookTracker.build/Objects-normal/arm64/HistoryView.o"
+"/Users/nununugraha/Documents/Programming/My Project/BookTracker/BookTracker/Features/Common/ShareableHeatmap.swift":
+  const-values: "/Users/nununugraha/Documents/Programming/My Project/BookTracker/build/Build/Intermediates.noindex/BookTracker.build/Debug-iphonesimulator/BookTracker.build/Objects-normal/arm64/ShareableHeatmap.swiftconstvalues"
+  dependencies: "/Users/nununugraha/Documents/Programming/My Project/BookTracker/build/Build/Intermediates.noindex/BookTracker.build/Debug-iphonesimulator/BookTracker.build/Objects-normal/arm64/ShareableHeatmap.d"
+  object: "/Users/nununugraha/Documents/Programming/My Project/BookTracker/build/Build/Intermediates.noindex/BookTracker.build/Debug-iphonesimulator/BookTracker.build/Objects-normal/arm64/ShareableHeatmap.o"
+  swift-dependencies: "/Users/nununugraha/Documents/Programming/My Project/BookTracker/build/Build/Intermediates.noindex/BookTracker.build/Debug-iphonesimulator/BookTracker.build/Objects-normal/arm64/ShareableHeatmap.swiftdeps"
+  diagnostics: "/Users/nununugraha/Documents/Programming/My Project/BookTracker/build/Build/Intermediates.noindex/BookTracker.build/Debug-iphonesimulator/BookTracker.build/Objects-normal/arm64/ShareableHeatmap.dia"
+"/Users/nununugraha/Documents/Programming/My Project/BookTracker/BookTracker/Features/Home/View/Components/DashboardHeaderView.swift":
+  const-values: "/Users/nununugraha/Documents/Programming/My Project/BookTracker/build/Build/Intermediates.noindex/BookTracker.build/Debug-iphonesimulator/BookTracker.build/Objects-normal/arm64/DashboardHeaderView.swiftconstvalues"
+  swift-dependencies: "/Users/nununugraha/Documents/Programming/My Project/BookTracker/build/Build/Intermediates.noindex/BookTracker.build/Debug-iphonesimulator/BookTracker.build/Objects-normal/arm64/DashboardHeaderView.swiftdeps"
+  object: "/Users/nununugraha/Documents/Programming/My Project/BookTracker/build/Build/Intermediates.noindex/BookTracker.build/Debug-iphonesimulator/BookTracker.build/Objects-normal/arm64/DashboardHeaderView.o"
+  diagnostics: "/Users/nununugraha/Documents/Programming/My Project/BookTracker/build/Build/Intermediates.noindex/BookTracker.build/Debug-iphonesimulator/BookTracker.build/Objects-normal/arm64/DashboardHeaderView.dia"
+  dependencies: "/Users/nununugraha/Documents/Programming/My Project/BookTracker/build/Build/Intermediates.noindex/BookTracker.build/Debug-iphonesimulator/BookTracker.build/Objects-normal/arm64/DashboardHeaderView.d"

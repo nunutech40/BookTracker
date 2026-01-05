@@ -1,0 +1,16 @@
+{
+  "source": "/Users/nununugraha/Documents/Programming/My Project/BookTracker/BookTracker/Features/Common/PermissionDeniedView.swift",
+  "tables": {
+    "Localizable": [
+      {
+        "comment": "",
+        "key": "Open Settings",
+        "location": {
+          "startingColumn": 20,
+          "startingLine": 46
+        }
+      }
+    ]
+  },
+  "version": 1
+}

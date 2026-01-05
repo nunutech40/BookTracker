@@ -1,0 +1,184 @@
+{
+  "source": "/Users/nununugraha/Documents/Programming/My Project/BookTracker/BookTracker/Features/Home/View/BookEditorView.swift",
+  "tables": {
+    "Localizable": [
+      {
+        "comment": "",
+        "key": "Delete Book?",
+        "location": {
+          "startingColumn": 31,
+          "startingLine": 110
+        }
+      },
+      {
+        "comment": "",
+        "key": "Book Info",
+        "location": {
+          "startingColumn": 52,
+          "startingLine": 48
+        }
+      },
+      {
+        "comment": "",
+        "key": "Remove Cover",
+        "location": {
+          "startingColumn": 38,
+          "startingLine": 174
+        }
+      },
+      {
+        "comment": "",
+        "key": "Title",
+        "location": {
+          "startingColumn": 45,
+          "startingLine": 49
+        }
+      },
+      {
+        "comment": "",
+        "key": "Author",
+        "location": {
+          "startingColumn": 45,
+          "startingLine": 55
+        }
+      },
+      {
+        "comment": "",
+        "key": "Total Pages",
+        "location": {
+          "startingColumn": 45,
+          "startingLine": 60
+        }
+      },
+      {
+        "comment": "",
+        "key": "Start Reading Now",
+        "location": {
+          "startingColumn": 45,
+          "startingLine": 70
+        }
+      },
+      {
+        "comment": "",
+        "key": "Book will appear in 'Reading Now'",
+        "location": {
+          "startingColumn": 65,
+          "startingLine": 74
+        }
+      },
+      {
+        "comment": "",
+        "key": "Book will start in 'Library (To Read)'",
+        "location": {
+          "startingColumn": 122,
+          "startingLine": 74
+        }
+      },
+      {
+        "comment": "",
+        "key": "Delete Book",
+        "location": {
+          "startingColumn": 46,
+          "startingLine": 80
+        }
+      },
+      {
+        "comment": "",
+        "key": "Add New Book",
+        "location": {
+          "startingColumn": 48,
+          "startingLine": 126
+        }
+      },
+      {
+        "comment": "",
+        "key": "Edit Book Details",
+        "location": {
+          "startingColumn": 46,
+          "startingLine": 127
+        }
+      },
+      {
+        "comment": "",
+        "key": "Delete",
+        "location": {
+          "startingColumn": 38,
+          "startingLine": 114
+        }
+      },
+      {
+        "comment": "",
+        "key": "Cancel",
+        "location": {
+          "startingColumn": 38,
+          "startingLine": 118
+        }
+      },
+      {
+        "comment": "",
+        "key": "Deleting this book will also remove all your reading progress. This action cannot be undone.",
+        "location": {
+          "startingColumn": 36,
+          "startingLine": 120
+        }
+      },
+      {
+        "comment": "",
+        "key": "Add Cover Photo",
+        "location": {
+          "startingColumn": 51,
+          "startingLine": 145
+        }
+      },
+      {
+        "comment": "",
+        "key": "Choose from Library",
+        "location": {
+          "startingColumn": 42,
+          "startingLine": 146
+        }
+      },
+      {
+        "comment": "",
+        "key": "Take Photo",
+        "location": {
+          "startingColumn": 46,
+          "startingLine": 156
+        }
+      },
+      {
+        "comment": "",
+        "key": "Tap to Add Cover",
+        "location": {
+          "startingColumn": 40,
+          "startingLine": 195
+        }
+      },
+      {
+        "comment": "",
+        "key": "Autofill data from Google Books",
+        "location": {
+          "startingColumn": 44,
+          "startingLine": 207
+        }
+      },
+      {
+        "comment": "",
+        "key": "Save",
+        "location": {
+          "startingColumn": 38,
+          "startingLine": 217
+        }
+      },
+      {
+        "comment": "",
+        "key": "Cancel",
+        "location": {
+          "startingColumn": 42,
+          "startingLine": 229
+        }
+      }
+    ]
+  },
+  "version": 1
+}

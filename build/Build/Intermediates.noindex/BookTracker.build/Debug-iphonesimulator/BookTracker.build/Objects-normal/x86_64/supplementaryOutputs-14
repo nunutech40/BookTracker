@@ -1,0 +1,30 @@
+"/Users/nununugraha/Documents/Programming/My Project/BookTracker/BookTracker/ContentView.swift":
+  swift-dependencies: "/Users/nununugraha/Documents/Programming/My Project/BookTracker/build/Build/Intermediates.noindex/BookTracker.build/Debug-iphonesimulator/BookTracker.build/Objects-normal/x86_64/ContentView.swiftdeps"
+  object: "/Users/nununugraha/Documents/Programming/My Project/BookTracker/build/Build/Intermediates.noindex/BookTracker.build/Debug-iphonesimulator/BookTracker.build/Objects-normal/x86_64/ContentView.o"
+  dependencies: "/Users/nununugraha/Documents/Programming/My Project/BookTracker/build/Build/Intermediates.noindex/BookTracker.build/Debug-iphonesimulator/BookTracker.build/Objects-normal/x86_64/ContentView.d"
+  diagnostics: "/Users/nununugraha/Documents/Programming/My Project/BookTracker/build/Build/Intermediates.noindex/BookTracker.build/Debug-iphonesimulator/BookTracker.build/Objects-normal/x86_64/ContentView.dia"
+  const-values: "/Users/nununugraha/Documents/Programming/My Project/BookTracker/build/Build/Intermediates.noindex/BookTracker.build/Debug-iphonesimulator/BookTracker.build/Objects-normal/x86_64/ContentView.swiftconstvalues"
+"/Users/nununugraha/Documents/Programming/My Project/BookTracker/BookTracker/Features/Profile/ViewModel/ProfileViewModel.swift":
+  swift-dependencies: "/Users/nununugraha/Documents/Programming/My Project/BookTracker/build/Build/Intermediates.noindex/BookTracker.build/Debug-iphonesimulator/BookTracker.build/Objects-normal/x86_64/ProfileViewModel.swiftdeps"
+  object: "/Users/nununugraha/Documents/Programming/My Project/BookTracker/build/Build/Intermediates.noindex/BookTracker.build/Debug-iphonesimulator/BookTracker.build/Objects-normal/x86_64/ProfileViewModel.o"
+  diagnostics: "/Users/nununugraha/Documents/Programming/My Project/BookTracker/build/Build/Intermediates.noindex/BookTracker.build/Debug-iphonesimulator/BookTracker.build/Objects-normal/x86_64/ProfileViewModel.dia"
+  dependencies: "/Users/nununugraha/Documents/Programming/My Project/BookTracker/build/Build/Intermediates.noindex/BookTracker.build/Debug-iphonesimulator/BookTracker.build/Objects-normal/x86_64/ProfileViewModel.d"
+  const-values: "/Users/nununugraha/Documents/Programming/My Project/BookTracker/build/Build/Intermediates.noindex/BookTracker.build/Debug-iphonesimulator/BookTracker.build/Objects-normal/x86_64/ProfileViewModel.swiftconstvalues"
+"/Users/nununugraha/Documents/Programming/My Project/BookTracker/BookTracker/AppDelegate.swift":
+  diagnostics: "/Users/nununugraha/Documents/Programming/My Project/BookTracker/build/Build/Intermediates.noindex/BookTracker.build/Debug-iphonesimulator/BookTracker.build/Objects-normal/x86_64/AppDelegate.dia"
+  const-values: "/Users/nununugraha/Documents/Programming/My Project/BookTracker/build/Build/Intermediates.noindex/BookTracker.build/Debug-iphonesimulator/BookTracker.build/Objects-normal/x86_64/AppDelegate.swiftconstvalues"
+  dependencies: "/Users/nununugraha/Documents/Programming/My Project/BookTracker/build/Build/Intermediates.noindex/BookTracker.build/Debug-iphonesimulator/BookTracker.build/Objects-normal/x86_64/AppDelegate.d"
+  object: "/Users/nununugraha/Documents/Programming/My Project/BookTracker/build/Build/Intermediates.noindex/BookTracker.build/Debug-iphonesimulator/BookTracker.build/Objects-normal/x86_64/AppDelegate.o"
+  swift-dependencies: "/Users/nununugraha/Documents/Programming/My Project/BookTracker/build/Build/Intermediates.noindex/BookTracker.build/Debug-iphonesimulator/BookTracker.build/Objects-normal/x86_64/AppDelegate.swiftdeps"
+"/Users/nununugraha/Documents/Programming/My Project/BookTracker/build/Build/Intermediates.noindex/BookTracker.build/Debug-iphonesimulator/BookTracker.build/DerivedSources/GeneratedAssetSymbols.swift":
+  diagnostics: "/Users/nununugraha/Documents/Programming/My Project/BookTracker/build/Build/Intermediates.noindex/BookTracker.build/Debug-iphonesimulator/BookTracker.build/Objects-normal/x86_64/GeneratedAssetSymbols.dia"
+  const-values: "/Users/nununugraha/Documents/Programming/My Project/BookTracker/build/Build/Intermediates.noindex/BookTracker.build/Debug-iphonesimulator/BookTracker.build/Objects-normal/x86_64/GeneratedAssetSymbols.swiftconstvalues"
+  dependencies: "/Users/nununugraha/Documents/Programming/My Project/BookTracker/build/Build/Intermediates.noindex/BookTracker.build/Debug-iphonesimulator/BookTracker.build/Objects-normal/x86_64/GeneratedAssetSymbols.d"
+  object: "/Users/nununugraha/Documents/Programming/My Project/BookTracker/build/Build/Intermediates.noindex/BookTracker.build/Debug-iphonesimulator/BookTracker.build/Objects-normal/x86_64/GeneratedAssetSymbols.o"
+  swift-dependencies: "/Users/nununugraha/Documents/Programming/My Project/BookTracker/build/Build/Intermediates.noindex/BookTracker.build/Debug-iphonesimulator/BookTracker.build/Objects-normal/x86_64/GeneratedAssetSymbols.swiftdeps"
+"/Users/nununugraha/Documents/Programming/My Project/BookTracker/BookTracker/BookTrackerApp.swift":
+  object: "/Users/nununugraha/Documents/Programming/My Project/BookTracker/build/Build/Intermediates.noindex/BookTracker.build/Debug-iphonesimulator/BookTracker.build/Objects-normal/x86_64/BookTrackerApp.o"
+  const-values: "/Users/nununugraha/Documents/Programming/My Project/BookTracker/build/Build/Intermediates.noindex/BookTracker.build/Debug-iphonesimulator/BookTracker.build/Objects-normal/x86_64/BookTrackerApp.swiftconstvalues"
+  swift-dependencies: "/Users/nununugraha/Documents/Programming/My Project/BookTracker/build/Build/Intermediates.noindex/BookTracker.build/Debug-iphonesimulator/BookTracker.build/Objects-normal/x86_64/BookTrackerApp.swiftdeps"
+  diagnostics: "/Users/nununugraha/Documents/Programming/My Project/BookTracker/build/Build/Intermediates.noindex/BookTracker.build/Debug-iphonesimulator/BookTracker.build/Objects-normal/x86_64/BookTrackerApp.dia"
+  dependencies: "/Users/nununugraha/Documents/Programming/My Project/BookTracker/build/Build/Intermediates.noindex/BookTracker.build/Debug-iphonesimulator/BookTracker.build/Objects-normal/x86_64/BookTrackerApp.d"

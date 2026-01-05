@@ -56,3 +56,19 @@ Proyek ini mencakup pengujian unit untuk lapisan layanannya guna memastikan kean
 ## Memulai
 
 *(Instruksi tentang cara menyiapkan dan menjalankan proyek akan ditambahkan di sini.)*
+
+
+## Run di Simulator pake terminal
+
+### 1
+xcodebuild -project BookTracker.xcodeproj \
+           -scheme BookTracker \
+           -configuration Debug \
+           -sdk iphonesimulator \
+           -derivedDataPath build
+
+### 2
+xcrun simctl install booted build/Build/Products/Debug-iphonesimulator/BookTracker.app
+
+### 3
+xcrun simctl launch booted id.ios.rajaongkirios.BookTracker

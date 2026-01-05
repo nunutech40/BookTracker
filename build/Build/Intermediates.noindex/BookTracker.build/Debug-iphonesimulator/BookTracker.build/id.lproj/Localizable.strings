@@ -1,0 +1,220 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE plist PUBLIC "-//Apple//DTD PLIST 1.0//EN" "http://www.apple.com/DTDs/PropertyList-1.0.dtd">
+<plist version="1.0">
+<dict>
+	<key>%lld Pages</key>
+	<string>%lld Halaman</string>
+	<key>%lld pages read</key>
+	<string>%lld halaman dibaca</string>
+	<key>0 Days</key>
+	<string>0 Hari</string>
+	<key>A simple app to track your daily book reading progress. Made with love using SwiftUI &amp; SwiftData.</key>
+	<string>Teman pribadimu untuk mencatat progres baca, membangun kebiasaan, dan jatuh cinta lagi pada buku.</string>
+	<key>About</key>
+	<string>Tentang</string>
+	<key>About BookTracker</key>
+	<string>Tentang BookTracker</string>
+	<key>Active Days</key>
+	<string>Hari Aktif</string>
+	<key>Add Cover Photo</key>
+	<string>Ganti Cover</string>
+	<key>Add New Book</key>
+	<string>Tambah Buku</string>
+	<key>Add new books to your queue.</key>
+	<string>Tambah buku baru ke rak.</string>
+	<key>App Info</key>
+	<string>Info App</string>
+	<key>Author</key>
+	<string>Penulis</string>
+	<key>Author cannot be empty.</key>
+	<string>Penulisnya siapa nih?</string>
+	<key>Author cannot be longer than 50 characters.</key>
+	<string>Nama penulis maks. 50 huruf.</string>
+	<key>Author must be at least 3 characters long.</key>
+	<string>Nama penulisnya min. 3 huruf.</string>
+	<key>Autofill data from Google Books</key>
+	<string>Cariin Google Aja</string>
+	<key>Book Info</key>
+	<string>Detail Buku</string>
+	<key>Book not found.</key>
+	<string>Bukunya gak ketemu :(</string>
+	<key>Book will appear in 'Reading Now'</key>
+	<string>Bukunya masuk list 'Lagi Dibaca'</string>
+	<key>Book will start in 'Library (To Read)'</key>
+	<string>Bukunya masuk 'Rak' dulu ya</string>
+	<key>BookTracker v1.0</key>
+	<string>BookTracker v1.0</string>
+	<key>Bookmarker</key>
+	<string>Bookmarker</string>
+	<key>CURRENT STREAK</key>
+	<string>STREAK</string>
+	<key>Cancel</key>
+	<string>Batal</string>
+	<key>Choose from Library</key>
+	<string>Dari Galeri</string>
+	<key>Close</key>
+	<string>Tutup</string>
+	<key>Collections</key>
+	<string>Koleksiku</string>
+	<key>Created by Nunu Nugraha</key>
+	<string>Dibuat oleh Nunu Nugraha</string>
+	<key>DAILY GOAL</key>
+	<string>GOAL HARIAN</string>
+	<key>Day</key>
+	<string>Hari</string>
+	<key>Days</key>
+	<string>Hari</string>
+	<key>Delete</key>
+	<string>Hapus</string>
+	<key>Delete Book</key>
+	<string>Hapus Buku</string>
+	<key>Delete Book?</key>
+	<string>Yakin hapus buku ini?</string>
+	<key>Deleting this book will also remove all your reading progress. This action cannot be undone.</key>
+	<string>Kalau dihapus, progres bacamu bakal ilang permanen. Yakin?</string>
+	<key>Dukung Developer</key>
+	<string>Dukung Developer</string>
+	<key>Dukung Developer Indie</key>
+	<string>Dukung Developer Indie</string>
+	<key>Edit Book Details</key>
+	<string>Edit Detail</string>
+	<key>Enter a valid number.</key>
+	<string>Isi angka yang bener ya.</string>
+	<key>Enter page for '%@' (Max: %lld)</key>
+	<string>Update progres '%@' (Maks: %lld)</string>
+	<key>Enter title or author</key>
+	<string>Ketik judul atau penulis...</string>
+	<key>Error</key>
+	<string>Yah, Error</string>
+	<key>Finish a book to see it here.</key>
+	<string>Kelarin buku, nanti muncul di sini.</string>
+	<key>Finished Books</key>
+	<string>Riwayat Baca</string>
+	<key>Google Books</key>
+	<string>Google Books</string>
+	<key>Hai, saya Nunu, developer tunggal di balik BookTracker. Aplikasi ini saya buat dari passion untuk membaca dan teknologi. Dukungan Anda sangat berarti untuk menjaga aplikasi ini tetap gratis, bebas iklan, dan terus berkembang dengan fitur-fitur baru. Setiap traktiran kopi dari Anda memberi saya energi dan motivasi untuk terus berkarya!</key>
+	<string>Hai, saya Nunu, developer tunggal di balik BookTracker. Aplikasi ini saya buat dari passion untuk membaca dan teknologi. Dukungan Anda sangat berarti untuk menjaga aplikasi ini tetap gratis, bebas iklan, dan terus berkembang dengan fitur-fitur baru. Setiap traktiran kopi dari Anda memberi saya energi dan motivasi untuk terus berkarya!</string>
+	<key>History</key>
+	<string>Riwayat</string>
+	<key>Home</key>
+	<string>Beranda</string>
+	<key>Internet connection failed.</key>
+	<string>Koneksi lagi jelek nih.</string>
+	<key>Invalid Page</key>
+	<string>Halaman Salah</string>
+	<key>Keep camera steady for best results.</key>
+	<string>Jaga kamera tetap stabil untuk hasil terbaik.</string>
+	<key>Keep it up!</key>
+	<string>Mantap, lanjutin!</string>
+	<key>Less</key>
+	<string>Dikit</string>
+	<key>Library</key>
+	<string>Koleksiku</string>
+	<key>Loading Your Library...</key>
+	<string>Loading...</string>
+	<key>Mark as Finished</key>
+	<string>Tandain Kelar</string>
+	<key>More</key>
+	<string>Banyak</string>
+	<key>My Library</key>
+	<string>Koleksiku</string>
+	<key>No Active Books</key>
+	<string>Belum ada yang dibaca nih</string>
+	<key>No Active Reading</key>
+	<string>Lagi ga ada yang dibaca</string>
+	<key>No Finished Books</key>
+	<string>Riwayat Baca Masih Kosong</string>
+	<key>No reading activity</key>
+	<string>Gak ada aktivitas baca</string>
+	<key>No reading data yet</key>
+	<string>Datanya masih kosong</string>
+	<key>OK</key>
+	<string>OK</string>
+	<key>Page</key>
+	<string>Halaman</string>
+	<key>Page must be greater than current page (%lld).</key>
+	<string>Halaman harus lebih besar dari halaman saat ini (%lld).</string>
+	<key>Page number not found. Please try again.</key>
+	<string>Nomor halaman tidak ditemukan. Coba lagi ya.</string>
+	<key>Please enter a valid page number between %lld and %lld.</key>
+	<string>Hal. harus antara %lld - %lld ya.</string>
+	<key>Point camera at page number. Scanning is automatic.</key>
+	<string>Arahkan kamera ke nomor halaman. Scan akan berjalan otomatis.</string>
+	<key>Profile</key>
+	<string>Akunku</string>
+	<key>Read</key>
+	<string>Baca</string>
+	<key>Read Again</key>
+	<string>Baca Ulang</string>
+	<key>Read just 1 page today to start your streak.</key>
+	<string>Cukup 1 halaman buat mulai streak.</string>
+	<key>Reading Activity (Last 12 Months)</key>
+	<string>Aktivitas Baca (Setahun)</string>
+	<key>Reading Now</key>
+	<string>Lagi Dibaca</string>
+	<key>Remove Cover</key>
+	<string>Hapus Cover</string>
+	<key>Save</key>
+	<string>Simpan</string>
+	<key>Saving...</key>
+	<string>Nyimpen...</string>
+	<key>Search Books</key>
+	<string>Cari Buku</string>
+	<key>Searching...</key>
+	<string>Nyari...</string>
+	<key>Select</key>
+	<string>Pilih</string>
+	<key>Shelf</key>
+	<string>Rak</string>
+	<key>Shelf Empty</key>
+	<string>Rak bukumu kosong</string>
+	<key>Start Reading</key>
+	<string>Mulai Baca</string>
+	<key>Start Reading Now</key>
+	<string>Langsung Baca</string>
+	<key>Start reading books from your shelf.</key>
+	<string>Yuk, mulai baca dari rak.</string>
+	<key>Support</key>
+	<string>Dukungan</string>
+	<key>Support Developer (Donate)</key>
+	<string>Traktir Kopi Developer</string>
+	<key>Take Photo</key>
+	<string>Jepret Foto</string>
+	<key>Tap to Add Cover</key>
+	<string>Tap buat Ganti Cover</string>
+	<key>Title</key>
+	<string>Judul</string>
+	<key>Title cannot be empty.</key>
+	<string>Judul jangan kosong dong.</string>
+	<key>Title cannot be longer than 100 characters.</key>
+	<string>Judulnya maks. 100 huruf.</string>
+	<key>Title must be at least 3 characters long.</key>
+	<string>Judulnya min. 3 huruf ya.</string>
+	<key>To Read (Shelf)</key>
+	<string>Rak Buku</string>
+	<key>Total Pages</key>
+	<string>Jml. Halaman</string>
+	<key>Total pages cannot be empty.</key>
+	<string>Jumlah halaman jangan kosong.</string>
+	<key>Total pages cannot exceed 9999.</key>
+	<string>Maks. 9999 halaman.</string>
+	<key>Total pages must be at least 1.</key>
+	<string>Min. 1 halaman lah ya.</string>
+	<key>Traktir di Buy Me a Coffee</key>
+	<string>Traktir di Buy Me a Coffee</string>
+	<key>Traktir di Saweria</key>
+	<string>Traktir di Saweria</string>
+	<key>Unknown</key>
+	<string>N/A</string>
+	<key>Update Progress</key>
+	<string>Update Progres</string>
+	<key>You're on fire! Keep the momentum going.</key>
+	<string>Lagi on fire! Terusin yuk.</string>
+	<key>Your reading journey starts here.
+Tap + to add a book.</key>
+	<string>Petualangan bacamu dimulai di sini.
+Tap + buat nambahin buku.</string>
+	<key>about.developer.story</key>
+	<string>Hai, saya Nunu, developer di balik BookTracker. Aplikasi ini saya buat dengan passion membaca dan keinginan membantu sesama pecinta buku melacak perjalanan mereka. Dukungan Anda membantu menjaga aplikasi ini tetap terupdate dan bebas iklan, memungkinkan saya mencurahkan lebih banyak waktu untuk meningkatkan pengalaman membaca Anda. Terima kasih!</string>
+</dict>
+</plist>

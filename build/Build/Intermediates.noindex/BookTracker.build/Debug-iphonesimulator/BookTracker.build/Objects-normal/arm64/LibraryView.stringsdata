@@ -1,0 +1,96 @@
+{
+  "source": "/Users/nununugraha/Documents/Programming/My Project/BookTracker/BookTracker/Features/Library/View/LibraryView.swift",
+  "tables": {
+    "Localizable": [
+      {
+        "comment": "",
+        "key": "My Library",
+        "location": {
+          "startingColumn": 48,
+          "startingLine": 44
+        }
+      },
+      {
+        "comment": "",
+        "key": "Filter",
+        "location": {
+          "startingColumn": 24,
+          "startingLine": 24
+        }
+      },
+      {
+        "comment": "",
+        "key": "To Read (Shelf)",
+        "location": {
+          "startingColumn": 44,
+          "startingLine": 25
+        }
+      },
+      {
+        "comment": "",
+        "key": "Reading Now",
+        "location": {
+          "startingColumn": 44,
+          "startingLine": 26
+        }
+      },
+      {
+        "comment": "",
+        "key": "Shelf Empty",
+        "location": {
+          "startingColumn": 63,
+          "startingLine": 81
+        }
+      },
+      {
+        "comment": "",
+        "key": "No Active Reading",
+        "location": {
+          "startingColumn": 98,
+          "startingLine": 81
+        }
+      },
+      {
+        "comment": "",
+        "key": "Add new books to your queue.",
+        "location": {
+          "startingColumn": 69,
+          "startingLine": 82
+        }
+      },
+      {
+        "comment": "",
+        "key": "Start reading books from your shelf.",
+        "location": {
+          "startingColumn": 121,
+          "startingLine": 82
+        }
+      },
+      {
+        "comment": "",
+        "key": "History",
+        "location": {
+          "startingColumn": 49,
+          "startingLine": 49
+        }
+      },
+      {
+        "comment": "",
+        "key": "Read",
+        "location": {
+          "startingColumn": 42,
+          "startingLine": 73
+        }
+      },
+      {
+        "comment": "",
+        "key": "Shelf",
+        "location": {
+          "startingColumn": 42,
+          "startingLine": 75
+        }
+      }
+    ]
+  },
+  "version": 1
+}

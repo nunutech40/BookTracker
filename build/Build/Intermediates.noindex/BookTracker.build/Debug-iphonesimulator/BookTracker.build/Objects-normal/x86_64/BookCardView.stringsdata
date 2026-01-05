@@ -1,0 +1,24 @@
+{
+  "source": "/Users/nununugraha/Documents/Programming/My Project/BookTracker/BookTracker/Features/Home/View/Components/BookCardView.swift",
+  "tables": {
+    "Localizable": [
+      {
+        "comment": "",
+        "key": "%lld / %lld Pg",
+        "location": {
+          "startingColumn": 18,
+          "startingLine": 68
+        }
+      },
+      {
+        "comment": "",
+        "key": "%lld",
+        "location": {
+          "startingColumn": 18,
+          "startingLine": 85
+        }
+      }
+    ]
+  },
+  "version": 1
+}

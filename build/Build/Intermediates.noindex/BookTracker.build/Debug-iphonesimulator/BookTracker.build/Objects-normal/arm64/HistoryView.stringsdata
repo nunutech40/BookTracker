@@ -1,0 +1,48 @@
+{
+  "source": "/Users/nununugraha/Documents/Programming/My Project/BookTracker/BookTracker/Features/History/View/HistoryView.swift",
+  "tables": {
+    "Localizable": [
+      {
+        "comment": "",
+        "key": "Finished Books",
+        "location": {
+          "startingColumn": 44,
+          "startingLine": 55
+        }
+      },
+      {
+        "comment": "",
+        "key": "No Finished Books",
+        "location": {
+          "startingColumn": 39,
+          "startingLine": 26
+        }
+      },
+      {
+        "comment": "",
+        "key": "Finish a book to see it here.",
+        "location": {
+          "startingColumn": 57,
+          "startingLine": 28
+        }
+      },
+      {
+        "comment": "",
+        "key": "Delete",
+        "location": {
+          "startingColumn": 54,
+          "startingLine": 39
+        }
+      },
+      {
+        "comment": "",
+        "key": "Read Again",
+        "location": {
+          "startingColumn": 54,
+          "startingLine": 45
+        }
+      }
+    ]
+  },
+  "version": 1
+}

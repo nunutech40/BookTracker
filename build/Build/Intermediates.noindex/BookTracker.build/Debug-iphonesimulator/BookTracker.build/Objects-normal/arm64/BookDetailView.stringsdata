@@ -1,0 +1,32 @@
+{
+  "source": "/Users/nununugraha/Documents/Programming/My Project/BookTracker/BookTracker/Features/Library/View/BookDetailView.swift",
+  "tables": {
+    "Localizable": [
+      {
+        "comment": "",
+        "key": "Start Reading",
+        "location": {
+          "startingColumn": 41,
+          "startingLine": 62
+        }
+      },
+      {
+        "comment": "",
+        "key": "Mark as Finished",
+        "location": {
+          "startingColumn": 41,
+          "startingLine": 74
+        }
+      },
+      {
+        "comment": "",
+        "key": "Read Again",
+        "location": {
+          "startingColumn": 41,
+          "startingLine": 88
+        }
+      }
+    ]
+  },
+  "version": 1
+}

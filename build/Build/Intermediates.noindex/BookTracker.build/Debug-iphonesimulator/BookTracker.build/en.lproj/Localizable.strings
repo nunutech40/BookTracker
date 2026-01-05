@@ -1,0 +1,206 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE plist PUBLIC "-//Apple//DTD PLIST 1.0//EN" "http://www.apple.com/DTDs/PropertyList-1.0.dtd">
+<plist version="1.0">
+<dict>
+	<key>%lld Pages</key>
+	<string>%lld Pages</string>
+	<key>%lld pages read</key>
+	<string>%lld pages read</string>
+	<key>0 Days</key>
+	<string>0 Days</string>
+	<key>A simple app to track your daily book reading progress. Made with love using SwiftUI &amp; SwiftData.</key>
+	<string>Your personal companion for tracking reading progress, building habits, and falling in love with books all over again.</string>
+	<key>About</key>
+	<string>About</string>
+	<key>About BookTracker</key>
+	<string>About BookTracker</string>
+	<key>Active Days</key>
+	<string>Active Days</string>
+	<key>Add Cover Photo</key>
+	<string>Add Cover Photo</string>
+	<key>Add New Book</key>
+	<string>Add New Book</string>
+	<key>Add new books to your queue.</key>
+	<string>Add new books to your queue.</string>
+	<key>App Info</key>
+	<string>App Info</string>
+	<key>Author</key>
+	<string>Author</string>
+	<key>Author cannot be empty.</key>
+	<string>Author cannot be empty.</string>
+	<key>Author cannot be longer than 50 characters.</key>
+	<string>Author cannot be longer than 50 characters.</string>
+	<key>Author must be at least 3 characters long.</key>
+	<string>Author must be at least 3 characters long.</string>
+	<key>Autofill data from Google Books</key>
+	<string>Autofill data from Google Books</string>
+	<key>Book Info</key>
+	<string>Book Info</string>
+	<key>Book not found.</key>
+	<string>Book not found.</string>
+	<key>Book will appear in 'Reading Now'</key>
+	<string>Book will appear in 'Reading Now'</string>
+	<key>Book will start in 'Library (To Read)'</key>
+	<string>Book will start in 'Library (To Read)'</string>
+	<key>BookTracker v1.0</key>
+	<string>BookTracker v1.0</string>
+	<key>Bookmarker</key>
+	<string>Bookmarker</string>
+	<key>CURRENT STREAK</key>
+	<string>CURRENT STREAK</string>
+	<key>Cancel</key>
+	<string>Cancel</string>
+	<key>Choose from Library</key>
+	<string>Choose from Library</string>
+	<key>Close</key>
+	<string>Close</string>
+	<key>Collections</key>
+	<string>Collections</string>
+	<key>Created by Nunu Nugraha</key>
+	<string>Created by Nunu Nugraha</string>
+	<key>DAILY GOAL</key>
+	<string>DAILY GOAL</string>
+	<key>Day</key>
+	<string>Day</string>
+	<key>Days</key>
+	<string>Days</string>
+	<key>Delete</key>
+	<string>Delete</string>
+	<key>Delete Book</key>
+	<string>Delete Book</string>
+	<key>Delete Book?</key>
+	<string>Delete Book?</string>
+	<key>Deleting this book will also remove all your reading progress. This action cannot be undone.</key>
+	<string>Deleting this book will also remove all your reading progress. This action cannot be undone.</string>
+	<key>Edit Book Details</key>
+	<string>Edit Book Details</string>
+	<key>Enter a valid number.</key>
+	<string>Enter a valid number.</string>
+	<key>Enter page for '%@' (Max: %lld)</key>
+	<string>Enter page for '%@' (Max: %lld)</string>
+	<key>Enter title or author</key>
+	<string>Enter title or author</string>
+	<key>Error</key>
+	<string>Error</string>
+	<key>Finish a book to see it here.</key>
+	<string>Finish a book to see it here.</string>
+	<key>Finished Books</key>
+	<string>Finished Books</string>
+	<key>Google Books</key>
+	<string>Google Books</string>
+	<key>History</key>
+	<string>History</string>
+	<key>Home</key>
+	<string>Home</string>
+	<key>Internet connection failed.</key>
+	<string>Internet connection failed.</string>
+	<key>Invalid Page</key>
+	<string>Invalid Page</string>
+	<key>Keep camera steady for best results.</key>
+	<string>Keep camera steady for best results.</string>
+	<key>Keep it up!</key>
+	<string>Keep it up!</string>
+	<key>Less</key>
+	<string>Less</string>
+	<key>Library</key>
+	<string>Library</string>
+	<key>Loading Your Library...</key>
+	<string>Loading Your Library...</string>
+	<key>Mark as Finished</key>
+	<string>Mark as Finished</string>
+	<key>More</key>
+	<string>More</string>
+	<key>My Library</key>
+	<string>My Library</string>
+	<key>No Active Books</key>
+	<string>No Active Books</string>
+	<key>No Active Reading</key>
+	<string>No Active Reading</string>
+	<key>No Finished Books</key>
+	<string>No Finished Books</string>
+	<key>No reading activity</key>
+	<string>No reading activity</string>
+	<key>No reading data yet</key>
+	<string>No reading data yet</string>
+	<key>OK</key>
+	<string>OK</string>
+	<key>Page</key>
+	<string>Page</string>
+	<key>Page must be greater than current page (%lld).</key>
+	<string>Page must be greater than current page (%lld).</string>
+	<key>Page number not found. Please try again.</key>
+	<string>Page number not found. Please try again.</string>
+	<key>Please enter a valid page number between %lld and %lld.</key>
+	<string>Please enter a valid page number between %lld and %lld.</string>
+	<key>Point camera at page number. Scanning is automatic.</key>
+	<string>Point camera at page number. Scanning is automatic.</string>
+	<key>Profile</key>
+	<string>Profile</string>
+	<key>Read</key>
+	<string>Read</string>
+	<key>Read Again</key>
+	<string>Read Again</string>
+	<key>Read just 1 page today to start your streak.</key>
+	<string>Read just 1 page today to start your streak.</string>
+	<key>Reading Activity (Last 12 Months)</key>
+	<string>Reading Activity (Last 12 Months)</string>
+	<key>Reading Now</key>
+	<string>Reading Now</string>
+	<key>Remove Cover</key>
+	<string>Remove Cover</string>
+	<key>Save</key>
+	<string>Save</string>
+	<key>Saving...</key>
+	<string>Saving...</string>
+	<key>Search Books</key>
+	<string>Search Books</string>
+	<key>Searching...</key>
+	<string>Searching...</string>
+	<key>Select</key>
+	<string>Select</string>
+	<key>Shelf</key>
+	<string>Shelf</string>
+	<key>Shelf Empty</key>
+	<string>Shelf Empty</string>
+	<key>Start Reading</key>
+	<string>Start Reading</string>
+	<key>Start Reading Now</key>
+	<string>Start Reading Now</string>
+	<key>Start reading books from your shelf.</key>
+	<string>Start reading books from your shelf.</string>
+	<key>Support Developer (Donate)</key>
+	<string>Support Developer (Donate)</string>
+	<key>Take Photo</key>
+	<string>Take Photo</string>
+	<key>Tap to Add Cover</key>
+	<string>Tap to Add Cover</string>
+	<key>Title</key>
+	<string>Title</string>
+	<key>Title cannot be empty.</key>
+	<string>Title cannot be empty.</string>
+	<key>Title cannot be longer than 100 characters.</key>
+	<string>Title cannot be longer than 100 characters.</string>
+	<key>Title must be at least 3 characters long.</key>
+	<string>Title must be at least 3 characters long.</string>
+	<key>To Read (Shelf)</key>
+	<string>To Read (Shelf)</string>
+	<key>Total Pages</key>
+	<string>Total Pages</string>
+	<key>Total pages cannot be empty.</key>
+	<string>Total pages cannot be empty.</string>
+	<key>Total pages cannot exceed 9999.</key>
+	<string>Total pages cannot exceed 9999.</string>
+	<key>Total pages must be at least 1.</key>
+	<string>Total pages must be at least 1.</string>
+	<key>Unknown</key>
+	<string>Unknown</string>
+	<key>Update Progress</key>
+	<string>Update Progress</string>
+	<key>You're on fire! Keep the momentum going.</key>
+	<string>You're on fire! Keep the momentum going.</string>
+	<key>Your reading journey starts here.
+Tap + to add a book.</key>
+	<string>Your reading journey starts here.
+Tap + to add a book.</string>
+</dict>
+</plist>

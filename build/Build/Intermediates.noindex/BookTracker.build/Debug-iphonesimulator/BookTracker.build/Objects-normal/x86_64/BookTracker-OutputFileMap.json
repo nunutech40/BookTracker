@@ -1,0 +1,448 @@
+{
+  "" : {
+    "diagnostics" : "/Users/nununugraha/Documents/Programming/My Project/BookTracker/build/Build/Intermediates.noindex/BookTracker.build/Debug-iphonesimulator/BookTracker.build/Objects-normal/x86_64/BookTracker-master.dia",
+    "emit-module-dependencies" : "/Users/nununugraha/Documents/Programming/My Project/BookTracker/build/Build/Intermediates.noindex/BookTracker.build/Debug-iphonesimulator/BookTracker.build/Objects-normal/x86_64/BookTracker-master-emit-module.d",
+    "emit-module-diagnostics" : "/Users/nununugraha/Documents/Programming/My Project/BookTracker/build/Build/Intermediates.noindex/BookTracker.build/Debug-iphonesimulator/BookTracker.build/Objects-normal/x86_64/BookTracker-master-emit-module.dia",
+    "swift-dependencies" : "/Users/nununugraha/Documents/Programming/My Project/BookTracker/build/Build/Intermediates.noindex/BookTracker.build/Debug-iphonesimulator/BookTracker.build/Objects-normal/x86_64/BookTracker-master.swiftdeps"
+  },
+  "/Users/nununugraha/Documents/Programming/My Project/BookTracker/BookTracker/AppDelegate.swift" : {
+    "const-values" : "/Users/nununugraha/Documents/Programming/My Project/BookTracker/build/Build/Intermediates.noindex/BookTracker.build/Debug-iphonesimulator/BookTracker.build/Objects-normal/x86_64/AppDelegate.swiftconstvalues",
+    "dependencies" : "/Users/nununugraha/Documents/Programming/My Project/BookTracker/build/Build/Intermediates.noindex/BookTracker.build/Debug-iphonesimulator/BookTracker.build/Objects-normal/x86_64/AppDelegate.d",
+    "diagnostics" : "/Users/nununugraha/Documents/Programming/My Project/BookTracker/build/Build/Intermediates.noindex/BookTracker.build/Debug-iphonesimulator/BookTracker.build/Objects-normal/x86_64/AppDelegate.dia",
+    "index-unit-output-path" : "/BookTracker.build/Debug-iphonesimulator/BookTracker.build/Objects-normal/x86_64/AppDelegate.o",
+    "llvm-bc" : "/Users/nununugraha/Documents/Programming/My Project/BookTracker/build/Build/Intermediates.noindex/BookTracker.build/Debug-iphonesimulator/BookTracker.build/Objects-normal/x86_64/AppDelegate.bc",
+    "object" : "/Users/nununugraha/Documents/Programming/My Project/BookTracker/build/Build/Intermediates.noindex/BookTracker.build/Debug-iphonesimulator/BookTracker.build/Objects-normal/x86_64/AppDelegate.o",
+    "swift-dependencies" : "/Users/nununugraha/Documents/Programming/My Project/BookTracker/build/Build/Intermediates.noindex/BookTracker.build/Debug-iphonesimulator/BookTracker.build/Objects-normal/x86_64/AppDelegate.swiftdeps",
+    "swiftmodule" : "/Users/nununugraha/Documents/Programming/My Project/BookTracker/build/Build/Intermediates.noindex/BookTracker.build/Debug-iphonesimulator/BookTracker.build/Objects-normal/x86_64/AppDelegate~partial.swiftmodule"
+  },
+  "/Users/nununugraha/Documents/Programming/My Project/BookTracker/BookTracker/BookTrackerApp.swift" : {
+    "const-values" : "/Users/nununugraha/Documents/Programming/My Project/BookTracker/build/Build/Intermediates.noindex/BookTracker.build/Debug-iphonesimulator/BookTracker.build/Objects-normal/x86_64/BookTrackerApp.swiftconstvalues",
+    "dependencies" : "/Users/nununugraha/Documents/Programming/My Project/BookTracker/build/Build/Intermediates.noindex/BookTracker.build/Debug-iphonesimulator/BookTracker.build/Objects-normal/x86_64/BookTrackerApp.d",
+    "diagnostics" : "/Users/nununugraha/Documents/Programming/My Project/BookTracker/build/Build/Intermediates.noindex/BookTracker.build/Debug-iphonesimulator/BookTracker.build/Objects-normal/x86_64/BookTrackerApp.dia",
+    "index-unit-output-path" : "/BookTracker.build/Debug-iphonesimulator/BookTracker.build/Objects-normal/x86_64/BookTrackerApp.o",
+    "llvm-bc" : "/Users/nununugraha/Documents/Programming/My Project/BookTracker/build/Build/Intermediates.noindex/BookTracker.build/Debug-iphonesimulator/BookTracker.build/Objects-normal/x86_64/BookTrackerApp.bc",
+    "object" : "/Users/nununugraha/Documents/Programming/My Project/BookTracker/build/Build/Intermediates.noindex/BookTracker.build/Debug-iphonesimulator/BookTracker.build/Objects-normal/x86_64/BookTrackerApp.o",
+    "swift-dependencies" : "/Users/nununugraha/Documents/Programming/My Project/BookTracker/build/Build/Intermediates.noindex/BookTracker.build/Debug-iphonesimulator/BookTracker.build/Objects-normal/x86_64/BookTrackerApp.swiftdeps",
+    "swiftmodule" : "/Users/nununugraha/Documents/Programming/My Project/BookTracker/build/Build/Intermediates.noindex/BookTracker.build/Debug-iphonesimulator/BookTracker.build/Objects-normal/x86_64/BookTrackerApp~partial.swiftmodule"
+  },
+  "/Users/nununugraha/Documents/Programming/My Project/BookTracker/BookTracker/ContentView.swift" : {
+    "const-values" : "/Users/nununugraha/Documents/Programming/My Project/BookTracker/build/Build/Intermediates.noindex/BookTracker.build/Debug-iphonesimulator/BookTracker.build/Objects-normal/x86_64/ContentView.swiftconstvalues",
+    "dependencies" : "/Users/nununugraha/Documents/Programming/My Project/BookTracker/build/Build/Intermediates.noindex/BookTracker.build/Debug-iphonesimulator/BookTracker.build/Objects-normal/x86_64/ContentView.d",
+    "diagnostics" : "/Users/nununugraha/Documents/Programming/My Project/BookTracker/build/Build/Intermediates.noindex/BookTracker.build/Debug-iphonesimulator/BookTracker.build/Objects-normal/x86_64/ContentView.dia",
+    "index-unit-output-path" : "/BookTracker.build/Debug-iphonesimulator/BookTracker.build/Objects-normal/x86_64/ContentView.o",
+    "llvm-bc" : "/Users/nununugraha/Documents/Programming/My Project/BookTracker/build/Build/Intermediates.noindex/BookTracker.build/Debug-iphonesimulator/BookTracker.build/Objects-normal/x86_64/ContentView.bc",
+    "object" : "/Users/nununugraha/Documents/Programming/My Project/BookTracker/build/Build/Intermediates.noindex/BookTracker.build/Debug-iphonesimulator/BookTracker.build/Objects-normal/x86_64/ContentView.o",
+    "swift-dependencies" : "/Users/nununugraha/Documents/Programming/My Project/BookTracker/build/Build/Intermediates.noindex/BookTracker.build/Debug-iphonesimulator/BookTracker.build/Objects-normal/x86_64/ContentView.swiftdeps",
+    "swiftmodule" : "/Users/nununugraha/Documents/Programming/My Project/BookTracker/build/Build/Intermediates.noindex/BookTracker.build/Debug-iphonesimulator/BookTracker.build/Objects-normal/x86_64/ContentView~partial.swiftmodule"
+  },
+  "/Users/nununugraha/Documents/Programming/My Project/BookTracker/BookTracker/Core/DI/Injection.swift" : {
+    "const-values" : "/Users/nununugraha/Documents/Programming/My Project/BookTracker/build/Build/Intermediates.noindex/BookTracker.build/Debug-iphonesimulator/BookTracker.build/Objects-normal/x86_64/Injection.swiftconstvalues",
+    "dependencies" : "/Users/nununugraha/Documents/Programming/My Project/BookTracker/build/Build/Intermediates.noindex/BookTracker.build/Debug-iphonesimulator/BookTracker.build/Objects-normal/x86_64/Injection.d",
+    "diagnostics" : "/Users/nununugraha/Documents/Programming/My Project/BookTracker/build/Build/Intermediates.noindex/BookTracker.build/Debug-iphonesimulator/BookTracker.build/Objects-normal/x86_64/Injection.dia",
+    "index-unit-output-path" : "/BookTracker.build/Debug-iphonesimulator/BookTracker.build/Objects-normal/x86_64/Injection.o",
+    "llvm-bc" : "/Users/nununugraha/Documents/Programming/My Project/BookTracker/build/Build/Intermediates.noindex/BookTracker.build/Debug-iphonesimulator/BookTracker.build/Objects-normal/x86_64/Injection.bc",
+    "object" : "/Users/nununugraha/Documents/Programming/My Project/BookTracker/build/Build/Intermediates.noindex/BookTracker.build/Debug-iphonesimulator/BookTracker.build/Objects-normal/x86_64/Injection.o",
+    "swift-dependencies" : "/Users/nununugraha/Documents/Programming/My Project/BookTracker/build/Build/Intermediates.noindex/BookTracker.build/Debug-iphonesimulator/BookTracker.build/Objects-normal/x86_64/Injection.swiftdeps",
+    "swiftmodule" : "/Users/nununugraha/Documents/Programming/My Project/BookTracker/build/Build/Intermediates.noindex/BookTracker.build/Debug-iphonesimulator/BookTracker.build/Objects-normal/x86_64/Injection~partial.swiftmodule"
+  },
+  "/Users/nununugraha/Documents/Programming/My Project/BookTracker/BookTracker/Core/Data/Book.swift" : {
+    "const-values" : "/Users/nununugraha/Documents/Programming/My Project/BookTracker/build/Build/Intermediates.noindex/BookTracker.build/Debug-iphonesimulator/BookTracker.build/Objects-normal/x86_64/Book.swiftconstvalues",
+    "dependencies" : "/Users/nununugraha/Documents/Programming/My Project/BookTracker/build/Build/Intermediates.noindex/BookTracker.build/Debug-iphonesimulator/BookTracker.build/Objects-normal/x86_64/Book.d",
+    "diagnostics" : "/Users/nununugraha/Documents/Programming/My Project/BookTracker/build/Build/Intermediates.noindex/BookTracker.build/Debug-iphonesimulator/BookTracker.build/Objects-normal/x86_64/Book.dia",
+    "index-unit-output-path" : "/BookTracker.build/Debug-iphonesimulator/BookTracker.build/Objects-normal/x86_64/Book.o",
+    "llvm-bc" : "/Users/nununugraha/Documents/Programming/My Project/BookTracker/build/Build/Intermediates.noindex/BookTracker.build/Debug-iphonesimulator/BookTracker.build/Objects-normal/x86_64/Book.bc",
+    "object" : "/Users/nununugraha/Documents/Programming/My Project/BookTracker/build/Build/Intermediates.noindex/BookTracker.build/Debug-iphonesimulator/BookTracker.build/Objects-normal/x86_64/Book.o",
+    "swift-dependencies" : "/Users/nununugraha/Documents/Programming/My Project/BookTracker/build/Build/Intermediates.noindex/BookTracker.build/Debug-iphonesimulator/BookTracker.build/Objects-normal/x86_64/Book.swiftdeps",
+    "swiftmodule" : "/Users/nununugraha/Documents/Programming/My Project/BookTracker/build/Build/Intermediates.noindex/BookTracker.build/Debug-iphonesimulator/BookTracker.build/Objects-normal/x86_64/Book~partial.swiftmodule"
+  },
+  "/Users/nununugraha/Documents/Programming/My Project/BookTracker/BookTracker/Core/Data/GamificationAchievement.swift" : {
+    "const-values" : "/Users/nununugraha/Documents/Programming/My Project/BookTracker/build/Build/Intermediates.noindex/BookTracker.build/Debug-iphonesimulator/BookTracker.build/Objects-normal/x86_64/GamificationAchievement.swiftconstvalues",
+    "dependencies" : "/Users/nununugraha/Documents/Programming/My Project/BookTracker/build/Build/Intermediates.noindex/BookTracker.build/Debug-iphonesimulator/BookTracker.build/Objects-normal/x86_64/GamificationAchievement.d",
+    "diagnostics" : "/Users/nununugraha/Documents/Programming/My Project/BookTracker/build/Build/Intermediates.noindex/BookTracker.build/Debug-iphonesimulator/BookTracker.build/Objects-normal/x86_64/GamificationAchievement.dia",
+    "index-unit-output-path" : "/BookTracker.build/Debug-iphonesimulator/BookTracker.build/Objects-normal/x86_64/GamificationAchievement.o",
+    "llvm-bc" : "/Users/nununugraha/Documents/Programming/My Project/BookTracker/build/Build/Intermediates.noindex/BookTracker.build/Debug-iphonesimulator/BookTracker.build/Objects-normal/x86_64/GamificationAchievement.bc",
+    "object" : "/Users/nununugraha/Documents/Programming/My Project/BookTracker/build/Build/Intermediates.noindex/BookTracker.build/Debug-iphonesimulator/BookTracker.build/Objects-normal/x86_64/GamificationAchievement.o",
+    "swift-dependencies" : "/Users/nununugraha/Documents/Programming/My Project/BookTracker/build/Build/Intermediates.noindex/BookTracker.build/Debug-iphonesimulator/BookTracker.build/Objects-normal/x86_64/GamificationAchievement.swiftdeps",
+    "swiftmodule" : "/Users/nununugraha/Documents/Programming/My Project/BookTracker/build/Build/Intermediates.noindex/BookTracker.build/Debug-iphonesimulator/BookTracker.build/Objects-normal/x86_64/GamificationAchievement~partial.swiftmodule"
+  },
+  "/Users/nununugraha/Documents/Programming/My Project/BookTracker/BookTracker/Core/Data/UnlockedAchievement.swift" : {
+    "const-values" : "/Users/nununugraha/Documents/Programming/My Project/BookTracker/build/Build/Intermediates.noindex/BookTracker.build/Debug-iphonesimulator/BookTracker.build/Objects-normal/x86_64/UnlockedAchievement.swiftconstvalues",
+    "dependencies" : "/Users/nununugraha/Documents/Programming/My Project/BookTracker/build/Build/Intermediates.noindex/BookTracker.build/Debug-iphonesimulator/BookTracker.build/Objects-normal/x86_64/UnlockedAchievement.d",
+    "diagnostics" : "/Users/nununugraha/Documents/Programming/My Project/BookTracker/build/Build/Intermediates.noindex/BookTracker.build/Debug-iphonesimulator/BookTracker.build/Objects-normal/x86_64/UnlockedAchievement.dia",
+    "index-unit-output-path" : "/BookTracker.build/Debug-iphonesimulator/BookTracker.build/Objects-normal/x86_64/UnlockedAchievement.o",
+    "llvm-bc" : "/Users/nununugraha/Documents/Programming/My Project/BookTracker/build/Build/Intermediates.noindex/BookTracker.build/Debug-iphonesimulator/BookTracker.build/Objects-normal/x86_64/UnlockedAchievement.bc",
+    "object" : "/Users/nununugraha/Documents/Programming/My Project/BookTracker/build/Build/Intermediates.noindex/BookTracker.build/Debug-iphonesimulator/BookTracker.build/Objects-normal/x86_64/UnlockedAchievement.o",
+    "swift-dependencies" : "/Users/nununugraha/Documents/Programming/My Project/BookTracker/build/Build/Intermediates.noindex/BookTracker.build/Debug-iphonesimulator/BookTracker.build/Objects-normal/x86_64/UnlockedAchievement.swiftdeps",
+    "swiftmodule" : "/Users/nununugraha/Documents/Programming/My Project/BookTracker/build/Build/Intermediates.noindex/BookTracker.build/Debug-iphonesimulator/BookTracker.build/Objects-normal/x86_64/UnlockedAchievement~partial.swiftmodule"
+  },
+  "/Users/nununugraha/Documents/Programming/My Project/BookTracker/BookTracker/Core/Service/BookService.swift" : {
+    "const-values" : "/Users/nununugraha/Documents/Programming/My Project/BookTracker/build/Build/Intermediates.noindex/BookTracker.build/Debug-iphonesimulator/BookTracker.build/Objects-normal/x86_64/BookService.swiftconstvalues",
+    "dependencies" : "/Users/nununugraha/Documents/Programming/My Project/BookTracker/build/Build/Intermediates.noindex/BookTracker.build/Debug-iphonesimulator/BookTracker.build/Objects-normal/x86_64/BookService.d",
+    "diagnostics" : "/Users/nununugraha/Documents/Programming/My Project/BookTracker/build/Build/Intermediates.noindex/BookTracker.build/Debug-iphonesimulator/BookTracker.build/Objects-normal/x86_64/BookService.dia",
+    "index-unit-output-path" : "/BookTracker.build/Debug-iphonesimulator/BookTracker.build/Objects-normal/x86_64/BookService.o",
+    "llvm-bc" : "/Users/nununugraha/Documents/Programming/My Project/BookTracker/build/Build/Intermediates.noindex/BookTracker.build/Debug-iphonesimulator/BookTracker.build/Objects-normal/x86_64/BookService.bc",
+    "object" : "/Users/nununugraha/Documents/Programming/My Project/BookTracker/build/Build/Intermediates.noindex/BookTracker.build/Debug-iphonesimulator/BookTracker.build/Objects-normal/x86_64/BookService.o",
+    "swift-dependencies" : "/Users/nununugraha/Documents/Programming/My Project/BookTracker/build/Build/Intermediates.noindex/BookTracker.build/Debug-iphonesimulator/BookTracker.build/Objects-normal/x86_64/BookService.swiftdeps",
+    "swiftmodule" : "/Users/nununugraha/Documents/Programming/My Project/BookTracker/build/Build/Intermediates.noindex/BookTracker.build/Debug-iphonesimulator/BookTracker.build/Objects-normal/x86_64/BookService~partial.swiftmodule"
+  },
+  "/Users/nununugraha/Documents/Programming/My Project/BookTracker/BookTracker/Core/Service/BookServiceProtocol.swift" : {
+    "const-values" : "/Users/nununugraha/Documents/Programming/My Project/BookTracker/build/Build/Intermediates.noindex/BookTracker.build/Debug-iphonesimulator/BookTracker.build/Objects-normal/x86_64/BookServiceProtocol.swiftconstvalues",
+    "dependencies" : "/Users/nununugraha/Documents/Programming/My Project/BookTracker/build/Build/Intermediates.noindex/BookTracker.build/Debug-iphonesimulator/BookTracker.build/Objects-normal/x86_64/BookServiceProtocol.d",
+    "diagnostics" : "/Users/nununugraha/Documents/Programming/My Project/BookTracker/build/Build/Intermediates.noindex/BookTracker.build/Debug-iphonesimulator/BookTracker.build/Objects-normal/x86_64/BookServiceProtocol.dia",
+    "index-unit-output-path" : "/BookTracker.build/Debug-iphonesimulator/BookTracker.build/Objects-normal/x86_64/BookServiceProtocol.o",
+    "llvm-bc" : "/Users/nununugraha/Documents/Programming/My Project/BookTracker/build/Build/Intermediates.noindex/BookTracker.build/Debug-iphonesimulator/BookTracker.build/Objects-normal/x86_64/BookServiceProtocol.bc",
+    "object" : "/Users/nununugraha/Documents/Programming/My Project/BookTracker/build/Build/Intermediates.noindex/BookTracker.build/Debug-iphonesimulator/BookTracker.build/Objects-normal/x86_64/BookServiceProtocol.o",
+    "swift-dependencies" : "/Users/nununugraha/Documents/Programming/My Project/BookTracker/build/Build/Intermediates.noindex/BookTracker.build/Debug-iphonesimulator/BookTracker.build/Objects-normal/x86_64/BookServiceProtocol.swiftdeps",
+    "swiftmodule" : "/Users/nununugraha/Documents/Programming/My Project/BookTracker/build/Build/Intermediates.noindex/BookTracker.build/Debug-iphonesimulator/BookTracker.build/Objects-normal/x86_64/BookServiceProtocol~partial.swiftmodule"
+  },
+  "/Users/nununugraha/Documents/Programming/My Project/BookTracker/BookTracker/Core/Service/GamificationService.swift" : {
+    "const-values" : "/Users/nununugraha/Documents/Programming/My Project/BookTracker/build/Build/Intermediates.noindex/BookTracker.build/Debug-iphonesimulator/BookTracker.build/Objects-normal/x86_64/GamificationService.swiftconstvalues",
+    "dependencies" : "/Users/nununugraha/Documents/Programming/My Project/BookTracker/build/Build/Intermediates.noindex/BookTracker.build/Debug-iphonesimulator/BookTracker.build/Objects-normal/x86_64/GamificationService.d",
+    "diagnostics" : "/Users/nununugraha/Documents/Programming/My Project/BookTracker/build/Build/Intermediates.noindex/BookTracker.build/Debug-iphonesimulator/BookTracker.build/Objects-normal/x86_64/GamificationService.dia",
+    "index-unit-output-path" : "/BookTracker.build/Debug-iphonesimulator/BookTracker.build/Objects-normal/x86_64/GamificationService.o",
+    "llvm-bc" : "/Users/nununugraha/Documents/Programming/My Project/BookTracker/build/Build/Intermediates.noindex/BookTracker.build/Debug-iphonesimulator/BookTracker.build/Objects-normal/x86_64/GamificationService.bc",
+    "object" : "/Users/nununugraha/Documents/Programming/My Project/BookTracker/build/Build/Intermediates.noindex/BookTracker.build/Debug-iphonesimulator/BookTracker.build/Objects-normal/x86_64/GamificationService.o",
+    "swift-dependencies" : "/Users/nununugraha/Documents/Programming/My Project/BookTracker/build/Build/Intermediates.noindex/BookTracker.build/Debug-iphonesimulator/BookTracker.build/Objects-normal/x86_64/GamificationService.swiftdeps",
+    "swiftmodule" : "/Users/nununugraha/Documents/Programming/My Project/BookTracker/build/Build/Intermediates.noindex/BookTracker.build/Debug-iphonesimulator/BookTracker.build/Objects-normal/x86_64/GamificationService~partial.swiftmodule"
+  },
+  "/Users/nununugraha/Documents/Programming/My Project/BookTracker/BookTracker/Core/Service/GoogleBooksService.swift" : {
+    "const-values" : "/Users/nununugraha/Documents/Programming/My Project/BookTracker/build/Build/Intermediates.noindex/BookTracker.build/Debug-iphonesimulator/BookTracker.build/Objects-normal/x86_64/GoogleBooksService.swiftconstvalues",
+    "dependencies" : "/Users/nununugraha/Documents/Programming/My Project/BookTracker/build/Build/Intermediates.noindex/BookTracker.build/Debug-iphonesimulator/BookTracker.build/Objects-normal/x86_64/GoogleBooksService.d",
+    "diagnostics" : "/Users/nununugraha/Documents/Programming/My Project/BookTracker/build/Build/Intermediates.noindex/BookTracker.build/Debug-iphonesimulator/BookTracker.build/Objects-normal/x86_64/GoogleBooksService.dia",
+    "index-unit-output-path" : "/BookTracker.build/Debug-iphonesimulator/BookTracker.build/Objects-normal/x86_64/GoogleBooksService.o",
+    "llvm-bc" : "/Users/nununugraha/Documents/Programming/My Project/BookTracker/build/Build/Intermediates.noindex/BookTracker.build/Debug-iphonesimulator/BookTracker.build/Objects-normal/x86_64/GoogleBooksService.bc",
+    "object" : "/Users/nununugraha/Documents/Programming/My Project/BookTracker/build/Build/Intermediates.noindex/BookTracker.build/Debug-iphonesimulator/BookTracker.build/Objects-normal/x86_64/GoogleBooksService.o",
+    "swift-dependencies" : "/Users/nununugraha/Documents/Programming/My Project/BookTracker/build/Build/Intermediates.noindex/BookTracker.build/Debug-iphonesimulator/BookTracker.build/Objects-normal/x86_64/GoogleBooksService.swiftdeps",
+    "swiftmodule" : "/Users/nununugraha/Documents/Programming/My Project/BookTracker/build/Build/Intermediates.noindex/BookTracker.build/Debug-iphonesimulator/BookTracker.build/Objects-normal/x86_64/GoogleBooksService~partial.swiftmodule"
+  },
+  "/Users/nununugraha/Documents/Programming/My Project/BookTracker/BookTracker/Core/Service/GoogleBooksServiceProtocol.swift" : {
+    "const-values" : "/Users/nununugraha/Documents/Programming/My Project/BookTracker/build/Build/Intermediates.noindex/BookTracker.build/Debug-iphonesimulator/BookTracker.build/Objects-normal/x86_64/GoogleBooksServiceProtocol.swiftconstvalues",
+    "dependencies" : "/Users/nununugraha/Documents/Programming/My Project/BookTracker/build/Build/Intermediates.noindex/BookTracker.build/Debug-iphonesimulator/BookTracker.build/Objects-normal/x86_64/GoogleBooksServiceProtocol.d",
+    "diagnostics" : "/Users/nununugraha/Documents/Programming/My Project/BookTracker/build/Build/Intermediates.noindex/BookTracker.build/Debug-iphonesimulator/BookTracker.build/Objects-normal/x86_64/GoogleBooksServiceProtocol.dia",
+    "index-unit-output-path" : "/BookTracker.build/Debug-iphonesimulator/BookTracker.build/Objects-normal/x86_64/GoogleBooksServiceProtocol.o",
+    "llvm-bc" : "/Users/nununugraha/Documents/Programming/My Project/BookTracker/build/Build/Intermediates.noindex/BookTracker.build/Debug-iphonesimulator/BookTracker.build/Objects-normal/x86_64/GoogleBooksServiceProtocol.bc",
+    "object" : "/Users/nununugraha/Documents/Programming/My Project/BookTracker/build/Build/Intermediates.noindex/BookTracker.build/Debug-iphonesimulator/BookTracker.build/Objects-normal/x86_64/GoogleBooksServiceProtocol.o",
+    "swift-dependencies" : "/Users/nununugraha/Documents/Programming/My Project/BookTracker/build/Build/Intermediates.noindex/BookTracker.build/Debug-iphonesimulator/BookTracker.build/Objects-normal/x86_64/GoogleBooksServiceProtocol.swiftdeps",
+    "swiftmodule" : "/Users/nununugraha/Documents/Programming/My Project/BookTracker/build/Build/Intermediates.noindex/BookTracker.build/Debug-iphonesimulator/BookTracker.build/Objects-normal/x86_64/GoogleBooksServiceProtocol~partial.swiftmodule"
+  },
+  "/Users/nununugraha/Documents/Programming/My Project/BookTracker/BookTracker/Core/Utils/ImageUtils.swift" : {
+    "const-values" : "/Users/nununugraha/Documents/Programming/My Project/BookTracker/build/Build/Intermediates.noindex/BookTracker.build/Debug-iphonesimulator/BookTracker.build/Objects-normal/x86_64/ImageUtils.swiftconstvalues",
+    "dependencies" : "/Users/nununugraha/Documents/Programming/My Project/BookTracker/build/Build/Intermediates.noindex/BookTracker.build/Debug-iphonesimulator/BookTracker.build/Objects-normal/x86_64/ImageUtils.d",
+    "diagnostics" : "/Users/nununugraha/Documents/Programming/My Project/BookTracker/build/Build/Intermediates.noindex/BookTracker.build/Debug-iphonesimulator/BookTracker.build/Objects-normal/x86_64/ImageUtils.dia",
+    "index-unit-output-path" : "/BookTracker.build/Debug-iphonesimulator/BookTracker.build/Objects-normal/x86_64/ImageUtils.o",
+    "llvm-bc" : "/Users/nununugraha/Documents/Programming/My Project/BookTracker/build/Build/Intermediates.noindex/BookTracker.build/Debug-iphonesimulator/BookTracker.build/Objects-normal/x86_64/ImageUtils.bc",
+    "object" : "/Users/nununugraha/Documents/Programming/My Project/BookTracker/build/Build/Intermediates.noindex/BookTracker.build/Debug-iphonesimulator/BookTracker.build/Objects-normal/x86_64/ImageUtils.o",
+    "swift-dependencies" : "/Users/nununugraha/Documents/Programming/My Project/BookTracker/build/Build/Intermediates.noindex/BookTracker.build/Debug-iphonesimulator/BookTracker.build/Objects-normal/x86_64/ImageUtils.swiftdeps",
+    "swiftmodule" : "/Users/nununugraha/Documents/Programming/My Project/BookTracker/build/Build/Intermediates.noindex/BookTracker.build/Debug-iphonesimulator/BookTracker.build/Objects-normal/x86_64/ImageUtils~partial.swiftmodule"
+  },
+  "/Users/nununugraha/Documents/Programming/My Project/BookTracker/BookTracker/Core/Utils/NavigationCoordinator.swift" : {
+    "const-values" : "/Users/nununugraha/Documents/Programming/My Project/BookTracker/build/Build/Intermediates.noindex/BookTracker.build/Debug-iphonesimulator/BookTracker.build/Objects-normal/x86_64/NavigationCoordinator.swiftconstvalues",
+    "dependencies" : "/Users/nununugraha/Documents/Programming/My Project/BookTracker/build/Build/Intermediates.noindex/BookTracker.build/Debug-iphonesimulator/BookTracker.build/Objects-normal/x86_64/NavigationCoordinator.d",
+    "diagnostics" : "/Users/nununugraha/Documents/Programming/My Project/BookTracker/build/Build/Intermediates.noindex/BookTracker.build/Debug-iphonesimulator/BookTracker.build/Objects-normal/x86_64/NavigationCoordinator.dia",
+    "index-unit-output-path" : "/BookTracker.build/Debug-iphonesimulator/BookTracker.build/Objects-normal/x86_64/NavigationCoordinator.o",
+    "llvm-bc" : "/Users/nununugraha/Documents/Programming/My Project/BookTracker/build/Build/Intermediates.noindex/BookTracker.build/Debug-iphonesimulator/BookTracker.build/Objects-normal/x86_64/NavigationCoordinator.bc",
+    "object" : "/Users/nununugraha/Documents/Programming/My Project/BookTracker/build/Build/Intermediates.noindex/BookTracker.build/Debug-iphonesimulator/BookTracker.build/Objects-normal/x86_64/NavigationCoordinator.o",
+    "swift-dependencies" : "/Users/nununugraha/Documents/Programming/My Project/BookTracker/build/Build/Intermediates.noindex/BookTracker.build/Debug-iphonesimulator/BookTracker.build/Objects-normal/x86_64/NavigationCoordinator.swiftdeps",
+    "swiftmodule" : "/Users/nununugraha/Documents/Programming/My Project/BookTracker/build/Build/Intermediates.noindex/BookTracker.build/Debug-iphonesimulator/BookTracker.build/Objects-normal/x86_64/NavigationCoordinator~partial.swiftmodule"
+  },
+  "/Users/nununugraha/Documents/Programming/My Project/BookTracker/BookTracker/Core/Utils/NotificationManager.swift" : {
+    "const-values" : "/Users/nununugraha/Documents/Programming/My Project/BookTracker/build/Build/Intermediates.noindex/BookTracker.build/Debug-iphonesimulator/BookTracker.build/Objects-normal/x86_64/NotificationManager.swiftconstvalues",
+    "dependencies" : "/Users/nununugraha/Documents/Programming/My Project/BookTracker/build/Build/Intermediates.noindex/BookTracker.build/Debug-iphonesimulator/BookTracker.build/Objects-normal/x86_64/NotificationManager.d",
+    "diagnostics" : "/Users/nununugraha/Documents/Programming/My Project/BookTracker/build/Build/Intermediates.noindex/BookTracker.build/Debug-iphonesimulator/BookTracker.build/Objects-normal/x86_64/NotificationManager.dia",
+    "index-unit-output-path" : "/BookTracker.build/Debug-iphonesimulator/BookTracker.build/Objects-normal/x86_64/NotificationManager.o",
+    "llvm-bc" : "/Users/nununugraha/Documents/Programming/My Project/BookTracker/build/Build/Intermediates.noindex/BookTracker.build/Debug-iphonesimulator/BookTracker.build/Objects-normal/x86_64/NotificationManager.bc",
+    "object" : "/Users/nununugraha/Documents/Programming/My Project/BookTracker/build/Build/Intermediates.noindex/BookTracker.build/Debug-iphonesimulator/BookTracker.build/Objects-normal/x86_64/NotificationManager.o",
+    "swift-dependencies" : "/Users/nununugraha/Documents/Programming/My Project/BookTracker/build/Build/Intermediates.noindex/BookTracker.build/Debug-iphonesimulator/BookTracker.build/Objects-normal/x86_64/NotificationManager.swiftdeps",
+    "swiftmodule" : "/Users/nununugraha/Documents/Programming/My Project/BookTracker/build/Build/Intermediates.noindex/BookTracker.build/Debug-iphonesimulator/BookTracker.build/Objects-normal/x86_64/NotificationManager~partial.swiftmodule"
+  },
+  "/Users/nununugraha/Documents/Programming/My Project/BookTracker/BookTracker/Core/Utils/PermissionManager.swift" : {
+    "const-values" : "/Users/nununugraha/Documents/Programming/My Project/BookTracker/build/Build/Intermediates.noindex/BookTracker.build/Debug-iphonesimulator/BookTracker.build/Objects-normal/x86_64/PermissionManager.swiftconstvalues",
+    "dependencies" : "/Users/nununugraha/Documents/Programming/My Project/BookTracker/build/Build/Intermediates.noindex/BookTracker.build/Debug-iphonesimulator/BookTracker.build/Objects-normal/x86_64/PermissionManager.d",
+    "diagnostics" : "/Users/nununugraha/Documents/Programming/My Project/BookTracker/build/Build/Intermediates.noindex/BookTracker.build/Debug-iphonesimulator/BookTracker.build/Objects-normal/x86_64/PermissionManager.dia",
+    "index-unit-output-path" : "/BookTracker.build/Debug-iphonesimulator/BookTracker.build/Objects-normal/x86_64/PermissionManager.o",
+    "llvm-bc" : "/Users/nununugraha/Documents/Programming/My Project/BookTracker/build/Build/Intermediates.noindex/BookTracker.build/Debug-iphonesimulator/BookTracker.build/Objects-normal/x86_64/PermissionManager.bc",
+    "object" : "/Users/nununugraha/Documents/Programming/My Project/BookTracker/build/Build/Intermediates.noindex/BookTracker.build/Debug-iphonesimulator/BookTracker.build/Objects-normal/x86_64/PermissionManager.o",
+    "swift-dependencies" : "/Users/nununugraha/Documents/Programming/My Project/BookTracker/build/Build/Intermediates.noindex/BookTracker.build/Debug-iphonesimulator/BookTracker.build/Objects-normal/x86_64/PermissionManager.swiftdeps",
+    "swiftmodule" : "/Users/nununugraha/Documents/Programming/My Project/BookTracker/build/Build/Intermediates.noindex/BookTracker.build/Debug-iphonesimulator/BookTracker.build/Objects-normal/x86_64/PermissionManager~partial.swiftmodule"
+  },
+  "/Users/nununugraha/Documents/Programming/My Project/BookTracker/BookTracker/Features/Common/ActivityView.swift" : {
+    "const-values" : "/Users/nununugraha/Documents/Programming/My Project/BookTracker/build/Build/Intermediates.noindex/BookTracker.build/Debug-iphonesimulator/BookTracker.build/Objects-normal/x86_64/ActivityView.swiftconstvalues",
+    "dependencies" : "/Users/nununugraha/Documents/Programming/My Project/BookTracker/build/Build/Intermediates.noindex/BookTracker.build/Debug-iphonesimulator/BookTracker.build/Objects-normal/x86_64/ActivityView.d",
+    "diagnostics" : "/Users/nununugraha/Documents/Programming/My Project/BookTracker/build/Build/Intermediates.noindex/BookTracker.build/Debug-iphonesimulator/BookTracker.build/Objects-normal/x86_64/ActivityView.dia",
+    "index-unit-output-path" : "/BookTracker.build/Debug-iphonesimulator/BookTracker.build/Objects-normal/x86_64/ActivityView.o",
+    "llvm-bc" : "/Users/nununugraha/Documents/Programming/My Project/BookTracker/build/Build/Intermediates.noindex/BookTracker.build/Debug-iphonesimulator/BookTracker.build/Objects-normal/x86_64/ActivityView.bc",
+    "object" : "/Users/nununugraha/Documents/Programming/My Project/BookTracker/build/Build/Intermediates.noindex/BookTracker.build/Debug-iphonesimulator/BookTracker.build/Objects-normal/x86_64/ActivityView.o",
+    "swift-dependencies" : "/Users/nununugraha/Documents/Programming/My Project/BookTracker/build/Build/Intermediates.noindex/BookTracker.build/Debug-iphonesimulator/BookTracker.build/Objects-normal/x86_64/ActivityView.swiftdeps",
+    "swiftmodule" : "/Users/nununugraha/Documents/Programming/My Project/BookTracker/build/Build/Intermediates.noindex/BookTracker.build/Debug-iphonesimulator/BookTracker.build/Objects-normal/x86_64/ActivityView~partial.swiftmodule"
+  },
+  "/Users/nununugraha/Documents/Programming/My Project/BookTracker/BookTracker/Features/Common/DataScannerView.swift" : {
+    "const-values" : "/Users/nununugraha/Documents/Programming/My Project/BookTracker/build/Build/Intermediates.noindex/BookTracker.build/Debug-iphonesimulator/BookTracker.build/Objects-normal/x86_64/DataScannerView.swiftconstvalues",
+    "dependencies" : "/Users/nununugraha/Documents/Programming/My Project/BookTracker/build/Build/Intermediates.noindex/BookTracker.build/Debug-iphonesimulator/BookTracker.build/Objects-normal/x86_64/DataScannerView.d",
+    "diagnostics" : "/Users/nununugraha/Documents/Programming/My Project/BookTracker/build/Build/Intermediates.noindex/BookTracker.build/Debug-iphonesimulator/BookTracker.build/Objects-normal/x86_64/DataScannerView.dia",
+    "index-unit-output-path" : "/BookTracker.build/Debug-iphonesimulator/BookTracker.build/Objects-normal/x86_64/DataScannerView.o",
+    "llvm-bc" : "/Users/nununugraha/Documents/Programming/My Project/BookTracker/build/Build/Intermediates.noindex/BookTracker.build/Debug-iphonesimulator/BookTracker.build/Objects-normal/x86_64/DataScannerView.bc",
+    "object" : "/Users/nununugraha/Documents/Programming/My Project/BookTracker/build/Build/Intermediates.noindex/BookTracker.build/Debug-iphonesimulator/BookTracker.build/Objects-normal/x86_64/DataScannerView.o",
+    "swift-dependencies" : "/Users/nununugraha/Documents/Programming/My Project/BookTracker/build/Build/Intermediates.noindex/BookTracker.build/Debug-iphonesimulator/BookTracker.build/Objects-normal/x86_64/DataScannerView.swiftdeps",
+    "swiftmodule" : "/Users/nununugraha/Documents/Programming/My Project/BookTracker/build/Build/Intermediates.noindex/BookTracker.build/Debug-iphonesimulator/BookTracker.build/Objects-normal/x86_64/DataScannerView~partial.swiftmodule"
+  },
+  "/Users/nununugraha/Documents/Programming/My Project/BookTracker/BookTracker/Features/Common/ImagePicker.swift" : {
+    "const-values" : "/Users/nununugraha/Documents/Programming/My Project/BookTracker/build/Build/Intermediates.noindex/BookTracker.build/Debug-iphonesimulator/BookTracker.build/Objects-normal/x86_64/ImagePicker.swiftconstvalues",
+    "dependencies" : "/Users/nununugraha/Documents/Programming/My Project/BookTracker/build/Build/Intermediates.noindex/BookTracker.build/Debug-iphonesimulator/BookTracker.build/Objects-normal/x86_64/ImagePicker.d",
+    "diagnostics" : "/Users/nununugraha/Documents/Programming/My Project/BookTracker/build/Build/Intermediates.noindex/BookTracker.build/Debug-iphonesimulator/BookTracker.build/Objects-normal/x86_64/ImagePicker.dia",
+    "index-unit-output-path" : "/BookTracker.build/Debug-iphonesimulator/BookTracker.build/Objects-normal/x86_64/ImagePicker.o",
+    "llvm-bc" : "/Users/nununugraha/Documents/Programming/My Project/BookTracker/build/Build/Intermediates.noindex/BookTracker.build/Debug-iphonesimulator/BookTracker.build/Objects-normal/x86_64/ImagePicker.bc",
+    "object" : "/Users/nununugraha/Documents/Programming/My Project/BookTracker/build/Build/Intermediates.noindex/BookTracker.build/Debug-iphonesimulator/BookTracker.build/Objects-normal/x86_64/ImagePicker.o",
+    "swift-dependencies" : "/Users/nununugraha/Documents/Programming/My Project/BookTracker/build/Build/Intermediates.noindex/BookTracker.build/Debug-iphonesimulator/BookTracker.build/Objects-normal/x86_64/ImagePicker.swiftdeps",
+    "swiftmodule" : "/Users/nununugraha/Documents/Programming/My Project/BookTracker/build/Build/Intermediates.noindex/BookTracker.build/Debug-iphonesimulator/BookTracker.build/Objects-normal/x86_64/ImagePicker~partial.swiftmodule"
+  },
+  "/Users/nununugraha/Documents/Programming/My Project/BookTracker/BookTracker/Features/Common/PermissionDeniedView.swift" : {
+    "const-values" : "/Users/nununugraha/Documents/Programming/My Project/BookTracker/build/Build/Intermediates.noindex/BookTracker.build/Debug-iphonesimulator/BookTracker.build/Objects-normal/x86_64/PermissionDeniedView.swiftconstvalues",
+    "dependencies" : "/Users/nununugraha/Documents/Programming/My Project/BookTracker/build/Build/Intermediates.noindex/BookTracker.build/Debug-iphonesimulator/BookTracker.build/Objects-normal/x86_64/PermissionDeniedView.d",
+    "diagnostics" : "/Users/nununugraha/Documents/Programming/My Project/BookTracker/build/Build/Intermediates.noindex/BookTracker.build/Debug-iphonesimulator/BookTracker.build/Objects-normal/x86_64/PermissionDeniedView.dia",
+    "index-unit-output-path" : "/BookTracker.build/Debug-iphonesimulator/BookTracker.build/Objects-normal/x86_64/PermissionDeniedView.o",
+    "llvm-bc" : "/Users/nununugraha/Documents/Programming/My Project/BookTracker/build/Build/Intermediates.noindex/BookTracker.build/Debug-iphonesimulator/BookTracker.build/Objects-normal/x86_64/PermissionDeniedView.bc",
+    "object" : "/Users/nununugraha/Documents/Programming/My Project/BookTracker/build/Build/Intermediates.noindex/BookTracker.build/Debug-iphonesimulator/BookTracker.build/Objects-normal/x86_64/PermissionDeniedView.o",
+    "swift-dependencies" : "/Users/nununugraha/Documents/Programming/My Project/BookTracker/build/Build/Intermediates.noindex/BookTracker.build/Debug-iphonesimulator/BookTracker.build/Objects-normal/x86_64/PermissionDeniedView.swiftdeps",
+    "swiftmodule" : "/Users/nununugraha/Documents/Programming/My Project/BookTracker/build/Build/Intermediates.noindex/BookTracker.build/Debug-iphonesimulator/BookTracker.build/Objects-normal/x86_64/PermissionDeniedView~partial.swiftmodule"
+  },
+  "/Users/nununugraha/Documents/Programming/My Project/BookTracker/BookTracker/Features/Common/ScannerGuidanceOverlayView.swift" : {
+    "const-values" : "/Users/nununugraha/Documents/Programming/My Project/BookTracker/build/Build/Intermediates.noindex/BookTracker.build/Debug-iphonesimulator/BookTracker.build/Objects-normal/x86_64/ScannerGuidanceOverlayView.swiftconstvalues",
+    "dependencies" : "/Users/nununugraha/Documents/Programming/My Project/BookTracker/build/Build/Intermediates.noindex/BookTracker.build/Debug-iphonesimulator/BookTracker.build/Objects-normal/x86_64/ScannerGuidanceOverlayView.d",
+    "diagnostics" : "/Users/nununugraha/Documents/Programming/My Project/BookTracker/build/Build/Intermediates.noindex/BookTracker.build/Debug-iphonesimulator/BookTracker.build/Objects-normal/x86_64/ScannerGuidanceOverlayView.dia",
+    "index-unit-output-path" : "/BookTracker.build/Debug-iphonesimulator/BookTracker.build/Objects-normal/x86_64/ScannerGuidanceOverlayView.o",
+    "llvm-bc" : "/Users/nununugraha/Documents/Programming/My Project/BookTracker/build/Build/Intermediates.noindex/BookTracker.build/Debug-iphonesimulator/BookTracker.build/Objects-normal/x86_64/ScannerGuidanceOverlayView.bc",
+    "object" : "/Users/nununugraha/Documents/Programming/My Project/BookTracker/build/Build/Intermediates.noindex/BookTracker.build/Debug-iphonesimulator/BookTracker.build/Objects-normal/x86_64/ScannerGuidanceOverlayView.o",
+    "swift-dependencies" : "/Users/nununugraha/Documents/Programming/My Project/BookTracker/build/Build/Intermediates.noindex/BookTracker.build/Debug-iphonesimulator/BookTracker.build/Objects-normal/x86_64/ScannerGuidanceOverlayView.swiftdeps",
+    "swiftmodule" : "/Users/nununugraha/Documents/Programming/My Project/BookTracker/build/Build/Intermediates.noindex/BookTracker.build/Debug-iphonesimulator/BookTracker.build/Objects-normal/x86_64/ScannerGuidanceOverlayView~partial.swiftmodule"
+  },
+  "/Users/nununugraha/Documents/Programming/My Project/BookTracker/BookTracker/Features/Common/ShareableHeatmap.swift" : {
+    "const-values" : "/Users/nununugraha/Documents/Programming/My Project/BookTracker/build/Build/Intermediates.noindex/BookTracker.build/Debug-iphonesimulator/BookTracker.build/Objects-normal/x86_64/ShareableHeatmap.swiftconstvalues",
+    "dependencies" : "/Users/nununugraha/Documents/Programming/My Project/BookTracker/build/Build/Intermediates.noindex/BookTracker.build/Debug-iphonesimulator/BookTracker.build/Objects-normal/x86_64/ShareableHeatmap.d",
+    "diagnostics" : "/Users/nununugraha/Documents/Programming/My Project/BookTracker/build/Build/Intermediates.noindex/BookTracker.build/Debug-iphonesimulator/BookTracker.build/Objects-normal/x86_64/ShareableHeatmap.dia",
+    "index-unit-output-path" : "/BookTracker.build/Debug-iphonesimulator/BookTracker.build/Objects-normal/x86_64/ShareableHeatmap.o",
+    "llvm-bc" : "/Users/nununugraha/Documents/Programming/My Project/BookTracker/build/Build/Intermediates.noindex/BookTracker.build/Debug-iphonesimulator/BookTracker.build/Objects-normal/x86_64/ShareableHeatmap.bc",
+    "object" : "/Users/nununugraha/Documents/Programming/My Project/BookTracker/build/Build/Intermediates.noindex/BookTracker.build/Debug-iphonesimulator/BookTracker.build/Objects-normal/x86_64/ShareableHeatmap.o",
+    "swift-dependencies" : "/Users/nununugraha/Documents/Programming/My Project/BookTracker/build/Build/Intermediates.noindex/BookTracker.build/Debug-iphonesimulator/BookTracker.build/Objects-normal/x86_64/ShareableHeatmap.swiftdeps",
+    "swiftmodule" : "/Users/nununugraha/Documents/Programming/My Project/BookTracker/build/Build/Intermediates.noindex/BookTracker.build/Debug-iphonesimulator/BookTracker.build/Objects-normal/x86_64/ShareableHeatmap~partial.swiftmodule"
+  },
+  "/Users/nununugraha/Documents/Programming/My Project/BookTracker/BookTracker/Features/History/View/HistoryView.swift" : {
+    "const-values" : "/Users/nununugraha/Documents/Programming/My Project/BookTracker/build/Build/Intermediates.noindex/BookTracker.build/Debug-iphonesimulator/BookTracker.build/Objects-normal/x86_64/HistoryView.swiftconstvalues",
+    "dependencies" : "/Users/nununugraha/Documents/Programming/My Project/BookTracker/build/Build/Intermediates.noindex/BookTracker.build/Debug-iphonesimulator/BookTracker.build/Objects-normal/x86_64/HistoryView.d",
+    "diagnostics" : "/Users/nununugraha/Documents/Programming/My Project/BookTracker/build/Build/Intermediates.noindex/BookTracker.build/Debug-iphonesimulator/BookTracker.build/Objects-normal/x86_64/HistoryView.dia",
+    "index-unit-output-path" : "/BookTracker.build/Debug-iphonesimulator/BookTracker.build/Objects-normal/x86_64/HistoryView.o",
+    "llvm-bc" : "/Users/nununugraha/Documents/Programming/My Project/BookTracker/build/Build/Intermediates.noindex/BookTracker.build/Debug-iphonesimulator/BookTracker.build/Objects-normal/x86_64/HistoryView.bc",
+    "object" : "/Users/nununugraha/Documents/Programming/My Project/BookTracker/build/Build/Intermediates.noindex/BookTracker.build/Debug-iphonesimulator/BookTracker.build/Objects-normal/x86_64/HistoryView.o",
+    "swift-dependencies" : "/Users/nununugraha/Documents/Programming/My Project/BookTracker/build/Build/Intermediates.noindex/BookTracker.build/Debug-iphonesimulator/BookTracker.build/Objects-normal/x86_64/HistoryView.swiftdeps",
+    "swiftmodule" : "/Users/nununugraha/Documents/Programming/My Project/BookTracker/build/Build/Intermediates.noindex/BookTracker.build/Debug-iphonesimulator/BookTracker.build/Objects-normal/x86_64/HistoryView~partial.swiftmodule"
+  },
+  "/Users/nununugraha/Documents/Programming/My Project/BookTracker/BookTracker/Features/Home/View/BookEditorView.swift" : {
+    "const-values" : "/Users/nununugraha/Documents/Programming/My Project/BookTracker/build/Build/Intermediates.noindex/BookTracker.build/Debug-iphonesimulator/BookTracker.build/Objects-normal/x86_64/BookEditorView.swiftconstvalues",
+    "dependencies" : "/Users/nununugraha/Documents/Programming/My Project/BookTracker/build/Build/Intermediates.noindex/BookTracker.build/Debug-iphonesimulator/BookTracker.build/Objects-normal/x86_64/BookEditorView.d",
+    "diagnostics" : "/Users/nununugraha/Documents/Programming/My Project/BookTracker/build/Build/Intermediates.noindex/BookTracker.build/Debug-iphonesimulator/BookTracker.build/Objects-normal/x86_64/BookEditorView.dia",
+    "index-unit-output-path" : "/BookTracker.build/Debug-iphonesimulator/BookTracker.build/Objects-normal/x86_64/BookEditorView.o",
+    "llvm-bc" : "/Users/nununugraha/Documents/Programming/My Project/BookTracker/build/Build/Intermediates.noindex/BookTracker.build/Debug-iphonesimulator/BookTracker.build/Objects-normal/x86_64/BookEditorView.bc",
+    "object" : "/Users/nununugraha/Documents/Programming/My Project/BookTracker/build/Build/Intermediates.noindex/BookTracker.build/Debug-iphonesimulator/BookTracker.build/Objects-normal/x86_64/BookEditorView.o",
+    "swift-dependencies" : "/Users/nununugraha/Documents/Programming/My Project/BookTracker/build/Build/Intermediates.noindex/BookTracker.build/Debug-iphonesimulator/BookTracker.build/Objects-normal/x86_64/BookEditorView.swiftdeps",
+    "swiftmodule" : "/Users/nununugraha/Documents/Programming/My Project/BookTracker/build/Build/Intermediates.noindex/BookTracker.build/Debug-iphonesimulator/BookTracker.build/Objects-normal/x86_64/BookEditorView~partial.swiftmodule"
+  },
+  "/Users/nununugraha/Documents/Programming/My Project/BookTracker/BookTracker/Features/Home/View/Components/BookCardView.swift" : {
+    "const-values" : "/Users/nununugraha/Documents/Programming/My Project/BookTracker/build/Build/Intermediates.noindex/BookTracker.build/Debug-iphonesimulator/BookTracker.build/Objects-normal/x86_64/BookCardView.swiftconstvalues",
+    "dependencies" : "/Users/nununugraha/Documents/Programming/My Project/BookTracker/build/Build/Intermediates.noindex/BookTracker.build/Debug-iphonesimulator/BookTracker.build/Objects-normal/x86_64/BookCardView.d",
+    "diagnostics" : "/Users/nununugraha/Documents/Programming/My Project/BookTracker/build/Build/Intermediates.noindex/BookTracker.build/Debug-iphonesimulator/BookTracker.build/Objects-normal/x86_64/BookCardView.dia",
+    "index-unit-output-path" : "/BookTracker.build/Debug-iphonesimulator/BookTracker.build/Objects-normal/x86_64/BookCardView.o",
+    "llvm-bc" : "/Users/nununugraha/Documents/Programming/My Project/BookTracker/build/Build/Intermediates.noindex/BookTracker.build/Debug-iphonesimulator/BookTracker.build/Objects-normal/x86_64/BookCardView.bc",
+    "object" : "/Users/nununugraha/Documents/Programming/My Project/BookTracker/build/Build/Intermediates.noindex/BookTracker.build/Debug-iphonesimulator/BookTracker.build/Objects-normal/x86_64/BookCardView.o",
+    "swift-dependencies" : "/Users/nununugraha/Documents/Programming/My Project/BookTracker/build/Build/Intermediates.noindex/BookTracker.build/Debug-iphonesimulator/BookTracker.build/Objects-normal/x86_64/BookCardView.swiftdeps",
+    "swiftmodule" : "/Users/nununugraha/Documents/Programming/My Project/BookTracker/build/Build/Intermediates.noindex/BookTracker.build/Debug-iphonesimulator/BookTracker.build/Objects-normal/x86_64/BookCardView~partial.swiftmodule"
+  },
+  "/Users/nununugraha/Documents/Programming/My Project/BookTracker/BookTracker/Features/Home/View/Components/DashboardHeaderView.swift" : {
+    "const-values" : "/Users/nununugraha/Documents/Programming/My Project/BookTracker/build/Build/Intermediates.noindex/BookTracker.build/Debug-iphonesimulator/BookTracker.build/Objects-normal/x86_64/DashboardHeaderView.swiftconstvalues",
+    "dependencies" : "/Users/nununugraha/Documents/Programming/My Project/BookTracker/build/Build/Intermediates.noindex/BookTracker.build/Debug-iphonesimulator/BookTracker.build/Objects-normal/x86_64/DashboardHeaderView.d",
+    "diagnostics" : "/Users/nununugraha/Documents/Programming/My Project/BookTracker/build/Build/Intermediates.noindex/BookTracker.build/Debug-iphonesimulator/BookTracker.build/Objects-normal/x86_64/DashboardHeaderView.dia",
+    "index-unit-output-path" : "/BookTracker.build/Debug-iphonesimulator/BookTracker.build/Objects-normal/x86_64/DashboardHeaderView.o",
+    "llvm-bc" : "/Users/nununugraha/Documents/Programming/My Project/BookTracker/build/Build/Intermediates.noindex/BookTracker.build/Debug-iphonesimulator/BookTracker.build/Objects-normal/x86_64/DashboardHeaderView.bc",
+    "object" : "/Users/nununugraha/Documents/Programming/My Project/BookTracker/build/Build/Intermediates.noindex/BookTracker.build/Debug-iphonesimulator/BookTracker.build/Objects-normal/x86_64/DashboardHeaderView.o",
+    "swift-dependencies" : "/Users/nununugraha/Documents/Programming/My Project/BookTracker/build/Build/Intermediates.noindex/BookTracker.build/Debug-iphonesimulator/BookTracker.build/Objects-normal/x86_64/DashboardHeaderView.swiftdeps",
+    "swiftmodule" : "/Users/nununugraha/Documents/Programming/My Project/BookTracker/build/Build/Intermediates.noindex/BookTracker.build/Debug-iphonesimulator/BookTracker.build/Objects-normal/x86_64/DashboardHeaderView~partial.swiftmodule"
+  },
+  "/Users/nununugraha/Documents/Programming/My Project/BookTracker/BookTracker/Features/Home/View/Components/GoogleBookSearchSheet.swift" : {
+    "const-values" : "/Users/nununugraha/Documents/Programming/My Project/BookTracker/build/Build/Intermediates.noindex/BookTracker.build/Debug-iphonesimulator/BookTracker.build/Objects-normal/x86_64/GoogleBookSearchSheet.swiftconstvalues",
+    "dependencies" : "/Users/nununugraha/Documents/Programming/My Project/BookTracker/build/Build/Intermediates.noindex/BookTracker.build/Debug-iphonesimulator/BookTracker.build/Objects-normal/x86_64/GoogleBookSearchSheet.d",
+    "diagnostics" : "/Users/nununugraha/Documents/Programming/My Project/BookTracker/build/Build/Intermediates.noindex/BookTracker.build/Debug-iphonesimulator/BookTracker.build/Objects-normal/x86_64/GoogleBookSearchSheet.dia",
+    "index-unit-output-path" : "/BookTracker.build/Debug-iphonesimulator/BookTracker.build/Objects-normal/x86_64/GoogleBookSearchSheet.o",
+    "llvm-bc" : "/Users/nununugraha/Documents/Programming/My Project/BookTracker/build/Build/Intermediates.noindex/BookTracker.build/Debug-iphonesimulator/BookTracker.build/Objects-normal/x86_64/GoogleBookSearchSheet.bc",
+    "object" : "/Users/nununugraha/Documents/Programming/My Project/BookTracker/build/Build/Intermediates.noindex/BookTracker.build/Debug-iphonesimulator/BookTracker.build/Objects-normal/x86_64/GoogleBookSearchSheet.o",
+    "swift-dependencies" : "/Users/nununugraha/Documents/Programming/My Project/BookTracker/build/Build/Intermediates.noindex/BookTracker.build/Debug-iphonesimulator/BookTracker.build/Objects-normal/x86_64/GoogleBookSearchSheet.swiftdeps",
+    "swiftmodule" : "/Users/nununugraha/Documents/Programming/My Project/BookTracker/build/Build/Intermediates.noindex/BookTracker.build/Debug-iphonesimulator/BookTracker.build/Objects-normal/x86_64/GoogleBookSearchSheet~partial.swiftmodule"
+  },
+  "/Users/nununugraha/Documents/Programming/My Project/BookTracker/BookTracker/Features/Home/View/Components/SearchResultRow.swift" : {
+    "const-values" : "/Users/nununugraha/Documents/Programming/My Project/BookTracker/build/Build/Intermediates.noindex/BookTracker.build/Debug-iphonesimulator/BookTracker.build/Objects-normal/x86_64/SearchResultRow.swiftconstvalues",
+    "dependencies" : "/Users/nununugraha/Documents/Programming/My Project/BookTracker/build/Build/Intermediates.noindex/BookTracker.build/Debug-iphonesimulator/BookTracker.build/Objects-normal/x86_64/SearchResultRow.d",
+    "diagnostics" : "/Users/nununugraha/Documents/Programming/My Project/BookTracker/build/Build/Intermediates.noindex/BookTracker.build/Debug-iphonesimulator/BookTracker.build/Objects-normal/x86_64/SearchResultRow.dia",
+    "index-unit-output-path" : "/BookTracker.build/Debug-iphonesimulator/BookTracker.build/Objects-normal/x86_64/SearchResultRow.o",
+    "llvm-bc" : "/Users/nununugraha/Documents/Programming/My Project/BookTracker/build/Build/Intermediates.noindex/BookTracker.build/Debug-iphonesimulator/BookTracker.build/Objects-normal/x86_64/SearchResultRow.bc",
+    "object" : "/Users/nununugraha/Documents/Programming/My Project/BookTracker/build/Build/Intermediates.noindex/BookTracker.build/Debug-iphonesimulator/BookTracker.build/Objects-normal/x86_64/SearchResultRow.o",
+    "swift-dependencies" : "/Users/nununugraha/Documents/Programming/My Project/BookTracker/build/Build/Intermediates.noindex/BookTracker.build/Debug-iphonesimulator/BookTracker.build/Objects-normal/x86_64/SearchResultRow.swiftdeps",
+    "swiftmodule" : "/Users/nununugraha/Documents/Programming/My Project/BookTracker/build/Build/Intermediates.noindex/BookTracker.build/Debug-iphonesimulator/BookTracker.build/Objects-normal/x86_64/SearchResultRow~partial.swiftmodule"
+  },
+  "/Users/nununugraha/Documents/Programming/My Project/BookTracker/BookTracker/Features/Home/View/Components/UpdateProgressSheet.swift" : {
+    "const-values" : "/Users/nununugraha/Documents/Programming/My Project/BookTracker/build/Build/Intermediates.noindex/BookTracker.build/Debug-iphonesimulator/BookTracker.build/Objects-normal/x86_64/UpdateProgressSheet.swiftconstvalues",
+    "dependencies" : "/Users/nununugraha/Documents/Programming/My Project/BookTracker/build/Build/Intermediates.noindex/BookTracker.build/Debug-iphonesimulator/BookTracker.build/Objects-normal/x86_64/UpdateProgressSheet.d",
+    "diagnostics" : "/Users/nununugraha/Documents/Programming/My Project/BookTracker/build/Build/Intermediates.noindex/BookTracker.build/Debug-iphonesimulator/BookTracker.build/Objects-normal/x86_64/UpdateProgressSheet.dia",
+    "index-unit-output-path" : "/BookTracker.build/Debug-iphonesimulator/BookTracker.build/Objects-normal/x86_64/UpdateProgressSheet.o",
+    "llvm-bc" : "/Users/nununugraha/Documents/Programming/My Project/BookTracker/build/Build/Intermediates.noindex/BookTracker.build/Debug-iphonesimulator/BookTracker.build/Objects-normal/x86_64/UpdateProgressSheet.bc",
+    "object" : "/Users/nununugraha/Documents/Programming/My Project/BookTracker/build/Build/Intermediates.noindex/BookTracker.build/Debug-iphonesimulator/BookTracker.build/Objects-normal/x86_64/UpdateProgressSheet.o",
+    "swift-dependencies" : "/Users/nununugraha/Documents/Programming/My Project/BookTracker/build/Build/Intermediates.noindex/BookTracker.build/Debug-iphonesimulator/BookTracker.build/Objects-normal/x86_64/UpdateProgressSheet.swiftdeps",
+    "swiftmodule" : "/Users/nununugraha/Documents/Programming/My Project/BookTracker/build/Build/Intermediates.noindex/BookTracker.build/Debug-iphonesimulator/BookTracker.build/Objects-normal/x86_64/UpdateProgressSheet~partial.swiftmodule"
+  },
+  "/Users/nununugraha/Documents/Programming/My Project/BookTracker/BookTracker/Features/Home/View/HomeView.swift" : {
+    "const-values" : "/Users/nununugraha/Documents/Programming/My Project/BookTracker/build/Build/Intermediates.noindex/BookTracker.build/Debug-iphonesimulator/BookTracker.build/Objects-normal/x86_64/HomeView.swiftconstvalues",
+    "dependencies" : "/Users/nununugraha/Documents/Programming/My Project/BookTracker/build/Build/Intermediates.noindex/BookTracker.build/Debug-iphonesimulator/BookTracker.build/Objects-normal/x86_64/HomeView.d",
+    "diagnostics" : "/Users/nununugraha/Documents/Programming/My Project/BookTracker/build/Build/Intermediates.noindex/BookTracker.build/Debug-iphonesimulator/BookTracker.build/Objects-normal/x86_64/HomeView.dia",
+    "index-unit-output-path" : "/BookTracker.build/Debug-iphonesimulator/BookTracker.build/Objects-normal/x86_64/HomeView.o",
+    "llvm-bc" : "/Users/nununugraha/Documents/Programming/My Project/BookTracker/build/Build/Intermediates.noindex/BookTracker.build/Debug-iphonesimulator/BookTracker.build/Objects-normal/x86_64/HomeView.bc",
+    "object" : "/Users/nununugraha/Documents/Programming/My Project/BookTracker/build/Build/Intermediates.noindex/BookTracker.build/Debug-iphonesimulator/BookTracker.build/Objects-normal/x86_64/HomeView.o",
+    "swift-dependencies" : "/Users/nununugraha/Documents/Programming/My Project/BookTracker/build/Build/Intermediates.noindex/BookTracker.build/Debug-iphonesimulator/BookTracker.build/Objects-normal/x86_64/HomeView.swiftdeps",
+    "swiftmodule" : "/Users/nununugraha/Documents/Programming/My Project/BookTracker/build/Build/Intermediates.noindex/BookTracker.build/Debug-iphonesimulator/BookTracker.build/Objects-normal/x86_64/HomeView~partial.swiftmodule"
+  },
+  "/Users/nununugraha/Documents/Programming/My Project/BookTracker/BookTracker/Features/Home/ViewModel/BookEditorViewModel.swift" : {
+    "const-values" : "/Users/nununugraha/Documents/Programming/My Project/BookTracker/build/Build/Intermediates.noindex/BookTracker.build/Debug-iphonesimulator/BookTracker.build/Objects-normal/x86_64/BookEditorViewModel.swiftconstvalues",
+    "dependencies" : "/Users/nununugraha/Documents/Programming/My Project/BookTracker/build/Build/Intermediates.noindex/BookTracker.build/Debug-iphonesimulator/BookTracker.build/Objects-normal/x86_64/BookEditorViewModel.d",
+    "diagnostics" : "/Users/nununugraha/Documents/Programming/My Project/BookTracker/build/Build/Intermediates.noindex/BookTracker.build/Debug-iphonesimulator/BookTracker.build/Objects-normal/x86_64/BookEditorViewModel.dia",
+    "index-unit-output-path" : "/BookTracker.build/Debug-iphonesimulator/BookTracker.build/Objects-normal/x86_64/BookEditorViewModel.o",
+    "llvm-bc" : "/Users/nununugraha/Documents/Programming/My Project/BookTracker/build/Build/Intermediates.noindex/BookTracker.build/Debug-iphonesimulator/BookTracker.build/Objects-normal/x86_64/BookEditorViewModel.bc",
+    "object" : "/Users/nununugraha/Documents/Programming/My Project/BookTracker/build/Build/Intermediates.noindex/BookTracker.build/Debug-iphonesimulator/BookTracker.build/Objects-normal/x86_64/BookEditorViewModel.o",
+    "swift-dependencies" : "/Users/nununugraha/Documents/Programming/My Project/BookTracker/build/Build/Intermediates.noindex/BookTracker.build/Debug-iphonesimulator/BookTracker.build/Objects-normal/x86_64/BookEditorViewModel.swiftdeps",
+    "swiftmodule" : "/Users/nununugraha/Documents/Programming/My Project/BookTracker/build/Build/Intermediates.noindex/BookTracker.build/Debug-iphonesimulator/BookTracker.build/Objects-normal/x86_64/BookEditorViewModel~partial.swiftmodule"
+  },
+  "/Users/nununugraha/Documents/Programming/My Project/BookTracker/BookTracker/Features/Home/ViewModel/HomeViewModel.swift" : {
+    "const-values" : "/Users/nununugraha/Documents/Programming/My Project/BookTracker/build/Build/Intermediates.noindex/BookTracker.build/Debug-iphonesimulator/BookTracker.build/Objects-normal/x86_64/HomeViewModel.swiftconstvalues",
+    "dependencies" : "/Users/nununugraha/Documents/Programming/My Project/BookTracker/build/Build/Intermediates.noindex/BookTracker.build/Debug-iphonesimulator/BookTracker.build/Objects-normal/x86_64/HomeViewModel.d",
+    "diagnostics" : "/Users/nununugraha/Documents/Programming/My Project/BookTracker/build/Build/Intermediates.noindex/BookTracker.build/Debug-iphonesimulator/BookTracker.build/Objects-normal/x86_64/HomeViewModel.dia",
+    "index-unit-output-path" : "/BookTracker.build/Debug-iphonesimulator/BookTracker.build/Objects-normal/x86_64/HomeViewModel.o",
+    "llvm-bc" : "/Users/nununugraha/Documents/Programming/My Project/BookTracker/build/Build/Intermediates.noindex/BookTracker.build/Debug-iphonesimulator/BookTracker.build/Objects-normal/x86_64/HomeViewModel.bc",
+    "object" : "/Users/nununugraha/Documents/Programming/My Project/BookTracker/build/Build/Intermediates.noindex/BookTracker.build/Debug-iphonesimulator/BookTracker.build/Objects-normal/x86_64/HomeViewModel.o",
+    "swift-dependencies" : "/Users/nununugraha/Documents/Programming/My Project/BookTracker/build/Build/Intermediates.noindex/BookTracker.build/Debug-iphonesimulator/BookTracker.build/Objects-normal/x86_64/HomeViewModel.swiftdeps",
+    "swiftmodule" : "/Users/nununugraha/Documents/Programming/My Project/BookTracker/build/Build/Intermediates.noindex/BookTracker.build/Debug-iphonesimulator/BookTracker.build/Objects-normal/x86_64/HomeViewModel~partial.swiftmodule"
+  },
+  "/Users/nununugraha/Documents/Programming/My Project/BookTracker/BookTracker/Features/Home/ViewModel/ValidationState.swift" : {
+    "const-values" : "/Users/nununugraha/Documents/Programming/My Project/BookTracker/build/Build/Intermediates.noindex/BookTracker.build/Debug-iphonesimulator/BookTracker.build/Objects-normal/x86_64/ValidationState.swiftconstvalues",
+    "dependencies" : "/Users/nununugraha/Documents/Programming/My Project/BookTracker/build/Build/Intermediates.noindex/BookTracker.build/Debug-iphonesimulator/BookTracker.build/Objects-normal/x86_64/ValidationState.d",
+    "diagnostics" : "/Users/nununugraha/Documents/Programming/My Project/BookTracker/build/Build/Intermediates.noindex/BookTracker.build/Debug-iphonesimulator/BookTracker.build/Objects-normal/x86_64/ValidationState.dia",
+    "index-unit-output-path" : "/BookTracker.build/Debug-iphonesimulator/BookTracker.build/Objects-normal/x86_64/ValidationState.o",
+    "llvm-bc" : "/Users/nununugraha/Documents/Programming/My Project/BookTracker/build/Build/Intermediates.noindex/BookTracker.build/Debug-iphonesimulator/BookTracker.build/Objects-normal/x86_64/ValidationState.bc",
+    "object" : "/Users/nununugraha/Documents/Programming/My Project/BookTracker/build/Build/Intermediates.noindex/BookTracker.build/Debug-iphonesimulator/BookTracker.build/Objects-normal/x86_64/ValidationState.o",
+    "swift-dependencies" : "/Users/nununugraha/Documents/Programming/My Project/BookTracker/build/Build/Intermediates.noindex/BookTracker.build/Debug-iphonesimulator/BookTracker.build/Objects-normal/x86_64/ValidationState.swiftdeps",
+    "swiftmodule" : "/Users/nununugraha/Documents/Programming/My Project/BookTracker/build/Build/Intermediates.noindex/BookTracker.build/Debug-iphonesimulator/BookTracker.build/Objects-normal/x86_64/ValidationState~partial.swiftmodule"
+  },
+  "/Users/nununugraha/Documents/Programming/My Project/BookTracker/BookTracker/Features/Library/View/BookDetailView.swift" : {
+    "const-values" : "/Users/nununugraha/Documents/Programming/My Project/BookTracker/build/Build/Intermediates.noindex/BookTracker.build/Debug-iphonesimulator/BookTracker.build/Objects-normal/x86_64/BookDetailView.swiftconstvalues",
+    "dependencies" : "/Users/nununugraha/Documents/Programming/My Project/BookTracker/build/Build/Intermediates.noindex/BookTracker.build/Debug-iphonesimulator/BookTracker.build/Objects-normal/x86_64/BookDetailView.d",
+    "diagnostics" : "/Users/nununugraha/Documents/Programming/My Project/BookTracker/build/Build/Intermediates.noindex/BookTracker.build/Debug-iphonesimulator/BookTracker.build/Objects-normal/x86_64/BookDetailView.dia",
+    "index-unit-output-path" : "/BookTracker.build/Debug-iphonesimulator/BookTracker.build/Objects-normal/x86_64/BookDetailView.o",
+    "llvm-bc" : "/Users/nununugraha/Documents/Programming/My Project/BookTracker/build/Build/Intermediates.noindex/BookTracker.build/Debug-iphonesimulator/BookTracker.build/Objects-normal/x86_64/BookDetailView.bc",
+    "object" : "/Users/nununugraha/Documents/Programming/My Project/BookTracker/build/Build/Intermediates.noindex/BookTracker.build/Debug-iphonesimulator/BookTracker.build/Objects-normal/x86_64/BookDetailView.o",
+    "swift-dependencies" : "/Users/nununugraha/Documents/Programming/My Project/BookTracker/build/Build/Intermediates.noindex/BookTracker.build/Debug-iphonesimulator/BookTracker.build/Objects-normal/x86_64/BookDetailView.swiftdeps",
+    "swiftmodule" : "/Users/nununugraha/Documents/Programming/My Project/BookTracker/build/Build/Intermediates.noindex/BookTracker.build/Debug-iphonesimulator/BookTracker.build/Objects-normal/x86_64/BookDetailView~partial.swiftmodule"
+  },
+  "/Users/nununugraha/Documents/Programming/My Project/BookTracker/BookTracker/Features/Library/View/Components/LibraryBookView.swift" : {
+    "const-values" : "/Users/nununugraha/Documents/Programming/My Project/BookTracker/build/Build/Intermediates.noindex/BookTracker.build/Debug-iphonesimulator/BookTracker.build/Objects-normal/x86_64/LibraryBookView.swiftconstvalues",
+    "dependencies" : "/Users/nununugraha/Documents/Programming/My Project/BookTracker/build/Build/Intermediates.noindex/BookTracker.build/Debug-iphonesimulator/BookTracker.build/Objects-normal/x86_64/LibraryBookView.d",
+    "diagnostics" : "/Users/nununugraha/Documents/Programming/My Project/BookTracker/build/Build/Intermediates.noindex/BookTracker.build/Debug-iphonesimulator/BookTracker.build/Objects-normal/x86_64/LibraryBookView.dia",
+    "index-unit-output-path" : "/BookTracker.build/Debug-iphonesimulator/BookTracker.build/Objects-normal/x86_64/LibraryBookView.o",
+    "llvm-bc" : "/Users/nununugraha/Documents/Programming/My Project/BookTracker/build/Build/Intermediates.noindex/BookTracker.build/Debug-iphonesimulator/BookTracker.build/Objects-normal/x86_64/LibraryBookView.bc",
+    "object" : "/Users/nununugraha/Documents/Programming/My Project/BookTracker/build/Build/Intermediates.noindex/BookTracker.build/Debug-iphonesimulator/BookTracker.build/Objects-normal/x86_64/LibraryBookView.o",
+    "swift-dependencies" : "/Users/nununugraha/Documents/Programming/My Project/BookTracker/build/Build/Intermediates.noindex/BookTracker.build/Debug-iphonesimulator/BookTracker.build/Objects-normal/x86_64/LibraryBookView.swiftdeps",
+    "swiftmodule" : "/Users/nununugraha/Documents/Programming/My Project/BookTracker/build/Build/Intermediates.noindex/BookTracker.build/Debug-iphonesimulator/BookTracker.build/Objects-normal/x86_64/LibraryBookView~partial.swiftmodule"
+  },
+  "/Users/nununugraha/Documents/Programming/My Project/BookTracker/BookTracker/Features/Library/View/LibraryView.swift" : {
+    "const-values" : "/Users/nununugraha/Documents/Programming/My Project/BookTracker/build/Build/Intermediates.noindex/BookTracker.build/Debug-iphonesimulator/BookTracker.build/Objects-normal/x86_64/LibraryView.swiftconstvalues",
+    "dependencies" : "/Users/nununugraha/Documents/Programming/My Project/BookTracker/build/Build/Intermediates.noindex/BookTracker.build/Debug-iphonesimulator/BookTracker.build/Objects-normal/x86_64/LibraryView.d",
+    "diagnostics" : "/Users/nununugraha/Documents/Programming/My Project/BookTracker/build/Build/Intermediates.noindex/BookTracker.build/Debug-iphonesimulator/BookTracker.build/Objects-normal/x86_64/LibraryView.dia",
+    "index-unit-output-path" : "/BookTracker.build/Debug-iphonesimulator/BookTracker.build/Objects-normal/x86_64/LibraryView.o",
+    "llvm-bc" : "/Users/nununugraha/Documents/Programming/My Project/BookTracker/build/Build/Intermediates.noindex/BookTracker.build/Debug-iphonesimulator/BookTracker.build/Objects-normal/x86_64/LibraryView.bc",
+    "object" : "/Users/nununugraha/Documents/Programming/My Project/BookTracker/build/Build/Intermediates.noindex/BookTracker.build/Debug-iphonesimulator/BookTracker.build/Objects-normal/x86_64/LibraryView.o",
+    "swift-dependencies" : "/Users/nununugraha/Documents/Programming/My Project/BookTracker/build/Build/Intermediates.noindex/BookTracker.build/Debug-iphonesimulator/BookTracker.build/Objects-normal/x86_64/LibraryView.swiftdeps",
+    "swiftmodule" : "/Users/nununugraha/Documents/Programming/My Project/BookTracker/build/Build/Intermediates.noindex/BookTracker.build/Debug-iphonesimulator/BookTracker.build/Objects-normal/x86_64/LibraryView~partial.swiftmodule"
+  },
+  "/Users/nununugraha/Documents/Programming/My Project/BookTracker/BookTracker/Features/Profile/View/AboutView.swift" : {
+    "const-values" : "/Users/nununugraha/Documents/Programming/My Project/BookTracker/build/Build/Intermediates.noindex/BookTracker.build/Debug-iphonesimulator/BookTracker.build/Objects-normal/x86_64/AboutView.swiftconstvalues",
+    "dependencies" : "/Users/nununugraha/Documents/Programming/My Project/BookTracker/build/Build/Intermediates.noindex/BookTracker.build/Debug-iphonesimulator/BookTracker.build/Objects-normal/x86_64/AboutView.d",
+    "diagnostics" : "/Users/nununugraha/Documents/Programming/My Project/BookTracker/build/Build/Intermediates.noindex/BookTracker.build/Debug-iphonesimulator/BookTracker.build/Objects-normal/x86_64/AboutView.dia",
+    "index-unit-output-path" : "/BookTracker.build/Debug-iphonesimulator/BookTracker.build/Objects-normal/x86_64/AboutView.o",
+    "llvm-bc" : "/Users/nununugraha/Documents/Programming/My Project/BookTracker/build/Build/Intermediates.noindex/BookTracker.build/Debug-iphonesimulator/BookTracker.build/Objects-normal/x86_64/AboutView.bc",
+    "object" : "/Users/nununugraha/Documents/Programming/My Project/BookTracker/build/Build/Intermediates.noindex/BookTracker.build/Debug-iphonesimulator/BookTracker.build/Objects-normal/x86_64/AboutView.o",
+    "swift-dependencies" : "/Users/nununugraha/Documents/Programming/My Project/BookTracker/build/Build/Intermediates.noindex/BookTracker.build/Debug-iphonesimulator/BookTracker.build/Objects-normal/x86_64/AboutView.swiftdeps",
+    "swiftmodule" : "/Users/nununugraha/Documents/Programming/My Project/BookTracker/build/Build/Intermediates.noindex/BookTracker.build/Debug-iphonesimulator/BookTracker.build/Objects-normal/x86_64/AboutView~partial.swiftmodule"
+  },
+  "/Users/nununugraha/Documents/Programming/My Project/BookTracker/BookTracker/Features/Profile/View/GamificationView.swift" : {
+    "const-values" : "/Users/nununugraha/Documents/Programming/My Project/BookTracker/build/Build/Intermediates.noindex/BookTracker.build/Debug-iphonesimulator/BookTracker.build/Objects-normal/x86_64/GamificationView.swiftconstvalues",
+    "dependencies" : "/Users/nununugraha/Documents/Programming/My Project/BookTracker/build/Build/Intermediates.noindex/BookTracker.build/Debug-iphonesimulator/BookTracker.build/Objects-normal/x86_64/GamificationView.d",
+    "diagnostics" : "/Users/nununugraha/Documents/Programming/My Project/BookTracker/build/Build/Intermediates.noindex/BookTracker.build/Debug-iphonesimulator/BookTracker.build/Objects-normal/x86_64/GamificationView.dia",
+    "index-unit-output-path" : "/BookTracker.build/Debug-iphonesimulator/BookTracker.build/Objects-normal/x86_64/GamificationView.o",
+    "llvm-bc" : "/Users/nununugraha/Documents/Programming/My Project/BookTracker/build/Build/Intermediates.noindex/BookTracker.build/Debug-iphonesimulator/BookTracker.build/Objects-normal/x86_64/GamificationView.bc",
+    "object" : "/Users/nununugraha/Documents/Programming/My Project/BookTracker/build/Build/Intermediates.noindex/BookTracker.build/Debug-iphonesimulator/BookTracker.build/Objects-normal/x86_64/GamificationView.o",
+    "swift-dependencies" : "/Users/nununugraha/Documents/Programming/My Project/BookTracker/build/Build/Intermediates.noindex/BookTracker.build/Debug-iphonesimulator/BookTracker.build/Objects-normal/x86_64/GamificationView.swiftdeps",
+    "swiftmodule" : "/Users/nununugraha/Documents/Programming/My Project/BookTracker/build/Build/Intermediates.noindex/BookTracker.build/Debug-iphonesimulator/BookTracker.build/Objects-normal/x86_64/GamificationView~partial.swiftmodule"
+  },
+  "/Users/nununugraha/Documents/Programming/My Project/BookTracker/BookTracker/Features/Profile/View/ProfileView.swift" : {
+    "const-values" : "/Users/nununugraha/Documents/Programming/My Project/BookTracker/build/Build/Intermediates.noindex/BookTracker.build/Debug-iphonesimulator/BookTracker.build/Objects-normal/x86_64/ProfileView.swiftconstvalues",
+    "dependencies" : "/Users/nununugraha/Documents/Programming/My Project/BookTracker/build/Build/Intermediates.noindex/BookTracker.build/Debug-iphonesimulator/BookTracker.build/Objects-normal/x86_64/ProfileView.d",
+    "diagnostics" : "/Users/nununugraha/Documents/Programming/My Project/BookTracker/build/Build/Intermediates.noindex/BookTracker.build/Debug-iphonesimulator/BookTracker.build/Objects-normal/x86_64/ProfileView.dia",
+    "index-unit-output-path" : "/BookTracker.build/Debug-iphonesimulator/BookTracker.build/Objects-normal/x86_64/ProfileView.o",
+    "llvm-bc" : "/Users/nununugraha/Documents/Programming/My Project/BookTracker/build/Build/Intermediates.noindex/BookTracker.build/Debug-iphonesimulator/BookTracker.build/Objects-normal/x86_64/ProfileView.bc",
+    "object" : "/Users/nununugraha/Documents/Programming/My Project/BookTracker/build/Build/Intermediates.noindex/BookTracker.build/Debug-iphonesimulator/BookTracker.build/Objects-normal/x86_64/ProfileView.o",
+    "swift-dependencies" : "/Users/nununugraha/Documents/Programming/My Project/BookTracker/build/Build/Intermediates.noindex/BookTracker.build/Debug-iphonesimulator/BookTracker.build/Objects-normal/x86_64/ProfileView.swiftdeps",
+    "swiftmodule" : "/Users/nununugraha/Documents/Programming/My Project/BookTracker/build/Build/Intermediates.noindex/BookTracker.build/Debug-iphonesimulator/BookTracker.build/Objects-normal/x86_64/ProfileView~partial.swiftmodule"
+  },
+  "/Users/nununugraha/Documents/Programming/My Project/BookTracker/BookTracker/Features/Profile/View/ShareCardView.swift" : {
+    "const-values" : "/Users/nununugraha/Documents/Programming/My Project/BookTracker/build/Build/Intermediates.noindex/BookTracker.build/Debug-iphonesimulator/BookTracker.build/Objects-normal/x86_64/ShareCardView.swiftconstvalues",
+    "dependencies" : "/Users/nununugraha/Documents/Programming/My Project/BookTracker/build/Build/Intermediates.noindex/BookTracker.build/Debug-iphonesimulator/BookTracker.build/Objects-normal/x86_64/ShareCardView.d",
+    "diagnostics" : "/Users/nununugraha/Documents/Programming/My Project/BookTracker/build/Build/Intermediates.noindex/BookTracker.build/Debug-iphonesimulator/BookTracker.build/Objects-normal/x86_64/ShareCardView.dia",
+    "index-unit-output-path" : "/BookTracker.build/Debug-iphonesimulator/BookTracker.build/Objects-normal/x86_64/ShareCardView.o",
+    "llvm-bc" : "/Users/nununugraha/Documents/Programming/My Project/BookTracker/build/Build/Intermediates.noindex/BookTracker.build/Debug-iphonesimulator/BookTracker.build/Objects-normal/x86_64/ShareCardView.bc",
+    "object" : "/Users/nununugraha/Documents/Programming/My Project/BookTracker/build/Build/Intermediates.noindex/BookTracker.build/Debug-iphonesimulator/BookTracker.build/Objects-normal/x86_64/ShareCardView.o",
+    "swift-dependencies" : "/Users/nununugraha/Documents/Programming/My Project/BookTracker/build/Build/Intermediates.noindex/BookTracker.build/Debug-iphonesimulator/BookTracker.build/Objects-normal/x86_64/ShareCardView.swiftdeps",
+    "swiftmodule" : "/Users/nununugraha/Documents/Programming/My Project/BookTracker/build/Build/Intermediates.noindex/BookTracker.build/Debug-iphonesimulator/BookTracker.build/Objects-normal/x86_64/ShareCardView~partial.swiftmodule"
+  },
+  "/Users/nununugraha/Documents/Programming/My Project/BookTracker/BookTracker/Features/Profile/View/SupportDeveloperView.swift" : {
+    "const-values" : "/Users/nununugraha/Documents/Programming/My Project/BookTracker/build/Build/Intermediates.noindex/BookTracker.build/Debug-iphonesimulator/BookTracker.build/Objects-normal/x86_64/SupportDeveloperView.swiftconstvalues",
+    "dependencies" : "/Users/nununugraha/Documents/Programming/My Project/BookTracker/build/Build/Intermediates.noindex/BookTracker.build/Debug-iphonesimulator/BookTracker.build/Objects-normal/x86_64/SupportDeveloperView.d",
+    "diagnostics" : "/Users/nununugraha/Documents/Programming/My Project/BookTracker/build/Build/Intermediates.noindex/BookTracker.build/Debug-iphonesimulator/BookTracker.build/Objects-normal/x86_64/SupportDeveloperView.dia",
+    "index-unit-output-path" : "/BookTracker.build/Debug-iphonesimulator/BookTracker.build/Objects-normal/x86_64/SupportDeveloperView.o",
+    "llvm-bc" : "/Users/nununugraha/Documents/Programming/My Project/BookTracker/build/Build/Intermediates.noindex/BookTracker.build/Debug-iphonesimulator/BookTracker.build/Objects-normal/x86_64/SupportDeveloperView.bc",
+    "object" : "/Users/nununugraha/Documents/Programming/My Project/BookTracker/build/Build/Intermediates.noindex/BookTracker.build/Debug-iphonesimulator/BookTracker.build/Objects-normal/x86_64/SupportDeveloperView.o",
+    "swift-dependencies" : "/Users/nununugraha/Documents/Programming/My Project/BookTracker/build/Build/Intermediates.noindex/BookTracker.build/Debug-iphonesimulator/BookTracker.build/Objects-normal/x86_64/SupportDeveloperView.swiftdeps",
+    "swiftmodule" : "/Users/nununugraha/Documents/Programming/My Project/BookTracker/build/Build/Intermediates.noindex/BookTracker.build/Debug-iphonesimulator/BookTracker.build/Objects-normal/x86_64/SupportDeveloperView~partial.swiftmodule"
+  },
+  "/Users/nununugraha/Documents/Programming/My Project/BookTracker/BookTracker/Features/Profile/ViewModel/GamificationViewModel.swift" : {
+    "const-values" : "/Users/nununugraha/Documents/Programming/My Project/BookTracker/build/Build/Intermediates.noindex/BookTracker.build/Debug-iphonesimulator/BookTracker.build/Objects-normal/x86_64/GamificationViewModel.swiftconstvalues",
+    "dependencies" : "/Users/nununugraha/Documents/Programming/My Project/BookTracker/build/Build/Intermediates.noindex/BookTracker.build/Debug-iphonesimulator/BookTracker.build/Objects-normal/x86_64/GamificationViewModel.d",
+    "diagnostics" : "/Users/nununugraha/Documents/Programming/My Project/BookTracker/build/Build/Intermediates.noindex/BookTracker.build/Debug-iphonesimulator/BookTracker.build/Objects-normal/x86_64/GamificationViewModel.dia",
+    "index-unit-output-path" : "/BookTracker.build/Debug-iphonesimulator/BookTracker.build/Objects-normal/x86_64/GamificationViewModel.o",
+    "llvm-bc" : "/Users/nununugraha/Documents/Programming/My Project/BookTracker/build/Build/Intermediates.noindex/BookTracker.build/Debug-iphonesimulator/BookTracker.build/Objects-normal/x86_64/GamificationViewModel.bc",
+    "object" : "/Users/nununugraha/Documents/Programming/My Project/BookTracker/build/Build/Intermediates.noindex/BookTracker.build/Debug-iphonesimulator/BookTracker.build/Objects-normal/x86_64/GamificationViewModel.o",
+    "swift-dependencies" : "/Users/nununugraha/Documents/Programming/My Project/BookTracker/build/Build/Intermediates.noindex/BookTracker.build/Debug-iphonesimulator/BookTracker.build/Objects-normal/x86_64/GamificationViewModel.swiftdeps",
+    "swiftmodule" : "/Users/nununugraha/Documents/Programming/My Project/BookTracker/build/Build/Intermediates.noindex/BookTracker.build/Debug-iphonesimulator/BookTracker.build/Objects-normal/x86_64/GamificationViewModel~partial.swiftmodule"
+  },
+  "/Users/nununugraha/Documents/Programming/My Project/BookTracker/BookTracker/Features/Profile/ViewModel/ProfileViewModel.swift" : {
+    "const-values" : "/Users/nununugraha/Documents/Programming/My Project/BookTracker/build/Build/Intermediates.noindex/BookTracker.build/Debug-iphonesimulator/BookTracker.build/Objects-normal/x86_64/ProfileViewModel.swiftconstvalues",
+    "dependencies" : "/Users/nununugraha/Documents/Programming/My Project/BookTracker/build/Build/Intermediates.noindex/BookTracker.build/Debug-iphonesimulator/BookTracker.build/Objects-normal/x86_64/ProfileViewModel.d",
+    "diagnostics" : "/Users/nununugraha/Documents/Programming/My Project/BookTracker/build/Build/Intermediates.noindex/BookTracker.build/Debug-iphonesimulator/BookTracker.build/Objects-normal/x86_64/ProfileViewModel.dia",
+    "index-unit-output-path" : "/BookTracker.build/Debug-iphonesimulator/BookTracker.build/Objects-normal/x86_64/ProfileViewModel.o",
+    "llvm-bc" : "/Users/nununugraha/Documents/Programming/My Project/BookTracker/build/Build/Intermediates.noindex/BookTracker.build/Debug-iphonesimulator/BookTracker.build/Objects-normal/x86_64/ProfileViewModel.bc",
+    "object" : "/Users/nununugraha/Documents/Programming/My Project/BookTracker/build/Build/Intermediates.noindex/BookTracker.build/Debug-iphonesimulator/BookTracker.build/Objects-normal/x86_64/ProfileViewModel.o",
+    "swift-dependencies" : "/Users/nununugraha/Documents/Programming/My Project/BookTracker/build/Build/Intermediates.noindex/BookTracker.build/Debug-iphonesimulator/BookTracker.build/Objects-normal/x86_64/ProfileViewModel.swiftdeps",
+    "swiftmodule" : "/Users/nununugraha/Documents/Programming/My Project/BookTracker/build/Build/Intermediates.noindex/BookTracker.build/Debug-iphonesimulator/BookTracker.build/Objects-normal/x86_64/ProfileViewModel~partial.swiftmodule"
+  },
+  "/Users/nununugraha/Documents/Programming/My Project/BookTracker/build/Build/Intermediates.noindex/BookTracker.build/Debug-iphonesimulator/BookTracker.build/DerivedSources/GeneratedAssetSymbols.swift" : {
+    "const-values" : "/Users/nununugraha/Documents/Programming/My Project/BookTracker/build/Build/Intermediates.noindex/BookTracker.build/Debug-iphonesimulator/BookTracker.build/Objects-normal/x86_64/GeneratedAssetSymbols.swiftconstvalues",
+    "dependencies" : "/Users/nununugraha/Documents/Programming/My Project/BookTracker/build/Build/Intermediates.noindex/BookTracker.build/Debug-iphonesimulator/BookTracker.build/Objects-normal/x86_64/GeneratedAssetSymbols.d",
+    "diagnostics" : "/Users/nununugraha/Documents/Programming/My Project/BookTracker/build/Build/Intermediates.noindex/BookTracker.build/Debug-iphonesimulator/BookTracker.build/Objects-normal/x86_64/GeneratedAssetSymbols.dia",
+    "index-unit-output-path" : "/BookTracker.build/Debug-iphonesimulator/BookTracker.build/Objects-normal/x86_64/GeneratedAssetSymbols.o",
+    "llvm-bc" : "/Users/nununugraha/Documents/Programming/My Project/BookTracker/build/Build/Intermediates.noindex/BookTracker.build/Debug-iphonesimulator/BookTracker.build/Objects-normal/x86_64/GeneratedAssetSymbols.bc",
+    "object" : "/Users/nununugraha/Documents/Programming/My Project/BookTracker/build/Build/Intermediates.noindex/BookTracker.build/Debug-iphonesimulator/BookTracker.build/Objects-normal/x86_64/GeneratedAssetSymbols.o",
+    "swift-dependencies" : "/Users/nununugraha/Documents/Programming/My Project/BookTracker/build/Build/Intermediates.noindex/BookTracker.build/Debug-iphonesimulator/BookTracker.build/Objects-normal/x86_64/GeneratedAssetSymbols.swiftdeps",
+    "swiftmodule" : "/Users/nununugraha/Documents/Programming/My Project/BookTracker/build/Build/Intermediates.noindex/BookTracker.build/Debug-iphonesimulator/BookTracker.build/Objects-normal/x86_64/GeneratedAssetSymbols~partial.swiftmodule"
+  }
+}

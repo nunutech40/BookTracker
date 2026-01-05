@@ -1,0 +1,137 @@
+[
+  {
+    "id": "streak_starter",
+    "title": "Streak Starter",
+    "description": "Achieve a 2-day reading streak. Build that momentum!",
+    "message": "First streak unlocked! You're building a habit, fam. Keep it going!",
+    "icon": "flame.fill",
+    "conditionType": "consecutive_days",
+    "conditionValue": 2
+  },
+  {
+    "id": "daily_dose",
+    "title": "Daily Dose",
+    "description": "Read at least 50 pages in a single day. Fuel your brain!",
+    "message": "Daily Dose achieved! Your brain just got a power-up. 🧠",
+    "icon": "brain.head.profile",
+    "conditionType": "pages_in_single_day",
+    "conditionValue": 50
+  },
+  {
+    "id": "page_turner",
+    "title": "Page Turner",
+    "description": "Read a total of 500 pages across all books. You're flying!",
+    "message": "500 pages down! You're officially a page-turner. What's next?",
+    "icon": "books.vertical.fill",
+    "conditionType": "total_pages_read",
+    "conditionValue": 500
+  },
+  {
+    "id": "weekend_warrior",
+    "title": "Weekend Warrior",
+    "description": "Read on both Saturday and Sunday in the same calendar week. Conquer the weekend!",
+    "message": "Weekend Warrior! Level up your chill. 💯",
+    "icon": "sun.max.fill",
+    "conditionType": "read_on_weekend",
+    "conditionValue": 1
+  },
+  {
+    "id": "reading_marathoner",
+    "title": "Reading Marathoner",
+    "description": "Achieve a 7-day reading streak. You're in it for the long haul!",
+    "message": "7-day streak! You're a reading marathoner. Goals! 🏅",
+    "icon": "trophy.fill",
+    "conditionType": "consecutive_days",
+    "conditionValue": 7
+  },
+  {
+    "id": "bookworm",
+    "title": "Bookworm",
+    "description": "Finish 3 books. Your literary journey is just beginning!",
+    "message": "Bookworm status: activated! So many stories, so little time. 🐛",
+    "icon": "book.closed.fill",
+    "conditionType": "total_books_finished",
+    "conditionValue": 3
+  },
+  {
+    "id": "speed_reader",
+    "title": "Speed Reader",
+    "description": "Read at least 100 pages in a single day. Whoa, fast!",
+    "message": "Speed Reader! You devoured those pages. Next stop: literary expert. 💨",
+    "icon": "bolt.fill",
+    "conditionType": "pages_in_single_day",
+    "conditionValue": 100
+  },
+  {
+    "id": "consistent_reader",
+    "title": "Consistent Reader",
+    "description": "Read at least 3 days in a single calendar week. Keep up the good work!",
+    "message": "Consistent Reader! You're making reading a lifestyle. Respect. 🙌",
+    "icon": "checkmark.circle.fill",
+    "conditionType": "days_read_in_week",
+    "conditionValue": 3
+  },
+  {
+    "id": "unstoppable_reader",
+    "title": "Unstoppable Reader",
+    "description": "Achieve a 30-day reading streak. Nothing can stop you!",
+    "message": "Unstoppable Reader! You're legendary. Keep inspiring! ✨",
+    "icon": "sparkles",
+    "conditionType": "consecutive_days",
+    "conditionValue": 30
+  },
+  {
+    "id": "architect",
+    "title": "The Architect",
+    "description": "Finish a book with over 500 pages. Master builder of worlds!",
+    "message": "The Architect! You built a whole new world in your mind. 🏗️",
+    "icon": "building.columns.fill",
+    "conditionType": "finish_large_book",
+    "conditionValue": 500
+  },
+  {
+    "id": "first_read",
+    "title": "First Read",
+    "description": "Finish your very first book. The journey begins!",
+    "message": "First book down! Welcome to the club, legend. 🚀",
+    "icon": "book.fill",
+    "conditionType": "total_books_finished",
+    "conditionValue": 1
+  },
+  {
+    "id": "book_hoarder",
+    "title": "Book Hoarder",
+    "description": "Add 10 books to your shelf. So many stories, so little time!",
+    "message": "Book Hoarder activated! Your TBR pile is getting serious. 📚✨",
+    "icon": "books.vertical",
+    "conditionType": "total_books_added",
+    "conditionValue": 10
+  },
+  {
+    "id": "early_bird_reader",
+    "title": "Early Bird Reader",
+    "description": "Log a reading session before 9 AM. Seize the day!",
+    "message": "Early Bird! Crushing pages before the world wakes up. ☀️",
+    "icon": "sunrise.fill",
+    "conditionType": "read_before_time",
+    "conditionValue": 9
+  },
+  {
+    "id": "night_owl_reader",
+    "title": "Night Owl Reader",
+    "description": "Log a reading session after 10 PM. Uncover late-night literary gems!",
+    "message": "Night Owl! Reading deep into the night. What secrets did you find? 🦉",
+    "icon": "moon.fill",
+    "conditionType": "read_after_time",
+    "conditionValue": 22
+  },
+  {
+    "id": "reading_spree_pro",
+    "title": "Reading Spree Pro",
+    "description": "Read more than 200 pages in a single day. You're unstoppable!",
+    "message": "Reading Spree Pro! You're in an epic flow state. Keep that momentum going! 🌀",
+    "icon": "hurricane",
+    "conditionType": "pages_in_single_day",
+    "conditionValue": 200
+  }
+]
