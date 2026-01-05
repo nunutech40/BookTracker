@@ -144,7 +144,7 @@ import SwiftData
             session.date >= startDate
         }
         
-        var descriptor = FetchDescriptor<ReadingSession>(predicate: predicate)
+        let descriptor = FetchDescriptor<ReadingSession>(predicate: predicate)
         
         guard let sessions = try? modelContext.fetch(descriptor) else {
             print("   ❌ Fetch Failed")
