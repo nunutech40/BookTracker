@@ -10,9 +10,9 @@ import SwiftData
 
 @Model
 final class UnlockedAchievement {
-    let id: UUID // Internal ID for SwiftData
-    let achievementID: String // Corresponds to GamificationAchievement.id
-    let unlockedDate: Date
+    var id: UUID // Internal ID for SwiftData
+    var achievementID: String // Corresponds to GamificationAchievement.id
+    var unlockedDate: Date
     
     init(achievementID: String, unlockedDate: Date) {
         self.id = UUID()

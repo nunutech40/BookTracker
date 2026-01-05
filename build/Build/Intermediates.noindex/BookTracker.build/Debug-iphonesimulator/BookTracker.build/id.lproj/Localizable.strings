@@ -2,6 +2,16 @@
 <!DOCTYPE plist PUBLIC "-//Apple//DTD PLIST 1.0//EN" "http://www.apple.com/DTDs/PropertyList-1.0.dtd">
 <plist version="1.0">
 <dict>
+	<key>%d / %d Pages</key>
+	<string>%1$d / %2$d Halaman</string>
+	<key>%d / %d pages</key>
+	<string>%1$d / %2$d halaman</string>
+	<key>%d Day Streak</key>
+	<string>%d Hari Streak</string>
+	<key>%d Pages</key>
+	<string>%d Halaman</string>
+	<key>%lld Day(s)</key>
+	<string>%lld Hari</string>
 	<key>%lld Pages</key>
 	<string>%lld Halaman</string>
 	<key>%lld pages read</key>
@@ -14,6 +24,8 @@
 	<string>Tentang</string>
 	<key>About BookTracker</key>
 	<string>Tentang BookTracker</string>
+	<key>Achievements</key>
+	<string>Pencapaian</string>
 	<key>Active Days</key>
 	<string>Hari Aktif</string>
 	<key>Add Cover Photo</key>
@@ -22,6 +34,10 @@
 	<string>Tambah Buku</string>
 	<key>Add new books to your queue.</key>
 	<string>Tambah buku baru ke rak.</string>
+	<key>All achievements unlocked! You're a legend!</key>
+	<string>Semua pencapaian telah terbuka! Kamu adalah legenda!</string>
+	<key>Analyze Productivity</key>
+	<string>Analisis Produktivitas</string>
 	<key>App Info</key>
 	<string>Info App</string>
 	<key>Author</key>
@@ -34,6 +50,8 @@
 	<string>Nama penulisnya min. 3 huruf.</string>
 	<key>Autofill data from Google Books</key>
 	<string>Cariin Google Aja</string>
+	<key>BOOKTRACKER</key>
+	<string>BOOKTRACKER</string>
 	<key>Book Info</key>
 	<string>Detail Buku</string>
 	<key>Book not found.</key>
@@ -42,14 +60,20 @@
 	<string>Bukunya masuk list 'Lagi Dibaca'</string>
 	<key>Book will start in 'Library (To Read)'</key>
 	<string>Bukunya masuk 'Rak' dulu ya</string>
+	<key>BookTracker %@</key>
+	<string>BookTracker %s</string>
 	<key>BookTracker v1.0</key>
 	<string>BookTracker v1.0</string>
 	<key>Bookmarker</key>
 	<string>Bookmarker</string>
 	<key>CURRENT STREAK</key>
 	<string>STREAK</string>
+	<key>Camera Access Denied</key>
+	<string>Akses Kamera Ditolak</string>
 	<key>Cancel</key>
 	<string>Batal</string>
+	<key>Check out my reading progress on BookTracker!</key>
+	<string>Lihat progres membacaku di BookTracker!</string>
 	<key>Choose from Library</key>
 	<string>Dari Galeri</string>
 	<key>Close</key>
@@ -72,6 +96,8 @@
 	<string>Yakin hapus buku ini?</string>
 	<key>Deleting this book will also remove all your reading progress. This action cannot be undone.</key>
 	<string>Kalau dihapus, progres bacamu bakal ilang permanen. Yakin?</string>
+	<key>Discover New Books</key>
+	<string>Temukan Buku Baru</string>
 	<key>Dukung Developer</key>
 	<string>Dukung Developer</string>
 	<key>Dukung Developer Indie</key>
@@ -86,10 +112,18 @@
 	<string>Ketik judul atau penulis...</string>
 	<key>Error</key>
 	<string>Yah, Error</string>
+	<key>Filter</key>
+	<string>Filter</string>
+	<key>Find your next favorite book by searching the vast Google Books library.</key>
+	<string>Temukan buku favoritmu selanjutnya dengan mencari di perpustakaan Google Books yang luas.</string>
 	<key>Finish a book to see it here.</key>
 	<string>Kelarin buku, nanti muncul di sini.</string>
 	<key>Finished Books</key>
 	<string>Riwayat Baca</string>
+	<key>Get BookTracker on the App Store</key>
+	<string>Dapatkan BookTracker di App Store</string>
+	<key>Get Started</key>
+	<string>Mulai</string>
 	<key>Google Books</key>
 	<string>Google Books</string>
 	<key>Hai, saya Nunu, developer tunggal di balik BookTracker. Aplikasi ini saya buat dari passion untuk membaca dan teknologi. Dukungan Anda sangat berarti untuk menjaga aplikasi ini tetap gratis, bebas iklan, dan terus berkembang dengan fitur-fitur baru. Setiap traktiran kopi dari Anda memberi saya energi dan motivasi untuk terus berkarya!</key>
@@ -112,30 +146,48 @@
 	<string>Koleksiku</string>
 	<key>Loading Your Library...</key>
 	<string>Loading...</string>
+	<key>Locked Achievements</key>
+	<string>Pencapaian Terkunci</string>
+	<key>Log the last page you read and visualize your reading habits with an activity heatmap.</key>
+	<string>Catat halaman terakhir yang kamu baca dan visualisasikan kebiasaan membacamu dengan peta panas aktivitas.</string>
 	<key>Mark as Finished</key>
 	<string>Tandain Kelar</string>
+	<key>Monitor your reading speed and maintain your daily reading streaks.</key>
+	<string>Pantau kecepatan membacamu dan pertahankan coretan harianmu.</string>
 	<key>More</key>
 	<string>Banyak</string>
 	<key>My Library</key>
 	<string>Koleksiku</string>
+	<key>My Reading Journey</key>
+	<string>Perjalanan Membacaku</string>
+	<key>Next</key>
+	<string>Lanjut</string>
 	<key>No Active Books</key>
 	<string>Belum ada yang dibaca nih</string>
 	<key>No Active Reading</key>
 	<string>Lagi ga ada yang dibaca</string>
 	<key>No Finished Books</key>
 	<string>Riwayat Baca Masih Kosong</string>
+	<key>No achievements unlocked yet. Keep reading!</key>
+	<string>Belum ada pencapaian yang terbuka. Teruslah membaca!</string>
 	<key>No reading activity</key>
 	<string>Gak ada aktivitas baca</string>
 	<key>No reading data yet</key>
 	<string>Datanya masih kosong</string>
 	<key>OK</key>
 	<string>OK</string>
+	<key>Open Settings</key>
+	<string>Buka Pengaturan</string>
 	<key>Page</key>
 	<string>Halaman</string>
 	<key>Page must be greater than current page (%lld).</key>
 	<string>Halaman harus lebih besar dari halaman saat ini (%lld).</string>
 	<key>Page number not found. Please try again.</key>
 	<string>Nomor halaman tidak ditemukan. Coba lagi ya.</string>
+	<key>Pages</key>
+	<string>Halaman</string>
+	<key>Photo Library Access Denied</key>
+	<string>Akses Galeri Foto Ditolak</string>
 	<key>Please enter a valid page number between %lld and %lld.</key>
 	<string>Hal. harus antara %lld - %lld ya.</string>
 	<key>Point camera at page number. Scanning is automatic.</key>
@@ -164,6 +216,8 @@
 	<string>Nyari...</string>
 	<key>Select</key>
 	<string>Pilih</string>
+	<key>Share</key>
+	<string>Bagikan</string>
 	<key>Shelf</key>
 	<string>Rak</string>
 	<key>Shelf Empty</key>
@@ -174,6 +228,8 @@
 	<string>Langsung Baca</string>
 	<key>Start reading books from your shelf.</key>
 	<string>Yuk, mulai baca dari rak.</string>
+	<key>Stay motivated by earning medals and reaching milestones as you build your consistent reading habit.</key>
+	<string>Tetap termotivasi dengan mendapatkan medali dan mencapai tonggak sejarah saat Anda membangun kebiasaan membaca yang konsisten.</string>
 	<key>Support</key>
 	<string>Dukungan</string>
 	<key>Support Developer (Donate)</key>
@@ -192,6 +248,10 @@
 	<string>Judulnya min. 3 huruf ya.</string>
 	<key>To Read (Shelf)</key>
 	<string>Rak Buku</string>
+	<key>To use this feature, please enable camera access in Settings.</key>
+	<string>Untuk menggunakan fitur ini, harap aktifkan akses kamera di Pengaturan.</string>
+	<key>To use this feature, please enable photo library access in Settings.</key>
+	<string>Untuk menggunakan fitur ini, harap aktifkan akses perpustakaan foto di Pengaturan.</string>
 	<key>Total Pages</key>
 	<string>Jml. Halaman</string>
 	<key>Total pages cannot be empty.</key>
@@ -200,14 +260,26 @@
 	<string>Maks. 9999 halaman.</string>
 	<key>Total pages must be at least 1.</key>
 	<string>Min. 1 halaman lah ya.</string>
+	<key>Track Your Progress</key>
+	<string>Lacak Progres Anda</string>
+	<key>Track your reading habits!</key>
+	<string>Lacak kebiasaan membacamu!</string>
 	<key>Traktir di Buy Me a Coffee</key>
 	<string>Traktir di Buy Me a Coffee</string>
 	<key>Traktir di Saweria</key>
 	<string>Traktir di Saweria</string>
+	<key>Tutorial</key>
+	<string>Tutorial</string>
 	<key>Unknown</key>
 	<string>N/A</string>
+	<key>Unlock Your Achievements</key>
+	<string>Buka Pencapaian Anda</string>
+	<key>Unlocked Achievements</key>
+	<string>Pencapaian Terbuka</string>
 	<key>Update Progress</key>
 	<string>Update Progres</string>
+	<key>Update progres '%@' (Maks: %lld)</key>
+	<string>Update progres '%1$@' (Maks: %2$lld)</string>
 	<key>You're on fire! Keep the momentum going.</key>
 	<string>Lagi on fire! Terusin yuk.</string>
 	<key>Your reading journey starts here.

@@ -72,6 +72,10 @@
 	<string>Delete Book?</string>
 	<key>Deleting this book will also remove all your reading progress. This action cannot be undone.</key>
 	<string>Deleting this book will also remove all your reading progress. This action cannot be undone.</string>
+	<key>Dukung Developer</key>
+	<string>Support Developer</string>
+	<key>Dukung Developer Indie</key>
+	<string>Support Indie Developer</string>
 	<key>Edit Book Details</key>
 	<string>Edit Book Details</string>
 	<key>Enter a valid number.</key>
@@ -192,6 +196,10 @@
 	<string>Total pages cannot exceed 9999.</string>
 	<key>Total pages must be at least 1.</key>
 	<string>Total pages must be at least 1.</string>
+	<key>Traktir di Buy Me a Coffee</key>
+	<string>Treat on Buy Me a Coffee</string>
+	<key>Traktir di Saweria</key>
+	<string>Treat on Saweria</string>
 	<key>Unknown</key>
 	<string>Unknown</string>
 	<key>Update Progress</key>

@@ -20,10 +20,10 @@
       },
       {
         "comment": "",
-        "key": "%lld %@",
+        "key": "%lld Day(s)",
         "location": {
-          "startingColumn": 18,
-          "startingLine": 114
+          "startingColumn": 45,
+          "startingLine": 113
         }
       },
       {

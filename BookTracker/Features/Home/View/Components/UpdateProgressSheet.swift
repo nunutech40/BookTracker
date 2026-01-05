@@ -41,7 +41,9 @@ struct UpdateProgressSheet: View {
                 .navigationBarTitleDisplayMode(.inline)
                 .toolbar { toolbarContent }
                 .onAppear(perform: setupView)
-                .onChange(of: inputPage, perform: validateInput)
+                .onChange(of: inputPage) { oldValue, newValue in
+                    validateInput(newValue: newValue)
+                }
                 .alert(String(localized: "Invalid Page"), isPresented: $showAlert) {
                     Button(String(localized: "OK")) { }
                 } message: {

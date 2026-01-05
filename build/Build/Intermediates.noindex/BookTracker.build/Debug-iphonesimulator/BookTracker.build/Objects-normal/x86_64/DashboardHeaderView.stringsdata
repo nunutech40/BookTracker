@@ -6,32 +6,24 @@
         "comment": "",
         "key": "Keep it up!",
         "location": {
-          "startingColumn": 26,
+          "startingColumn": 44,
           "startingLine": 26
-        }
-      },
-      {
-        "comment": "",
-        "key": "No reading data yet",
-        "location": {
-          "startingColumn": 26,
-          "startingLine": 35
-        }
-      },
-      {
-        "comment": "",
-        "key": "%lld Day Streak",
-        "location": {
-          "startingColumn": 27,
-          "startingLine": 21
         }
       },
       {
         "comment": "",
         "key": "Start Reading",
         "location": {
-          "startingColumn": 27,
+          "startingColumn": 45,
           "startingLine": 31
+        }
+      },
+      {
+        "comment": "",
+        "key": "No reading data yet",
+        "location": {
+          "startingColumn": 44,
+          "startingLine": 35
         }
       },
       {

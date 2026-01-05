@@ -36,7 +36,7 @@
       },
       {
         "comment": "",
-        "key": "Halaman",
+        "key": "Page",
         "location": {
           "startingColumn": 45,
           "startingLine": 74
@@ -44,7 +44,7 @@
       },
       {
         "comment": "",
-        "key": "Batal",
+        "key": "Cancel",
         "location": {
           "startingColumn": 38,
           "startingLine": 99
@@ -52,7 +52,7 @@
       },
       {
         "comment": "",
-        "key": "Simpan",
+        "key": "Save",
         "location": {
           "startingColumn": 38,
           "startingLine": 104

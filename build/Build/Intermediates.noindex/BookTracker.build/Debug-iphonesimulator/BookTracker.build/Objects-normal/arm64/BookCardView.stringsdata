@@ -4,14 +4,6 @@
     "Localizable": [
       {
         "comment": "",
-        "key": "%lld / %lld Pg",
-        "location": {
-          "startingColumn": 18,
-          "startingLine": 68
-        }
-      },
-      {
-        "comment": "",
         "key": "%lld",
         "location": {
           "startingColumn": 18,

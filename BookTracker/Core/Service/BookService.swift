@@ -22,7 +22,7 @@ import SwiftData
  1. **Progress Tracking ($Z = X - Y$):** Menghitung selisih halaman baru dengan halaman lama untuk menentukan apakah perlu mencatat `ReadingSession`.
  2. **Data Aggregation:** Mengelompokkan history bacaan berdasarkan tanggal untuk kebutuhan visualisasi Heatmap (mirip kontribusi GitHub).
  */
-final class BookService: BookServiceProtocol {
+@preconcurrency final class BookService: BookServiceProtocol {
     
     /// Context database (penghubung ke storage fisik)
     private let modelContext: ModelContext

@@ -92,14 +92,6 @@
       },
       {
         "comment": "",
-        "key": "Achievements",
-        "location": {
-          "startingColumn": 23,
-          "startingLine": 105
-        }
-      },
-      {
-        "comment": "",
         "key": "About BookTracker",
         "location": {
           "startingColumn": 41,
@@ -120,14 +112,6 @@
         "location": {
           "startingColumn": 41,
           "startingLine": 126
-        }
-      },
-      {
-        "comment": "",
-        "key": "Share",
-        "location": {
-          "startingColumn": 23,
-          "startingLine": 138
         }
       },
       {

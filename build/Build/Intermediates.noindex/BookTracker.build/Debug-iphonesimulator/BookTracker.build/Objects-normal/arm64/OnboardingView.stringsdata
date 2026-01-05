@@ -1,32 +1,5 @@
 {
   "source": "/Users/nununugraha/Documents/Programming/My Project/BookTracker/BookTracker/Features/Onboarding/OnboardingView.swift",
-  "tables": {
-    "Localizable": [
-      {
-        "comment": "",
-        "key": "Close",
-        "location": {
-          "startingColumn": 57,
-          "startingLine": 55
-        }
-      },
-      {
-        "comment": "",
-        "key": "Get Started",
-        "location": {
-          "startingColumn": 67,
-          "startingLine": 55
-        }
-      },
-      {
-        "comment": "",
-        "key": "Next",
-        "location": {
-          "startingColumn": 84,
-          "startingLine": 55
-        }
-      }
-    ]
-  },
+  "tables": {},
   "version": 1
 }
