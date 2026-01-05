@@ -1,48 +1,63 @@
 import SwiftUI
 
 struct OnboardingView: View {
-    @Binding var hasCompletedOnboarding: Bool
-
+    // Pake AppStorage biar tersimpan di UserDefaults otomatis
+    @AppStorage("hasCompletedOnboarding") var hasCompletedOnboarding: Bool = false
+    @State private var selection = 0
+    
     var body: some View {
-        VStack {
-            TabView {
+        VStack(spacing: 0) {
+            TabView(selection: $selection) {
                 OnboardingSlideView(
-                    imageName: "book.pages.fill",
+                    imageName: "OnBoarding1", // Pastikan nama sesuai di Assets.xcassets
                     title: "Track Your Progress",
                     description: "Log the last page you read and visualize your reading habits with an activity heatmap."
                 )
+                .tag(0)
 
                 OnboardingSlideView(
-                    imageName: "magnifyingglass",
+                    imageName: "OnBoarding2",
                     title: "Discover New Books",
                     description: "Find your next favorite book by searching the vast Google Books library."
                 )
+                .tag(1)
 
                 OnboardingSlideView(
-                    imageName: "camera.fill",
-                    title: "Scan Page Numbers",
-                    description: "Quickly update your progress by scanning the page number with your camera."
+                    imageName: "OnBoarding3",
+                    title: "Analyze Productivity",
+                    description: "Monitor your reading speed and maintain your daily reading streaks."
                 )
+                .tag(2)
+
+                OnboardingSlideView(
+                    imageName: "OnBoarding4",
+                    title: "Unlock Your Achievements",
+                    description: "Stay motivated by earning medals and reaching milestones as you build your consistent reading habit."
+                )
+                .tag(3)
             }
-            .tabViewStyle(PageTabViewStyle())
-            .indexViewStyle(PageIndexViewStyle(backgroundDisplayMode: .always))
+            .tabViewStyle(.page(indexDisplayMode: .always))
+            .indexViewStyle(.page(backgroundDisplayMode: .always))
             
+            // Tombol Dinamis
             Button(action: {
-                hasCompletedOnboarding = true
+                if selection < 3 {
+                    withAnimation { selection += 1 }
+                } else {
+                    hasCompletedOnboarding = true
+                }
             }) {
-                Text("Get Started")
+                Text(selection == 3 ? "Get Started" : "Next")
                     .fontWeight(.bold)
                     .frame(maxWidth: .infinity)
                     .padding()
                     .background(Color.accentColor)
                     .foregroundColor(.white)
-                    .cornerRadius(10)
+                    .cornerRadius(12)
             }
-            .padding(32)
+            .padding(.horizontal, 32)
+            .padding(.bottom, 40)
         }
+        .background(Color(UIColor.systemBackground))
     }
-}
-
-#Preview {
-    OnboardingView(hasCompletedOnboarding: .constant(false))
 }

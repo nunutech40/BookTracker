@@ -6,22 +6,35 @@ struct OnboardingSlideView: View {
     let description: String
 
     var body: some View {
-        VStack(spacing: 20) {
-            Image(systemName: imageName)
+        VStack(spacing: 30) {
+            Spacer()
+            
+            // --- Poles Screenshot biar kayak Mockup ---
+            Image(imageName)
                 .resizable()
                 .scaledToFit()
-                .frame(width: 100, height: 100)
-                .foregroundColor(.accentColor)
+                .cornerRadius(24) // Bikin sudut tumpul ala iPhone
+                .overlay(
+                    RoundedRectangle(cornerRadius: 24)
+                        .stroke(Color.gray.opacity(0.1), lineWidth: 1) // Garis pinggir halus
+                )
+                .shadow(color: .black.opacity(0.1), radius: 20, x: 0, y: 10) // Shadow buat efek depth
+                .padding(.horizontal, 50) // Biar nggak mepet layar
+            
+            VStack(spacing: 15) {
+                Text(title)
+                    .font(.title2)
+                    .fontWeight(.bold)
+                    .multilineTextAlignment(.center)
 
-            Text(title)
-                .font(.title)
-                .fontWeight(.bold)
-                .multilineTextAlignment(.center)
-
-            Text(description)
-                .font(.body)
-                .multilineTextAlignment(.center)
-                .padding(.horizontal)
+                Text(description)
+                    .font(.body)
+                    .foregroundColor(.secondary)
+                    .multilineTextAlignment(.center)
+                    .padding(.horizontal, 40)
+            }
+            
+            Spacer()
         }
     }
 }

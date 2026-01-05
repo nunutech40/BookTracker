@@ -63,7 +63,7 @@ struct BookTrackerApp: App {
                     navigationCoordinator: appDelegate.navigationCoordinator // Pass the coordinator
                 )
             } else {
-                OnboardingView(hasCompletedOnboarding: $hasCompletedOnboarding)
+                OnboardingView(hasCompletedOnboarding: hasCompletedOnboarding)
             }
         }
         // Jangan lupa modifier ini tetap wajib ada biar SwiftUI environment jalan

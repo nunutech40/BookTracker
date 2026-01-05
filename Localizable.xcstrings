@@ -829,6 +829,9 @@
     "Get BookTracker on the App Store" : {
 
     },
+    "Get Started" : {
+
+    },
     "Google Books" : {
       "extractionState" : "manual",
       "localizations" : {
@@ -1074,6 +1077,9 @@
       }
     },
     "My Reading Journey" : {
+
+    },
+    "Next" : {
 
     },
     "No achievements unlocked yet. Keep reading!" : {
