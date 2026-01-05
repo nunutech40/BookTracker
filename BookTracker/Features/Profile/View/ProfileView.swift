@@ -32,7 +32,7 @@ struct ProfileView: View {
                 }
             }
             .sheet(isPresented: $showOnboarding) {
-                OnboardingView()
+                OnboardingView(isFromTutorial: true)
             }
             .background(
                 Group {

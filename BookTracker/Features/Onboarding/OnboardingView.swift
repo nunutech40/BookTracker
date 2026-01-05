@@ -1,15 +1,17 @@
 import SwiftUI
 
 struct OnboardingView: View {
-    // Pake AppStorage biar tersimpan di UserDefaults otomatis
+    @Environment(\.presentationMode) var presentationMode
     @AppStorage("hasCompletedOnboarding") var hasCompletedOnboarding: Bool = false
     @State private var selection = 0
+    
+    var isFromTutorial: Bool = false
     
     var body: some View {
         VStack(spacing: 0) {
             TabView(selection: $selection) {
                 OnboardingSlideView(
-                    imageName: "OnBoarding1", // Pastikan nama sesuai di Assets.xcassets
+                    imageName: "OnBoarding1",
                     title: "Track Your Progress",
                     description: "Log the last page you read and visualize your reading habits with an activity heatmap."
                 )
@@ -39,15 +41,18 @@ struct OnboardingView: View {
             .tabViewStyle(.page(indexDisplayMode: .always))
             .indexViewStyle(.page(backgroundDisplayMode: .always))
             
-            // Tombol Dinamis
             Button(action: {
                 if selection < 3 {
                     withAnimation { selection += 1 }
                 } else {
-                    hasCompletedOnboarding = true
+                    if isFromTutorial {
+                        presentationMode.wrappedValue.dismiss()
+                    } else {
+                        hasCompletedOnboarding = true
+                    }
                 }
             }) {
-                Text(selection == 3 ? "Get Started" : "Next")
+                Text(selection == 3 ? (isFromTutorial ? "Close" : "Get Started") : "Next")
                     .fontWeight(.bold)
                     .frame(maxWidth: .infinity)
                     .padding()

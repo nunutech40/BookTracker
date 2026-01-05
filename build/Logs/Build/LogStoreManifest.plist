@@ -6,7 +6,7 @@
 	<integer>11</integer>
 	<key>logs</key>
 	<dict>
-		<key>A1B163F4-CC11-4AA8-B234-0E050D44AAE4</key>
+		<key>36E48412-D51B-4AC6-971C-0130110D25BC</key>
 		<dict>
 			<key>className</key>
 			<string>IDECommandLineBuildLog</string>
@@ -15,7 +15,7 @@
 			<key>domainType</key>
 			<string>Xcode.IDEActivityLogDomainType.BuildLog</string>
 			<key>fileName</key>
-			<string>A1B163F4-CC11-4AA8-B234-0E050D44AAE4.xcactivitylog</string>
+			<string>36E48412-D51B-4AC6-971C-0130110D25BC.xcactivitylog</string>
 			<key>hasPrimaryLog</key>
 			<true/>
 			<key>primaryObservable</key>
@@ -29,7 +29,7 @@
 				<key>totalNumberOfTestFailures</key>
 				<integer>0</integer>
 				<key>totalNumberOfWarnings</key>
-				<integer>72</integer>
+				<integer>26</integer>
 			</dict>
 			<key>schemeIdentifier-containerName</key>
 			<string>BookTracker project</string>
@@ -40,15 +40,15 @@
 			<key>signature</key>
 			<string>Building project BookTracker with scheme BookTracker and configuration Debug</string>
 			<key>timeStartedRecording</key>
-			<real>789281488.001459</real>
+			<real>789282480.58166504</real>
 			<key>timeStoppedRecording</key>
-			<real>789281523.751719</real>
+			<real>789282512.15174794</real>
 			<key>title</key>
 			<string>Building project BookTracker with scheme BookTracker and configuration Debug</string>
 			<key>uniqueIdentifier</key>
-			<string>A1B163F4-CC11-4AA8-B234-0E050D44AAE4</string>
+			<string>36E48412-D51B-4AC6-971C-0130110D25BC</string>
 		</dict>
-		<key>EB9558D5-3F1E-4A0C-BE96-648B16068E55</key>
+		<key>4F3C49E7-52EC-4E17-B21E-F40C780B3422</key>
 		<dict>
 			<key>className</key>
 			<string>IDECommandLineBuildLog</string>
@@ -57,13 +57,13 @@
 			<key>domainType</key>
 			<string>Xcode.IDEActivityLogDomainType.BuildLog</string>
 			<key>fileName</key>
-			<string>EB9558D5-3F1E-4A0C-BE96-648B16068E55.xcactivitylog</string>
+			<string>4F3C49E7-52EC-4E17-B21E-F40C780B3422.xcactivitylog</string>
 			<key>hasPrimaryLog</key>
 			<true/>
 			<key>primaryObservable</key>
 			<dict>
 				<key>highLevelStatus</key>
-				<string>W</string>
+				<string>S</string>
 				<key>totalNumberOfAnalyzerIssues</key>
 				<integer>0</integer>
 				<key>totalNumberOfErrors</key>
@@ -71,7 +71,7 @@
 				<key>totalNumberOfTestFailures</key>
 				<integer>0</integer>
 				<key>totalNumberOfWarnings</key>
-				<integer>72</integer>
+				<integer>0</integer>
 			</dict>
 			<key>schemeIdentifier-containerName</key>
 			<string>BookTracker project</string>
@@ -82,13 +82,13 @@
 			<key>signature</key>
 			<string>Building project BookTracker with scheme BookTracker and configuration Debug</string>
 			<key>timeStartedRecording</key>
-			<real>789280316.76400697</real>
+			<real>789281993.10710704</real>
 			<key>timeStoppedRecording</key>
-			<real>789280330.115049</real>
+			<real>789282005.56270099</real>
 			<key>title</key>
 			<string>Building project BookTracker with scheme BookTracker and configuration Debug</string>
 			<key>uniqueIdentifier</key>
-			<string>EB9558D5-3F1E-4A0C-BE96-648B16068E55</string>
+			<string>4F3C49E7-52EC-4E17-B21E-F40C780B3422</string>
 		</dict>
 	</dict>
 </dict>

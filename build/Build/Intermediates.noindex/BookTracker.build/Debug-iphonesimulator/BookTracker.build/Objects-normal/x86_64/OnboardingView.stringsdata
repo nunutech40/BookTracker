@@ -4,18 +4,26 @@
     "Localizable": [
       {
         "comment": "",
+        "key": "Close",
+        "location": {
+          "startingColumn": 57,
+          "startingLine": 55
+        }
+      },
+      {
+        "comment": "",
         "key": "Get Started",
         "location": {
-          "startingColumn": 39,
-          "startingLine": 50
+          "startingColumn": 67,
+          "startingLine": 55
         }
       },
       {
         "comment": "",
         "key": "Next",
         "location": {
-          "startingColumn": 55,
-          "startingLine": 50
+          "startingColumn": 84,
+          "startingLine": 55
         }
       }
     ]
