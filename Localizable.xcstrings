@@ -4,40 +4,36 @@
     "%@" : {
 
     },
+    "%d / %d pages" : {
+      "localizations" : {
+        "en" : {
+          "stringUnit" : {
+            "state" : "new",
+            "value" : "%1$d / %2$d pages"
+          }
+        }
+      }
+    },
+    "%d / %d Pages" : {
+      "localizations" : {
+        "en" : {
+          "stringUnit" : {
+            "state" : "new",
+            "value" : "%1$d / %2$d Pages"
+          }
+        }
+      }
+    },
+    "%d Day Streak" : {
+
+    },
+    "%d Pages" : {
+
+    },
     "%lld" : {
 
     },
-    "%lld / %lld Pages" : {
-      "localizations" : {
-        "en" : {
-          "stringUnit" : {
-            "state" : "new",
-            "value" : "%1$lld / %2$lld Pages"
-          }
-        }
-      }
-    },
-    "%lld / %lld Pg" : {
-      "localizations" : {
-        "en" : {
-          "stringUnit" : {
-            "state" : "new",
-            "value" : "%1$lld / %2$lld Pg"
-          }
-        }
-      }
-    },
-    "%lld %@" : {
-      "localizations" : {
-        "en" : {
-          "stringUnit" : {
-            "state" : "new",
-            "value" : "%1$lld %2$@"
-          }
-        }
-      }
-    },
-    "%lld Day Streak" : {
+    "%lld Day(s)" : {
 
     },
     "%lld Pages" : {
@@ -233,6 +229,9 @@
     "All achievements unlocked! You're a legend!" : {
 
     },
+    "Analyze Productivity" : {
+
+    },
     "App Info" : {
       "extractionState" : "manual",
       "localizations" : {
@@ -334,9 +333,6 @@
           }
         }
       }
-    },
-    "Batal" : {
-
     },
     "Book Info" : {
       "extractionState" : "manual",
@@ -446,6 +442,9 @@
         }
       }
     },
+    "Camera Access Denied" : {
+
+    },
     "Cancel" : {
       "extractionState" : "manual",
       "localizations" : {
@@ -462,6 +461,9 @@
           }
         }
       }
+    },
+    "Check out my reading progress on BookTracker!" : {
+
     },
     "Choose from Library" : {
       "extractionState" : "manual",
@@ -670,6 +672,9 @@
         }
       }
     },
+    "Discover New Books" : {
+
+    },
     "Dukung Developer" : {
       "extractionState" : "manual",
       "localizations" : {
@@ -792,6 +797,9 @@
     "Filter" : {
 
     },
+    "Find your next favorite book by searching the vast Google Books library." : {
+
+    },
     "Finish a book to see it here." : {
       "extractionState" : "manual",
       "localizations" : {
@@ -865,9 +873,6 @@
           }
         }
       }
-    },
-    "Halaman" : {
-
     },
     "History" : {
       "extractionState" : "manual",
@@ -1025,6 +1030,9 @@
     "Locked Achievements" : {
 
     },
+    "Log the last page you read and visualize your reading habits with an activity heatmap." : {
+
+    },
     "Mark as Finished" : {
       "extractionState" : "manual",
       "localizations" : {
@@ -1041,6 +1049,9 @@
           }
         }
       }
+    },
+    "Monitor your reading speed and maintain your daily reading streaks." : {
+
     },
     "More" : {
       "extractionState" : "manual",
@@ -1242,6 +1253,9 @@
       }
     },
     "Pages" : {
+
+    },
+    "Photo Library Access Denied" : {
 
     },
     "Please enter a valid page number between %lld and %lld." : {
@@ -1519,9 +1533,6 @@
         }
       }
     },
-    "Simpan" : {
-
-    },
     "Start Reading" : {
       "extractionState" : "manual",
       "localizations" : {
@@ -1572,6 +1583,9 @@
           }
         }
       }
+    },
+    "Stay motivated by earning medals and reaching milestones as you build your consistent reading habit." : {
+
     },
     "Support" : {
       "extractionState" : "manual",
@@ -1726,6 +1740,12 @@
         }
       }
     },
+    "To use this feature, please enable camera access in Settings." : {
+
+    },
+    "To use this feature, please enable photo library access in Settings." : {
+
+    },
     "Total Pages" : {
       "extractionState" : "manual",
       "localizations" : {
@@ -1794,6 +1814,9 @@
         }
       }
     },
+    "Track Your Progress" : {
+
+    },
     "Track your reading habits!" : {
 
     },
@@ -1831,6 +1854,9 @@
         }
       }
     },
+    "Tutorial" : {
+
+    },
     "Unknown" : {
       "extractionState" : "manual",
       "localizations" : {
@@ -1847,6 +1873,9 @@
           }
         }
       }
+    },
+    "Unlock Your Achievements" : {
+
     },
     "Unlocked Achievements" : {
 
