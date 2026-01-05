@@ -864,6 +864,22 @@
         }
       }
     },
+    "Easily move books from your 'To Read' shelf to 'Reading Now' to start tracking your progress." : {
+        "localizations" : {
+            "en" : {
+                "stringUnit" : {
+                    "state" : "new",
+                    "value" : "Easily move books from your 'To Read' shelf to 'Reading Now' to start tracking your progress."
+                }
+            },
+            "id" : {
+                "stringUnit" : {
+                    "state" : "new",
+                    "value" : "Pindahkan buku dengan mudah dari rak 'Ingin Dibaca' ke 'Sedang Dibaca' untuk mulai melacak kemajuan Anda."
+                }
+            }
+        }
+    },
     "Edit Book Details" : {
       "extractionState" : "manual",
       "localizations" : {
@@ -1265,6 +1281,22 @@
           }
         }
       }
+    },
+    "Manage Your Reading" : {
+        "localizations" : {
+            "en" : {
+                "stringUnit" : {
+                    "state" : "new",
+                    "value" : "Manage Your Reading"
+                }
+            },
+            "id" : {
+                "stringUnit" : {
+                    "state" : "new",
+                    "value" : "Atur Bacaan Anda"
+                }
+            }
+        }
     },
     "Mark as Finished" : {
       "extractionState" : "manual",

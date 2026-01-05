@@ -37,12 +37,19 @@ struct OnboardingView: View {
                     description: NSLocalizedString("Stay motivated by earning medals and reaching milestones as you build your consistent reading habit.", comment: "")
                 )
                 .tag(3)
+                
+                OnboardingSlideView(
+                    imageName: "OnBoarding5",
+                    title: NSLocalizedString("Manage Your Reading", comment: ""),
+                    description: NSLocalizedString("Easily move books from your 'To Read' shelf to 'Reading Now' to start tracking your progress.", comment: "")
+                )
+                .tag(4)
             }
             .tabViewStyle(.page(indexDisplayMode: .always))
             .indexViewStyle(.page(backgroundDisplayMode: .always))
             
             Button(action: {
-                if selection < 3 {
+                if selection < 4 {
                     withAnimation { selection += 1 }
                 } else {
                     if isFromTutorial {
@@ -52,7 +59,7 @@ struct OnboardingView: View {
                     }
                 }
             }) {
-                Text(selection == 3 ? (isFromTutorial ? NSLocalizedString("Close", comment: "") : NSLocalizedString("Get Started", comment: "")) : NSLocalizedString("Next", comment: ""))
+                Text(selection == 4 ? (isFromTutorial ? NSLocalizedString("Close", comment: "") : NSLocalizedString("Get Started", comment: "")) : NSLocalizedString("Next", comment: ""))
                     .fontWeight(.bold)
                     .frame(maxWidth: .infinity)
                     .padding()
